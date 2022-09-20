@@ -32,10 +32,12 @@
 * @type {Namespace}
 */
 var ns = {};
+ns.filledBy = require( '@stdlib/array-base-filled-by' );
 ns.isArray = require( '@stdlib/assert-is-array' );
 ns.kebabcase = require( '@stdlib/string-kebabcase' );
 ns.lowercase = require( '@stdlib/string-lowercase' );
 ns.map2d = require( '@stdlib/utils-map2d' );
+ns.mt19937 = require( '@stdlib/random-base-mt19937' );
 ns.naryFunction = require( '@stdlib/utils-nary-function' );
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 

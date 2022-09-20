@@ -57,6 +57,21 @@ function STDLIB_LOWERCASE( value ) {
 }
 
 /**
+* Returns a pseudorandom integer on the interval [0, 4294967295].
+*
+* @customfunction
+* @param {number} N - number of values
+* @param {number} seed - pseudorandom number generator seed
+* @returns {Array<number>} pseudorandom integers
+*/
+function STDLIB_MT19937( N, seed ) {
+	var rand = ns.mt19937.factory({
+		'seed': seed
+	});
+	return ns.filledBy( N, rand );
+}
+
+/**
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
 * @customfunction
