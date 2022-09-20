@@ -175,6 +175,24 @@ function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue
 }
 
 /**
+* Multiplies a vector by a constant and adds the result to another vector.
+*
+* @customfunction
+* @param {number} N - number of elements on which to operate
+* @param {number} alpha - scalar constant
+* @param {Array<Array<number>>} x - first vector
+* @param {number} strideX - index increment for the first vector
+* @param {number} offsetX - index offset for the first vector
+* @param {Array<Array<number>>} y - second vector
+* @param {number} strideY - index increment for the second vector
+* @param {number} offsetY - index offset for the second vector
+* @returns {Array<Array<number>>} results
+*/
+function STDLIB_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) {
+	return ns.saxpy.ndarray( N, alpha, ns.flattenArray( x ), strideX, offsetX, ns.flattenArray( y ), strideY, offsetY );
+}
+
+/**
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
 * @customfunction

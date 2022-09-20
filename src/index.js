@@ -33,7 +33,7 @@
 */
 var ns = {};
 ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
-ns.daxpy = require( '@stdlib/blas-base-daxpy' );
+ns.daxpy = require( '@stdlib/blas-base-gaxpy' );
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
 ns.flattenArray = require( '@stdlib/utils-flatten-array' );
 ns.isArray = require( '@stdlib/assert-is-array' );
@@ -44,6 +44,7 @@ ns.lowercase = require( '@stdlib/string-lowercase' );
 ns.map2d = require( '@stdlib/utils-map2d' );
 ns.mt19937 = require( '@stdlib/random-base-mt19937' );
 ns.naryFunction = require( '@stdlib/utils-nary-function' );
+ns.saxpy = require( '@stdlib/blas-base-gaxpy' );
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 
 
