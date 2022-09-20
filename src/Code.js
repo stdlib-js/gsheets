@@ -101,17 +101,9 @@ function STDLIB_MT19937_NORMALIZED( N, seed ) {
 *
 * @example
 * STDLIB_SAWTOOTH_WAVE( 10 )
-*
-* @example
 * STDLIB_SAWTOOTH_WAVE( 10, "period", 10 )
-*
-* @example
 * STDLIB_SAWTOOTH_WAVE( 10, "amplitude", 20 )
-*
-* @example
 * STDLIB_SAWTOOTH_WAVE( 10, "offset", 3 )
-*
-* @example
 * STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
 */
 function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) {
