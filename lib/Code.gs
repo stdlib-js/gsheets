@@ -92,6 +92,12 @@ function STDLIB_MT19937_NORMALIZED( N, seed ) {
 /**
 * Generates a sawtooth wave.
 *
+* STDLIB_SAWTOOTH_WAVE( 10 )
+* STDLIB_SAWTOOTH_WAVE( 10, "period", 10 )
+* STDLIB_SAWTOOTH_WAVE( 10, "amplitude", 20 )
+* STDLIB_SAWTOOTH_WAVE( 10, "offset", 3 )
+* STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
+*
 * @customfunction
 * @param {number} N - number of values
 * @param {string} period - period option name
@@ -101,13 +107,6 @@ function STDLIB_MT19937_NORMALIZED( N, seed ) {
 * @param {string} offset - phase offset option name
 * @param {number} offsetValue - phase offset value
 * @returns {Array<number>} simulated values
-*
-* @example
-* STDLIB_SAWTOOTH_WAVE( 10 )
-* STDLIB_SAWTOOTH_WAVE( 10, "period", 10 )
-* STDLIB_SAWTOOTH_WAVE( 10, "amplitude", 20 )
-* STDLIB_SAWTOOTH_WAVE( 10, "offset", 3 )
-* STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
 */
 function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) {
 	var opts;
