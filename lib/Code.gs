@@ -64,7 +64,7 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 		opts.alpha = alphaValue;
 	}
 	out = ns.bartlettTest( ns.flattenArray( values ), opts );
-	if ( format === 'raw' ) {
+	if ( format && formatValue === 'raw' ) {
 		return [
 			[ 'rejected', out.rejected ],
 			[ 'alpha', out.alpha ],
