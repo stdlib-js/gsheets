@@ -60,7 +60,7 @@ function STDLIB_LOWERCASE( value ) {
 }
 
 /**
-* Returns a pseudorandom integer on the interval [0, 4294967295].
+* Returns pseudorandom integers on the interval [0, 4294967295].
 *
 * @customfunction
 * @param {number} N - number of values
@@ -69,6 +69,21 @@ function STDLIB_LOWERCASE( value ) {
 */
 function STDLIB_MT19937( N, seed ) {
 	var rand = ns.mt19937.factory({
+		'seed': seed
+	});
+	return ns.filledBy( N, rand );
+}
+
+/**
+* Returns pseudorandom numbers on the interval [0, 1).
+*
+* @customfunction
+* @param {number} N - number of values
+* @param {number} seed - pseudorandom number generator seed
+* @returns {Array<number>} pseudorandom numbers
+*/
+function STDLIB_MT19937_NORMALIZED( N, seed ) {
+	var rand = ns.mt19937.normalized.factory({
 		'seed': seed
 	});
 	return ns.filledBy( N, rand );
