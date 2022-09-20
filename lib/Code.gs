@@ -84,12 +84,14 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 * @param {number} alpha - scalar constant
 * @param {Array<Array<number>>} x - first vector
 * @param {number} strideX - index increment for the first vector
+* @param {number} offsetX - index offset for the first vector
 * @param {Array<Array<number>>} y - second vector
 * @param {number} strideY - index increment for the second vector
+* @param {number} offsetY - index offset for the second vector
 * @returns {Array<Array<number>>} results
 */
-function STDLIB_DAXPY( N, alpha, x, strideX, y, strideY ) {
-	return ns.daxpy( N, alpha, ns.flattenArray( x ), strideX, ns.flattenArray( y ), strideY );
+function STDLIB_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) {
+	return ns.daxpy.ndarray( N, alpha, ns.flattenArray( x ), strideX, offsetX, ns.flattenArray( y ), strideY, offsetY );
 }
 
 /**
