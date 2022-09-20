@@ -32,8 +32,8 @@
 * Converts a string to kebab-case.
 *
 * @customfunction
-* @param {(string|Array<Array<string>>)} value - string(s) to convert
-* @returns {(string|Array<Array<string>>)} converted string(s)
+* @param {string|Array<Array<string>>} value - string(s) to convert
+* @returns {string|Array<Array<string>>} converted string(s)
 */
 function STDLIB_KEBABCASE( value ) {
 	if ( ns.isArray( value ) ) {
@@ -46,8 +46,8 @@ function STDLIB_KEBABCASE( value ) {
 * Converts a string to lowercase.
 *
 * @customfunction
-* @param {(string|Array<Array<string>>)} value - string(s) to convert
-* @returns {(string|Array<Array<string>>)} converted string(s)
+* @param {string|Array<Array<string>>} value - string(s) to convert
+* @returns {string|Array<Array<string>>} converted string(s)
 */
 function STDLIB_LOWERCASE( value ) {
 	if ( ns.isArray( value ) ) {
@@ -60,8 +60,8 @@ function STDLIB_LOWERCASE( value ) {
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
 * @customfunction
-* @param {(number|Array<Array<number>>)} value - input value(s)
-* @returns {(number|Array<Array<number>>)} result(s)
+* @param {number|Array<Array<number>>} value - input value(s)
+* @returns {number|Array<Array<number>>} result(s)
 */
 function STDLIB_ZETA( value ) {
 	if ( ns.isArray( value ) ) {
