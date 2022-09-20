@@ -29,6 +29,31 @@
 // MAIN //
 
 /**
+* Tests the null hypothesis that the variances in all groups are the same.
+*
+* @customfunction
+* @param {Array<Array<number>>} values - numeric observations
+* @param {string} groups - groups option name
+* @param {Array<Array>} groupsValue - groups option values
+* @param {string} alpha - significance level option name
+* @param {number} alphaValue - significance level option value (default: 0.05)
+* @returns {Array<Array>} results
+*/
+function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue ) {
+	var opts;
+	var out;
+
+	opts = {
+		'groups': ns.flattenArray( groupsValue )
+	};
+	if ( alpha ) {
+		opts.alpha = alphaValue;
+	}
+	out = ns.bartlettTest( ns.flattenArray( values ), opts );
+	return out.print();
+}
+
+/**
 * Converts a string to kebab-case.
 *
 * @customfunction
@@ -98,11 +123,11 @@ function STDLIB_MT19937_NORMALIZED( N, seed ) {
 * @customfunction
 * @param {number} N - number of values
 * @param {string} period - period option name
-* @param {number} periodValue - period value
+* @param {number} periodValue - period value (default: 10)
 * @param {string} amplitude - amplitude option name
-* @param {number} amplitudeValue - amplitude value
+* @param {number} amplitudeValue - amplitude value (default: 1)
 * @param {string} offset - phase offset option name
-* @param {number} offsetValue - phase offset value
+* @param {number} offsetValue - phase offset value (default: 0)
 * @returns {Array<number>} simulated values
 */
 function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) {

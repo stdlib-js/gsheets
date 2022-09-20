@@ -46,8 +46,10 @@
     "@stdlib/math-base-special-riemann-zeta": "^0.0.6",
     "@stdlib/random-base-mt19937": "^0.0.6",
     "@stdlib/simulate-iter-sawtooth-wave": "^0.0.6",
+    "@stdlib/stats-bartlett-test": "^0.0.7",
     "@stdlib/string-kebabcase": "^0.0.3",
     "@stdlib/string-lowercase": "^0.0.8",
+    "@stdlib/utils-flatten-array": "^0.0.7",
     "@stdlib/utils-map2d": "^0.0.1",
     "@stdlib/utils-nary-function": "^0.0.1",
     "esbuild": "^0.14.38"

@@ -32,7 +32,9 @@
 * @type {Namespace}
 */
 var ns = {};
+ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
+ns.flattenArray = require( '@stdlib/utils-flatten-array' );
 ns.isArray = require( '@stdlib/assert-is-array' );
 ns.iterator2array = require( '@stdlib/array-from-iterator' );
 ns.iterSawtoothWave = require( '@stdlib/simulate-iter-sawtooth-wave' );
