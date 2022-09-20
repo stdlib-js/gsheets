@@ -37,6 +37,7 @@ ns.kebabcase = require( '@stdlib/string-kebabcase' );
 ns.lowercase = require( '@stdlib/string-lowercase' );
 ns.map2d = require( '@stdlib/utils-map2d' );
 ns.naryFunction = require( '@stdlib/utils-nary-function' );
+ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 
 
 // EXPORTS //

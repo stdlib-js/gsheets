@@ -55,3 +55,17 @@ function STDLIB_LOWERCASE( value ) {
 	}
 	return ns.lowercase( value );
 }
+
+/**
+* Evaluates the Riemann zeta function as a function of a real variable.
+*
+* @customfunction
+* @param {(number|Array<Array<number>>)} value - input value(s)
+* @returns {(number|Array<Array<number>>)} result(s)
+*/
+function STDLIB_ZETA( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.map2d( value, ns.naryFunction( ns.zeta, 1 ) );
+	}
+	return ns.zeta( value );
+}
