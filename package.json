@@ -38,11 +38,13 @@
   "bugs": {
     "url": "https://github.com/stdlib-js/gsheets/issues"
   },
-  "dependencies": {},
   "devDependencies": {
     "@google/clasp": "^2.4.1",
-    "@stdlib/string-kebabcase": "0.0.3",
-    "@stdlib/string-lowercase": "0.0.8",
+    "@stdlib/assert-is-array": "^0.0.7",
+    "@stdlib/string-kebabcase": "^0.0.3",
+    "@stdlib/string-lowercase": "^0.0.8",
+    "@stdlib/utils-map2d": "^0.0.1",
+    "@stdlib/utils-nary-function": "^0.0.1",
     "esbuild": "^0.14.38"
   },
   "keywords": [

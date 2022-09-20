@@ -32,10 +32,13 @@
 * Converts a string to kebab-case.
 *
 * @customfunction
-* @param {string} value - string to convert
-* @returns {string} converted string
+* @param {(string|Array<Array<string>>)} value - string(s) to convert
+* @returns {(string|Array<Array<string>>)} converted string(s)
 */
 function STDLIB_KEBABCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.map2d( value, naryFunction( ns.kebabcase, 1 ) );
+	}
 	return ns.kebabcase( value );
 }
 
@@ -43,9 +46,12 @@ function STDLIB_KEBABCASE( value ) {
 * Converts a string to lowercase.
 *
 * @customfunction
-* @param {string} value - string to convert
-* @returns {string} converted string
+* @param {(string|Array<Array<string>>)} value - string(s) to convert
+* @returns {(string|Array<Array<string>>)} converted string(s)
 */
 function STDLIB_LOWERCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.map2d( value, naryFunction( ns.lowercase, 1 ) );
+	}
 	return ns.lowercase( value );
 }
