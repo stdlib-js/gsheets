@@ -65,6 +65,22 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 }
 
 /**
+* Multiplies a vector by a constant and adds the result to another vector.
+*
+* @customfunction
+* @param {number} N - number of elements on which to operate
+* @param {number} alpha - scalar constant
+* @param {Array<Array<number>>} x - first vector
+* @param {number} strideX - index increment for the first vector
+* @param {Array<Array<number>>} y - second vector
+* @param {number} strideY - index increment for the second vector
+* @returns {Array<Array<number>>} results
+*/
+function STDLIB_DAXPY( N, alpha, x, strideX, y, strideY ) {
+	return ns.daxpy( N, alpha, ns.flattenArray( x ), strideX, ns.flattenArray( y ), strideY );
+}
+
+/**
 * Converts a string to kebab-case.
 *
 * @customfunction

@@ -33,6 +33,7 @@
 */
 var ns = {};
 ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
+ns.daxpy = require( '@stdlib/blas-base-daxpy' );
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
 ns.flattenArray = require( '@stdlib/utils-flatten-array' );
 ns.isArray = require( '@stdlib/assert-is-array' );
