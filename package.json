@@ -41,9 +41,11 @@
   "devDependencies": {
     "@google/clasp": "^2.4.1",
     "@stdlib/array-base-filled-by": "^0.0.2",
+    "@stdlib/array-from-iterator": "^0.0.6",
     "@stdlib/assert-is-array": "^0.0.7",
     "@stdlib/math-base-special-riemann-zeta": "^0.0.6",
     "@stdlib/random-base-mt19937": "^0.0.6",
+    "@stdlib/simulate-iter-sawtooth-wave": "^0.0.6",
     "@stdlib/string-kebabcase": "^0.0.3",
     "@stdlib/string-lowercase": "^0.0.8",
     "@stdlib/utils-map2d": "^0.0.1",

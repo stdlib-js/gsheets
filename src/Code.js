@@ -87,6 +87,34 @@ function STDLIB_MT19937_NORMALIZED( N, seed ) {
 }
 
 /**
+* Generates a sawtooth wave.
+*
+* @customfunction
+* @param {number} N - number of values
+* @param {string} [period] - period option name
+* @param {number} [periodValue] - period value
+* @param {string} [amplitude] - amplitude option name
+* @param {number} [amplitudeValue] - amplitude value
+* @param {string} [offset] - phase offset option name
+* @param {number} [offsetValue] - phase offset value
+* @returns {Array<number>} simulated values
+*/
+function STDLIB_SAWTOOTH_WAVE( N ) {
+	var opts;
+	var it;
+	var i;
+
+	opts = {
+		'iter': N
+	};
+	for ( i = 1; i < arguments.length; i += 2 ) {
+		opts[ arguments[ i ] ] = arguments[ i+1 ];
+	}
+	it = ns.iterSawtoothWave( opts );
+	return ns.iterator2array( it );
+}
+
+/**
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
 * @customfunction

@@ -34,6 +34,8 @@
 var ns = {};
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
 ns.isArray = require( '@stdlib/assert-is-array' );
+ns.iterator2array = require( '@stdlib/array-from-iterator' );
+ns.iterSawtoothWave = require( '@stdlib/simulate-iter-sawtooth-wave' );
 ns.kebabcase = require( '@stdlib/string-kebabcase' );
 ns.lowercase = require( '@stdlib/string-lowercase' );
 ns.map2d = require( '@stdlib/utils-map2d' );
