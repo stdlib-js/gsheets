@@ -97,9 +97,9 @@ function STDLIB_MT19937_NORMALIZED( N, seed ) {
 * @param {number} [amplitudeValue] - amplitude value
 * @param {string} [offset] - phase offset option name
 * @param {number} [offsetValue] - phase offset value
-* @return {Array<number>} simulated values
+* @returns {Array<number>} simulated values
 */
-function STDLIB_SAWTOOTH_WAVE( N ) {
+function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) {
 	var opts;
 	var it;
 	var i;
