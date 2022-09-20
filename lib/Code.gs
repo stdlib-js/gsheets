@@ -83,10 +83,10 @@ function STDLIB_MT19937( N, seed ) {
 * @returns {Array<number>} pseudorandom numbers
 */
 function STDLIB_MT19937_NORMALIZED( N, seed ) {
-	var rand = ns.mt19937.normalized.factory({
+	var rand = ns.mt19937.factory({
 		'seed': seed
 	});
-	return ns.filledBy( N, rand );
+	return ns.filledBy( N, rand.normalized );
 }
 
 /**
