@@ -46,12 +46,14 @@ var global = {};
 * @customfunction
 * @param {Array<Array<number>>} values - numeric observations
 * @param {string} groups - groups option name
-* @param {Array<Array>} groupsValue - groups option values
+* @param {Array<Array<*>>} groupsValue - groups option values
 * @param {string} alpha - significance level option name
 * @param {number} alphaValue - significance level option value (default: 0.05)
-* @returns {Array<Array>} results
+* @param {string} format - results format option name
+* @param {string} formatValue - results format option value (either 'print' or 'raw'; default: 'print')
+* @returns {string|Array<Array<*>>} results
 */
-function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue ) {
+function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) {
 	var opts;
 	var out;
 
@@ -62,6 +64,15 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue ) 
 		opts.alpha = alphaValue;
 	}
 	out = ns.bartlettTest( ns.flattenArray( values ), opts );
+	if ( format === 'raw' ) {
+		return [
+			[ 'rejected', out.rejected ],
+			[ 'alpha', out.alpha ],
+			[ 'df', out.df ],
+			[ 'pValue', out.pValue ],
+			[ 'statistic', out.statistic ]
+		];
+	}
 	return out.print();
 }
 
