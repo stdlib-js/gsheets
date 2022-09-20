@@ -40,7 +40,7 @@ var global = {};
 */
 function STDLIB_KEBABCASE( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.map2d( value, naryFunction( ns.kebabcase, 1 ) );
+		return ns.map2d( value, ns.naryFunction( ns.kebabcase, 1 ) );
 	}
 	return ns.kebabcase( value );
 }
@@ -54,7 +54,7 @@ function STDLIB_KEBABCASE( value ) {
 */
 function STDLIB_LOWERCASE( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.map2d( value, naryFunction( ns.lowercase, 1 ) );
+		return ns.map2d( value, ns.naryFunction( ns.lowercase, 1 ) );
 	}
 	return ns.lowercase( value );
 }
