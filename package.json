@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "name": "@stdlib/gsheets",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "description": "",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
+    }
+  ],
+  "main": "",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "build": "npm run build:clean && npm run build:init && npm run build:bundle && npm run build:preamble && npm run build:app",
+    "build:app": "cat ./build/preamble.js ./build/bundle.js ./src/Code.js > ./lib/Code.gs",
+    "build:bundle": "./node_modules/.bin/esbuild ./src/index.js --bundle --minify --format=iife --legal-comments=none --global-name=ns --outfile=./build/bundle.js",
+    "build:clean": "rm -rf ./build",
+    "build:init": "mkdir ./build",
+    "build:preamble": "echo '/** @OnlyCurrentDoc */\nvar global = {};' > ./build/preamble.js",
+    "clasp:pull": "./node_modules/.bin/clasp pull",
+    "clasp:push": "./node_modules/.bin/clasp push",
+    "clasp:status": "./node_modules/.bin/clasp status",
+    "publish": "npm run build && ((git add . && git commit -m 'Build app' && git push origin main) || echo 'Nothing to publish') && npm run clasp:push"
+  },
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/gsheets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/gsheets/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@google/clasp": "^2.4.1",
+    "@stdlib/string-kebabcase": "0.0.3",
+    "@stdlib/string-lowercase": "0.0.8",
+    "esbuild": "^0.14.38"
+  },
+  "keywords": [
+    "stdlib",
+    "sheets",
+    "gsheets",
+    "spreadsheet"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
