@@ -27,13 +27,18 @@ function __KEBABCASE( value ) {
 /**
 * Converts a string to kebab case.
 *
-* STDLIB_KEBABCASE( "FooBar" )
-* STDLIB_KEBABCASE( A2:A )
-* STDLIB_KEBABCASE( A2:D100 )
-*
 * @customfunction
 * @param {string|Array<Array<string>>} value - string(s) to convert
 * @returns {string|Array<Array<string>>} converted string(s)
+*
+* @example
+* STDLIB_KEBABCASE( "FooBar" )
+*
+* @example
+* STDLIB_KEBABCASE( A2:A )
+*
+* @example
+* STDLIB_KEBABCASE( A2:D100 )
 */
 function STDLIB_KEBABCASE( value ) {
 	if ( ns.isArray( value ) ) {
@@ -42,13 +47,12 @@ function STDLIB_KEBABCASE( value ) {
 	return __KEBABCASE( value );
 }
 /**
-* Generates pseudorandom numbers. Without normalization, generates numbers on the closed interval from 0 to 4294967295. With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
+* Generates pseudorandom numbers.
 *
-* <br/>
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )<br>
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )<br/>
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
-* </br>
+* ## Notes
+*
+* -   Without normalization, generates numbers on the closed interval from 0 to 4294967295.
+* -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 * @customfunction
 * @param {number} nrows - number of rows
@@ -131,13 +135,18 @@ function __ZETA( value ) {
 /**
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
-* STDLIB_ZETA( 1.2 )
-* STDLIB_ZETA( A1:A100 )
-* STDLIB_ZETA( A1:D100 )
-*
 * @customfunction
 * @param {number|Array<Array<number>>} value - input value(s)
 * @returns {number|Array<Array<number>>} result(s)
+*
+* @example
+* STDLIB_ZETA( 1.2 )
+*
+* @example
+* STDLIB_ZETA( A1:A100 )
+*
+* @example
+* STDLIB_ZETA( A1:D100 )
 */
 function STDLIB_ZETA( value ) {
 	if ( ns.isArray( value ) ) {
@@ -147,8 +156,6 @@ function STDLIB_ZETA( value ) {
 }
 /**
 * Multiplies a vector by a constant and adds the result to another vector.
-*
-* STDLIB_BLAS_SAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 *
 * @customfunction
 * @param {number} N - number of elements on which to operate
@@ -160,6 +167,9 @@ function STDLIB_ZETA( value ) {
 * @param {number} strideY - index increment for the second vector
 * @param {number} offsetY - index offset for the second vector
 * @returns {Array<Array<number>>} results
+*
+* @example
+* STDLIB_BLAS_SAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 */
 function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
 	if ( !ns.isNonNegativeInteger( N ) ) {
@@ -185,12 +195,6 @@ function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 /**
 * Tests the null hypothesis that the variances in all groups are the same.
 *
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100 )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10 )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "print" )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "raw" )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10, "format", "print" )
-*
 * @customfunction
 * @param {Array<Array<number>>} values - numeric observations
 * @param {string} groups - groups option name
@@ -200,6 +204,21 @@ function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * @param {string} format - results format option name
 * @param {string} formatValue - results format option value (either 'print' or 'raw'; default: 'print')
 * @returns {(string|Array<Array<*>>)} results
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100 )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10 )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "print" )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "raw" )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10, "format", "print" )
 */
 function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var opts;
@@ -268,13 +287,18 @@ function __LOWERCASE( value ) {
 /**
 * Converts a string to lowercase.
 *
-* STDLIB_LOWERCASE( "FooBar" )
-* STDLIB_LOWERCASE( A2:A )
-* STDLIB_LOWERCASE( A2:D100 )
-*
 * @customfunction
 * @param {string|Array<Array<string>>} value - string(s) to convert
 * @returns {string|Array<Array<string>>} converted string(s)
+*
+* @example
+* STDLIB_LOWERCASE( "FooBar" )
+*
+* @example
+* STDLIB_LOWERCASE( A2:A )
+*
+* @example
+* STDLIB_LOWERCASE( A2:D100 )
 */
 function STDLIB_LOWERCASE( value ) {
 	if ( ns.isArray( value ) ) {
@@ -284,8 +308,6 @@ function STDLIB_LOWERCASE( value ) {
 }
 /**
 * Multiplies a vector by a constant and adds the result to another vector.
-*
-* STDLIB_BLAS_DAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 *
 * @customfunction
 * @param {number} N - number of elements on which to operate
@@ -297,6 +319,9 @@ function STDLIB_LOWERCASE( value ) {
 * @param {number} strideY - index increment for the second vector
 * @param {number} offsetY - index offset for the second vector
 * @returns {Array<Array<number>>} results
+*
+* @example
+* STDLIB_BLAS_DAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 */
 function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
 	if ( !ns.isNonNegativeInteger( N ) ) {
@@ -322,12 +347,6 @@ function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 /**
 * Generates a sawtooth wave.
 *
-* STDLIB_SAWTOOTH_WAVE( 10 )
-* STDLIB_SAWTOOTH_WAVE( 10, "period", 10 )
-* STDLIB_SAWTOOTH_WAVE( 10, "amplitude", 20 )
-* STDLIB_SAWTOOTH_WAVE( 10, "offset", 3 )
-* STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
-*
 * @customfunction
 * @param {number} N - number of values
 * @param {string} period - period option name
@@ -337,6 +356,21 @@ function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * @param {string} offset - phase offset option name
 * @param {number} offsetValue - phase offset value (default: 0)
 * @returns {Array<number>} simulated values
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "period", 10 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "amplitude", 20 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "offset", 3 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
 */
 function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars, stdlib/jsdoc-require-throws-tags
 	var opts;
