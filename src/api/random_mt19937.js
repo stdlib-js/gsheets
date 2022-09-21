@@ -28,8 +28,14 @@ var ns = require( './../namespace.js' );
 /**
 * Generates pseudorandom numbers. Without normalization, generates numbers on the interval \[0, 4294967295]. With normalization, generates numbers on the interval \[0, 1).
 *
+*
+*
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
+*
+*
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
+*
+*
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
 *
 * @customfunction
