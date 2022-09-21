@@ -26,7 +26,7 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers using a linear congruential pseudorandom number generator (LCG) whose output is shuffled
+* Generates pseudorandom numbers using a linear congruential pseudorandom number generator (LCG) whose output is shuffled.
 *
 * ## Notes
 *
