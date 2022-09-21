@@ -53,9 +53,10 @@ function STDLIB_KEBABCASE( value ) {
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
 * @returns {Array<number>} pseudorandom numbers
 *
-* @summary STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
-* @description STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
-* @example STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
+* @example
+* * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
+* * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
+* * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
 */
 function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var rand;
