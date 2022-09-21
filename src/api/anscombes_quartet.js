@@ -50,7 +50,7 @@ function STDLIB_ANSCOMBES_QUARTET() {
 	for ( i = 0; i < N; i++ ) {
 		tmp = [];
 		for ( j = 0; j < 4; j++ ) {
-			tmp.push.apply( null, data[ j ][ i ] );
+			tmp.push.apply( tmp, data[ j ][ i ] );
 		}
 		out.push( tmp );
 	}
