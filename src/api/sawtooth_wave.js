@@ -46,7 +46,7 @@ var ns = require( './../namespace.js' );
 * @throws {TypeError} period must be a positive integer
 * @throws {TypeError} amplitude must be a nonnegative number
 * @throws {TypeError} offset must be an integer
-* @throws {Error} unrecognized option
+* @throws {Error} unrecognized option name
 * @returns {Array<number>} simulated values
 */
 function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars
@@ -57,7 +57,7 @@ function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue
 	var i;
 
 	if ( !ns.isNonNegativeInteger( N ) ) {
-		throw new TypeError( ns.format( 'Number of values must be a nonnegative integer. Value: %s.', String( N ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of values must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}
 	opts = {
 		'iter': N
@@ -67,21 +67,21 @@ function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue
 		v = arguments[ i+1 ];
 		if ( o === 'period' ) {
 			if ( !ns.isPositiveInteger( v ) ) {
-				throw new TypeError( ns.format( 'Period must be a positive integer. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Period must be a positive integer. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else if ( o === 'amplitude' ) {
 			if ( !ns.isNonNegativeNumber( v ) ) {
-				throw new TypeError( ns.format( 'Amplitude must be a nonnegative number. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Amplitude must be a nonnegative number. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else if ( o === 'offset' ) {
 			if ( !ns.isInteger( v ) ) {
-				throw new TypeError( ns.format( 'Offset must be an integer. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Offset must be an integer. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else {
-			throw new Error( ns.format( 'Unrecognized option. Value: %s.', String( o ) ) );
+			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
 		}
 	}
 	it = ns.iterSawtoothWave( opts );

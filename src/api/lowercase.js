@@ -35,7 +35,7 @@ var ns = require( './../namespace.js' );
 */
 function __LOWERCASE( value ) {
 	if ( !ns.isString( value ) ) {
-		throw new TypeError( ns.format( 'Must be a string. Value: %s.', String( value ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Must be a string or a range of strings. Value: %s.', String( value ) ) );
 	}
 	return ns.lowercase( value );
 }

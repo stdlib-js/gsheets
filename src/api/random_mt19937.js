@@ -63,17 +63,17 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 		} else if ( o === 'normalized' ) {
 			flg = v;
 		} else {
-			throw new Error( ns.format( 'Unrecognized option. Value: %s.', String( o ) ) );
+			throw new Error( ns.format( 'invalid argument. Unrecognized option. Value: %s.', String( o ) ) );
 		}
 	}
 	if ( s === void 0 ) {
-		throw new Error( 'Must provide a pseudorandom generator seed.' );
+		throw new Error( 'invalid invocation. Must provide a pseudorandom generator seed.' );
 	}
 	if ( !ns.isPositiveInteger( nrows ) ) {
-		throw new TypeError( ns.format( 'Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );
 	}
 	if ( !ns.isPositiveInteger( ncols ) ) {
-		throw new TypeError( ns.format( 'Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
 	}
 	rand = ns.mt19937.factory({
 		'seed': s

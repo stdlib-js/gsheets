@@ -49,22 +49,22 @@ var ns = require( './../namespace.js' );
 */
 function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len
 	if ( !ns.isNonNegativeInteger( N ) ) {
-		throw new TypeError( ns.format( 'Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}
 	if ( !ns.isNumber( alpha ) ) {
-		throw new TypeError( ns.format( 'Scalar constant must be a number. Value: %s.', String( alpha ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Scalar constant must be a number. Value: %s.', String( alpha ) ) );
 	}
 	if ( !ns.isInteger( strideX ) ) {
-		throw new TypeError( ns.format( 'Stride for first vector must be an integer. Value: %s.', String( strideX ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Stride for first vector must be an integer. Value: %s.', String( strideX ) ) );
 	}
 	if ( !ns.isNonNegativeInteger( offsetX ) ) {
-		throw new TypeError( ns.format( 'Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
 	}
 	if ( !ns.isInteger( strideY ) ) {
-		throw new TypeError( ns.format( 'Stride for second vector must be an integer. Value: %s.', String( strideY ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Stride for second vector must be an integer. Value: %s.', String( strideY ) ) );
 	}
 	if ( !ns.isNonNegativeInteger( offsetY ) ) {
-		throw new TypeError( ns.format( 'Offset for second vector must be a nonnegative integer. Value: %s.', String( offsetY ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Offset for second vector must be a nonnegative integer. Value: %s.', String( offsetY ) ) );
 	}
 	return ns.daxpy( N, alpha, ns.flattenArray( x ), strideX, offsetX, ns.flattenArray( y ), strideY, offsetY );
 }

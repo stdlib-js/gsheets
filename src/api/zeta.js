@@ -35,7 +35,7 @@ var ns = require( './../namespace.js' );
 */
 function __ZETA( value ) {
 	if ( !ns.isNumber( value ) ) {
-		throw new TypeError( ns.format( 'Must be a number. Value: %s.', String( value ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Must be a number or a range of numbers. Value: %s.', String( value ) ) );
 	}
 	return ns.zeta( value );
 }

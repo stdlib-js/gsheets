@@ -47,7 +47,7 @@ var ns = require( './../namespace.js' );
 * @throws {Error} must provide groups
 * @throws {TypeError} significance level must be a number
 * @throws {TypeError} format must be a string
-* @throws {Error} unrecognized option
+* @throws {Error} unrecognized option name
 * @throws {Error} unrecognized format
 * @returns {(string|Array<Array<*>>)} results
 */
@@ -59,7 +59,7 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 	var i;
 
 	if ( !ns.isArray( values ) ) {
-		throw new TypeError( ns.format( 'Observations must be a range. Value: %s.', String( values ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Observations must be a range. Value: %s.', String( values ) ) );
 	}
 	opts = {};
 	for ( i = 1; i < arguments.length; i += 2 ) {
@@ -67,24 +67,24 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 		v = arguments[ i+1 ];
 		if ( o === 'groups' ) {
 			if ( !ns.isArray( v ) ) {
-				throw new TypeError( ns.format( 'Groups must be a range. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Groups must be a range. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = ns.flattenArray( v );
 		} else if ( o === 'alpha' ) {
 			if ( !ns.isNumber( v ) ) {
-				throw new TypeError( ns.format( 'Significance level must be a number. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Significance level must be a number. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else if ( o === 'format' ) {
 			if ( !ns.isString( v ) ) {
-				throw new TypeError( ns.format( 'Format must be a string. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Format must be a string. Value: %s.', String( v ) ) );
 			}
 			if ( v !== 'raw' && v !== 'print' ) {
-				throw new Error( ns.format( 'Unrecognized format. Value: %s.', String( v ) ) );
+				throw new Error( ns.format( 'invalid argument. Unrecognized format. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else {
-			throw new Error( ns.format( 'Unrecognized option. Value: %s.', String( o ) ) );
+			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
 		}
 	}
 	if ( !opts.groups ) {
