@@ -34,6 +34,7 @@
 * @type {Namespace}
 */
 var ns = {};
+ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
 ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
 ns.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
