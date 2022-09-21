@@ -38,21 +38,19 @@ function STDLIB_ANSCOMBES_QUARTET() {
 	var data;
 	var out;
 	var tmp;
-	var N;
+	var d;
 	var i;
 	var j;
 
 	data = ns.ANSCOMBES_QUARTET();
-	N = data[ 0 ].length;
-	out = [
-		[ 'x1', 'y1', 'x2', 'y2', 'x3', 'y3', 'x4', 'y4' ]
-	];
-	for ( i = 0; i < N; i++ ) {
-		tmp = [];
-		for ( j = 0; j < 4; j++ ) {
-			tmp.push.apply( tmp, data[ j ][ i ] );
+	out = [];
+	for ( i = 0; i < data.length; i++ ) {
+		d = data[ i ];
+		for ( j = 0; j < d.length; j++ ) {
+			tmp = d[ j ];
+			tmp.push( i+1 );
+			out.push( tmp );
 		}
-		out.push( tmp );
 	}
 	return out;
 }
