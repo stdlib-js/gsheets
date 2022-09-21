@@ -28,6 +28,12 @@ var ns = require( './../namespace.js' );
 /**
 * Generates pseudorandom numbers. Without normalization, generates numbers on the closed interval from 0 to 4294967295. With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
+* <pre>
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
+* </pre>
+*
 * @customfunction
 * @param {number} nrows - number of rows
 * @param {number} ncols - number of columns
@@ -38,9 +44,11 @@ var ns = require( './../namespace.js' );
 * @returns {Array<number>} pseudorandom numbers
 *
 * @example
-* * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
-* * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
-* * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
+* <pre>
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
+* </pre>
 */
 function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var rand;
