@@ -5,6 +5,8 @@
     -   remove `@example` tags
     -   remove extended descriptions (only keep the first line)
     
+-   show plot for Riemann zeta function
+
 
 
 ## Packages

@@ -26,39 +26,29 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers.
-*
-* ## Notes
-*
-* -   Without normalization, generates numbers on the closed interval from 0 to 4294967295.
-* -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
+* Generates pseudorandom numbers drawn fro a continuous uniform distribution.
 *
 * @customfunction
 * @param {number} nrows - number of rows
 * @param {number} ncols - number of columns
+* @param {number} a - minimum support (inclusive)
+* @param {number} b - maximum support (exclusive)
 * @param {string} seed - seed option name
 * @param {number} seedValue - pseudorandom number generator seed value
-* @param {string} normalized - normalized option name
-* @param {boolean} normalizedValue - normalized option value (default: FALSE)
 * @returns {Array<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
+* STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
 *
 * @example
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
-*
-* @example
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
+* STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
 	var rand;
-	var flg;
 	var out;
 	var s;
 	var o;
 	var v;
-	var f;
 	var i;
 
 	for ( i = 2; i < arguments.length; i += 2 ) {
@@ -66,8 +56,6 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
 			s = v;
-		} else if ( o === 'normalized' ) {
-			flg = v;
 		} else {
 			throw new Error( ns.format( 'invalid argument. Unrecognized option. Value: %s.', String( o ) ) );
 		}
@@ -81,20 +69,15 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 	if ( !ns.isPositiveInteger( ncols ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
 	}
-	rand = ns.random.mt19937.factory({
+	rand = ns.random.uniform.factory( a, b, {
 		'seed': s
 	});
-	if ( flg ) {
-		f = rand.normalized;
-	} else {
-		f = rand;
-	}
 	if ( ncols === 1 ) {
-		return ns.filledBy( nrows, f );
+		return ns.filledBy( nrows, rand );
 	}
 	out = [];
 	for ( i = 0; i < nrows; i++ ) {
-		out.push( ns.filledBy( ncols, f ) );
+		out.push( ns.filledBy( ncols, rand ) );
 	}
 	return out;
 }
@@ -102,4 +85,4 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_MT19937;
+module.exports = STDLIB_RANDOM_UNIFORM;

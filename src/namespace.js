@@ -36,7 +36,11 @@
 var ns = {};
 ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
 ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
-ns.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
+
+ns.blas = {};
+ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
+ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
+
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
 ns.flattenArray = require( '@stdlib/utils-flatten-array' );
 ns.format = require( '@stdlib/string-format' );
@@ -52,9 +56,12 @@ ns.iterSawtoothWave = require( '@stdlib/simulate-iter-sawtooth-wave' );
 ns.kebabcase = require( '@stdlib/string-kebabcase' ); // TODO: replace with base version
 ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base version
 ns.map2d = require( '@stdlib/utils-map2d' );
-ns.mt19937 = require( '@stdlib/random-base-mt19937' );
+
+ns.random = {};
+ns.random.mt19937 = require( '@stdlib/random-base-mt19937' );
+ns.random.uniform = require( '@stdlib/random-base-uniform' );
+
 ns.naryFunction = require( '@stdlib/utils-nary-function' );
-ns.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 
 
