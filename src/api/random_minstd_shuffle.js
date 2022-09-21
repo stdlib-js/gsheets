@@ -26,32 +26,42 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from a normal distribution.
+* Generates pseudorandom numbers using a linear congruential pseudorandom number generator (LCG) whose output is shuffled
+*
+* ## Notes
+*
+* -   Without normalization, generates numbers on the closed interval from 0 to 2147483646.
+* -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 * @customfunction
 * @param {number} nrows - number of rows
 * @param {number} ncols - number of columns
-* @param {number} mu - mean
-* @param {number} sigma - standard deviation
 * @param {string} seed - seed option name
 * @param {number|Array<number>} seedValue - pseudorandom number generator seed value
+* @param {string} normalized - normalized option name
+* @param {boolean} normalizedValue - normalized option value (default: FALSE)
 * @returns {Array<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
+* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234 )
 *
 * @example
-* STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
+* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234, "normalized", FALSE )
+*
+* @example
+* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234, "normalized", TRUE )
 */
-function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags, id-length
 	var rand;
+	var flg;
 	var out;
 	var s;
 	var o;
 	var v;
+	var f;
 	var i;
 
-	for ( i = 4; i < arguments.length; i += 2 ) {
+	for ( i = 2; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
@@ -62,6 +72,8 @@ function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // e
 			} else {
 				throw new TypeError( ns.format( 'invalid argument. Pseudorandom number generator seed must be an integer or a range of integers. Value: %s.', String( v ) ) );
 			}
+		} else if ( o === 'normalized' ) {
+			flg = v;
 		} else {
 			throw new Error( ns.format( 'invalid argument. Unrecognized option. Value: %s.', String( o ) ) );
 		}
@@ -75,21 +87,20 @@ function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // e
 	if ( !ns.isPositiveInteger( ncols ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
 	}
-	if ( !ns.isNumber( mu ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Mean must be a number. Value: %s.', String( mu ) ) );
-	}
-	if ( !ns.isNumber( sigma ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Standard deviation must be a number. Value: %s.', String( sigma ) ) );
-	}
-	rand = ns.random.normal.factory( mu, sigma, {
+	rand = ns.random.minstdShuffle.factory({
 		'seed': s
 	});
+	if ( flg ) {
+		f = rand.normalized;
+	} else {
+		f = rand;
+	}
 	if ( ncols === 1 ) {
-		return ns.filledBy( nrows, rand );
+		return ns.filledBy( nrows, f );
 	}
 	out = [];
 	for ( i = 0; i < nrows; i++ ) {
-		out.push( ns.filledBy( ncols, rand ) );
+		out.push( ns.filledBy( ncols, f ) );
 	}
 	return out;
 }
@@ -97,4 +108,4 @@ function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // e
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_NORMAL;
+module.exports = STDLIB_RANDOM_MINSTD_SHUFFLE;

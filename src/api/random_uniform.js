@@ -34,7 +34,7 @@ var ns = require( './../namespace.js' );
 * @param {number} a - minimum support (inclusive)
 * @param {number} b - maximum support (exclusive)
 * @param {string} seed - seed option name
-* @param {number} seedValue - pseudorandom number generator seed value
+* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
 * @returns {Array<number>} pseudorandom numbers
 *
 * @example
@@ -55,13 +55,19 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslin
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			s = v;
+			if ( ns.isArray( v ) ) {
+				s = ns.flattenArray( v );
+			} else if ( ns.isInteger( v ) ) {
+				s = v;
+			} else {
+				throw new TypeError( ns.format( 'invalid argument. Pseudorandom number generator seed must be an integer or a range of integers. Value: %s.', String( v ) ) );
+			}
 		} else {
 			throw new Error( ns.format( 'invalid argument. Unrecognized option. Value: %s.', String( o ) ) );
 		}
 	}
 	if ( s === void 0 ) {
-		throw new Error( 'invalid invocation. Must provide a pseudorandom generator seed.' );
+		throw new Error( 'invalid invocation. Must provide a pseudorandom number generator seed.' );
 	}
 	if ( !ns.isPositiveInteger( nrows ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );

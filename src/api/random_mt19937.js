@@ -26,7 +26,7 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers.
+* Generates pseudorandom numbers using the Mersenne Twister pseudorandom number generator.
 *
 * ## Notes
 *
@@ -37,7 +37,7 @@ var ns = require( './../namespace.js' );
 * @param {number} nrows - number of rows
 * @param {number} ncols - number of columns
 * @param {string} seed - seed option name
-* @param {number} seedValue - pseudorandom number generator seed value
+* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
 * @returns {Array<number>} pseudorandom numbers
@@ -65,7 +65,13 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			s = v;
+			if ( ns.isArray( v ) ) {
+				s = ns.flattenArray( v );
+			} else if ( ns.isInteger( v ) ) {
+				s = v;
+			} else {
+				throw new TypeError( ns.format( 'invalid argument. Pseudorandom number generator seed must be an integer or a range of integers. Value: %s.', String( v ) ) );
+			}
 		} else if ( o === 'normalized' ) {
 			flg = v;
 		} else {
@@ -73,7 +79,7 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 		}
 	}
 	if ( s === void 0 ) {
-		throw new Error( 'invalid invocation. Must provide a pseudorandom generator seed.' );
+		throw new Error( 'invalid invocation. Must provide a pseudorandom number generator seed.' );
 	}
 	if ( !ns.isPositiveInteger( nrows ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );

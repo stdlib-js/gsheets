@@ -58,6 +58,8 @@ ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base
 ns.map2d = require( '@stdlib/utils-map2d' );
 
 ns.random = {};
+ns.random.minstd = require( '@stdlib/random-base-minstd' );
+ns.random.minstdShuffle = require( '@stdlib/random-base-minstd-shuffle' );
 ns.random.mt19937 = require( '@stdlib/random-base-mt19937' );
 ns.random.normal = require( '@stdlib/random-base-normal' );
 ns.random.uniform = require( '@stdlib/random-base-uniform' );

@@ -52,6 +52,8 @@
     "@stdlib/blas-base-gaxpy": "^0.0.7",
     "@stdlib/datasets-anscombes-quartet": "^0.0.9",
     "@stdlib/math-base-special-riemann-zeta": "^0.0.6",
+    "@stdlib/random-base-minstd": "^0.0.6",
+    "@stdlib/random-base-minstd-shuffle": "^0.0.6",
     "@stdlib/random-base-mt19937": "^0.0.6",
     "@stdlib/random-base-normal": "^0.0.6",
     "@stdlib/random-base-uniform": "^0.0.6",
