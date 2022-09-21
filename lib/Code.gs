@@ -143,7 +143,7 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslin
 	var o;
 	var v;
 	var i;
-	for ( i = 2; i < arguments.length; i += 2 ) {
+	for ( i = 4; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
