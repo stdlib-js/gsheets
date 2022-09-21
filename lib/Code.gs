@@ -20,7 +20,7 @@ var global = {};
 */
 function __KEBABCASE( value ) {
 	if ( !ns.isString( value ) ) {
-		throw new TypeError( ns.format( 'Must be a string. Value: %s.', String( value ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Must be a string or a range of strings. Value: %s.', String( value ) ) );
 	}
 	return ns.kebabcase( value );
 }
@@ -33,7 +33,6 @@ function __KEBABCASE( value ) {
 *
 * @customfunction
 * @param {string|Array<Array<string>>} value - string(s) to convert
-* @throws {TypeError} input values must be strings
 * @returns {string|Array<Array<string>>} converted string(s)
 */
 function STDLIB_KEBABCASE( value ) {
@@ -56,13 +55,9 @@ function STDLIB_KEBABCASE( value ) {
 * @param {number} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
-* @throws {Error} must provide a pseudorandom generator seed
-* @throws {TypeError} number of rows must be a positive integer
-* @throws {TypeError} number of columns must be a positive integer
-* @throws {Error} unrecognized option
 * @returns {Array<number>} pseudorandom numbers
 */
-function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len
+function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var rand;
 	var flg;
 	var out;
@@ -79,17 +74,17 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 		} else if ( o === 'normalized' ) {
 			flg = v;
 		} else {
-			throw new Error( ns.format( 'Unrecognized option. Value: %s.', String( o ) ) );
+			throw new Error( ns.format( 'invalid argument. Unrecognized option. Value: %s.', String( o ) ) );
 		}
 	}
 	if ( s === void 0 ) {
-		throw new Error( 'Must provide a pseudorandom generator seed.' );
+		throw new Error( 'invalid invocation. Must provide a pseudorandom generator seed.' );
 	}
 	if ( !ns.isPositiveInteger( nrows ) ) {
-		throw new TypeError( ns.format( 'Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );
 	}
 	if ( !ns.isPositiveInteger( ncols ) ) {
-		throw new TypeError( ns.format( 'Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
 	}
 	rand = ns.mt19937.factory({
 		'seed': s
@@ -118,7 +113,7 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 */
 function __ZETA( value ) {
 	if ( !ns.isNumber( value ) ) {
-		throw new TypeError( ns.format( 'Must be a number. Value: %s.', String( value ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Must be a number or a range of numbers. Value: %s.', String( value ) ) );
 	}
 	return ns.zeta( value );
 }
@@ -153,32 +148,26 @@ function STDLIB_ZETA( value ) {
 * @param {Array<Array<number>>} y - second vector
 * @param {number} strideY - index increment for the second vector
 * @param {number} offsetY - index offset for the second vector
-* @throws {TypeError} first argument must be a nonnegative integer
-* @throws {TypeError} second argument must be a number
-* @throws {TypeError} fourth argument must be an integer
-* @throws {TypeError} fifth argument must be a nonnegative integer
-* @throws {TypeError} seventh argument must be an integer
-* @throws {TypeError} eighth argument must be a nonnegative integer
 * @returns {Array<Array<number>>} results
 */
-function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len
+function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
 	if ( !ns.isNonNegativeInteger( N ) ) {
-		throw new TypeError( ns.format( 'Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}
 	if ( !ns.isNumber( alpha ) ) {
-		throw new TypeError( ns.format( 'Scalar constant must be a number. Value: %s.', String( alpha ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Scalar constant must be a number. Value: %s.', String( alpha ) ) );
 	}
 	if ( !ns.isInteger( strideX ) ) {
-		throw new TypeError( ns.format( 'Stride for first vector must be an integer. Value: %s.', String( strideX ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Stride for first vector must be an integer. Value: %s.', String( strideX ) ) );
 	}
 	if ( !ns.isNonNegativeInteger( offsetX ) ) {
-		throw new TypeError( ns.format( 'Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
 	}
 	if ( !ns.isInteger( strideY ) ) {
-		throw new TypeError( ns.format( 'Stride for second vector must be an integer. Value: %s.', String( strideY ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Stride for second vector must be an integer. Value: %s.', String( strideY ) ) );
 	}
 	if ( !ns.isNonNegativeInteger( offsetY ) ) {
-		throw new TypeError( ns.format( 'Offset for second vector must be a nonnegative integer. Value: %s.', String( offsetY ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Offset for second vector must be a nonnegative integer. Value: %s.', String( offsetY ) ) );
 	}
 	return ns.saxpy( N, alpha, ns.flattenArray( x ), strideX, offsetX, ns.flattenArray( y ), strideY, offsetY );
 }
@@ -199,23 +188,16 @@ function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * @param {number} alphaValue - significance level option value (default: 0.05)
 * @param {string} format - results format option name
 * @param {string} formatValue - results format option value (either 'print' or 'raw'; default: 'print')
-* @throws {TypeError} observations must be a range
-* @throws {TypeError} groups must be a range
-* @throws {Error} must provide groups
-* @throws {TypeError} significance level must be a number
-* @throws {TypeError} format must be a string
-* @throws {Error} unrecognized option
-* @throws {Error} unrecognized format
 * @returns {(string|Array<Array<*>>)} results
 */
-function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len
+function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var opts;
 	var out;
 	var o;
 	var v;
 	var i;
 	if ( !ns.isArray( values ) ) {
-		throw new TypeError( ns.format( 'Observations must be a range. Value: %s.', String( values ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Observations must be a range. Value: %s.', String( values ) ) );
 	}
 	opts = {};
 	for ( i = 1; i < arguments.length; i += 2 ) {
@@ -223,24 +205,24 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 		v = arguments[ i+1 ];
 		if ( o === 'groups' ) {
 			if ( !ns.isArray( v ) ) {
-				throw new TypeError( ns.format( 'Groups must be a range. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Groups must be a range. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = ns.flattenArray( v );
 		} else if ( o === 'alpha' ) {
 			if ( !ns.isNumber( v ) ) {
-				throw new TypeError( ns.format( 'Significance level must be a number. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Significance level must be a number. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else if ( o === 'format' ) {
 			if ( !ns.isString( v ) ) {
-				throw new TypeError( ns.format( 'Format must be a string. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Format must be a string. Value: %s.', String( v ) ) );
 			}
 			if ( v !== 'raw' && v !== 'print' ) {
-				throw new Error( ns.format( 'Unrecognized format. Value: %s.', String( v ) ) );
+				throw new Error( ns.format( 'invalid argument. Unrecognized format. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else {
-			throw new Error( ns.format( 'Unrecognized option. Value: %s.', String( o ) ) );
+			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
 		}
 	}
 	if ( !opts.groups ) {
@@ -268,7 +250,7 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 */
 function __LOWERCASE( value ) {
 	if ( !ns.isString( value ) ) {
-		throw new TypeError( ns.format( 'Must be a string. Value: %s.', String( value ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Must be a string or a range of strings. Value: %s.', String( value ) ) );
 	}
 	return ns.lowercase( value );
 }
@@ -281,7 +263,6 @@ function __LOWERCASE( value ) {
 *
 * @customfunction
 * @param {string|Array<Array<string>>} value - string(s) to convert
-* @throws {TypeError} input values must be strings
 * @returns {string|Array<Array<string>>} converted string(s)
 */
 function STDLIB_LOWERCASE( value ) {
@@ -304,32 +285,26 @@ function STDLIB_LOWERCASE( value ) {
 * @param {Array<Array<number>>} y - second vector
 * @param {number} strideY - index increment for the second vector
 * @param {number} offsetY - index offset for the second vector
-* @throws {TypeError} first argument must be a nonnegative integer
-* @throws {TypeError} second argument must be a number
-* @throws {TypeError} fourth argument must be an integer
-* @throws {TypeError} fifth argument must be a nonnegative integer
-* @throws {TypeError} seventh argument must be an integer
-* @throws {TypeError} eighth argument must be a nonnegative integer
 * @returns {Array<Array<number>>} results
 */
-function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len
+function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
 	if ( !ns.isNonNegativeInteger( N ) ) {
-		throw new TypeError( ns.format( 'Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}
 	if ( !ns.isNumber( alpha ) ) {
-		throw new TypeError( ns.format( 'Scalar constant must be a number. Value: %s.', String( alpha ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Scalar constant must be a number. Value: %s.', String( alpha ) ) );
 	}
 	if ( !ns.isInteger( strideX ) ) {
-		throw new TypeError( ns.format( 'Stride for first vector must be an integer. Value: %s.', String( strideX ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Stride for first vector must be an integer. Value: %s.', String( strideX ) ) );
 	}
 	if ( !ns.isNonNegativeInteger( offsetX ) ) {
-		throw new TypeError( ns.format( 'Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
 	}
 	if ( !ns.isInteger( strideY ) ) {
-		throw new TypeError( ns.format( 'Stride for second vector must be an integer. Value: %s.', String( strideY ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Stride for second vector must be an integer. Value: %s.', String( strideY ) ) );
 	}
 	if ( !ns.isNonNegativeInteger( offsetY ) ) {
-		throw new TypeError( ns.format( 'Offset for second vector must be a nonnegative integer. Value: %s.', String( offsetY ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Offset for second vector must be a nonnegative integer. Value: %s.', String( offsetY ) ) );
 	}
 	return ns.daxpy( N, alpha, ns.flattenArray( x ), strideX, offsetX, ns.flattenArray( y ), strideY, offsetY );
 }
@@ -350,21 +325,16 @@ function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * @param {number} amplitudeValue - amplitude value (default: 1)
 * @param {string} offset - phase offset option name
 * @param {number} offsetValue - phase offset value (default: 0)
-* @throws {TypeError} number of values must be a nonnegative integer
-* @throws {TypeError} period must be a positive integer
-* @throws {TypeError} amplitude must be a nonnegative number
-* @throws {TypeError} offset must be an integer
-* @throws {Error} unrecognized option
 * @returns {Array<number>} simulated values
 */
-function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars
+function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars, stdlib/jsdoc-require-throws-tags
 	var opts;
 	var it;
 	var o;
 	var v;
 	var i;
 	if ( !ns.isNonNegativeInteger( N ) ) {
-		throw new TypeError( ns.format( 'Number of values must be a nonnegative integer. Value: %s.', String( N ) ) );
+		throw new TypeError( ns.format( 'invalid argument. Number of values must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}
 	opts = {
 		'iter': N
@@ -374,21 +344,21 @@ function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue
 		v = arguments[ i+1 ];
 		if ( o === 'period' ) {
 			if ( !ns.isPositiveInteger( v ) ) {
-				throw new TypeError( ns.format( 'Period must be a positive integer. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Period must be a positive integer. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else if ( o === 'amplitude' ) {
 			if ( !ns.isNonNegativeNumber( v ) ) {
-				throw new TypeError( ns.format( 'Amplitude must be a nonnegative number. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Amplitude must be a nonnegative number. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else if ( o === 'offset' ) {
 			if ( !ns.isInteger( v ) ) {
-				throw new TypeError( ns.format( 'Offset must be an integer. Value: %s.', String( v ) ) );
+				throw new TypeError( ns.format( 'invalid argument. Offset must be an integer. Value: %s.', String( v ) ) );
 			}
 			opts[ o ] = v;
 		} else {
-			throw new Error( ns.format( 'Unrecognized option. Value: %s.', String( o ) ) );
+			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
 		}
 	}
 	it = ns.iterSawtoothWave( opts );
