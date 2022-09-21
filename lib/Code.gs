@@ -287,7 +287,7 @@ function STDLIB_ANSCOMBES_QUARTET() {
 	var i;
 	var j;
 	data = ns.ANSCOMBES_QUARTET();
-	N = data.length;
+	N = data[ 0 ].length;
 	out = [
 		[ 'x1', 'y1', 'x2', 'y2', 'x3', 'y3', 'x4', 'y4' ]
 	];
