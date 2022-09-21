@@ -42,7 +42,7 @@ function STDLIB_KEBABCASE( value ) {
 	return __KEBABCASE( value );
 }
 /**
-* Generates pseudorandom numbers. Without normalization, generates numbers on the interval \[0, 4294967295]. With normalization, generates numbers on the interval \[0, 1).
+* Generates pseudorandom numbers. Without normalization, generates numbers on the closed interval from 0 to 4294967295. With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 *
 *
