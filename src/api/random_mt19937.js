@@ -55,7 +55,7 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 	var f;
 	var i;
 
-	for ( i = 1; i < arguments.length; i += 2 ) {
+	for ( i = 2; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
