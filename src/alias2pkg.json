@@ -1,0 +1,11 @@
+{
+    "STDLIB_ANSCOMBES_QUARTET": "@stdlib/datasets/anscombes-quartet",
+    "STDLIB_BARTLETT_TEST": "@stdlib/stats/bartlett-test",
+    "STDLIB_BLAS_DAXPY": "@stdlib/blas/base/gaxpy",
+    "STDLIB_BLAS_SAXPY": "@stdlib/blas/base/gaxpy",
+    "STDLIB_KEBABASE": "@stdlib/string/kebabcase",
+    "STDLIB_LOWERCASE": "@stdlib/string/lowercase",
+    "STDLIB_RANDOM_MT19937": "@stdlib/random/base/mt19937",
+    "STDLIB_SAWTOOTH_WAVE": "@stdlib/simulate/iter/sawtooth-wave",
+    "STDLIB_ZETA": "@stdlib/math/base/special/riemann-zeta"
+}
