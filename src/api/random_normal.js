@@ -26,24 +26,24 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from a continuous uniform distribution.
+* Generates pseudorandom numbers drawn from a normal distribution.
 *
 * @customfunction
 * @param {number} nrows - number of rows
 * @param {number} ncols - number of columns
-* @param {number} a - minimum support (inclusive)
-* @param {number} b - maximum support (exclusive)
+* @param {number} mu - mean
+* @param {number} sigma - standard deviation
 * @param {string} seed - seed option name
 * @param {number} seedValue - pseudorandom number generator seed value
 * @returns {Array<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
+* STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
 *
 * @example
-* STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
+* STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
 	var rand;
 	var out;
 	var s;
@@ -69,13 +69,13 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslin
 	if ( !ns.isPositiveInteger( ncols ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
 	}
-	if ( !ns.isNumber( a ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Minimum support must be a number. Value: %s.', String( a ) ) );
+	if ( !ns.isNumber( mu ) ) {
+		throw new TypeError( ns.format( 'invalid argument. Mean must be a number. Value: %s.', String( mu ) ) );
 	}
-	if ( !ns.isNumber( b ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Maximum support must be a number. Value: %s.', String( b ) ) );
+	if ( !ns.isNumber( sigma ) ) {
+		throw new TypeError( ns.format( 'invalid argument. Standard deviation must be a number. Value: %s.', String( sigma ) ) );
 	}
-	rand = ns.random.uniform.factory( a, b, {
+	rand = ns.random.normal.factory( mu, sigma, {
 		'seed': s
 	});
 	if ( ncols === 1 ) {
@@ -91,4 +91,4 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslin
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_UNIFORM;
+module.exports = STDLIB_RANDOM_NORMAL;

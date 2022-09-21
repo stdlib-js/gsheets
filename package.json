@@ -53,6 +53,7 @@
     "@stdlib/datasets-anscombes-quartet": "^0.0.9",
     "@stdlib/math-base-special-riemann-zeta": "^0.0.6",
     "@stdlib/random-base-mt19937": "^0.0.6",
+    "@stdlib/random-base-normal": "^0.0.6",
     "@stdlib/random-base-uniform": "^0.0.6",
     "@stdlib/simulate-iter-sawtooth-wave": "^0.0.6",
     "@stdlib/stats-bartlett-test": "^0.0.7",

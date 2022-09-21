@@ -59,6 +59,7 @@ ns.map2d = require( '@stdlib/utils-map2d' );
 
 ns.random = {};
 ns.random.mt19937 = require( '@stdlib/random-base-mt19937' );
+ns.random.normal = require( '@stdlib/random-base-normal' );
 ns.random.uniform = require( '@stdlib/random-base-uniform' );
 
 ns.naryFunction = require( '@stdlib/utils-nary-function' );
