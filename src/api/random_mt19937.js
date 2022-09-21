@@ -39,13 +39,9 @@ var ns = require( './../namespace.js' );
 * @param {number} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
-* @throws {Error} must provide a pseudorandom generator seed
-* @throws {TypeError} number of rows must be a positive integer
-* @throws {TypeError} number of columns must be a positive integer
-* @throws {Error} unrecognized option
 * @returns {Array<number>} pseudorandom numbers
 */
-function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len
+function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var rand;
 	var flg;
 	var out;

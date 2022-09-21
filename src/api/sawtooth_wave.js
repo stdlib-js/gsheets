@@ -42,14 +42,9 @@ var ns = require( './../namespace.js' );
 * @param {number} amplitudeValue - amplitude value (default: 1)
 * @param {string} offset - phase offset option name
 * @param {number} offsetValue - phase offset value (default: 0)
-* @throws {TypeError} number of values must be a nonnegative integer
-* @throws {TypeError} period must be a positive integer
-* @throws {TypeError} amplitude must be a nonnegative number
-* @throws {TypeError} offset must be an integer
-* @throws {Error} unrecognized option name
 * @returns {Array<number>} simulated values
 */
-function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars
+function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars, stdlib/jsdoc-require-throws-tags
 	var opts;
 	var it;
 	var o;

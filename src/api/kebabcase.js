@@ -52,7 +52,6 @@ function __KEBABCASE( value ) {
 *
 * @customfunction
 * @param {string|Array<Array<string>>} value - string(s) to convert
-* @throws {TypeError} input values must be strings
 * @returns {string|Array<Array<string>>} converted string(s)
 */
 function STDLIB_KEBABCASE( value ) {

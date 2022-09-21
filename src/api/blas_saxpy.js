@@ -39,15 +39,9 @@ var ns = require( './../namespace.js' );
 * @param {Array<Array<number>>} y - second vector
 * @param {number} strideY - index increment for the second vector
 * @param {number} offsetY - index offset for the second vector
-* @throws {TypeError} first argument must be a nonnegative integer
-* @throws {TypeError} second argument must be a number
-* @throws {TypeError} fourth argument must be an integer
-* @throws {TypeError} fifth argument must be a nonnegative integer
-* @throws {TypeError} seventh argument must be an integer
-* @throws {TypeError} eighth argument must be a nonnegative integer
 * @returns {Array<Array<number>>} results
 */
-function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len
+function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
 	if ( !ns.isNonNegativeInteger( N ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}

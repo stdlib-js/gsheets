@@ -42,16 +42,9 @@ var ns = require( './../namespace.js' );
 * @param {number} alphaValue - significance level option value (default: 0.05)
 * @param {string} format - results format option name
 * @param {string} formatValue - results format option value (either 'print' or 'raw'; default: 'print')
-* @throws {TypeError} observations must be a range
-* @throws {TypeError} groups must be a range
-* @throws {Error} must provide groups
-* @throws {TypeError} significance level must be a number
-* @throws {TypeError} format must be a string
-* @throws {Error} unrecognized option name
-* @throws {Error} unrecognized format
 * @returns {(string|Array<Array<*>>)} results
 */
-function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len
+function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var opts;
 	var out;
 	var o;
