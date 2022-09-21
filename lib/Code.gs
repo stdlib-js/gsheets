@@ -44,16 +44,6 @@ function STDLIB_KEBABCASE( value ) {
 /**
 * Generates pseudorandom numbers. Without normalization, generates numbers on the closed interval from 0 to 4294967295. With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
-*
-*
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
-*
-*
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
-*
-*
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
-*
 * @customfunction
 * @param {number} nrows - number of rows
 * @param {number} ncols - number of columns
@@ -62,6 +52,12 @@ function STDLIB_KEBABCASE( value ) {
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
 * @returns {Array<number>} pseudorandom numbers
+*
+* @example
+*
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
+* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
 */
 function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var rand;
