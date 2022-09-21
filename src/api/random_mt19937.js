@@ -37,8 +37,7 @@ var ns = require( './../namespace.js' );
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
 * @returns {Array<number>} pseudorandom numbers
 *
-* @example
-*
+* @ignore
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
