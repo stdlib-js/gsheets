@@ -28,12 +28,6 @@ var ns = require( './../namespace.js' );
 /**
 * Generates a sawtooth wave.
 *
-* STDLIB_SAWTOOTH_WAVE( 10 )
-* STDLIB_SAWTOOTH_WAVE( 10, "period", 10 )
-* STDLIB_SAWTOOTH_WAVE( 10, "amplitude", 20 )
-* STDLIB_SAWTOOTH_WAVE( 10, "offset", 3 )
-* STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
-*
 * @customfunction
 * @param {number} N - number of values
 * @param {string} period - period option name
@@ -43,6 +37,21 @@ var ns = require( './../namespace.js' );
 * @param {string} offset - phase offset option name
 * @param {number} offsetValue - phase offset value (default: 0)
 * @returns {Array<number>} simulated values
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "period", 10 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "amplitude", 20 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "offset", 3 )
+*
+* @example
+* STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
 */
 function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars, stdlib/jsdoc-require-throws-tags
 	var opts;

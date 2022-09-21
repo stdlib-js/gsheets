@@ -28,8 +28,6 @@ var ns = require( './../namespace.js' );
 /**
 * Multiplies a vector by a constant and adds the result to another vector.
 *
-* STDLIB_BLAS_DAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
-*
 * @customfunction
 * @param {number} N - number of elements on which to operate
 * @param {number} alpha - scalar constant
@@ -40,6 +38,9 @@ var ns = require( './../namespace.js' );
 * @param {number} strideY - index increment for the second vector
 * @param {number} offsetY - index offset for the second vector
 * @returns {Array<Array<number>>} results
+*
+* @example
+* STDLIB_BLAS_DAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 */
 function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
 	if ( !ns.isNonNegativeInteger( N ) ) {

@@ -28,12 +28,6 @@ var ns = require( './../namespace.js' );
 /**
 * Tests the null hypothesis that the variances in all groups are the same.
 *
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100 )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10 )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "print" )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "raw" )
-* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10, "format", "print" )
-*
 * @customfunction
 * @param {Array<Array<number>>} values - numeric observations
 * @param {string} groups - groups option name
@@ -43,6 +37,21 @@ var ns = require( './../namespace.js' );
 * @param {string} format - results format option name
 * @param {string} formatValue - results format option value (either 'print' or 'raw'; default: 'print')
 * @returns {(string|Array<Array<*>>)} results
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100 )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10 )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "print" )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "format", "raw" )
+*
+* @example
+* STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10, "format", "print" )
 */
 function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
 	var opts;

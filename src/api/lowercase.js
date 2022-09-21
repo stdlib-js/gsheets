@@ -46,13 +46,18 @@ function __LOWERCASE( value ) {
 /**
 * Converts a string to lowercase.
 *
-* STDLIB_LOWERCASE( "FooBar" )
-* STDLIB_LOWERCASE( A2:A )
-* STDLIB_LOWERCASE( A2:D100 )
-*
 * @customfunction
 * @param {string|Array<Array<string>>} value - string(s) to convert
 * @returns {string|Array<Array<string>>} converted string(s)
+*
+* @example
+* STDLIB_LOWERCASE( "FooBar" )
+*
+* @example
+* STDLIB_LOWERCASE( A2:A )
+*
+* @example
+* STDLIB_LOWERCASE( A2:D100 )
 */
 function STDLIB_LOWERCASE( value ) {
 	if ( ns.isArray( value ) ) {

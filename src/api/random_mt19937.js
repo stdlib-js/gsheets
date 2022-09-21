@@ -26,13 +26,12 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers. Without normalization, generates numbers on the closed interval from 0 to 4294967295. With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
+* Generates pseudorandom numbers.
 *
-* <br/>
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )<br>
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", FALSE )<br/>
-* STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
-* </br>
+* ## Notes
+*
+* -   Without normalization, generates numbers on the closed interval from 0 to 4294967295.
+* -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 * @customfunction
 * @param {number} nrows - number of rows

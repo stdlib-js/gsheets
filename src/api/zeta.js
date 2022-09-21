@@ -46,13 +46,18 @@ function __ZETA( value ) {
 /**
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
-* STDLIB_ZETA( 1.2 )
-* STDLIB_ZETA( A1:A100 )
-* STDLIB_ZETA( A1:D100 )
-*
 * @customfunction
 * @param {number|Array<Array<number>>} value - input value(s)
 * @returns {number|Array<Array<number>>} result(s)
+*
+* @example
+* STDLIB_ZETA( 1.2 )
+*
+* @example
+* STDLIB_ZETA( A1:A100 )
+*
+* @example
+* STDLIB_ZETA( A1:D100 )
 */
 function STDLIB_ZETA( value ) {
 	if ( ns.isArray( value ) ) {

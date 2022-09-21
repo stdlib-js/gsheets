@@ -46,13 +46,18 @@ function __KEBABCASE( value ) {
 /**
 * Converts a string to kebab case.
 *
-* STDLIB_KEBABCASE( "FooBar" )
-* STDLIB_KEBABCASE( A2:A )
-* STDLIB_KEBABCASE( A2:D100 )
-*
 * @customfunction
 * @param {string|Array<Array<string>>} value - string(s) to convert
 * @returns {string|Array<Array<string>>} converted string(s)
+*
+* @example
+* STDLIB_KEBABCASE( "FooBar" )
+*
+* @example
+* STDLIB_KEBABCASE( A2:A )
+*
+* @example
+* STDLIB_KEBABCASE( A2:D100 )
 */
 function STDLIB_KEBABCASE( value ) {
 	if ( ns.isArray( value ) ) {
