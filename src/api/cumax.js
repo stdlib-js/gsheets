@@ -29,13 +29,19 @@ var ns = require( './../namespace.js' );
 * Computes the cumulative maximum.
 *
 * @customfunction
-* @param {Array<Array<number>>} x - range(s)
+* @param {Array<Array<number>>} x - range
 * @param {string} axis - axis option name
 * @param {number} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
 * @returns {Array<Array<number>>} results
 *
 * @example
 * STDLIB_CUMAX( A1:A100 )
+*
+* @example
+* STDLIB_CUMAX( A1:C100, "axis", 1 )
+*
+* @example
+* STDLIB_CUMAX( A1:C100, "axis", 0 )
 */
 function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdoc-require-throws-tags
 	var sarray;
