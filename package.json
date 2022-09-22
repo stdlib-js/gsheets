@@ -65,8 +65,6 @@
     "@stdlib/string-kebabcase": "^0.0.4",
     "@stdlib/string-lowercase": "^0.0.9",
     "@stdlib/utils-flatten-array": "^0.0.7",
-    "@stdlib/utils-map2d": "^0.0.1",
-    "@stdlib/utils-nary-function": "^0.0.1",
     "esbuild": "^0.14.38"
   },
   "keywords": [
