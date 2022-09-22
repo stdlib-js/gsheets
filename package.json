@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "npm run build:clean && npm run build:init && npm run build:bundle && npm run build:preamble && npm run build:app",
-    "build:app": "cat ./build/preamble.js ./build/bundle.js > ./lib/Code.gs && find ./src/api -type f -exec sh -c \"cat {} | sed -n '/var ns =/, /\\/\\/ EXPORTS \\/\\// p' | sed '1d' | sed '/^\\/\\//d' | sed '/^$/d'\" \\; >> ./lib/Code.gs",
+    "build:app": "cat ./build/preamble.js ./build/bundle.js > ./lib/Code.gs && find ./src/api -type f -exec sh -c \"cat {} | sed -n '/var ns =/, /\\/\\/ EXPORTS \\/\\// p' | sed '1d' | sed '/^\\/\\//d' | sed 's/\\/\\/ eslint-disable-line.*$//' | sed '/^$/d'\" \\; >> ./lib/Code.gs",
     "build:bundle": "./node_modules/.bin/esbuild ./src/namespace.js --bundle --minify --format=iife --legal-comments=none --global-name=ns --outfile=./build/bundle.js",
     "build:clean": "rm -rf ./build",
     "build:init": "mkdir ./build",

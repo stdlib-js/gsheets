@@ -72,7 +72,7 @@ function STDLIB_KEBABCASE( value ) {
 * @example
 * STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234, "normalized", TRUE )
 */
-function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags, id-length
+function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { 
 	var rand;
 	var flg;
 	var out;
@@ -150,7 +150,7 @@ function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized
 * @example
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
 */
-function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { 
 	var rand;
 	var flg;
 	var out;
@@ -220,7 +220,7 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 * @example
 * STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { 
 	var rand;
 	var out;
 	var s;
@@ -287,7 +287,7 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslin
 * @example
 * STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { 
 	var rand;
 	var out;
 	var s;
@@ -389,7 +389,7 @@ function STDLIB_ZETA( value ) {
 * @example
 * STDLIB_BLAS_SAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 */
-function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { 
 	if ( !ns.isNonNegativeInteger( N ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}
@@ -450,7 +450,7 @@ function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * @example
 * STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10, "format", "print" )
 */
-function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { 
 	var opts;
 	var out;
 	var o;
@@ -590,7 +590,7 @@ function STDLIB_LOWERCASE( value ) {
 * @example
 * STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234, "normalized", TRUE )
 */
-function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { 
 	var rand;
 	var flg;
 	var out;
@@ -660,7 +660,7 @@ function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normal
 * @example
 * STDLIB_CUMAX( A1:C100, "axis", 0 )
 */
-function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdoc-require-throws-tags
+function STDLIB_CUMAX( x, axis, axisValue ) { 
 	var sarray;
 	var offset;
 	var tmp;
@@ -743,7 +743,7 @@ function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdo
 * @example
 * STDLIB_BLAS_DAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 */
-function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { 
 	if ( !ns.isNonNegativeInteger( N ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
 	}
@@ -804,7 +804,7 @@ function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * @example
 * STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
 */
-function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { 
 	var opts;
 	var it;
 	var o;

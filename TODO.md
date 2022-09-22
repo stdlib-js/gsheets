@@ -7,6 +7,10 @@
     
 -   micro-optimization: when provided a single row (e.g., `x = [ [ 1, 2, 3 ] ]`), flattening does not need to involve a copy; instead, just return the row values (e.g., `x[ 0 ]`) as the flattened array
 
+-   add benchmarks
+
+-   add unit tests
+
 
 
 ## Packages
