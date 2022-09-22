@@ -705,12 +705,12 @@ function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdo
 	}
 	// Check for singleton dimensions...
 	if ( M === 1 ) {
-		// If operating across columns, return a single column...
+		// If operating across columns, return a single row...
 		if ( ax === 0 ) {
-			return sarray;
+			return [ sarray ];
 		}
-		// If operating across rows, return a single row:
-		return [ sarray ];
+		// If operating across rows, return a single column:
+		return sarray;
 	}
 	// Reuse the input array as the output array...
 	M = x.length;
