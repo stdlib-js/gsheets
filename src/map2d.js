@@ -23,6 +23,7 @@
 /**
 * Applies a function to each nested element in an array of arrays and updates the input array in-place.
 *
+* @private
 * @param {Array<Array>} arr - array of arrays
 * @param {Function} fcn - function to apply
 * @returns {Array<Array>} array of arrays
