@@ -20,7 +20,7 @@
 * This file contains all functions which should be exposed to `Code.gs`.
 */
 
-/* eslint-disable node/no-unpublished-require */
+/* eslint-disable node/no-unpublished-require, stdlib/require-order */
 
 'use strict';
 
@@ -34,9 +34,10 @@
 * @type {Namespace}
 */
 var ns = {};
-ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
-ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
 
+ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
+
+ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
 ns.blas = {};
 ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
@@ -44,6 +45,9 @@ ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
 ns.flattenArray = require( '@stdlib/utils-flatten-array' );
 ns.format = require( '@stdlib/string-format' );
+
+ns.hasSingletonDimension = require( './has_singleton_dimension.js' );
+
 ns.isArray = require( '@stdlib/assert-is-array' );
 ns.isInteger = require( '@stdlib/assert-is-integer' ).isPrimitive;
 ns.isNonNegativeInteger = require( '@stdlib/assert-is-nonnegative-integer' ).isPrimitive;
@@ -51,10 +55,14 @@ ns.isNonNegativeNumber = require( '@stdlib/assert-is-nonnegative-number' ).isPri
 ns.isNumber = require( '@stdlib/assert-is-number' ).isPrimitive;
 ns.isPositiveInteger = require( '@stdlib/assert-is-positive-integer' ).isPrimitive;
 ns.isString = require( '@stdlib/assert-is-string' ).isPrimitive;
+
 ns.iterator2array = require( '@stdlib/array-from-iterator' );
 ns.iterSawtoothWave = require( '@stdlib/simulate-iter-sawtooth-wave' );
+
 ns.kebabcase = require( '@stdlib/string-kebabcase' ); // TODO: replace with base version
+
 ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base version
+
 ns.map2d = require( '@stdlib/utils-map2d' );
 
 ns.random = {};
@@ -64,7 +72,6 @@ ns.random.mt19937 = require( '@stdlib/random-base-mt19937' );
 ns.random.normal = require( '@stdlib/random-base-normal' );
 ns.random.uniform = require( '@stdlib/random-base-uniform' );
 
-ns.naryFunction = require( '@stdlib/utils-nary-function' );
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 
 
