@@ -49,6 +49,9 @@ function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 	if ( !ns.isNumber( alpha ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Scalar constant must be a number. Value: %s.', String( alpha ) ) );
 	}
+	if ( !ns.isArray( x ) ) {
+		throw new TypeError( ns.format( 'invalid argument. First vector argument must be a range. Value: %s.', String( x ) ) );
+	}
 	if ( !ns.hasSingletonDimension( x ) ) {
 		throw new TypeError( 'invalid argument. Range for first vector must consist of only a single row or a single column.' );
 	}
@@ -57,6 +60,9 @@ function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 	}
 	if ( !ns.isNonNegativeInteger( offsetX ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
+	}
+	if ( !ns.isArray( y ) ) {
+		throw new TypeError( ns.format( 'invalid argument. Second vector argument must be a range. Value: %s.', String( y ) ) );
 	}
 	if ( !ns.hasSingletonDimension( y ) ) {
 		throw new TypeError( 'invalid argument. Range for second vector must consist of only a single row or a single column.' );
