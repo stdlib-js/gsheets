@@ -72,45 +72,40 @@ function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdo
 			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
 		}
 	}
+	// Check for the simple case where we're provided a range in row-major order and asked to operate across columns...
 	if ( ax === 0 ) {
-		M = x.length;      // number of rows
-		N = x[ 0 ].length; // number of columns
-		so = N;            // offset stride
-		s = 1;             // column stride
-	} else {
-		M = x[ 0 ].length; // number of columns
-		N = x.length;      // number of rows
-		so = 1;            // offset stride
-		s = M;             // row stride
+		M = x.length;
+		N = x[ 0 ].length;
+		for ( i = 0; i < M; i++ ) {
+			ns.cumax( N, x[ i ], 1, 0, x[ i ], 1, 0 );
+		}
+		return x;
 	}
-	// Note: at this point, `M` is the number of iterations and `N` is the number of elements over which we need to operate per iteration.
+	// More complex case where we're provided a range in row-major order, but asked to operate across rows...
+	M = x[ 0 ].length; // number of columns
+	N = x.length;      // number of rows
+	s = M;             // row stride
 
 	// Flatten the input array to a strided array in row-major order:
 	sarray = ns.flattenArray( x );
 
-	// Set the initial offset which defines the pointer to the first indexed element:
+	// Set the offset which defines the pointer to the first indexed element in a column:
 	offset = 0;
 
+	// Iterate over rows...
 	for ( i = 0; i < M; i++ ) {
 		ns.cumax( N, sarray, s, offset, sarray, s, offset );
-		offset += so;
+		offset += 1;
 	}
-	// Check for singleton dimensions...
+	// Check for a singleton dimension and whether we can avoid performing a copy...
 	if ( M === 1 ) {
-		// If operating across columns, return a single row...
-		if ( ax === 0 ) {
-			return [ sarray ];
-		}
-		// If operating across rows, return a single column:
 		return sarray;
 	}
 	// Reuse the input array as the output array...
-	M = x.length;
-	N = x[ 0 ].length;
 	offset = 0;
-	for ( i = 0; i < M; i++ ) {
+	for ( i = 0; i < N; i++ ) {
 		tmp = x[ i ];
-		for ( j = 0; j < N; j++ ) {
+		for ( j = 0; j < M; j++ ) {
 			tmp[ j ] = sarray[ offset ];
 			offset += 1;
 		}
