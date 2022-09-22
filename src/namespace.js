@@ -42,6 +42,8 @@ ns.blas = {};
 ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 
+ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
+
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
 ns.flattenArray = require( '@stdlib/utils-flatten-array' );
 ns.format = require( '@stdlib/string-format' );
