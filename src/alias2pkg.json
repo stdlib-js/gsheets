@@ -3,6 +3,7 @@
     "stdlib_bartlett_test": "@stdlib/stats/bartlett-test",
     "stdlib_blas_daxpy": "@stdlib/blas/base/gaxpy",
     "stdlib_blas_saxpy": "@stdlib/blas/base/gaxpy",
+    "stdlib_cumax": "@stdlib/stats/base/cumax",
     "stdlib_kebabase": "@stdlib/string/kebabcase",
     "stdlib_lowercase": "@stdlib/string/lowercase",
     "stdlib_random_mintsd": "@stdlib/random/base/minstd",
