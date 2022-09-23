@@ -44,7 +44,7 @@ ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
-ns.filledBy = require( '@stdlib/array-base-filled-by' );
+ns.filledBy = require( './utils/filled_by2d.js' );
 ns.flattenArray = require( './utils/flatten2d.js' );
 ns.format = require( '@stdlib/string-format' );
 
@@ -62,6 +62,7 @@ ns.assert.isRange = require( './assert/is_range.js' );
 ns.assert.isRange1d = require( './assert/is_range_1d.js' );
 ns.assert.isString = require( './assert/is_string.js' );
 ns.assert.unrecognizedOptionName = require( './assert/unrecognized_option_name.js' );
+ns.assert.verifyCommonPRNGArgs = require( './assert/verify_common_prng_args.js' );
 ns.assert.verifyPRNGSeed = require( './assert/verify_prng_seed.js' );
 
 ns.iterator2array = require( '@stdlib/array-from-iterator' );

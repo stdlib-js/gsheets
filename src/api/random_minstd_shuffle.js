@@ -54,7 +54,6 @@ var ns = require( './../namespace.js' );
 function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, id-length
 	var rand;
 	var flg;
-	var out;
 	var s;
 	var o;
 	var v;
@@ -72,9 +71,7 @@ function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	ns.assert.isDefined( s, 'a pseudorandom number generator seed' );
-	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
-	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
 
 	rand = ns.random.minstdShuffle({
 		'seed': s
@@ -84,14 +81,7 @@ function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized
 	} else {
 		f = rand;
 	}
-	if ( ncols === 1 ) {
-		return ns.filledBy( nrows, f );
-	}
-	out = [];
-	for ( i = 0; i < nrows; i++ ) {
-		out.push( ns.filledBy( ncols, f ) );
-	}
-	return out;
+	return ns.filledBy( nrows, ncols, f );
 }
 
 

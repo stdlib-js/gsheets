@@ -45,7 +45,6 @@ var ns = require( './../namespace.js' );
 */
 function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, id-length
 	var rand;
-	var out;
 	var s;
 	var o;
 	var v;
@@ -60,23 +59,14 @@ function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	ns.assert.isDefined( s, 'a pseudorandom number generator seed' );
-	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
-	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
 	ns.assert.isInteger( a, 'Minimum support' );
 	ns.assert.isInteger( b, 'Maximum support' );
 
 	rand = ns.random.discreteUniform( a, b, {
 		'seed': s
 	});
-	if ( ncols === 1 ) {
-		return ns.filledBy( nrows, rand );
-	}
-	out = [];
-	for ( i = 0; i < nrows; i++ ) {
-		out.push( ns.filledBy( ncols, rand ) );
-	}
-	return out;
+	return ns.filledBy( nrows, ncols, rand );
 }
 
 
