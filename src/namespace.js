@@ -57,6 +57,7 @@ ns.assert.isNumber = require( './assert/is_number.js' );
 ns.assert.isOneOf = require( './assert/is_one_of.js' );
 ns.assert.isPositiveInteger = require( './assert/is_positive_integer.js' );
 ns.assert.isPositiveNumber = require( './assert/is_positive_number.js' );
+ns.assert.isProbability = require( './assert/is_probability.js' );
 ns.assert.isRange = require( './assert/is_range.js' );
 ns.assert.isRange1d = require( './assert/is_range_1d.js' );
 ns.assert.isSameShape = require( './assert/is_same_shape.js' );
@@ -81,6 +82,7 @@ ns.random.discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).fa
 ns.random.minstd = require( '@stdlib/random-base-minstd' ).factory;
 ns.random.minstdShuffle = require( '@stdlib/random-base-minstd-shuffle' ).factory;
 ns.random.mt19937 = require( '@stdlib/random-base-mt19937' ).factory;
+ns.random.bernoulli = require( '@stdlib/random-base-bernoulli' ).factory;
 ns.random.normal = require( '@stdlib/random-base-normal' ).factory;
 ns.random.uniform = require( '@stdlib/random-base-uniform' ).factory;
 
