@@ -15,8 +15,8 @@ var __STDLIB_KEBABCASE = ns.tools.s_s( ns.kebabcase );
 * Converts a string to kebab case.
 *
 * @customfunction
-* @param {string|Array<Array<string>>} value - string(s) to convert
-* @returns {string|Array<Array<string>>} converted string(s)
+* @param {string|Range<string>} value - string(s) to convert
+* @returns {string|Range<string>} converted string(s)
 *
 * @example
 * STDLIB_KEBABCASE( "FooBar" )
@@ -34,13 +34,13 @@ function STDLIB_KEBABCASE( value ) {
 * Generates pseudorandom numbers drawn from a discrete uniform distribution.
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
-* @param {number} a - minimum support (inclusive)
-* @param {number} b - maximum support (inclusive)
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {integer} a - minimum support (inclusive)
+* @param {integer} b - maximum support (inclusive)
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
-* @returns {Array<number>} pseudorandom numbers
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
@@ -80,13 +80,13 @@ function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 * -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
-* @returns {Array<number>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234 )
@@ -136,13 +136,13 @@ function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized
 * -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
-* @returns {Array<number>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234 )
@@ -187,13 +187,13 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 * Generates pseudorandom numbers drawn from a continuous uniform distribution.
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
 * @param {number} a - minimum support (inclusive)
 * @param {number} b - maximum support (exclusive)
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
-* @returns {Array<number>} pseudorandom numbers
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
@@ -228,13 +228,13 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 * Generates pseudorandom numbers drawn from a normal distribution.
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
 * @param {number} mu - mean
 * @param {number} sigma - standard deviation
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
-* @returns {Array<number>} pseudorandom numbers
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
@@ -269,10 +269,10 @@ function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) {
 * Computes the maximum value.
 *
 * @customfunction
-* @param {Array<Array<number>>} x - range
+* @param {Range<number>} x - range
 * @param {string} axis - axis option name
-* @param {number} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
-* @returns {Array<Array<number>>} results
+* @param {integer} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
+* @returns {Range<number>} results
 *
 * @example
 * STDLIB_MAX( A1:A100 )
@@ -334,8 +334,8 @@ var __STDLIB_ZETA = ns.tools.n_n( ns.zeta );
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
 * @customfunction
-* @param {number|Array<Array<number>>} value - input value(s)
-* @returns {number|Array<Array<number>>} result(s)
+* @param {number|Range<number>} value - input value(s)
+* @returns {number|Range<number>} result(s)
 *
 * @example
 * STDLIB_ZETA( 1.2 )
@@ -353,15 +353,15 @@ function STDLIB_ZETA( value ) {
 * Multiplies a vector by a constant and adds the result to another vector.
 *
 * @customfunction
-* @param {number} N - number of elements on which to operate
+* @param {integer} N - number of elements on which to operate
 * @param {number} alpha - scalar constant
-* @param {Array<Array<number>>} x - first vector
-* @param {number} strideX - index increment for the first vector
-* @param {number} offsetX - index offset for the first vector
-* @param {Array<Array<number>>} y - second vector
-* @param {number} strideY - index increment for the second vector
-* @param {number} offsetY - index offset for the second vector
-* @returns {Array<Array<number>>} results
+* @param {Range<number>} x - first vector
+* @param {integer} strideX - index increment for the first vector
+* @param {integer} offsetX - index offset for the first vector
+* @param {Range<number>} y - second vector
+* @param {integer} strideY - index increment for the second vector
+* @param {integer} offsetY - index offset for the second vector
+* @returns {Range<number>} results
 *
 * @example
 * STDLIB_BLAS_SAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
@@ -387,14 +387,14 @@ function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * Tests the null hypothesis that the variances in all groups are the same.
 *
 * @customfunction
-* @param {Array<Array<number>>} values - numeric observations
+* @param {Range<number>} values - numeric observations
 * @param {string} groups - groups option name
-* @param {Array<Array<*>>} groupsValue - groups option values
+* @param {Range} groupsValue - groups option values
 * @param {string} alpha - significance level option name
 * @param {number} alphaValue - significance level option value (default: 0.05)
 * @param {string} format - results format option name
 * @param {string} formatValue - results format option value (either "print" or "raw"; default: "print")
-* @returns {(string|Array<Array<*>>)} results
+* @returns {string|Range<string|number>} results
 *
 * @example
 * STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100 )
@@ -452,7 +452,7 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 * Anscombe's quartet.
 *
 * @customfunction
-* @returns {Array<Array<string|number>>} dataset
+* @returns {Range<number>} dataset
 *
 * @example
 * STDLIB_ANSCOMBES_QUARTET()
@@ -481,8 +481,8 @@ var __STDLIB_LOWERCASE = ns.tools.s_s( ns.lowercase );
 * Converts a string to lowercase.
 *
 * @customfunction
-* @param {string|Array<Array<string>>} value - string(s) to convert
-* @returns {string|Array<Array<string>>} converted string(s)
+* @param {string|Range<string>} value - string(s) to convert
+* @returns {string|Range<string>} converted string(s)
 *
 * @example
 * STDLIB_LOWERCASE( "FooBar" )
@@ -505,13 +505,13 @@ function STDLIB_LOWERCASE( value ) {
 * -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
-* @returns {Array<number>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234 )
@@ -556,10 +556,10 @@ function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normal
 * Computes the cumulative maximum value.
 *
 * @customfunction
-* @param {Array<Array<number>>} x - range
+* @param {Range<number>} x - range
 * @param {string} axis - axis option name
-* @param {number} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
-* @returns {Array<Array<number>>} results
+* @param {integer} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
+* @returns {Range<number>} results
 *
 * @example
 * STDLIB_CUMAX( A1:A100 )
@@ -633,15 +633,15 @@ function STDLIB_CUMAX( x, axis, axisValue ) {
 * Multiplies a vector by a constant and adds the result to another vector.
 *
 * @customfunction
-* @param {number} N - number of elements on which to operate
+* @param {integer} N - number of elements on which to operate
 * @param {number} alpha - scalar constant
-* @param {Array<Array<number>>} x - first vector
-* @param {number} strideX - index increment for the first vector
-* @param {number} offsetX - index offset for the first vector
-* @param {Array<Array<number>>} y - second vector
-* @param {number} strideY - index increment for the second vector
-* @param {number} offsetY - index offset for the second vector
-* @returns {Array<Array<number>>} results
+* @param {Range<number>} x - first vector
+* @param {integer} strideX - index increment for the first vector
+* @param {integer} offsetX - index offset for the first vector
+* @param {Range<number>} y - second vector
+* @param {integer} strideY - index increment for the second vector
+* @param {integer} offsetY - index offset for the second vector
+* @returns {Range<number>} results
 *
 * @example
 * STDLIB_BLAS_DAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
@@ -667,14 +667,14 @@ function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 * Generates a sawtooth wave.
 *
 * @customfunction
-* @param {number} N - number of values
+* @param {integer} N - number of values
 * @param {string} period - period option name
-* @param {number} periodValue - period value (default: 10)
+* @param {integer} periodValue - period value (default: 10)
 * @param {string} amplitude - amplitude option name
 * @param {number} amplitudeValue - amplitude value (default: 1)
 * @param {string} offset - phase offset option name
-* @param {number} offsetValue - phase offset value (default: 0)
-* @returns {Array<number>} simulated values
+* @param {integer} offsetValue - phase offset value (default: 0)
+* @returns {Range<number>} simulated values
 *
 * @example
 * STDLIB_SAWTOOTH_WAVE( 10 )
