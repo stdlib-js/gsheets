@@ -55,45 +55,34 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100, "alpha", 0.10, "format", "print" )
 */
-function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, format, formatValue ) { // eslint-disable-line no-unused-vars, max-len
 	var opts;
 	var out;
 	var o;
 	var v;
 	var i;
 
-	if ( !ns.isArray( values ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Observations must be a range. Value: %s.', String( values ) ) );
-	}
+	ns.assert.isRange( values, 'Observations' );
+
 	opts = {};
 	for ( i = 1; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'groups' ) {
-			if ( !ns.isArray( v ) ) {
-				throw new TypeError( ns.format( 'invalid argument. Groups must be a range. Value: %s.', String( v ) ) );
-			}
+			ns.assert.isRange( v, 'Groups' );
 			opts[ o ] = ns.flattenArray( v );
 		} else if ( o === 'alpha' ) {
-			if ( !ns.isNumber( v ) ) {
-				throw new TypeError( ns.format( 'invalid argument. Significance level must be a number. Value: %s.', String( v ) ) );
-			}
+			ns.assert.isNumber( v, 'Significance level' );
 			opts[ o ] = v;
 		} else if ( o === 'format' ) {
-			if ( !ns.isString( v ) ) {
-				throw new TypeError( ns.format( 'invalid argument. Format must be a string. Value: %s.', String( v ) ) );
-			}
-			if ( v !== 'raw' && v !== 'print' ) {
-				throw new Error( ns.format( 'invalid argument. Unrecognized format. Value: %s.', String( v ) ) );
-			}
+			ns.assert.isOneOf( v, [ 'raw', 'print' ], 'format' );
 			opts[ o ] = v;
 		} else {
-			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
+			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	if ( !opts.groups ) {
-		throw new Error( 'Must provide groups.' );
-	}
+	ns.assert.isDefined( opts.groups, 'groups' );
+
 	out = ns.bartlettTest( ns.flattenArray( values ), opts );
 	if ( opts.format === 'raw' ) {
 		return [

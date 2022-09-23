@@ -86,6 +86,7 @@
   },
   "dependencies": {
     "@stdlib/assert-is-function": "^0.0.8",
+    "@stdlib/assert-is-positive-number": "^0.0.7",
     "save-dev": "^0.0.1-security"
   }
 }

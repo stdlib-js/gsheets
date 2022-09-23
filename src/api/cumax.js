@@ -45,7 +45,7 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_CUMAX( A1:C100, "axis", 0 )
 */
-function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line no-unused-vars
 	var sarray;
 	var offset;
 	var tmp;
@@ -56,20 +56,18 @@ function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line no-unused-v
 	var v;
 	var i;
 	var j;
-	if ( !ns.isArray( x ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Values argument must be a range. Value: %s.', String( x ) ) );
-	}
+
+	ns.assert.isRange( x, 'First argument' );
+
 	ax = 1;
 	for ( i = 1; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'axis' ) {
-			if ( v !== 0 && v !== 1 ) {
-				throw new TypeError( ns.format( 'invalid argument. Axis option must be either 0 or 1. Value: %s.', String( v ) ) );
-			}
+			ns.assert.isOneOf( v, [ 0, 1 ], 'axis' );
 			ax = v;
 		} else {
-			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
+			ns.assert.unrecognizedOptionName( o );
 		}
 	}
 	// Check for the simple case where we're provided a range in row-major order and asked to operate across columns...

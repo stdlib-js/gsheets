@@ -53,16 +53,15 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_SAWTOOTH_WAVE( 10, "period", 10, "amplitude", 20, "offset", 3 )
 */
-function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue, offset, offsetValue ) { // eslint-disable-line max-len, no-unused-vars
 	var opts;
 	var it;
 	var o;
 	var v;
 	var i;
 
-	if ( !ns.isNonNegativeInteger( N ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Number of values must be a nonnegative integer. Value: %s.', String( N ) ) );
-	}
+	ns.assert.isNonNegativeInteger( N, 'Number of values' );
+
 	opts = {
 		'iter': N
 	};
@@ -70,22 +69,16 @@ function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'period' ) {
-			if ( !ns.isPositiveInteger( v ) ) {
-				throw new TypeError( ns.format( 'invalid argument. Period must be a positive integer. Value: %s.', String( v ) ) );
-			}
+			ns.assert.isPositiveInteger( v, 'Period' );
 			opts[ o ] = v;
 		} else if ( o === 'amplitude' ) {
-			if ( !ns.isNonNegativeNumber( v ) ) {
-				throw new TypeError( ns.format( 'invalid argument. Amplitude must be a nonnegative number. Value: %s.', String( v ) ) );
-			}
+			ns.assert.isNonNegativeNumber( v, 'Amplitude' );
 			opts[ o ] = v;
 		} else if ( o === 'offset' ) {
-			if ( !ns.isInteger( v ) ) {
-				throw new TypeError( ns.format( 'invalid argument. Offset must be an integer. Value: %s.', String( v ) ) );
-			}
+			ns.assert.isInteger( v, 'Offset' );
 			opts[ o ] = v;
 		} else {
-			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
+			ns.assert.unrecognizedOptionName( o );
 		}
 	}
 	it = ns.iterSawtoothWave( opts );

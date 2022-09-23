@@ -43,7 +43,7 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;
 	var out;
 	var s;
@@ -55,32 +55,17 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslin
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			if ( ns.isArray( v ) ) {
-				s = ns.flattenArray( v );
-			} else if ( ns.isInteger( v ) ) {
-				s = v;
-			} else {
-				throw new TypeError( ns.format( 'invalid argument. Pseudorandom number generator seed must be an integer or a range of integers. Value: %s.', String( v ) ) );
-			}
+			s = ns.assert.verifyPRNGSeed( v );
 		} else {
-			throw new Error( ns.format( 'invalid argument. Unrecognized option. Value: %s.', String( o ) ) );
+			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	if ( s === void 0 ) {
-		throw new Error( 'invalid invocation. Must provide a pseudorandom number generator seed.' );
-	}
-	if ( !ns.isPositiveInteger( nrows ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );
-	}
-	if ( !ns.isPositiveInteger( ncols ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
-	}
-	if ( !ns.isNumber( a ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Minimum support must be a number. Value: %s.', String( a ) ) );
-	}
-	if ( !ns.isNumber( b ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Maximum support must be a number. Value: %s.', String( b ) ) );
-	}
+	ns.assert.isDefined( s, 'a pseudorandom number generator seed' );
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
+	ns.assert.isNumber( a, 'Minimum support' );
+	ns.assert.isNumber( b, 'Maximum support' );
+
 	rand = ns.random.uniform( a, b, {
 		'seed': s
 	});

@@ -44,38 +44,18 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_BLAS_SAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
 */
-function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_BLAS_SAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY ) { // eslint-disable-line max-len
 	var out;
-	if ( !ns.isNonNegativeInteger( N ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Number of elements must be a nonnegative integer. Value: %s.', String( N ) ) );
-	}
-	if ( !ns.isNumber( alpha ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Scalar constant must be a number. Value: %s.', String( alpha ) ) );
-	}
-	if ( !ns.isArray( x ) ) {
-		throw new TypeError( ns.format( 'invalid argument. First vector argument must be a range. Value: %s.', String( x ) ) );
-	}
-	if ( !ns.hasSingletonDimension( x ) ) {
-		throw new TypeError( 'invalid argument. Range for first vector must consist of only a single row or a single column.' );
-	}
-	if ( !ns.isInteger( strideX ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Stride for first vector must be an integer. Value: %s.', String( strideX ) ) );
-	}
-	if ( !ns.isNonNegativeInteger( offsetX ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Offset for first vector must be a nonnegative integer. Value: %s.', String( offsetX ) ) );
-	}
-	if ( !ns.isArray( y ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Second vector argument must be a range. Value: %s.', String( y ) ) );
-	}
-	if ( !ns.hasSingletonDimension( y ) ) {
-		throw new TypeError( 'invalid argument. Range for second vector must consist of only a single row or a single column.' );
-	}
-	if ( !ns.isInteger( strideY ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Stride for second vector must be an integer. Value: %s.', String( strideY ) ) );
-	}
-	if ( !ns.isNonNegativeInteger( offsetY ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Offset for second vector must be a nonnegative integer. Value: %s.', String( offsetY ) ) );
-	}
+
+	ns.assert.isNonNegativeInteger( N, 'Number of elements' );
+	ns.assert.isNumber( alpha, 'Scalar constant' );
+	ns.assert.isRange1d( x, 'First vector argument' );
+	ns.assert.isInteger( strideX, 'Stride for first vector' );
+	ns.assert.isNonNegativeInteger( offsetX, 'Offset for first vector' );
+	ns.assert.isRange1d( y, 'Second vector argument' );
+	ns.assert.isInteger( strideY, 'Stride for second vector' );
+	ns.assert.isNonNegativeInteger( offsetY, 'Offset for second vector' );
+
 	out = ns.blas.saxpy( N, alpha, ns.flattenArray( x ), strideX, offsetX, ns.flattenArray( y ), strideY, offsetY ); // eslint-disable-line max-len
 
 	// If provided two rows, return a row...

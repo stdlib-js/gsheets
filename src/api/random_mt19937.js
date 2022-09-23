@@ -51,7 +51,7 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_RANDOM_MT19937( 10, 1, "seed", 1234, "normalized", TRUE )
 */
-function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { // eslint-disable-line no-unused-vars, max-len
 	var rand;
 	var flg;
 	var out;
@@ -65,28 +65,17 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			if ( ns.isArray( v ) ) {
-				s = ns.flattenArray( v );
-			} else if ( ns.isInteger( v ) ) {
-				s = v;
-			} else {
-				throw new TypeError( ns.format( 'invalid argument. Pseudorandom number generator seed must be an integer or a range of integers. Value: %s.', String( v ) ) );
-			}
+			s = ns.assert.verifyPRNGSeed( v );
 		} else if ( o === 'normalized' ) {
 			flg = v;
 		} else {
-			throw new Error( ns.format( 'invalid argument. Unrecognized option. Value: %s.', String( o ) ) );
+			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	if ( s === void 0 ) {
-		throw new Error( 'invalid invocation. Must provide a pseudorandom number generator seed.' );
-	}
-	if ( !ns.isPositiveInteger( nrows ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Number of rows must be a positive integer. Value: %s.', String( nrows ) ) );
-	}
-	if ( !ns.isPositiveInteger( ncols ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
-	}
+	ns.assert.isDefined( s, 'a pseudorandom number generator seed' );
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
+
 	rand = ns.random.mt19937({
 		'seed': s
 	});
