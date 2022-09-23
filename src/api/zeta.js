@@ -16,7 +16,7 @@
 * limitations under the License.
 */
 
-/* eslint-disable stdlib/jsdoc-doctest-marker, stdlib/jsdoc-doctest-quote-props */
+/* eslint-disable stdlib/jsdoc-doctest-marker, stdlib/jsdoc-doctest-quote-props, max-len */
 
 'use strict';
 
@@ -32,11 +32,13 @@ var ns = require( './../namespace.js' );
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
-* @param {string} nan - option name for specifying the value to use in place of NaN
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not numeric
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of NaN
 * @param {*} nanValue - NaN option value
-* @param {string} pinf - option name for specifying the value to use in place of positive infinity
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
 * @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to use in place of negative infinity
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
 * @returns {number|Range<number>} result(s)
 *
@@ -52,19 +54,20 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_ZETA( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_ZETA( value, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
+function STDLIB_ZETA( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
 	var opts;
 	var o;
 	var i;
 
 	opts = {
+		'nonnumeric': void 0,
 		'nan': NaN,
 		'pinf': Infinity,
 		'ninf': -Infinity
 	};
 	for ( i = 1; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
-		if ( o === 'nan' || o === 'pinf' || o === 'ninf' ) {
+		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
 			opts[ o ] = arguments[ i+1 ];
 		} else {
 			ns.assert.unrecognizedOptionName( o );

@@ -41,9 +41,10 @@ var map2d = require( './map2d.js' );
 * @private
 * @param {Function} fcn - function to apply
 * @param {Object} opts - options
-* @param {*} opts.nan - value to use in place of NaN
-* @param {*} opts.pinf - value to use in place of positive infinity
-* @param {*} opts.ninf - value to use in place of negative infinity
+* @param {*} opts.nonnumeric - value to return in place of raising an exception when an input value is not numeric
+* @param {*} opts.nan - value to return in place of NaN
+* @param {*} opts.pinf - value to return in place of positive infinity
+* @param {*} opts.ninf - value to return in place of negative infinity
 * @returns {Function} function which applies a unary function
 */
 function apply( fcn, opts ) {
@@ -74,7 +75,10 @@ function apply( fcn, opts ) {
 	function wrapper( value ) {
 		var v;
 		if ( !isNumber( value ) ) {
-			throw new TypeError( format( 'invalid argument. Must be a number or a range of numbers. Value: %s.', String( value ) ) );
+			if ( opts.nonnumeric === void 0 ) {
+				throw new TypeError( format( 'invalid argument. Must be a number or a range of numbers. Value: %s.', String( value ) ) );
+			}
+			return opts.nonnumeric;
 		}
 		v = fcn( value );
 		if ( v !== v ) {
