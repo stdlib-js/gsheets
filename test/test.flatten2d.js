@@ -21,7 +21,7 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var flatten2d = require( './../src/flatten2d.js' );
+var flatten2d = require( './../src/utils/flatten2d.js' );
 
 
 // TESTS //
