@@ -53,6 +53,8 @@
     "@stdlib/assert-is-positive-integer": "^0.0.7",
     "@stdlib/assert-is-string": "^0.0.8",
     "@stdlib/blas-base-gaxpy": "^0.0.7",
+    "@stdlib/constants-float64-ninf": "^0.0.7",
+    "@stdlib/constants-float64-pinf": "^0.0.7",
     "@stdlib/datasets-anscombes-quartet": "^0.0.9",
     "@stdlib/fs-write-file": "^0.0.8",
     "@stdlib/math-base-special-riemann-zeta": "^0.0.6",

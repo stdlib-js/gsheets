@@ -25,11 +25,6 @@
 var ns = require( './../namespace.js' );
 
 
-// VARIABLES //
-
-var __STDLIB_ZETA = ns.tools.n_n( ns.zeta ); // eslint-disable-line no-underscore-dangle
-
-
 // MAIN //
 
 /**
@@ -37,6 +32,12 @@ var __STDLIB_ZETA = ns.tools.n_n( ns.zeta ); // eslint-disable-line no-underscor
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
+* @param {string} nan - option name for specifying the value to use in place of NaN
+* @param {*} nanValue - NaN option value
+* @param {string} pinf - option name for specifying the value to use in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to use in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
 * @returns {number|Range<number>} result(s)
 *
 * @example
@@ -47,9 +48,29 @@ var __STDLIB_ZETA = ns.tools.n_n( ns.zeta ); // eslint-disable-line no-underscor
 *
 * @example
 * STDLIB_ZETA( A1:D100 )
+*
+* @example
+* STDLIB_ZETA( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_ZETA( value ) {
-	return __STDLIB_ZETA( value );
+function STDLIB_ZETA( value, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
+	var opts;
+	var o;
+	var i;
+
+	opts = {
+		'nan': NaN,
+		'pinf': Infinity,
+		'ninf': -Infinity
+	};
+	for ( i = 1; i < arguments.length; i++ ) {
+		o = arguments[ i ];
+		if ( o === 'nan' || o === 'pinf' || o === 'ninf' ) {
+			opts[ o ] = arguments[ i+1 ];
+		} else {
+			ns.unrecognizedOptionName( o );
+		}
+	}
+	return ns.tools.n_n( ns.zeta, opts )( value );
 }
 
 

@@ -23,6 +23,8 @@
 var isArray = require( '@stdlib/assert-is-array' );
 var isNumber = require( '@stdlib/assert-is-number' ).isPrimitive;
 var format = require( '@stdlib/string-format' );
+var PINF = require( '@stdlib/constants-float64-pinf' );
+var NINF = require( '@stdlib/constants-float64-ninf' );
 var map2d = require( './map2d.js' );
 
 
@@ -38,9 +40,13 @@ var map2d = require( './map2d.js' );
 *
 * @private
 * @param {Function} fcn - function to apply
+* @param {Object} opts - options
+* @param {*} opts.nan - value to use in place of NaN
+* @param {*} opts.pinf - value to use in place of positive infinity
+* @param {*} opts.ninf - value to use in place of negative infinity
 * @returns {Function} function which applies a unary function
 */
-function apply( fcn ) {
+function apply( fcn, opts ) {
 	return unary;
 
 	/**
@@ -66,10 +72,21 @@ function apply( fcn ) {
 	* @returns {number} result
 	*/
 	function wrapper( value ) {
+		var v;
 		if ( !isNumber( value ) ) {
 			throw new TypeError( format( 'invalid argument. Must be a number or a range of numbers. Value: %s.', String( value ) ) );
 		}
-		return fcn( value );
+		v = fcn( value );
+		if ( v !== v ) {
+			return opts.nan;
+		}
+		if ( v === PINF ) {
+			return opts.pinf;
+		}
+		if ( v === NINF ) {
+			return opts.ninf;
+		}
+		return v;
 	}
 }
 
