@@ -21,30 +21,26 @@
 // MODULES //
 
 var format = require( '@stdlib/string-format' );
-var isRange = require( './is_range.js' );
-var hasSingletonDimension = require( './base/has_singleton_dimension.js' );
+var hasSameShape = require( './base/has_same_shape.js' );
 
 
 // MAIN //
 
 /**
-* Asserts whether a value is a one-dimensional range (i.e., a range consisting of either a single row or a single column).
+* Asserts whether two input ranges are the same shape.
 *
 * @private
-* @param {*} value - value to test
+* @param {Array<Array>} x - first input range
+* @param {Array<Array>} y - second input range
 * @param {string} msg - message subject
-* @throws {TypeError} must provide a range
-* @throws {TypeError} must provide a range consisting of only a single row or a single column
+* @throws {TypeError} must provide ranges having the same shape
 * @returns {void}
 */
-function assert( value, msg ) {
-	if ( isRange( value ) ) {
+function assert( x, y, msg ) {
+	if ( hasSameShape( x, y ) ) {
 		return;
 	}
-	if ( hasSingletonDimension( value ) ) {
-		return;
-	}
-	throw new TypeError( format( 'invalid argument. %s must consist of only a single row or a single column.', msg ) );
+	throw new TypeError( format( 'invalid argument. %s must have the same shape (i.e., the same number of rows and columns). Value: %s.', msg, String( value ) ) );
 }
 
 

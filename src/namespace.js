@@ -49,7 +49,6 @@ ns.flattenArray = require( './utils/flatten2d.js' );
 ns.format = require( '@stdlib/string-format' );
 
 ns.assert = {};
-ns.assert.hasSingletonDimension = require( './assert/has_singleton_dimension.js' );
 ns.assert.isDefined = require( './assert/is_defined.js' );
 ns.assert.isInteger = require( './assert/is_integer.js' );
 ns.assert.isNonNegativeInteger = require( './assert/is_nonnegative_integer.js' );
@@ -60,6 +59,7 @@ ns.assert.isPositiveInteger = require( './assert/is_positive_integer.js' );
 ns.assert.isPositiveNumber = require( './assert/is_positive_number.js' );
 ns.assert.isRange = require( './assert/is_range.js' );
 ns.assert.isRange1d = require( './assert/is_range_1d.js' );
+ns.assert.isSameShape = require( './assert/is_same_shape.js' );
 ns.assert.isString = require( './assert/is_string.js' );
 ns.assert.unrecognizedOptionName = require( './assert/unrecognized_option_name.js' );
 ns.assert.verifyCommonPRNGArgs = require( './assert/verify_common_prng_args.js' );
