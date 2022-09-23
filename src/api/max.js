@@ -95,7 +95,7 @@ function STDLIB_MAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdoc-
 		out.push( ns.max( N, sarray, M, offset ) );
 		offset += 1;
 	}
-	return out;
+	return [ out ];
 }
 
 
