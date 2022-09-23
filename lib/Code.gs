@@ -368,7 +368,7 @@ function STDLIB_ZETA( value, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) {
 		if ( o === 'nan' || o === 'pinf' || o === 'ninf' ) {
 			opts[ o ] = arguments[ i+1 ];
 		} else {
-			ns.unrecognizedOptionName( o );
+			ns.assert.unrecognizedOptionName( o );
 		}
 	}
 	return ns.tools.n_n( ns.zeta, opts )( value );
