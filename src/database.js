@@ -39,13 +39,13 @@ ns.push({
 });
 
 ns.push({
-	'alias': 'blas.daxpy',
+	'alias': 'blas_daxpy',
 	'pkg': '@stdlib/blas/base/gaxpy',
 	'related': []
 });
 
 ns.push({
-	'alias': 'blas.saxpy',
+	'alias': 'blas_saxpy',
 	'pkg': '@stdlib/blas/base/gaxpy',
 	'related': []
 });
@@ -74,47 +74,57 @@ ns.push({
 	'alias': 'max',
 	'pkg': '@stdlib/stats/base/max',
 	'related': [
-		'cumax'
+		'cumax',
+		'mskmax'
 	]
 });
 
 ns.push({
-	'alias': 'random.discrete_uniform',
+	'alias': 'mskmax',
+	'pkg': '@stdlib/stats/base/mskmax',
+	'related': [
+		'cumax',
+		'max'
+	]
+});
+
+ns.push({
+	'alias': 'random_discrete_uniform',
 	'pkg': '@stdlib/random/base/discrete-uniform',
 	'related': [
-		'random.uniform'
+		'random_uniform'
 	]
 });
 
 ns.push({
-	'alias': 'random.minstd',
+	'alias': 'random_minstd',
 	'pkg': '@stdlib/random/base/minstd',
 	'related': []
 });
 
 ns.push({
-	'alias': 'random.minstd_shuffle',
+	'alias': 'random_minstd_shuffle',
 	'pkg': '@stdlib/random/base/minstd-shuffle',
 	'related': []
 });
 
 ns.push({
-	'alias': 'random.mt19937',
+	'alias': 'random_mt19937',
 	'pkg': '@stdlib/random/base/mt19937',
 	'related': []
 });
 
 ns.push({
-	'alias': 'random.normal',
+	'alias': 'random_normal',
 	'pkg': '@stdlib/random/base/normal',
 	'related': []
 });
 
 ns.push({
-	'alias': 'random.uniform',
+	'alias': 'random_uniform',
 	'pkg': '@stdlib/random/base/uniform',
 	'related': [
-		'random.discrete_uniform'
+		'random_discrete_uniform'
 	]
 });
 

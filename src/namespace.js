@@ -45,10 +45,10 @@ ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
 ns.filledBy = require( '@stdlib/array-base-filled-by' );
-ns.flattenArray = require( './flatten2d.js' );
+ns.flattenArray = require( './utils/flatten2d.js' );
 ns.format = require( '@stdlib/string-format' );
 
-ns.hasSingletonDimension = require( './has_singleton_dimension.js' );
+ns.hasSingletonDimension = require( './assert/has_singleton_dimension.js' );
 
 ns.isArray = require( '@stdlib/assert-is-array' );
 ns.isInteger = require( '@stdlib/assert-is-integer' ).isPrimitive;
@@ -65,7 +65,7 @@ ns.kebabcase = require( '@stdlib/string-kebabcase' ); // TODO: replace with base
 
 ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base version
 
-ns.map2d = require( './map2d.js' );
+ns.map2d = require( './utils/map2d.js' );
 ns.max = require( '@stdlib/stats-base-max' ).ndarray;
 ns.mskmax = require( '@stdlib/stats-base-mskmax' ).ndarray;
 

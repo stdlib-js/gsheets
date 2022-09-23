@@ -9,6 +9,17 @@
 
 -   add unit tests
 
+-   create an editor menu
+
+    -   ability to display rendered help (as extracted from JSDoc Markdown comments)
+    -   links to related functions
+    -   function search
+    -   examples
+    -   tutorials (e.g., machine learning with sample datasets; could have option to load a tutorial template)
+    -   videos and edu materials
+    -   product announcements (notifications in the menu when we've released new features)
+    -   the editor menu could be the paid product (user has to sign-up and login for help, search, tutorials, etc; this would also mean that functions could be used without paying, thus allowing sheets using stdlib functions to be sharable and still functional)
+
 
 
 ## Packages
