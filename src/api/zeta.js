@@ -62,7 +62,7 @@ function STDLIB_ZETA( value, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) {
 		'pinf': Infinity,
 		'ninf': -Infinity
 	};
-	for ( i = 1; i < arguments.length; i++ ) {
+	for ( i = 1; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		if ( o === 'nan' || o === 'pinf' || o === 'ninf' ) {
 			opts[ o ] = arguments[ i+1 ];
