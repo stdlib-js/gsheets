@@ -25,22 +25,9 @@
 var ns = require( './../namespace.js' );
 
 
-// FUNCTIONS //
+// VARIABLES //
 
-/**
-* Converts a string to kebab case.
-*
-* @private
-* @param {*} value - string to convert
-* @throws {TypeError} must provide a string
-* @returns {string} converted string
-*/
-function __KEBABCASE( value ) { // eslint-disable-line no-underscore-dangle
-	if ( !ns.isString( value ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Must be a string or a range of strings. Value: %s.', String( value ) ) );
-	}
-	return ns.kebabcase( value );
-}
+var __STDLIB_KEBABCASE = ns.tools.s_s( ns.kebabcase ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //
@@ -62,10 +49,7 @@ function __KEBABCASE( value ) { // eslint-disable-line no-underscore-dangle
 * STDLIB_KEBABCASE( A2:D100 )
 */
 function STDLIB_KEBABCASE( value ) {
-	if ( ns.isArray( value ) ) {
-		return ns.map2d( value, __KEBABCASE );
-	}
-	return __KEBABCASE( value );
+	return __STDLIB_KEBABCASE( value );
 }
 
 

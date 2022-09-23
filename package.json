@@ -83,5 +83,9 @@
   "funding": {
     "type": "patreon",
     "url": "https://www.patreon.com/athan"
+  },
+  "dependencies": {
+    "@stdlib/assert-is-function": "^0.0.8",
+    "save-dev": "^0.0.1-security"
   }
 }

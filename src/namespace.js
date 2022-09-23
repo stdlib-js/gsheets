@@ -20,7 +20,7 @@
 * This file contains all functions which should be exposed to `Code.gs`.
 */
 
-/* eslint-disable node/no-unpublished-require, stdlib/require-order */
+/* eslint-disable node/no-unpublished-require, stdlib/require-order, no-underscore-dangle */
 
 'use strict';
 
@@ -76,6 +76,10 @@ ns.random.minstdShuffle = require( '@stdlib/random-base-minstd-shuffle' ).factor
 ns.random.mt19937 = require( '@stdlib/random-base-mt19937' ).factory;
 ns.random.normal = require( '@stdlib/random-base-normal' ).factory;
 ns.random.uniform = require( '@stdlib/random-base-uniform' ).factory;
+
+ns.tools = {};
+ns.tools.n_n = require( './utils/n_n.js' );
+ns.tools.s_s = require( './utils/s_s.js' );
 
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 

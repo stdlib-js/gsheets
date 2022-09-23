@@ -25,22 +25,9 @@
 var ns = require( './../namespace.js' );
 
 
-// FUNCTIONS //
+// VARIABLES //
 
-/**
-* Converts a string to lowercase.
-*
-* @private
-* @param {*} value - string to convert
-* @throws {TypeError} must provide a string
-* @returns {string} converted string
-*/
-function __LOWERCASE( value ) { // eslint-disable-line no-underscore-dangle
-	if ( !ns.isString( value ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Must be a string or a range of strings. Value: %s.', String( value ) ) );
-	}
-	return ns.lowercase( value );
-}
+var __STDLIB_LOWERCASE = ns.tools.s_s( ns.lowercase ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //
@@ -62,10 +49,7 @@ function __LOWERCASE( value ) { // eslint-disable-line no-underscore-dangle
 * STDLIB_LOWERCASE( A2:D100 )
 */
 function STDLIB_LOWERCASE( value ) {
-	if ( ns.isArray( value ) ) {
-		return ns.map2d( value, __LOWERCASE );
-	}
-	return __LOWERCASE( value );
+	return __STDLIB_LOWERCASE( value );
 }
 
 

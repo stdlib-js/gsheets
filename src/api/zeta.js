@@ -25,22 +25,9 @@
 var ns = require( './../namespace.js' );
 
 
-// FUNCTIONS //
+// VARIABLES //
 
-/**
-* Evaluates the Riemann zeta function as a function of a real variable.
-*
-* @private
-* @param {*} value - input value
-* @throws {TypeError} must provide a number
-* @returns {number} result
-*/
-function __ZETA( value ) { // eslint-disable-line no-underscore-dangle
-	if ( !ns.isNumber( value ) ) {
-		throw new TypeError( ns.format( 'invalid argument. Must be a number or a range of numbers. Value: %s.', String( value ) ) );
-	}
-	return ns.zeta( value );
-}
+var __STDLIB_ZETA = ns.tools.n_n( ns.zeta ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //
@@ -62,10 +49,7 @@ function __ZETA( value ) { // eslint-disable-line no-underscore-dangle
 * STDLIB_ZETA( A1:D100 )
 */
 function STDLIB_ZETA( value ) {
-	if ( ns.isArray( value ) ) {
-		return ns.map2d( value, __ZETA );
-	}
-	return __ZETA( value );
+	return __STDLIB_ZETA( value );
 }
 
 
