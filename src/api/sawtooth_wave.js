@@ -29,14 +29,14 @@ var ns = require( './../namespace.js' );
 * Generates a sawtooth wave.
 *
 * @customfunction
-* @param {number} N - number of values
+* @param {integer} N - number of values
 * @param {string} period - period option name
-* @param {number} periodValue - period value (default: 10)
+* @param {integer} periodValue - period value (default: 10)
 * @param {string} amplitude - amplitude option name
 * @param {number} amplitudeValue - amplitude value (default: 1)
 * @param {string} offset - phase offset option name
-* @param {number} offsetValue - phase offset value (default: 0)
-* @returns {Array<number>} simulated values
+* @param {integer} offsetValue - phase offset value (default: 0)
+* @returns {Range<number>} simulated values
 *
 * @example
 * STDLIB_SAWTOOTH_WAVE( 10 )

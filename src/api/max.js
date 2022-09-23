@@ -31,10 +31,10 @@ var ns = require( './../namespace.js' );
 * Computes the maximum value.
 *
 * @customfunction
-* @param {Array<Array<number>>} x - range
+* @param {Range<number>} x - range
 * @param {string} axis - axis option name
-* @param {number} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
-* @returns {Array<Array<number>>} results
+* @param {integer} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
+* @returns {Range<number>} results
 *
 * @example
 * STDLIB_MAX( A1:A100 )

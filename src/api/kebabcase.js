@@ -36,8 +36,8 @@ var __STDLIB_KEBABCASE = ns.tools.s_s( ns.kebabcase ); // eslint-disable-line no
 * Converts a string to kebab case.
 *
 * @customfunction
-* @param {string|Array<Array<string>>} value - string(s) to convert
-* @returns {string|Array<Array<string>>} converted string(s)
+* @param {string|Range<string>} value - string(s) to convert
+* @returns {string|Range<string>} converted string(s)
 *
 * @example
 * STDLIB_KEBABCASE( "FooBar" )

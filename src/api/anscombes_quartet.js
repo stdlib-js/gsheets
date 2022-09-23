@@ -29,7 +29,7 @@ var ns = require( './../namespace.js' );
 * Anscombe's quartet.
 *
 * @customfunction
-* @returns {Array<Array<string|number>>} dataset
+* @returns {Range<number>} dataset
 *
 * @example
 * STDLIB_ANSCOMBES_QUARTET()

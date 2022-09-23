@@ -29,13 +29,13 @@ var ns = require( './../namespace.js' );
 * Generates pseudorandom numbers drawn from a discrete uniform distribution.
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
-* @param {number} a - minimum support (inclusive)
-* @param {number} b - maximum support (inclusive)
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {integer} a - minimum support (inclusive)
+* @param {integer} b - maximum support (inclusive)
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
-* @returns {Array<number>} pseudorandom numbers
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )

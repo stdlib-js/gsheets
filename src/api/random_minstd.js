@@ -34,13 +34,13 @@ var ns = require( './../namespace.js' );
 * -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
 *
 * @customfunction
-* @param {number} nrows - number of rows
-* @param {number} ncols - number of columns
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
 * @param {string} seed - seed option name
-* @param {number|Array<number>} seedValue - pseudorandom number generator seed value
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
 * @param {boolean} normalizedValue - normalized option value (default: FALSE)
-* @returns {Array<number>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234 )

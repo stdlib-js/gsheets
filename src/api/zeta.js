@@ -36,8 +36,8 @@ var __STDLIB_ZETA = ns.tools.n_n( ns.zeta ); // eslint-disable-line no-underscor
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
 * @customfunction
-* @param {number|Array<Array<number>>} value - input value(s)
-* @returns {number|Array<Array<number>>} result(s)
+* @param {number|Range<number>} value - input value(s)
+* @returns {number|Range<number>} result(s)
 *
 * @example
 * STDLIB_ZETA( 1.2 )

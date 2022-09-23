@@ -31,14 +31,14 @@ var ns = require( './../namespace.js' );
 * Tests the null hypothesis that the variances in all groups are the same.
 *
 * @customfunction
-* @param {Array<Array<number>>} values - numeric observations
+* @param {Range<number>} values - numeric observations
 * @param {string} groups - groups option name
-* @param {Array<Array<*>>} groupsValue - groups option values
+* @param {Range} groupsValue - groups option values
 * @param {string} alpha - significance level option name
 * @param {number} alphaValue - significance level option value (default: 0.05)
 * @param {string} format - results format option name
 * @param {string} formatValue - results format option value (either "print" or "raw"; default: "print")
-* @returns {(string|Array<Array<*>>)} results
+* @returns {string|Range<string|number>} results
 *
 * @example
 * STDLIB_BARTLETT_TEST( A1:A100, "groups", B1:B100 )

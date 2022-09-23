@@ -31,15 +31,15 @@ var ns = require( './../namespace.js' );
 * Multiplies a vector by a constant and adds the result to another vector.
 *
 * @customfunction
-* @param {number} N - number of elements on which to operate
+* @param {integer} N - number of elements on which to operate
 * @param {number} alpha - scalar constant
-* @param {Array<Array<number>>} x - first vector
-* @param {number} strideX - index increment for the first vector
-* @param {number} offsetX - index offset for the first vector
-* @param {Array<Array<number>>} y - second vector
-* @param {number} strideY - index increment for the second vector
-* @param {number} offsetY - index offset for the second vector
-* @returns {Array<Array<number>>} results
+* @param {Range<number>} x - first vector
+* @param {integer} strideX - index increment for the first vector
+* @param {integer} offsetX - index offset for the first vector
+* @param {Range<number>} y - second vector
+* @param {integer} strideY - index increment for the second vector
+* @param {integer} offsetY - index offset for the second vector
+* @returns {Range<number>} results
 *
 * @example
 * STDLIB_BLAS_SAXPY( 10, 5, A1:A100, 1, 0, B1:B100, 1, 0 )
