@@ -33,7 +33,7 @@ var map2d = require( './map2d.js' );
 *
 * ## Notes
 *
-* -   The returned function accepts both a single scalar argument and a nested array of arrays.
+* -   The returned function accepts both a single string argument and a nested array of arrays.
 * -   If provided a nested array of arrays, the returned function assumes that all nested array values are the same data type.
 *
 * @private
