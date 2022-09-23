@@ -54,6 +54,7 @@
     "@stdlib/datasets-anscombes-quartet": "^0.0.9",
     "@stdlib/fs-write-file": "^0.0.8",
     "@stdlib/math-base-special-riemann-zeta": "^0.0.6",
+    "@stdlib/random-base-discrete-uniform": "^0.0.6",
     "@stdlib/random-base-minstd": "^0.0.6",
     "@stdlib/random-base-minstd-shuffle": "^0.0.6",
     "@stdlib/random-base-mt19937": "^0.0.6",

@@ -81,7 +81,7 @@ function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // e
 	if ( !ns.isNumber( sigma ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Standard deviation must be a number. Value: %s.', String( sigma ) ) );
 	}
-	rand = ns.random.normal.factory( mu, sigma, {
+	rand = ns.random.normal( mu, sigma, {
 		'seed': s
 	});
 	if ( ncols === 1 ) {

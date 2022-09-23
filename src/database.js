@@ -79,6 +79,14 @@ ns.push({
 });
 
 ns.push({
+	'alias': 'random.discrete_uniform',
+	'pkg': '@stdlib/random/base/discrete-uniform',
+	'related': [
+		'random.uniform'
+	]
+});
+
+ns.push({
 	'alias': 'random.minstd',
 	'pkg': '@stdlib/random/base/minstd',
 	'related': []
@@ -105,7 +113,9 @@ ns.push({
 ns.push({
 	'alias': 'random.uniform',
 	'pkg': '@stdlib/random/base/uniform',
-	'related': []
+	'related': [
+		'random.discrete_uniform'
+	]
 });
 
 ns.push({

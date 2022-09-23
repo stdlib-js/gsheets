@@ -87,7 +87,7 @@ function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized
 	if ( !ns.isPositiveInteger( ncols ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
 	}
-	rand = ns.random.minstdShuffle.factory({
+	rand = ns.random.minstdShuffle({
 		'seed': s
 	});
 	if ( flg ) {

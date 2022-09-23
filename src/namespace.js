@@ -69,11 +69,12 @@ ns.map2d = require( './map2d.js' );
 ns.max = require( '@stdlib/stats-base-max' ).ndarray;
 
 ns.random = {};
-ns.random.minstd = require( '@stdlib/random-base-minstd' );
-ns.random.minstdShuffle = require( '@stdlib/random-base-minstd-shuffle' );
-ns.random.mt19937 = require( '@stdlib/random-base-mt19937' );
-ns.random.normal = require( '@stdlib/random-base-normal' );
-ns.random.uniform = require( '@stdlib/random-base-uniform' );
+ns.random.discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+ns.random.minstd = require( '@stdlib/random-base-minstd' ).factory;
+ns.random.minstdShuffle = require( '@stdlib/random-base-minstd-shuffle' ).factory;
+ns.random.mt19937 = require( '@stdlib/random-base-mt19937' ).factory;
+ns.random.normal = require( '@stdlib/random-base-normal' ).factory;
+ns.random.uniform = require( '@stdlib/random-base-uniform' ).factory;
 
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 

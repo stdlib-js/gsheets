@@ -87,7 +87,7 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 	if ( !ns.isPositiveInteger( ncols ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Number of columns must be a positive integer. Value: %s.', String( ncols ) ) );
 	}
-	rand = ns.random.mt19937.factory({
+	rand = ns.random.mt19937({
 		'seed': s
 	});
 	if ( flg ) {
