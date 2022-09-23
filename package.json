@@ -64,6 +64,7 @@
     "@stdlib/stats-bartlett-test": "^0.0.7",
     "@stdlib/stats-base-cumax": "^0.0.9",
     "@stdlib/stats-base-max": "^0.0.9",
+    "@stdlib/stats-base-mskmax": "^0.0.9",
     "@stdlib/string-format": "^0.0.3",
     "@stdlib/string-kebabcase": "^0.0.4",
     "@stdlib/string-lowercase": "^0.0.9",

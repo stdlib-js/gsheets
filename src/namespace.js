@@ -67,6 +67,7 @@ ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base
 
 ns.map2d = require( './map2d.js' );
 ns.max = require( '@stdlib/stats-base-max' ).ndarray;
+ns.mskmax = require( '@stdlib/stats-base-mskmax' ).ndarray;
 
 ns.random = {};
 ns.random.discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;

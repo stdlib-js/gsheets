@@ -16,6 +16,8 @@
 * limitations under the License.
 */
 
+/* eslint-disable stdlib/jsdoc-doctest-marker, stdlib/jsdoc-doctest-quote-props */
+
 'use strict';
 
 // MODULES //
@@ -43,7 +45,7 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_CUMAX( A1:C100, "axis", 0 )
 */
-function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdoc-require-throws-tags
+function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
 	var sarray;
 	var offset;
 	var tmp;

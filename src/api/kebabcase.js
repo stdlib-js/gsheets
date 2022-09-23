@@ -16,6 +16,8 @@
 * limitations under the License.
 */
 
+/* eslint-disable stdlib/jsdoc-doctest-marker, stdlib/jsdoc-doctest-quote-props */
+
 'use strict';
 
 // MODULES //
@@ -33,7 +35,7 @@ var ns = require( './../namespace.js' );
 * @throws {TypeError} must provide a string
 * @returns {string} converted string
 */
-function __KEBABCASE( value ) {
+function __KEBABCASE( value ) { // eslint-disable-line no-underscore-dangle
 	if ( !ns.isString( value ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Must be a string or a range of strings. Value: %s.', String( value ) ) );
 	}

@@ -84,7 +84,7 @@
 
 -   afinn-111
 -   afinn-96
--   anscombes-quartet
+-   [x] anscombes-quartet
 -   berndt-cps-wages-1985
 -   cdc-nchs-us-births-1969-1988
 -   cdc-nchs-us-births-1994-2003
@@ -164,7 +164,7 @@
 -   lanczos-pulse
 -   periodic-sinc
 -   pulse
--   sawtooth-wave
+-   [x] sawtooth-wave
 -   sine-wave
 -   square-wave
 -   triangle-wave
@@ -172,7 +172,7 @@
 ### stats
 
 -   anova1
--   bartlett-test
+-   [x] bartlett-test
 -   binomial-test
 -   chi2gof
 -   chi2test
@@ -203,11 +203,11 @@
 -   ends-with
 -   format
 -   from-code-point
--   kebabcase
+-   [x] kebabcase
 -   left-pad
 -   left-trim-n
 -   left-trim
--   lowercase
+-   [x] lowercase
 -   num-grapheme-clusters
 -   pad
 -   pascalcase

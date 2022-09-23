@@ -42,7 +42,7 @@ function STDLIB_ANSCOMBES_QUARTET() {
 	var i;
 	var j;
 
-	data = ns.ANSCOMBES_QUARTET();
+	data = ns.ANSCOMBES_QUARTET(); // eslint-disable-line new-cap
 	out = [];
 	for ( i = 0; i < data.length; i++ ) {
 		d = data[ i ];

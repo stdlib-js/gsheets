@@ -43,7 +43,7 @@ var ns = require( './../namespace.js' );
 * @example
 * STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags
+function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, stdlib/jsdoc-require-throws-tags, id-length
 	var rand;
 	var out;
 	var s;
