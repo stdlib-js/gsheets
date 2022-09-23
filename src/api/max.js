@@ -26,7 +26,7 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Computes the cumulative maximum value.
+* Computes the maximum value.
 *
 * @customfunction
 * @param {Array<Array<number>>} x - range
@@ -35,25 +35,24 @@ var ns = require( './../namespace.js' );
 * @returns {Array<Array<number>>} results
 *
 * @example
-* STDLIB_CUMAX( A1:A100 )
+* STDLIB_MAX( A1:A100 )
 *
 * @example
-* STDLIB_CUMAX( A1:C100, "axis", 1 )
+* STDLIB_MAX( A1:C100, "axis", 1 )
 *
 * @example
-* STDLIB_CUMAX( A1:C100, "axis", 0 )
+* STDLIB_MAX( A1:C100, "axis", 0 )
 */
-function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdoc-require-throws-tags
+function STDLIB_MAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdoc-require-throws-tags
 	var sarray;
 	var offset;
-	var tmp;
+	var out;
 	var ax;
 	var M;
 	var N;
 	var o;
 	var v;
 	var i;
-	var j;
 	if ( !ns.isArray( x ) ) {
 		throw new TypeError( ns.format( 'invalid argument. Values argument must be a range. Value: %s.', String( x ) ) );
 	}
@@ -74,10 +73,11 @@ function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdo
 	if ( ax === 0 ) {
 		M = x.length;
 		N = x[ 0 ].length;
+		out = [];
 		for ( i = 0; i < M; i++ ) {
-			ns.cumax( N, x[ i ], 1, 0, x[ i ], 1, 0 );
+			out.push( ns.max( N, x[ i ], 1, 0 ) );
 		}
-		return x;
+		return out;
 	}
 	// More complex case where we're provided a range in row-major order, but asked to operate across rows...
 	M = x[ 0 ].length; // number of columns
@@ -91,26 +91,13 @@ function STDLIB_CUMAX( x, axis, axisValue ) { // eslint-disable-line stdlib/jsdo
 
 	// Iterate over rows...
 	for ( i = 0; i < M; i++ ) {
-		ns.cumax( N, sarray, M, offset, sarray, M, offset );
+		out.push( ns.max( N, sarray, M, offset ) );
 		offset += 1;
 	}
-	// Check for a singleton dimension and whether we can avoid performing a copy...
-	if ( M === 1 ) {
-		return sarray;
-	}
-	// Reuse the input array as the output array...
-	offset = 0;
-	for ( i = 0; i < N; i++ ) {
-		tmp = x[ i ];
-		for ( j = 0; j < M; j++ ) {
-			tmp[ j ] = sarray[ offset ];
-			offset += 1;
-		}
-	}
-	return x;
+	return out;
 }
 
 
 // EXPORTS //
 
-module.exports = STDLIB_CUMAX;
+module.exports = STDLIB_MAX;

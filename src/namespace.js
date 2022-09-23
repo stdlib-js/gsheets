@@ -66,6 +66,7 @@ ns.kebabcase = require( '@stdlib/string-kebabcase' ); // TODO: replace with base
 ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base version
 
 ns.map2d = require( './map2d.js' );
+ns.max = require( '@stdlib/stats-base-max' ).ndarray;
 
 ns.random = {};
 ns.random.minstd = require( '@stdlib/random-base-minstd' );

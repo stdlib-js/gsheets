@@ -53,7 +53,9 @@ ns.push({
 ns.push({
 	'alias': 'cumax',
 	'pkg': '@stdlib/stats/base/cumax',
-	'related': []
+	'related': [
+		'max'
+	]
 });
 
 ns.push({
@@ -66,6 +68,14 @@ ns.push({
 	'alias': 'lowercase',
 	'pkg': '@stdlib/string/lowercase',
 	'related': []
+});
+
+ns.push({
+	'alias': 'max',
+	'pkg': '@stdlib/stats/base/max',
+	'related': [
+		'cumax'
+	]
 });
 
 ns.push({
