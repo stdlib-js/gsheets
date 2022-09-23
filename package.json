@@ -28,7 +28,9 @@
     "clasp:pull": "./node_modules/.bin/clasp pull",
     "clasp:push": "./node_modules/.bin/clasp push",
     "clasp:status": "./node_modules/.bin/clasp status",
-    "publish": "npm run build && ((git add . && git commit -m 'Build app' && git push origin main) || echo 'Nothing to publish') && npm run clasp:push"
+    "publish": "npm run build && ((git add . && git commit -m 'Build app' && git push origin main) || echo 'Nothing to publish') && npm run clasp:push",
+    "test": "make test",
+    "test-cov": "make test-cov"
   },
   "homepage": "https://stdlib.io",
   "repository": {
@@ -68,7 +70,9 @@
     "@stdlib/string-format": "^0.0.3",
     "@stdlib/string-kebabcase": "^0.0.4",
     "@stdlib/string-lowercase": "^0.0.9",
-    "esbuild": "^0.14.38"
+    "esbuild": "^0.14.38",
+    "tap-spec": "^5.0.0",
+    "tape": "git+https://github.com/kgryte/tape.git#fix/globby"
   },
   "keywords": [
     "stdlib",
