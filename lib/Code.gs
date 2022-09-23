@@ -380,11 +380,11 @@ function STDLIB_MAX( x, axis, axisValue ) {
 			throw new Error( ns.format( 'invalid argument. Unrecognized option name. Value: %s.', String( o ) ) );
 		}
 	}
+	out = [];
 	// Check for the simple case where we're provided a range in row-major order and asked to operate across columns...
 	if ( ax === 0 ) {
 		M = x.length;
 		N = x[ 0 ].length;
-		out = [];
 		for ( i = 0; i < M; i++ ) {
 			out.push( ns.max( N, x[ i ], 1, 0 ) );
 		}
