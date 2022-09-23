@@ -402,7 +402,7 @@ function STDLIB_MAX( x, axis, axisValue ) {
 		out.push( ns.max( N, sarray, M, offset ) );
 		offset += 1;
 	}
-	return out;
+	return [ out ];
 }
 /**
 * Evaluates the Riemann zeta function as a function of a real variable.
