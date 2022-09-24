@@ -26,7 +26,7 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from a beta distribution.
+* Generates pseudorandom numbers drawn from a beta prime distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
@@ -38,12 +38,12 @@ var ns = require( './../namespace.js' );
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_BETA( 10, 1, 1, 10, "seed", 1234 )
+* STDLIB_RANDOM_BETAPRIME( 10, 1, 1, 10, "seed", 1234 )
 *
 * @example
-* STDLIB_RANDOM_BETA( 10, 1, 1, 10, "seed", 1234 )
+* STDLIB_RANDOM_BETAPRIME( 10, 1, 1, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) { // eslint-disable-line no-unused-vars
+function STDLIB_RANDOM_BETAPRIME( nrows, ncols, alpha, beta, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;
 	var s;
 	var o;
@@ -74,4 +74,4 @@ function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) { // e
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_BETA;
+module.exports = STDLIB_RANDOM_BETAPRIME;
