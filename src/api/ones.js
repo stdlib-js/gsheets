@@ -37,8 +37,8 @@ var ns = require( './../namespace.js' );
 * STDLIB_ONES( 10, 1 )
 */
 function STDLIB_ONES( nrows, ncols ) {
-	ns.isPositiveInteger( nrows, 'Number of rows' );
-	ns.isPositiveInteger( ncols, 'Number of columns' );
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
 	return ns.filled( nrows, ncols, 1 );
 }
 
