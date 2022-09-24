@@ -26,24 +26,24 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from a beta prime distribution.
+* Generates pseudorandom numbers drawn from a binomial distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} alpha - first shape parameter
-* @param {number} beta - second shape parameter
+* @param {number} n - number of trials
+* @param {number} p - success probability
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_BETAPRIME( 10, 1, 1, 10, "seed", 1234 )
+* STDLIB_RANDOM_BINOMIAL( 10, 1, 20, 0.8, "seed", 1234 )
 *
 * @example
-* STDLIB_RANDOM_BETAPRIME( 10, 1, 1, 10, "seed", 1234 )
+* STDLIB_RANDOM_BINOMIAL( 10, 1, 20, 0.8, "seed", 1234 )
 */
-function STDLIB_RANDOM_BETAPRIME( nrows, ncols, alpha, beta, seed, seedValue ) { // eslint-disable-line no-unused-vars
+function STDLIB_RANDOM_BINOMIAL( nrows, ncols, n, p, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;
 	var s;
 	var o;
@@ -60,12 +60,10 @@ function STDLIB_RANDOM_BETAPRIME( nrows, ncols, alpha, beta, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( alpha, 'First shape parameter' );
-	ns.assert.isNumber( beta, 'Second shape parameter' );
-	ns.assert.isGreaterThan( alpha, 0, 'First shape parameter', 'zero' );
-	ns.assert.isGreaterThan( beta, 0, 'Second shape parameter', 'zero' );
+	ns.assert.isPositiveInteger( n, 'Number of trials' );
+	ns.assert.isProbability( p, 'Success probability' );
 
-	rand = ns.random.betaprime( alpha, beta, {
+	rand = ns.random.binomial( n, p, {
 		'seed': s
 	});
 	return ns.filledBy( nrows, ncols, rand );
@@ -74,4 +72,4 @@ function STDLIB_RANDOM_BETAPRIME( nrows, ncols, alpha, beta, seed, seedValue ) {
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_BETAPRIME;
+module.exports = STDLIB_RANDOM_BINOMIAL;
