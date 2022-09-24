@@ -531,8 +531,8 @@ function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) {
 * STDLIB_ZEROS( 10, 1 )
 */
 function STDLIB_ZEROS( nrows, ncols ) {
-	ns.isPositiveInteger( nrows, 'Number of rows' );
-	ns.isPositiveInteger( ncols, 'Number of columns' );
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
 	return ns.filled( nrows, ncols, 0 );
 }
 /**
@@ -901,8 +901,8 @@ function STDLIB_RANDOM_CHI( nrows, ncols, k, seed, seedValue ) {
 * STDLIB_ONES( 10, 1 )
 */
 function STDLIB_ONES( nrows, ncols ) {
-	ns.isPositiveInteger( nrows, 'Number of rows' );
-	ns.isPositiveInteger( ncols, 'Number of columns' );
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
 	return ns.filled( nrows, ncols, 1 );
 }
 /**
@@ -1197,8 +1197,8 @@ function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue
 * STDLIB_FULL( 10, 1, "beep" )
 */
 function STDLIB_FULL( nrows, ncols, value ) {
-	ns.isPositiveInteger( nrows, 'Number of rows' );
-	ns.isPositiveInteger( ncols, 'Number of columns' );
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
 	return ns.filled( nrows, ncols, value );
 }
 /**
