@@ -52,11 +52,11 @@ function filled( nrows, ncols, value ) {
 	var out;
 	var i;
 	if ( ncols === 1 ) {
-		return fill( nrows, value );
+		return fill( value, nrows );
 	}
 	out = [];
 	for ( i = 0; i < nrows; i++ ) {
-		out.push( fill( ncols, value ) );
+		out.push( fill( value, ncols ) );
 	}
 	return out;
 }
