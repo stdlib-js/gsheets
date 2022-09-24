@@ -26,7 +26,7 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from a cosine distribution.
+* Generates pseudorandom numbers drawn from a raised cosine distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
