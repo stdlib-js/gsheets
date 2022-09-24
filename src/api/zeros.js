@@ -31,7 +31,7 @@ var ns = require( './../namespace.js' );
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @returns {Range<number>} zeros
+* @returns {Range<integer>} zeros
 *
 * @example
 * STDLIB_ZEROS( 10, 1 )

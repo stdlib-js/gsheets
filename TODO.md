@@ -39,13 +39,13 @@
 ### array
 
 -   [ ] datespace
--   [ ] full
+-   [x] full
 -   [ ] incrspace
 -   [ ] linspace
 -   [ ] logspace
--   [ ] ones
+-   [x] ones
 -   [ ] unitspace
--   [ ] zeros
+-   [x] zeros
 
 ### assert
 

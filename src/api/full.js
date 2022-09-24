@@ -26,23 +26,27 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Fills one or more cells with ones.
+* Fills one or more cells with a specified value.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @returns {Range<integer>} ones
+* @param {*} value - fill value
+* @returns {Range} filled range
 *
 * @example
-* STDLIB_ONES( 10, 1 )
+* STDLIB_FULL( 10, 1, 5 )
+*
+* @example
+* STDLIB_FULL( 10, 1, "beep" )
 */
-function STDLIB_ONES( nrows, ncols ) {
+function STDLIB_FULL( nrows, ncols, value ) {
 	ns.isPositiveInteger( nrows, 'Number of rows' );
 	ns.isPositiveInteger( ncols, 'Number of columns' );
-	return ns.filled( nrows, ncols, 1 );
+	return ns.filled( nrows, ncols, value );
 }
 
 
 // EXPORTS //
 
-module.exports = STDLIB_ONES;
+module.exports = STDLIB_FULL;
