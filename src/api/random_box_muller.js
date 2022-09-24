@@ -37,9 +37,6 @@ var ns = require( './../namespace.js' );
 *
 * @example
 * STDLIB_RANDOM_BOX_MULLER( 10, 1, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_BOX_MULLER( 10, 1, "seed", 1234 )
 */
 function STDLIB_RANDOM_BOX_MULLER( nrows, ncols, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;

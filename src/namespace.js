@@ -44,7 +44,8 @@ ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
-ns.filledBy = require( './utils/filled_by2d.js' );
+ns.filled = require( './utils/filled2d.js' );
+ns.filledBy = require( './utils/filledby2d.js' );
 ns.flattenArray = require( './utils/flatten2d.js' );
 ns.format = require( '@stdlib/string-format' );
 

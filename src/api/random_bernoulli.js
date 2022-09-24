@@ -38,9 +38,6 @@ var ns = require( './../namespace.js' );
 *
 * @example
 * STDLIB_RANDOM_BERNOULLI( 10, 1, 0.5, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_BERNOULLI( 10, 1, 0.5, "seed", 1234 )
 */
 function STDLIB_RANDOM_BERNOULLI( nrows, ncols, p, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;

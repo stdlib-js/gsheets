@@ -38,9 +38,6 @@ var ns = require( './../namespace.js' );
 *
 * @example
 * STDLIB_RANDOM_CHI( 10, 1, 2, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_CHI( 10, 1, 2, "seed", 1234 )
 */
 function STDLIB_RANDOM_CHI( nrows, ncols, k, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;

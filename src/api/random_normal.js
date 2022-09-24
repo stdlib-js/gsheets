@@ -39,9 +39,6 @@ var ns = require( './../namespace.js' );
 *
 * @example
 * STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
 */
 function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;

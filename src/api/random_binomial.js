@@ -39,9 +39,6 @@ var ns = require( './../namespace.js' );
 *
 * @example
 * STDLIB_RANDOM_BINOMIAL( 10, 1, 20, 0.8, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_BINOMIAL( 10, 1, 20, 0.8, "seed", 1234 )
 */
 function STDLIB_RANDOM_BINOMIAL( nrows, ncols, n, p, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;

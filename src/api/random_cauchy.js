@@ -39,9 +39,6 @@ var ns = require( './../namespace.js' );
 *
 * @example
 * STDLIB_RANDOM_CAUCHY( 10, 1, 2, 5, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_CAUCHY( 10, 1, 2, 5, "seed", 1234 )
 */
 function STDLIB_RANDOM_CAUCHY( nrows, ncols, x0, gamma, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;

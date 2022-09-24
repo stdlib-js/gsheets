@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@google/clasp": "^2.4.1",
+    "@stdlib/array-base-filled": "^0.0.2",
     "@stdlib/array-base-filled-by": "^0.0.2",
     "@stdlib/array-from-iterator": "^0.0.6",
     "@stdlib/assert-has-own-property": "^0.0.7",
