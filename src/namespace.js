@@ -93,6 +93,7 @@ ns.random.chi = require( '@stdlib/random-base-chi' ).factory;
 ns.random.chisquare = require( '@stdlib/random-base-chisquare' ).factory;
 ns.random.cosine = require( '@stdlib/random-base-cosine' ).factory;
 ns.random.discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+
 ns.random.erlang = require( '@stdlib/random-base-erlang' ).factory;
 ns.random.exponential = require( '@stdlib/random-base-exponential' ).factory;
 ns.random.f = require( '@stdlib/random-base-f' ).factory;
@@ -108,17 +109,22 @@ ns.random.laplace = require( '@stdlib/random-base-laplace' ).factory;
 ns.random.levy = require( '@stdlib/random-base-levy' ).factory;
 ns.random.logistic = require( '@stdlib/random-base-logistic' ).factory;
 ns.random.lognormal = require( '@stdlib/random-base-lognormal' ).factory;
+
 ns.random.minstd = require( '@stdlib/random-base-minstd' ).factory;
 ns.random.minstdShuffle = require( '@stdlib/random-base-minstd-shuffle' ).factory;
 ns.random.mt19937 = require( '@stdlib/random-base-mt19937' ).factory;
+
 ns.random.negativeBinomial = require( '@stdlib/random-base-negative-binomial' ).factory;
+
 ns.random.normal = require( '@stdlib/random-base-normal' ).factory;
 ns.random.paretoType1 = require( '@stdlib/random-base-pareto-type1' ).factory;
 ns.random.poisson = require( '@stdlib/random-base-poisson' ).factory;
 ns.random.rayleigh = require( '@stdlib/random-base-rayleigh' ).factory;
 ns.random.t = require( '@stdlib/random-base-t' ).factory;
 ns.random.triangular = require( '@stdlib/random-base-triangular' ).factory;
+
 ns.random.uniform = require( '@stdlib/random-base-uniform' ).factory;
+
 ns.random.weibull = require( '@stdlib/random-base-weibull' ).factory;
 
 ns.tools = {};
