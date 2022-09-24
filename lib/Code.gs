@@ -538,6 +538,48 @@ function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) {
 	return ns.filledBy( nrows, ncols, rand );
 }
 /**
+* Generates pseudorandom numbers drawn from a cosine distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} mu - mean
+* @param {number} s - scale parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_COSINE( 10, 1, 2, 5, "seed", 1234 )
+*
+* @example
+* STDLIB_RANDOM_COSINE( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_COSINE( nrows, ncols, mu, s, seed, seedValue ) { 
+	var rand;
+	var sd;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			sd = ns.assert.verifyPRNGSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isNumber( mu, 'Mean' );
+	ns.assert.isNumber( s, 'Scale parameter' );
+	ns.assert.isGreaterThan( s, 0, 'Scale parameter', 'zero' );
+	rand = ns.random.cosine( mu, s, {
+		'seed': sd
+	});
+	return ns.filledBy( nrows, ncols, rand );
+}
+/**
 * Tests the null hypothesis that the variances in all groups are the same.
 *
 * @customfunction
@@ -688,6 +730,45 @@ function STDLIB_RANDOM_BOX_MULLER( nrows, ncols, seed, seedValue ) {
 	return ns.filledBy( nrows, ncols, rand );
 }
 /**
+* Generates pseudorandom numbers drawn from a chi-square distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} k - degrees of freedom
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_CHISQUARE( 10, 1, 2, "seed", 1234 )
+*
+* @example
+* STDLIB_RANDOM_CHISQUARE( 10, 1, 2, "seed", 1234 )
+*/
+function STDLIB_RANDOM_CHISQUARE( nrows, ncols, k, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.assert.verifyPRNGSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( k, 'Degrees of freedom' );
+	rand = ns.random.chisquare( k, {
+		'seed': s
+	});
+	return ns.filledBy( nrows, ncols, rand );
+}
+/**
 * Generates pseudorandom numbers drawn from a beta prime distribution.
 *
 * @customfunction
@@ -785,6 +866,45 @@ function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normal
 		f = rand;
 	}
 	return ns.filledBy( nrows, ncols, f );
+}
+/**
+* Generates pseudorandom numbers drawn from a chi distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} k - degrees of freedom
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_CHI( 10, 1, 2, "seed", 1234 )
+*
+* @example
+* STDLIB_RANDOM_CHI( 10, 1, 2, "seed", 1234 )
+*/
+function STDLIB_RANDOM_CHI( nrows, ncols, k, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.assert.verifyPRNGSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( k, 'Degrees of freedom' );
+	rand = ns.random.chi( k, {
+		'seed': s
+	});
+	return ns.filledBy( nrows, ncols, rand );
 }
 /**
 * Generates pseudorandom numbers drawn from an arcsine distribution.
