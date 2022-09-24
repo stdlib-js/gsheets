@@ -77,7 +77,7 @@ ns.iterSawtoothWave = require( '@stdlib/simulate-iter-sawtooth-wave' );
 
 ns.kebabcase = require( '@stdlib/string-kebabcase' ); // TODO: replace with base version
 
-ns.linspace = require( '@stdlib/array/linspace' );
+ns.linspace = require( '@stdlib/array-linspace' );
 ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base version
 
 ns.map2d = require( './utils/map2d.js' );
