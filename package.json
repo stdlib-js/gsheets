@@ -44,14 +44,21 @@
     "@google/clasp": "^2.4.1",
     "@stdlib/array-base-filled": "^0.0.2",
     "@stdlib/array-base-filled-by": "^0.0.2",
+    "@stdlib/array-base-incrspace": "^0.0.2",
+    "@stdlib/array-base-logspace": "^0.0.2",
+    "@stdlib/array-base-unitspace": "^0.0.1",
     "@stdlib/array-from-iterator": "^0.0.6",
+    "@stdlib/array-linspace": "^0.0.7",
     "@stdlib/assert-has-own-property": "^0.0.7",
     "@stdlib/assert-is-array": "^0.0.7",
+    "@stdlib/assert-is-boolean": "^0.0.8",
+    "@stdlib/assert-is-function": "^0.0.8",
     "@stdlib/assert-is-integer": "^0.0.8",
     "@stdlib/assert-is-nonnegative-integer": "^0.0.7",
     "@stdlib/assert-is-nonnegative-number": "^0.0.7",
     "@stdlib/assert-is-number": "^0.0.7",
     "@stdlib/assert-is-positive-integer": "^0.0.7",
+    "@stdlib/assert-is-positive-number": "^0.0.7",
     "@stdlib/assert-is-probability": "^0.0.7",
     "@stdlib/assert-is-string": "^0.0.8",
     "@stdlib/blas-base-gaxpy": "^0.0.7",
@@ -119,10 +126,5 @@
   "funding": {
     "type": "patreon",
     "url": "https://www.patreon.com/athan"
-  },
-  "dependencies": {
-    "@stdlib/assert-is-function": "^0.0.8",
-    "@stdlib/assert-is-positive-number": "^0.0.7",
-    "save-dev": "^0.0.1-security"
   }
 }

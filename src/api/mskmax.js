@@ -34,7 +34,7 @@ var ns = require( './../namespace.js' );
 * @param {Range<number>} x - input range
 * @param {Range<integer>} mask - mask range
 * @param {string} axis - axis option name
-* @param {integer} axisValue - axis option value (where 0 indicates across columns and 1 indicates across rows; default: 1)
+* @param {integer} axisValue - axis option value (where `0` indicates across columns and `1` indicates across rows; default: `1`)
 * @returns {Range<number>} results
 *
 * @example

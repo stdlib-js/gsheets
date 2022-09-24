@@ -37,19 +37,8 @@ var ns = {};
 
 ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
 
-ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
-ns.blas = {};
-ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
-ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
-
-ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
-
-ns.filled = require( './utils/filled2d.js' );
-ns.filledBy = require( './utils/filledby2d.js' );
-ns.flattenArray = require( './utils/flatten2d.js' );
-ns.format = require( '@stdlib/string-format' );
-
 ns.assert = {};
+ns.assert.isBoolean = require( './assert/is_boolean.js' );
 ns.assert.isDefined = require( './assert/is_defined.js' );
 ns.assert.isGreaterThan = require( './assert/is_greater_than.js' );
 ns.assert.isGreaterThanEqual = require( './assert/is_greater_than_equal.js' );
@@ -71,11 +60,24 @@ ns.assert.unrecognizedOptionName = require( './assert/unrecognized_option_name.j
 ns.assert.verifyCommonPRNGArgs = require( './assert/verify_common_prng_args.js' );
 ns.assert.verifyPRNGSeed = require( './assert/verify_prng_seed.js' );
 
+ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
+ns.blas = {};
+ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
+ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
+
+ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
+
+ns.filled = require( './utils/filled2d.js' );
+ns.filledBy = require( './utils/filledby2d.js' );
+ns.flattenArray = require( './utils/flatten2d.js' );
+ns.format = require( '@stdlib/string-format' );
+
 ns.iterator2array = require( '@stdlib/array-from-iterator' );
 ns.iterSawtoothWave = require( '@stdlib/simulate-iter-sawtooth-wave' );
 
 ns.kebabcase = require( '@stdlib/string-kebabcase' ); // TODO: replace with base version
 
+ns.linspace = require( '@stdlib/array/linspace' );
 ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base version
 
 ns.map2d = require( './utils/map2d.js' );

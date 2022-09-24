@@ -31,11 +31,11 @@ var ns = require( './../namespace.js' );
 * @customfunction
 * @param {integer} N - number of values
 * @param {string} period - period option name
-* @param {integer} periodValue - period value (default: 10)
+* @param {integer} periodValue - period value (default: `10`)
 * @param {string} amplitude - amplitude option name
-* @param {number} amplitudeValue - amplitude value (default: 1)
+* @param {number} amplitudeValue - amplitude value (default: `1`)
 * @param {string} offset - phase offset option name
-* @param {integer} offsetValue - phase offset value (default: 0)
+* @param {integer} offsetValue - phase offset value (default: `0`)
 * @returns {Range<number>} simulated values
 *
 * @example

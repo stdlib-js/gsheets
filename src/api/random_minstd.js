@@ -30,8 +30,8 @@ var ns = require( './../namespace.js' );
 *
 * ## Notes
 *
-* -   Without normalization, generates numbers on the closed interval from 0 to 2147483646.
-* -   With normalization, generates numbers on the half-open interval from 0 (inclusive) to 1 (exclusive).
+* -   Without normalization, generates numbers on the closed interval `[0, 2147483646]`.
+* -   With normalization, generates numbers on the half-open interval `[0, 1)`.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
@@ -39,7 +39,7 @@ var ns = require( './../namespace.js' );
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @param {string} normalized - normalized option name
-* @param {boolean} normalizedValue - normalized option value (default: FALSE)
+* @param {boolean} normalizedValue - normalized option value (default: `FALSE`)
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example

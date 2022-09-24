@@ -34,8 +34,8 @@ var ns = require( './../namespace.js' );
 * @param {number|Range<number>} value - input value(s)
 * @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not numeric
 * @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of NaN
-* @param {*} nanValue - NaN option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
 * @param {string} pinf - option name for specifying the value to return in place of positive infinity
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity

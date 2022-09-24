@@ -35,9 +35,9 @@ var ns = require( './../namespace.js' );
 * @param {string} groups - groups option name
 * @param {Range} groupsValue - groups option values
 * @param {string} alpha - significance level option name
-* @param {number} alphaValue - significance level option value (default: 0.05)
+* @param {number} alphaValue - significance level option value (default: `0.05`)
 * @param {string} format - results format option name
-* @param {string} formatValue - results format option value (either "print" or "raw"; default: "print")
+* @param {string} formatValue - results format option value (either `"print"` or `"raw"`; default: `"print"`)
 * @returns {string|Range<string|number>} results
 *
 * @example

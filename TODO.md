@@ -4,6 +4,7 @@
 
     -   remove `@example` tags
     -   remove extended descriptions (only keep the first line)
+    -   remove backticks from descriptions
     
 -   add benchmarks
 
@@ -261,7 +262,7 @@
 -   [ ] code-point-at (???)
 -   [ ] constantcase
 -   [ ] ends-with
--   [ ] format
+-   [ ] format (idea: be able to broadcast arguments, similar to `@stdlib/array/log`)
 -   [ ] from-code-point
 -   [x] kebabcase
 -   [ ] left-pad
