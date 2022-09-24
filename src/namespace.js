@@ -50,7 +50,11 @@ ns.format = require( '@stdlib/string-format' );
 
 ns.assert = {};
 ns.assert.isDefined = require( './assert/is_defined.js' );
+ns.assert.isGreaterThan = require( './assert/is_greater_than.js' );
+ns.assert.isGreaterThanEqual = require( './assert/is_greater_than_equal.js' );
 ns.assert.isInteger = require( './assert/is_integer.js' );
+ns.assert.isLessThan = require( './assert/is_less_than.js' );
+ns.assert.isLessThanEqual = require( './assert/is_less_than_equal.js' );
 ns.assert.isNonNegativeInteger = require( './assert/is_nonnegative_integer.js' );
 ns.assert.isNonNegativeNumber = require( './assert/is_nonnegative_number.js' );
 ns.assert.isNumber = require( './assert/is_number.js' );

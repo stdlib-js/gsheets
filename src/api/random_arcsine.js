@@ -26,24 +26,24 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from a discrete uniform distribution.
+* Generates pseudorandom numbers drawn from an arcsine distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {integer} a - minimum support (inclusive)
-* @param {integer} b - maximum support (inclusive)
+* @param {number} a - minimum support
+* @param {number} b - maximum support
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
+* STDLIB_RANDOM_ARCSINE( 10, 1, 0, 10, "seed", 1234 )
 *
 * @example
-* STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
+* STDLIB_RANDOM_ARCSINE( 10, 1, 0, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, id-length
+function STDLIB_RANDOM_ARCSINE( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;
 	var s;
 	var o;
@@ -60,11 +60,11 @@ function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isInteger( a, 'Minimum support' );
-	ns.assert.isInteger( b, 'Maximum support' );
-	ns.assert.isLessThanEqual( a, b, 'Minimum support', 'maximum support' );
+	ns.assert.isNumber( a, 'Minimum support' );
+	ns.assert.isNumber( b, 'Maximum support' );
+	ns.assert.isLessThan( a, b, 'Minimum support', 'maximum support' );
 
-	rand = ns.random.discreteUniform( a, b, {
+	rand = ns.random.arcsine( a, b, {
 		'seed': s
 	});
 	return ns.filledBy( nrows, ncols, rand );
@@ -73,4 +73,4 @@ function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_DISCRETE_UNIFORM;
+module.exports = STDLIB_RANDOM_ARCSINE;

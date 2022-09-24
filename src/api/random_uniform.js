@@ -62,6 +62,7 @@ function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslin
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
 	ns.assert.isNumber( a, 'Minimum support' );
 	ns.assert.isNumber( b, 'Maximum support' );
+	ns.assert.isLessThan( a, b, 'Minimum support', 'maximum support' );
 
 	rand = ns.random.uniform( a, b, {
 		'seed': s

@@ -21,26 +21,26 @@
 // MODULES //
 
 var format = require( '@stdlib/string-format' );
-var hasSameShape = require( './base/has_same_shape.js' );
 
 
 // MAIN //
 
 /**
-* Asserts whether two input ranges are the same shape.
+* Asserts whether a value is less than another value.
 *
 * @private
-* @param {Array<Array>} x - first input range
-* @param {Array<Array>} y - second input range
-* @param {string} msg - message subject
-* @throws {TypeError} must provide ranges having the same shape
+* @param {number} x - first value
+* @param {number} y - second value
+* @param {string} subject - message subject
+* @param {string} object - message object
+* @throws {TypeError} first value must be less than the second value
 * @returns {void}
 */
-function assert( x, y, msg ) {
-	if ( hasSameShape( x, y ) ) {
+function assert( x, y, subject, object ) {
+	if ( x < y ) {
 		return;
 	}
-	throw new TypeError( format( 'invalid argument. %s must have the same shape (i.e., the same number of rows and columns).', msg ) );
+	throw new TypeError( format( 'invalid argument. %s must be less than %s. Values: [%s, %s].', subject, object, String( x ), String( y ) ) );
 }
 
 
