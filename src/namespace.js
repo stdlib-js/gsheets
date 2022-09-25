@@ -65,6 +65,8 @@ ns.blas = {};
 ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 
+ns.camelcase = require( '@stdlib/string-camelcase' ); // TODO: replace with base version
+ns.constantcase = require( '@stdlib/string-constantcase' ); // TODO: replace with base version
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
 ns.filled = require( './utils/filled2d.js' );
@@ -83,6 +85,8 @@ ns.lowercase = require( '@stdlib/string-lowercase' ); // TODO: replace with base
 ns.map2d = require( './utils/map2d.js' );
 ns.max = require( '@stdlib/stats-base-max' ).ndarray;
 ns.mskmax = require( '@stdlib/stats-base-mskmax' ).ndarray;
+
+ns.pascalcase = require( '@stdlib/string-pascalcase' ); // TODO: replace with base version
 
 ns.random = {};
 ns.random.arcsine = require( '@stdlib/random-base-arcsine' ).factory;
@@ -130,9 +134,14 @@ ns.random.uniform = require( '@stdlib/random-base-uniform' ).factory;
 
 ns.random.weibull = require( '@stdlib/random-base-weibull' ).factory;
 
+ns.snakecase = require( '@stdlib/string-snakecase' ); // TODO: replace with base version
+ns.startcase = require( '@stdlib/string-startcase' ); // TODO: replace with base version
+
 ns.tools = {};
 ns.tools.n_n = require( './utils/n_n.js' );
 ns.tools.s_s = require( './utils/s_s.js' );
+
+ns.uppercase = require( '@stdlib/string-uppercase' ); // TODO: replace with base version
 
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 

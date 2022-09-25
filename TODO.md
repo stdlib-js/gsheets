@@ -261,10 +261,10 @@
 ### string
 
 -   [ ] acronym
--   [ ] camelcase
+-   [x] camelcase
 -   [ ] capitalize
 -   [ ] code-point-at (???)
--   [ ] constantcase
+-   [x] constantcase
 -   [ ] ends-with
 -   [ ] format (idea: be able to broadcast arguments, similar to `@stdlib/array/log`)
 -   [ ] from-code-point
@@ -275,7 +275,7 @@
 -   [x] lowercase
 -   [ ] num-grapheme-clusters
 -   [ ] pad
--   [ ] pascalcase
+-   [x] pascalcase
 -   [ ] percent-encode
 -   [ ] remove-first
 -   [ ] remove-last
@@ -287,9 +287,9 @@
 -   [ ] right-pad
 -   [ ] right-trim-n
 -   [ ] right-trim
--   [ ] snakecase
+-   [x] snakecase
 -   [ ] split-grapheme-clusters
--   [ ] startcase
+-   [x] startcase
 -   [ ] starts-with
 -   [ ] substring-after-last
 -   [ ] substring-after
@@ -299,7 +299,7 @@
 -   [ ] truncate-middle
 -   [ ] truncate
 -   [ ] uncapitalize
--   [ ] uppercase
+-   [x] uppercase
 
 ### utils
 
