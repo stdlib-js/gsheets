@@ -99,8 +99,8 @@ ns.random.discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).fa
 ns.random.erlang = require( '@stdlib/random-base-erlang' ).factory;
 ns.random.exponential = require( '@stdlib/random-base-exponential' ).factory;
 ns.random.f = require( '@stdlib/random-base-f' ).factory;
-
 ns.random.frechet = require( '@stdlib/random-base-frechet' ).factory;
+
 ns.random.gamma = require( '@stdlib/random-base-gamma' ).factory;
 ns.random.geometric = require( '@stdlib/random-base-geometric' ).factory;
 ns.random.gumbel = require( '@stdlib/random-base-gumbel' ).factory;
