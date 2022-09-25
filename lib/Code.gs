@@ -521,6 +521,46 @@ function STDLIB_RANDOM_ERLANG( nrows, ncols, k, lambda, seed, seedValue ) {
 	return ns.filledBy( nrows, ncols, rand );
 }
 /**
+* Generates pseudorandom numbers drawn from a Fréchet distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} alpha - shape parameter
+* @param {number} s - scale parameter
+* @param {number} m - location parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_FRECHET( 10, 1, 2, 5, 3.33, "seed", 1234 )
+*/
+function STDLIB_RANDOM_FRECHET( nrows, ncols, alpha, s, m, seed, seedValue ) { 
+	var rand;
+	var sd;
+	var o;
+	var v;
+	var i;
+	for ( i = 5; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			sd = ns.assert.verifyPRNGSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( alpha, 'Shape parameter' );
+	ns.assert.isPositiveNumber( s, 'Scale parameter' );
+	ns.assert.isNumber( m, 'Location parameter' );
+	rand = ns.random.frechet( alpha, s, m, {
+		'seed': sd
+	});
+	return ns.filledBy( nrows, ncols, rand );
+}
+/**
 * Evaluates the Riemann zeta function as a function of a real variable.
 *
 * @customfunction
@@ -635,6 +675,44 @@ function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) {
 	ns.assert.isPositiveNumber( alpha, 'First shape parameter' );
 	ns.assert.isPositiveNumber( beta, 'Second shape parameter' );
 	rand = ns.random.beta( alpha, beta, {
+		'seed': s
+	});
+	return ns.filledBy( nrows, ncols, rand );
+}
+/**
+* Generates pseudorandom numbers drawn from an F distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} d1 - degrees of freedom
+* @param {number} d2 - degrees of freedom
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_F( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_F( nrows, ncols, d1, d2, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.assert.verifyPRNGSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( d1, 'Degrees of freedom' );
+	ns.assert.isPositiveNumber( d2, 'Degrees of freedom' );
+	rand = ns.random.f( d1, d2, {
 		'seed': s
 	});
 	return ns.filledBy( nrows, ncols, rand );
