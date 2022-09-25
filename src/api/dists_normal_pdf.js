@@ -95,7 +95,7 @@ function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma ) {
 		strides[ 2 ] = 1;
 		lens.push( v.length );
 	} else {
-		throw new TypeError( 'invalid argument. Standard deviation must be either a number or a one-dimensional range of numbers. Value: %s.', String( sigma ) );
+		throw new TypeError( 'invalid argument. Standard deviation must be either a positive number or a one-dimensional range of positive numbers. Value: %s.', String( sigma ) );
 	}
 	if ( lens.length ) {
 		N = lens[ 0 ];
