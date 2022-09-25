@@ -81,6 +81,7 @@ ns.format = require( '@stdlib/string-format' );
 ns.isArray = require( '@stdlib/assert-is-array' );
 ns.isBoolean = require( '@stdlib/assert-is-boolean' ).isPrimitive;
 ns.isNumber = require( '@stdlib/assert-is-number' ).isPrimitive;
+ns.isPositiveNumber = require( '@stdlib/assert-is-positive-number' ).isPrimitive;
 ns.isRange1d = require( './assert/base/is_range_1d.js' );
 ns.isString = require( '@stdlib/assert-is-string' ).isPrimitive;
 ns.iterator2array = require( '@stdlib/array-from-iterator' );

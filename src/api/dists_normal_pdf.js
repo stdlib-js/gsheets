@@ -86,7 +86,7 @@ function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma ) {
 	} else {
 		throw new TypeError( 'invalid argument. Mean must be either a number or a one-dimensional range of numbers. Value: %s.', String( mean ) );
 	}
-	if ( ns.isNumber( sigma ) ) {
+	if ( ns.isPositiveNumber( sigma ) ) {
 		arrays[ 2 ] = [ sigma ];
 	} else if ( ns.isRange1d( sigma ) ) {
 		flg |= ( sigma.length === 1 ) ? 1 : 2;
