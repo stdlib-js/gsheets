@@ -183,10 +183,10 @@
 -   [x] base/chisquare
 -   [x] base/cosine
 -   [x] base/discrete-uniform
--   [ ] base/erlang
--   [ ] base/exponential
--   [ ] base/f
--   [ ] base/frechet
+-   [x] base/erlang
+-   [x] base/exponential
+-   [x] base/f
+-   [x] base/frechet
 -   [ ] base/gamma
 -   [ ] base/geometric
 -   [ ] base/gumbel
