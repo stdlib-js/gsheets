@@ -42,7 +42,7 @@
 -   [ ] datespace
 -   [x] full
 -   [ ] incrspace
--   [ ] linspace
+-   [x] linspace
 -   [ ] logspace
 -   [x] ones
 -   [ ] unitspace
@@ -138,6 +138,7 @@
 ### math
 
 -   [ ] base/special/\*
+-   [x] base/special/riemann-zeta
 
 ### nlp
 
@@ -204,6 +205,9 @@
 -   [x] base/normal
 -   [ ] base/pareto-type1
 -   [ ] base/poisson
+-   [ ] base/randi
+-   [ ] base/randn
+-   [ ] base/randu
 -   [ ] base/rayleigh
 -   [ ] base/t
 -   [ ] base/triangular

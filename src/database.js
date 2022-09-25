@@ -41,13 +41,17 @@ ns.push({
 ns.push({
 	'alias': 'blas_daxpy',
 	'pkg': '@stdlib/blas/base/gaxpy',
-	'related': []
+	'related': [
+		'blas_saxpy'
+	]
 });
 
 ns.push({
 	'alias': 'blas_saxpy',
 	'pkg': '@stdlib/blas/base/gaxpy',
-	'related': []
+	'related': [
+		'blas_daxpy'
+	]
 });
 
 ns.push({
@@ -99,13 +103,19 @@ ns.push({
 ns.push({
 	'alias': 'random_minstd',
 	'pkg': '@stdlib/random/base/minstd',
-	'related': []
+	'related': [
+		'random_minstd_shuffle',
+		'random_mt19937'
+	]
 });
 
 ns.push({
 	'alias': 'random_minstd_shuffle',
 	'pkg': '@stdlib/random/base/minstd-shuffle',
-	'related': []
+	'related': [
+		'random_minstd',
+		'random_mt19937'
+	]
 });
 
 ns.push({
@@ -117,7 +127,9 @@ ns.push({
 ns.push({
 	'alias': 'random_normal',
 	'pkg': '@stdlib/random/base/normal',
-	'related': []
+	'related': [
+		'random_box_muller'
+	]
 });
 
 ns.push({

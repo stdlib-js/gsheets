@@ -35,7 +35,7 @@ var ns = require( './../namespace.js' );
 * @param {number} p - success probability
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
+* @returns {Range<integer>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_BINOMIAL( 10, 1, 20, 0.8, "seed", 1234 )

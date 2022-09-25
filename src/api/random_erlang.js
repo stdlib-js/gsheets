@@ -26,21 +26,21 @@ var ns = require( './../namespace.js' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from a discrete uniform distribution.
+* Generates pseudorandom numbers drawn from an Erlang distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {integer} a - minimum support (inclusive)
-* @param {integer} b - maximum support (inclusive)
+* @param {integer} k - shape parameter
+* @param {number} lambda - rate parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
+* STDLIB_RANDOM_ERLANG( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { // eslint-disable-line no-unused-vars, id-length
+function STDLIB_RANDOM_ERLANG( nrows, ncols, k, lambda, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;
 	var s;
 	var o;
@@ -57,11 +57,10 @@ function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isInteger( a, 'Minimum support' );
-	ns.assert.isInteger( b, 'Maximum support' );
-	ns.assert.isLessThanEqual( a, b, 'Minimum support', 'maximum support' );
+	ns.assert.isPositiveInteger( k, 'Shape parameter' );
+	ns.assert.isPositiveNumber( lambda, 'Rate parameter' );
 
-	rand = ns.random.discreteUniform( a, b, {
+	rand = ns.random.erlang( k, lambda, {
 		'seed': s
 	});
 	return ns.filledBy( nrows, ncols, rand );
@@ -70,4 +69,4 @@ function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_DISCRETE_UNIFORM;
+module.exports = STDLIB_RANDOM_ERLANG;

@@ -58,8 +58,7 @@ function STDLIB_RANDOM_COSINE( nrows, ncols, mu, s, seed, seedValue ) { // eslin
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
 	ns.assert.isNumber( mu, 'Mean' );
-	ns.assert.isNumber( s, 'Scale parameter' );
-	ns.assert.isGreaterThan( s, 0, 'Scale parameter', 'zero' );
+	ns.assert.isPositiveNumber( s, 'Scale parameter' );
 
 	rand = ns.random.cosine( mu, s, {
 		'seed': sd

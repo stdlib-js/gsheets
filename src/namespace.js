@@ -96,8 +96,8 @@ ns.random.chi = require( '@stdlib/random-base-chi' ).factory;
 ns.random.chisquare = require( '@stdlib/random-base-chisquare' ).factory;
 ns.random.cosine = require( '@stdlib/random-base-cosine' ).factory;
 ns.random.discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
-
 ns.random.erlang = require( '@stdlib/random-base-erlang' ).factory;
+
 ns.random.exponential = require( '@stdlib/random-base-exponential' ).factory;
 ns.random.f = require( '@stdlib/random-base-f' ).factory;
 ns.random.frechet = require( '@stdlib/random-base-frechet' ).factory;

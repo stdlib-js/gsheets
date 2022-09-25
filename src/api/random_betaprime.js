@@ -57,10 +57,8 @@ function STDLIB_RANDOM_BETAPRIME( nrows, ncols, alpha, beta, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( alpha, 'First shape parameter' );
-	ns.assert.isNumber( beta, 'Second shape parameter' );
-	ns.assert.isGreaterThan( alpha, 0, 'First shape parameter', 'zero' );
-	ns.assert.isGreaterThan( beta, 0, 'Second shape parameter', 'zero' );
+	ns.assert.isPositiveNumber( alpha, 'First shape parameter' );
+	ns.assert.isPositiveNumber( beta, 'Second shape parameter' );
 
 	rand = ns.random.betaprime( alpha, beta, {
 		'seed': s

@@ -57,10 +57,8 @@ function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) { // e
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( alpha, 'First shape parameter' );
-	ns.assert.isNumber( beta, 'Second shape parameter' );
-	ns.assert.isGreaterThan( alpha, 0, 'First shape parameter', 'zero' );
-	ns.assert.isGreaterThan( beta, 0, 'Second shape parameter', 'zero' );
+	ns.assert.isPositiveNumber( alpha, 'First shape parameter' );
+	ns.assert.isPositiveNumber( beta, 'Second shape parameter' );
 
 	rand = ns.random.beta( alpha, beta, {
 		'seed': s

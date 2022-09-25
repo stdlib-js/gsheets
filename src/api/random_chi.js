@@ -34,7 +34,7 @@ var ns = require( './../namespace.js' );
 * @param {number} k - degrees of freedom
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
 * STDLIB_RANDOM_CHI( 10, 1, 2, "seed", 1234 )
