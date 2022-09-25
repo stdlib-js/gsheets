@@ -21,7 +21,7 @@
 // MODULES //
 
 var format = require( '@stdlib/string-format' );
-var isRange1d = require( './base/is_range1d.js' );
+var isRange1d = require( './base/is_range_1d.js' );
 
 
 // MAIN //
