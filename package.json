@@ -105,6 +105,7 @@
     "@stdlib/simulate-iter-sawtooth-wave": "^0.0.6",
     "@stdlib/stats-bartlett-test": "^0.0.7",
     "@stdlib/stats-base-cumax": "^0.0.9",
+    "@stdlib/stats-base-dists-normal-pdf": "^0.0.7",
     "@stdlib/stats-base-max": "^0.0.9",
     "@stdlib/stats-base-mskmax": "^0.0.9",
     "@stdlib/string-camelcase": "^0.0.4",

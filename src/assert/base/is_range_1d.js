@@ -20,30 +20,24 @@
 
 // MODULES //
 
-var format = require( '@stdlib/string-format' );
-var isRange1d = require( './base/is_range1d.js' );
+var isArray = require( '@stdlib/assert-is-array' );
+var hasSingletonDimension = require( './has_singleton_dimension.js' );
 
 
 // MAIN //
 
 /**
-* Asserts whether a value is a one-dimensional range (i.e., a range consisting of either a single row or a single column).
+* Tests whether a value is a one-dimensional range (i.e., a range consisting of either a single row or a single column).
 *
 * @private
 * @param {*} value - value to test
-* @param {string} msg - message subject
-* @throws {TypeError} must provide a range
-* @throws {TypeError} must provide a range consisting of only a single row or a single column
-* @returns {void}
+* @returns {boolean} boolean indicating whether a value is a one-dimensional range
 */
-function assert( value, msg ) {
-	if ( isRange1d( value ) ) {
-		return;
-	}
-	throw new TypeError( format( 'invalid argument. %s must consist of only a single row or a single column.', msg ) );
+function isRange1d( value ) {
+	return ( isArray( value ) && hasSingletonDimension( value ) );
 }
 
 
 // EXPORTS //
 
-module.exports = assert;
+module.exports = isRange1d;

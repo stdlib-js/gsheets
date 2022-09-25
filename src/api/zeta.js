@@ -32,7 +32,7 @@ var ns = require( './../namespace.js' );
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not numeric
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
 * @param {*} nonnumericValue - non-numeric option value
 * @param {string} nan - option name for specifying the value to return in place of `NaN`
 * @param {*} nanValue - `NaN` option value

@@ -41,7 +41,7 @@ var map2d = require( './map2d.js' );
 * @private
 * @param {Function} fcn - function to apply
 * @param {Object} opts - options
-* @param {*} opts.nonnumeric - value to return in place of raising an exception when an input value is not numeric
+* @param {*} opts.nonnumeric - value to return in place of raising an exception when an input value is not a number
 * @param {*} opts.nan - value to return in place of NaN
 * @param {*} opts.pinf - value to return in place of positive infinity
 * @param {*} opts.ninf - value to return in place of negative infinity

@@ -265,7 +265,7 @@
 -   [ ] capitalize
 -   [ ] code-point-at (???)
 -   [x] constantcase
--   [ ] ends-with
+-   [ ] ends-with (`endsWith( range, value|range )` where the second range must have the same number of elements as the first range)
 -   [ ] format (idea: be able to broadcast arguments, similar to `@stdlib/array/log`)
 -   [ ] from-code-point
 -   [x] kebabcase
