@@ -146,7 +146,7 @@ function STDLIB_MSKMAX( x, mask, axis, axisValue ) { // eslint-disable-line no-u
 	sx = ( xN > 1 ) ? M : 1;
 	sm = ( mN > 1 ) ? M : 1;
 
-	// Initialize the row pointers:
+	// Initialize the column pointers:
 	ix = 0;
 	im = 0;
 
