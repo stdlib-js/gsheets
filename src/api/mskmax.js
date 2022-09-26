@@ -30,13 +30,9 @@ var ns = require( './../namespace.js' );
 /**
 * Computes the maximum value according to a mask.
 *
-* ## Notes
-*
-* -   FIXME: add broadcasting notes
-*
 * @customfunction
 * @param {Range<number>} x - input range
-* @param {Range<integer>} mask - mask range
+* @param {Range<integer>} mask - mask range (must be broadcast compatible with the input range)
 * @param {string} axis - axis option name
 * @param {integer} axisValue - axis option value (where `0` indicates across columns and `1` indicates across rows; default: `1`)
 * @returns {Range<number>} results
