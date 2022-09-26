@@ -1205,7 +1205,7 @@ function STDLIB_RANDOM_ARCSINE( nrows, ncols, a, b, seed, seedValue ) {
 *
 * ## Notes
 *
-* -
+* -   FIXME: add broadcasting notes
 *
 * @customfunction
 * @param {Range<number>} x - input range
@@ -1221,6 +1221,9 @@ function STDLIB_RANDOM_ARCSINE( nrows, ncols, a, b, seed, seedValue ) {
 * STDLIB_MSKMAX( A1:C100, D1:D100 )
 *
 * @example
+* STDLIB_MSKMAX( A1:A100, D1:F100 )
+*
+* @example
 * STDLIB_MSKMAX( A1:C100, D1:F100, "axis", 1 )
 *
 * @example
@@ -1230,20 +1233,25 @@ function STDLIB_MSKMAX( x, mask, axis, axisValue ) {
 	var sarray;
 	var smask;
 	var out;
+	var sox;
 	var som;
 	var ax;
+	var xM;
+	var xN;
+	var mM;
+	var mN;
+	var sx;
 	var sm;
-	var ox;
-	var om;
+	var ix;
+	var im;
 	var M;
 	var N;
 	var o;
 	var v;
 	var i;
-	var j;
 	ns.assert.isRange( x, 'First argument' );
 	ns.assert.isRange( mask, 'Second argument' );
-	ns.assert.isBroadcastCompatibleWith( x, mask, 'Second argument', 'first argument' );
+	ns.assert.isBroadcastCompatible( x, mask, 'First and second arguments' );
 	ax = 1;
 	for ( i = 2; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
@@ -1258,44 +1266,57 @@ function STDLIB_MSKMAX( x, mask, axis, axisValue ) {
 	out = [];
 	// Check for the simple case where we're provided a range in row-major order and asked to operate across columns...
 	if ( ax === 0 ) {
-		M = x.length;
-		N = x[ 0 ].length;
-		// Check whether we need to broadcast the mask array...
-		if ( mask.length === 1 ) {
-			// Set the mask "stride" to zero to always use the same mask array:
-			som = 0;
-		} else {
-			som = 1;
-		}
-		j = 0;
+		// Retrieve input array dimensions:
+		xM = x.length;
+		xN = x[ 0 ].length;
+		mM = mask.length;
+		mN = mask[ 0 ].length;
+		// Determine the broadcasted dimensions:
+		M = ( xM > mM ) ? xM : mM;
+		N = ( xN > mN ) ? xN : mN;
+		// Set the "offset" strides (i.e., the increment for moving to the next row):
+		sox = ( xM > 1 ) ? 1 : 0;
+		som = ( mM > 1 ) ? 1 : 0;
+		// Set the array element strides (i.e., the increment for moving to the next column):
+		sx = ( xN > 1 ) ? 1 : 0;
+		sm = ( mN > 1 ) ? 1 : 0;
+		// Initialize the row pointers:
+		ix = 0;
+		im = 0;
+		// Iterate over columns...
 		for ( i = 0; i < M; i++ ) {
-			out.push( ns.mskmax( N, x[ i ], 1, 0, mask[ j ], 1, 0 ) );
-			j += som;
+			out.push( ns.mskmax( N, x[ ix ], sx, 0, mask[ im ], sm, 0 ) );
+			ix += sox;
+			im += som;
 		}
 		return out;
 	}
 	// More complex case where we're provided a range in row-major order, but asked to operate across rows...
-	M = x[ 0 ].length; // number of columns
-	N = x.length;      // number of rows
+	// Retrieve input array dimensions:
+	xM = x[ 0 ].length;    // number of columns
+	xN = x.length;         // number of rows
+	mM = mask[ 0 ].length;
+	mN = mask.length;
+	// Determine the broadcasted dimensions:
+	M = ( xM > mM ) ? xM : mM;
+	N = ( xN > mN ) ? xN : mN;
+	// Set the "offset" strides (i.e., the increment for moving to the next column):
+	sox = ( xM > 1 ) ? 1 : 0;
+	som = ( mM > 1 ) ? 1 : 0;
+	// Set the array element strides (i.e., the increment for moving to the next row):
+	sx = ( xN > 1 ) ? M : 1;
+	sm = ( mN > 1 ) ? M : 1;
+	// Initialize the row pointers:
+	ix = 0;
+	im = 0;
 	// Flatten the input arrays to strided arrays in row-major order:
 	sarray = ns.flattenArray( x );
 	smask = ns.flattenArray( mask );
-	// Check whether we need to broadcast the mask array...
-	if ( mask[ 0 ].length === 1 ) {
-		sm = 1;  // mask array stride
-		som = 0; // offset stride for mask array
-	} else {
-		sm = M;  // multiple columns, so need to specify an increment to index column values
-		som = 1; // multiple columns, so need to specify an increment to locate the first indexed value for a column
-	}
-	// Set the offsets which define the pointers to the first indexed element in a column:
-	ox = 0;
-	om = 0;
 	// Iterate over rows...
 	for ( i = 0; i < M; i++ ) {
-		out.push( ns.mskmax( N, sarray, M, ox, smask, sm, om ) );
-		ox += 1;
-		om += som;
+		out.push( ns.mskmax( N, sarray, sx, ix, smask, sm, im ) );
+		ix += sox;
+		im += som;
 	}
 	return [ out ];
 }
