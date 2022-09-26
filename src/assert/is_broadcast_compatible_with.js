@@ -21,26 +21,27 @@
 // MODULES //
 
 var format = require( '@stdlib/string-format' );
-var isBroadcastCompatible = require( './base/is_broadcast_compatible.js' );
+var isBroadcastCompatible = require( './base/is_broadcast_compatible_with.js' );
 
 
 // MAIN //
 
 /**
-* Asserts whether two input ranges are broadcast compatible.
+* Asserts whether a second input range is broadcast compatible with a provided input range.
 *
 * @private
-* @param {Array<Array>} x - first input range
+* @param {Array<Array>} x - first input range (i.e., the range to test against)
 * @param {Array<Array>} y - second input range
-* @param {string} msg - message subject
-* @throws {TypeError} must provide broadcast compatible ranges
+* @param {string} subject - message subject
+* @param {string} object - message object
+* @throws {TypeError} must provide a broadcast compatible range
 * @returns {void}
 */
-function assert( x, y, msg ) {
+function assert( x, y, subject, object ) {
 	if ( isBroadcastCompatible( x, y ) ) {
 		return;
 	}
-	throw new TypeError( format( 'invalid argument. %s must be broadcast compatible.', msg ) );
+	throw new TypeError( format( 'invalid argument. %s must be broadcast compatible with %s.', subject, object ) );
 }
 
 

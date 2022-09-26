@@ -40,6 +40,7 @@ ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
 ns.assert = {};
 ns.assert.isBoolean = require( './assert/is_boolean.js' );
 ns.assert.isBroadcastCompatible = require( './assert/is_broadcast_compatible.js' );
+ns.assert.isBroadcastCompatibleWith = require( './assert/is_broadcast_compatible_with.js' );
 ns.assert.isDefined = require( './assert/is_defined.js' );
 ns.assert.isGreaterThan = require( './assert/is_greater_than.js' );
 ns.assert.isGreaterThanEqual = require( './assert/is_greater_than_equal.js' );
