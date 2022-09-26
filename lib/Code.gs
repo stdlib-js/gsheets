@@ -1306,7 +1306,7 @@ function STDLIB_MSKMAX( x, mask, axis, axisValue ) {
 	// Set the array element strides (i.e., the increment for moving to the next row):
 	sx = ( xN > 1 ) ? M : 1;
 	sm = ( mN > 1 ) ? M : 1;
-	// Initialize the row pointers:
+	// Initialize the column pointers:
 	ix = 0;
 	im = 0;
 	// Flatten the input arrays to strided arrays in row-major order:
