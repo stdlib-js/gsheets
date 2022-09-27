@@ -117,6 +117,7 @@
     "@stdlib/string-pascalcase": "^0.0.2",
     "@stdlib/string-snakecase": "^0.0.2",
     "@stdlib/string-startcase": "^0.0.9",
+    "@stdlib/string-uncapitalize": "^0.0.9",
     "@stdlib/string-uppercase": "^0.0.9",
     "esbuild": "^0.14.38",
     "tap-spec": "^5.0.0",

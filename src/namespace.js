@@ -154,6 +154,7 @@ ns.tools = {};
 ns.tools.n_n = require( './utils/n_n.js' );
 ns.tools.s_s = require( './utils/s_s.js' );
 
+ns.uncapitalize = require( '@stdlib/string-uncapitalize' ); // TODO: replace with base version
 ns.uppercase = require( '@stdlib/string-uppercase' ); // TODO: replace with base version
 
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
