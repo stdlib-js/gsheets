@@ -77,6 +77,7 @@ function apply( fcn, opts ) {
 		K = values.length;
 		out = [];
 		for ( i = 0; i < M; i++ ) {
+			// Iterate over columns...
 			tmp = [];
 			for ( j = 0; j < N; j++ ) {
 				for ( k = 0; k < K; k++ ) {
@@ -84,6 +85,10 @@ function apply( fcn, opts ) {
 					offsets[ k ] += strides[ k ][ 1 ];
 				}
 				tmp.push( wrapper.apply( null, values ) );
+			}
+			// Set the offsets to point to the first element of the next row:
+			for ( k = 0; k < K; k++ ) {
+				offsets[ k ] = strides[ k ][ 0 ];
 			}
 			out.push( tmp );
 		}
