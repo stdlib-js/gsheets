@@ -68,6 +68,7 @@ ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 
 ns.camelcase = require( '@stdlib/string-camelcase' ); // TODO: replace with base version
+ns.capitalize = require( '@stdlib/string-capitalize' ); // TODO: replace with base version
 ns.constantcase = require( '@stdlib/string-constantcase' ); // TODO: replace with base version
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
