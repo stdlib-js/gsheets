@@ -63,9 +63,12 @@ ns.assert.verifyCommonPRNGArgs = require( './assert/verify_common_prng_args.js' 
 ns.assert.verifyPRNGSeed = require( './assert/verify_prng_seed.js' );
 
 ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
+
 ns.blas = {};
 ns.blas.daxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
 ns.blas.saxpy = require( '@stdlib/blas-base-gaxpy' ).ndarray;
+
+ns.broadcast = require( './utils/broadcast.js' );
 
 ns.camelcase = require( '@stdlib/string-camelcase' ); // TODO: replace with base version
 ns.capitalize = require( '@stdlib/string-capitalize' ); // TODO: replace with base version
@@ -152,6 +155,7 @@ ns.startcase = require( '@stdlib/string-startcase' ); // TODO: replace with base
 
 ns.tools = {};
 ns.tools.n_n = require( './utils/n_n.js' );
+ns.tools.nnn_n = require( './utils/nnn_n.js' );
 ns.tools.s_s = require( './utils/s_s.js' );
 
 ns.uncapitalize = require( '@stdlib/string-uncapitalize' ); // TODO: replace with base version

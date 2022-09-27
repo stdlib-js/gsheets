@@ -262,10 +262,10 @@
 
 -   [ ] acronym
 -   [x] camelcase
--   [ ] capitalize
+-   [x] capitalize
 -   [ ] code-point-at (???)
 -   [x] constantcase
--   [ ] ends-with (`endsWith( range, value|range )` where the second range must have the same number of elements as the first range)
+-   [ ] ends-with (`endsWith( value|range, value|range )` with support for broadcasting, which would allow, e.g., testing multiple values against an input range)
 -   [ ] format (idea: be able to broadcast arguments, similar to `@stdlib/array/log`)
 -   [ ] from-code-point
 -   [x] kebabcase
@@ -298,7 +298,7 @@
 -   [ ] trim
 -   [ ] truncate-middle
 -   [ ] truncate
--   [ ] uncapitalize
+-   [x] uncapitalize
 -   [x] uppercase
 
 ### utils

@@ -69,7 +69,7 @@ function apply( fcn, opts ) {
 	*
 	* @private
 	* @param {*} value - input value
-	* @throws {TypeError} must provide a number
+	* @throws {TypeError} must provide a number or a range of numbers
 	* @returns {number} result
 	*/
 	function wrapper( value ) {
