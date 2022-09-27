@@ -104,7 +104,7 @@ function broadcast( values, dtypes, msgs ) {
 		if ( d[ 0 ] === 1 ) {
 			s.push( 0 );
 		} else {
-			s.push( shape[ 1 ] );
+			s.push( d[ 1 ] );
 		}
 		if ( d[ 1 ] === 1 ) {
 			s.push( 0 );
