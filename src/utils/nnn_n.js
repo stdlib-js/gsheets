@@ -47,9 +47,9 @@ function apply( fcn, opts ) {
 	* Applies a ternary function.
 	*
 	* @private
-	* @param {Array<Array>} arrays - input arrays
-	* @param {Array<Array>} shape - output array
-	* @param {Array<Array>} strides - array strides
+	* @param {Array<Array<number>>} arrays - input (strided) arrays
+	* @param {Array<integer>} shape - output array shape
+	* @param {Array<Array<integer>>} strides - array strides
 	* @returns {Array<Array<number>>} results
 	*/
 	function ternary( arrays, shape, strides ) {
