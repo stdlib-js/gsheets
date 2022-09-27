@@ -75,10 +75,10 @@ function broadcast( values, dtypes, msgs ) {
 		dt = dtypes[ i ];
 		f = assert[ dt ];
 		if ( f( v ) ) {
-			arrays.push( [ [ v ] ] );
+			arrays.push( [ v ] );
 			shapes.push( [ 1, 1 ] );
 		} else if ( isArray( v ) ) {
-			arrays.push( v );
+			arrays.push( flatten( v ) );
 			shapes.push( [ v.length, v[ 0 ].length ] );
 		} else {
 			throw new TypeError( format( 'invalid argument. %s must be either a %s or a range of %ss. Value: %s.', msgs[ i ], dt, dt, String( v ) ) );

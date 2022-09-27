@@ -106,7 +106,7 @@ function apply( fcn, opts ) {
 		var v;
 		if ( !isNumber( x1 ) ) {
 			if ( opts.nonnumeric === void 0 ) {
-				throw new TypeError( format( 'invalid argument. First argument must be a number or a range of numbers. Value: %s.', String( typeof x1 ) ) );
+				throw new TypeError( format( 'invalid argument. First argument must be a number or a range of numbers. Value: %s.', String( x1 ) ) );
 			}
 			return opts.nonnumeric;
 		}
