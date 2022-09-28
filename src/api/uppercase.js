@@ -16,6 +16,8 @@
 * limitations under the License.
 */
 
+/* This is a generated file. Do not edit directly. */
+
 /* eslint-disable stdlib/jsdoc-doctest-marker, stdlib/jsdoc-doctest-quote-props */
 
 'use strict';
