@@ -1,0 +1,132 @@
+[
+  {
+    "alias": "camelcase",
+    "pkg": "string-camelcase",
+    "desc": "Converts a string to camel case",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "capitalize",
+    "pkg": "string-capitalize",
+    "desc": "Capitalizes the first character of a string",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "constantcase",
+    "pkg": "string-constantcase",
+    "desc": "Converts a string to constant case",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "kebabcase",
+    "pkg": "string-kebabcase",
+    "desc": "Converts a string to kebab case",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "lowercase",
+    "pkg": "string-lowercase",
+    "desc": "Converts a string to lowercase",
+    "values": [
+      "Foo Bar",
+      "foo bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "pascalcase",
+    "pkg": "string-pascalcase",
+    "desc": "Converts a string to Pascal case",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "snakecase",
+    "pkg": "string-snakecase",
+    "desc": "Converts a string to snake case",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "startcase",
+    "pkg": "string-startcase",
+    "desc": "Converts a string to start case",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "uncapitalize",
+    "pkg": "string-uncapitalize",
+    "desc": "Lowercases the first character of a string",
+    "values": [
+      "Foo Bar",
+      "foo bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  },
+  {
+    "alias": "uppercase",
+    "pkg": "string-uppercase",
+    "desc": "Converts a string to uppercase",
+    "values": [
+      "foo bar",
+      "Foo Bar",
+      "foo_bar",
+      "fooBar",
+      "FooBar",
+      "FOO_BAR"
+    ]
+  }
+]
