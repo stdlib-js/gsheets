@@ -77,6 +77,7 @@ ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
 ns.dists = {};
 ns.dists.normal = {};
+ns.dists.normal.entropy = require( '@stdlib/stats-base-dists-normal-entropy' );
 ns.dists.normal.pdf = require( '@stdlib/stats-base-dists-normal-pdf' );
 
 ns.filled = require( './utils/filled2d.js' );
