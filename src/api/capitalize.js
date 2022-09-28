@@ -49,6 +49,9 @@ var __STDLIB_CAPITALIZE = ns.tools.s_s( ns.capitalize ); // eslint-disable-line 
 * STDLIB_CAPITALIZE( A2:D100 )
 */
 function STDLIB_CAPITALIZE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_CAPITALIZE );
+	}
 	return __STDLIB_CAPITALIZE( value );
 }
 

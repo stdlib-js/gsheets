@@ -49,6 +49,9 @@ var __STDLIB_SNAKECASE = ns.tools.s_s( ns.snakecase ); // eslint-disable-line no
 * STDLIB_SNAKECASE( A2:D100 )
 */
 function STDLIB_SNAKECASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_SNAKECASE );
+	}
 	return __STDLIB_SNAKECASE( value );
 }
 

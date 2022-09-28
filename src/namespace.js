@@ -154,9 +154,13 @@ ns.snakecase = require( '@stdlib/string-snakecase' ); // TODO: replace with base
 ns.startcase = require( '@stdlib/string-startcase' ); // TODO: replace with base version
 
 ns.tools = {};
-ns.tools.n_n = require( './utils/n_n.js' );
-ns.tools.nnn_n = require( './utils/nnn_n.js' );
+ns.tools.binary2d = require( './utils/binary2d.js' );
+ns.tools.d_d = require( './utils/d_d.js' );
+ns.tools.dd_d = require( './utils/dd_d.js' );
+ns.tools.ddd_d = require( './utils/ddd_d.js' );
 ns.tools.s_s = require( './utils/s_s.js' );
+ns.tools.ternary2d = require( './utils/ternary2d.js' );
+ns.tools.unary2d = require( './utils/unary2d.js' );
 
 ns.uncapitalize = require( '@stdlib/string-uncapitalize' ); // TODO: replace with base version
 ns.uppercase = require( '@stdlib/string-uppercase' ); // TODO: replace with base version

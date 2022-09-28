@@ -49,6 +49,9 @@ var __STDLIB_STARTCASE = ns.tools.s_s( ns.startcase ); // eslint-disable-line no
 * STDLIB_STARTCASE( A2:D100 )
 */
 function STDLIB_STARTCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_STARTCASE );
+	}
 	return __STDLIB_STARTCASE( value );
 }
 

@@ -49,6 +49,9 @@ var __STDLIB_LOWERCASE = ns.tools.s_s( ns.lowercase ); // eslint-disable-line no
 * STDLIB_LOWERCASE( A2:D100 )
 */
 function STDLIB_LOWERCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_LOWERCASE );
+	}
 	return __STDLIB_LOWERCASE( value );
 }
 

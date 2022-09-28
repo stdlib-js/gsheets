@@ -49,6 +49,9 @@ var __STDLIB_UPPERCASE = ns.tools.s_s( ns.uppercase ); // eslint-disable-line no
 * STDLIB_UPPERCASE( A2:D100 )
 */
 function STDLIB_UPPERCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_UPPERCASE );
+	}
 	return __STDLIB_UPPERCASE( value );
 }
 

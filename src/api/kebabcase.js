@@ -49,6 +49,9 @@ var __STDLIB_KEBABCASE = ns.tools.s_s( ns.kebabcase ); // eslint-disable-line no
 * STDLIB_KEBABCASE( A2:D100 )
 */
 function STDLIB_KEBABCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_KEBABCASE );
+	}
 	return __STDLIB_KEBABCASE( value );
 }
 

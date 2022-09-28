@@ -49,6 +49,9 @@ var __STDLIB_CAMELCASE = ns.tools.s_s( ns.camelcase ); // eslint-disable-line no
 * STDLIB_CAMELCASE( A2:D100 )
 */
 function STDLIB_CAMELCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_CAMELCASE );
+	}
 	return __STDLIB_CAMELCASE( value );
 }
 

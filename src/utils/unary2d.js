@@ -20,39 +20,24 @@
 
 // MODULES //
 
-var isString = require( '@stdlib/assert-is-string' ).isPrimitive;
-var format = require( '@stdlib/string-format' );
+var map2d = require( './map2d.js' );
 
 
 // MAIN //
 
 /**
-* Wraps a unary function which accepts two strings and returns a string.
+* Applies a unary function to a two-dimensional input array.
 *
 * @private
+* @param {Array<Array<number>>} array - input array
 * @param {Function} fcn - function to apply
-* @returns {Function} wrapper
+* @returns {Array<Array<number>>} results
 */
-function wrap( fcn ) {
-	return wrapper;
-
-	/**
-	* Invokes a unary function.
-	*
-	* @private
-	* @param {*} value - input value
-	* @throws {TypeError} first argument must be a string or a range of strings
-	* @returns {string} result
-	*/
-	function wrapper( value ) {
-		if ( !isString( value ) ) {
-			throw new TypeError( format( 'invalid argument. First argument must be a string or a range of strings. Value: %s.', String( value ) ) );
-		}
-		return fcn( value );
-	}
+function unary2d( array, fcn ) {
+	return map2d( array, fcn );
 }
 
 
 // EXPORTS //
 
-module.exports = wrap;
+module.exports = unary2d;

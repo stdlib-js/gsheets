@@ -56,6 +56,7 @@ var ns = require( './../namespace.js' );
 */
 function STDLIB_ZETA( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
 	var opts;
+	var f;
 	var o;
 	var i;
 
@@ -73,7 +74,11 @@ function STDLIB_ZETA( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	return ns.tools.n_n( ns.zeta, opts )( value );
+	f = ns.tools.d_d( ns.zeta, opts );
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, f );
+	}
+	return f( value );
 }
 
 

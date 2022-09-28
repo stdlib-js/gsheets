@@ -49,6 +49,9 @@ var __STDLIB_PASCALCASE = ns.tools.s_s( ns.pascalcase ); // eslint-disable-line 
 * STDLIB_PASCALCASE( A2:D100 )
 */
 function STDLIB_PASCALCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		return ns.tools.unary2d( value, __STDLIB_PASCALCASE );
+	}
 	return __STDLIB_PASCALCASE( value );
 }
 

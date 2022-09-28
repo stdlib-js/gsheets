@@ -65,6 +65,7 @@ var __STDLIB_DISTS_NORMAL_PDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars, max-len, max-params
 	var arrays;
 	var opts;
+	var f;
 	var o;
 	var i;
 
@@ -82,10 +83,9 @@ function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma, nonnumeric, nonnumericValue, nan
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	// Broadcast the input ranges to a single shape:
 	arrays = ns.broadcast( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_PDF_DTYPES, __STDLIB_DISTS_NORMAL_PDF_MSGS ); // eslint-disable-line max-len
-
-	return ns.tools.nnn_n( ns.dists.normal.pdf, opts )( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ] ); // eslint-disable-line max-len
+	f = ns.tools.ddd_d( ns.dists.normal.pdf, opts );
+	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
 }
 
 
