@@ -21,43 +21,85 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var ref = require( '@stdlib/string-uppercase' );
+var ref = require( '@stdlib/string-pascalcase' );
 var isArray = require( '@stdlib/assert-is-array' );
-var flatten2d = require( './../src/utils/flatten2d.js' );
-var uppercase = require( './../src/api/uppercase.js' );
+var flatten2d = require( './../../src/utils/flatten2d.js' );
+var pascalcase = require( './../../src/api/pascalcase.js' );
 
 
 // TESTS //
 
 tape( 'main export is a function', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof uppercase, 'function', 'main export is a function' );
+	t.strictEqual( typeof pascalcase, 'function', 'main export is a function' );
 	t.end();
 });
 
-tape( 'the function converts a string to uppercase', function test( t ) {
+tape( 'the function throws an error if not provided a string (primitive)', function test( t ) {
+	var values;
+	var i;
+
+	values = [
+		1,
+		3.14,
+		true,
+		false
+	];
+
+	for ( i = 0; i < values.length; i++ ) {
+		t.throws( badValue( values[ i ] ), Error, 'throws an error when provided '+values[ i ] );
+	}
+	t.end();
+
+	function badValue( value ) {
+		return function badValue() {
+			pascalcase( value );
+		}
+	}
+});
+
+tape( 'the function throws an error if not provided a string (nested array)', function test( t ) {
+	var values;
+	var i;
+
+	values = [
+		1,
+		3.14,
+		true,
+		false
+	];
+
+	for ( i = 0; i < values.length; i++ ) {
+		t.throws( badValue( values[ i ] ), Error, 'throws an error when provided '+values[ i ] );
+	}
+	t.end();
+
+	function badValue( value ) {
+		return function badValue() {
+			pascalcase( [ [ value ] ] );
+		}
+	}
+});
+
+tape( 'the function converts a string to Pascal case (primitive)', function test( t ) {
 	var expected;
 	var actual;
 	var values;
 	var v;
 	var i;
 
-	values = [
-		'beep',
-		'boop',
-		'foo',
-		'bar'
-	];
+	values = [ 'foo bar', 'Foo Bar', 'foo_bar', 'fooBar' ];
+
 	for ( i = 0; i < values.length; i++ ) {
 		v = values[ i ];
-		actual = uppercase( v );
+		actual = pascalcase( v );
 		expected = ref( v );
 		t.strictEqual( actual, expected, 'returns expected value when provided '+v );
 	}
 	t.end();
 });
 
-tape( 'the function converts a nested array of strings to uppercase', function test( t ) {
+tape( 'the function converts a string to Pascal case (nested array)', function test( t ) {
 	var expected;
 	var actual;
 	var values;
@@ -67,12 +109,7 @@ tape( 'the function converts a nested array of strings to uppercase', function t
 	var i;
 	var j;
 
-	values = [
-		'beep',
-		'boop',
-		'foo',
-		'bar'
-	];
+	values = [ 'foo bar', 'Foo Bar', 'foo_bar', 'fooBar' ];
 
 	arr = [];
 	expected = [];
@@ -85,7 +122,7 @@ tape( 'the function converts a nested array of strings to uppercase', function t
 		}
 		arr.push( tmp );
 	}
-	actual = uppercase( arr );
+	actual = pascalcase( arr );
 
 	t.strictEqual( isArray( actual ), true, 'returns expected value' );
 	t.strictEqual( isArray( actual[ 0 ] ), true, 'returns expected value' );
