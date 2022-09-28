@@ -27,7 +27,7 @@ var ns = require( './../namespace.js' );
 
 // VARIABLES //
 
-var __STDLIB_LOWERCASE = ns.tools.s_s( ns.lowercase ); // eslint-disable-line no-underscore-dangle
+var __STDLIB_LOWERCASE = ns.tools.s_o( ns.lowercase ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //

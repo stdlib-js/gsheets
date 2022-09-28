@@ -27,7 +27,7 @@ var format = require( '@stdlib/string-format' );
 // MAIN //
 
 /**
-* Wraps a unary function which accepts two strings and returns a string.
+* Wraps a unary function which accepts a string.
 *
 * @private
 * @param {Function} fcn - function to apply

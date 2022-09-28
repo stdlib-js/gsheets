@@ -27,7 +27,7 @@ var ns = require( './../namespace.js' );
 
 // VARIABLES //
 
-var __STDLIB_UNCAPITALIZE = ns.tools.s_s( ns.uncapitalize ); // eslint-disable-line no-underscore-dangle
+var __STDLIB_UNCAPITALIZE = ns.tools.s_o( ns.uncapitalize ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //

@@ -56,6 +56,13 @@
     -   tensor3d2range
         -   tensor to compact representation
 
+-   data types
+
+    -   d: float64/number
+    -   s: string
+    -   x: boolean
+    -   o: generic/any
+    -   z: complex128/complex
 
 
 ## Packages
