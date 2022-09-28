@@ -54,14 +54,14 @@ var __STDLIB_KEBABCASE = ns.tools.s_o( ns.kebabcase );
 * Converts a string to kebab case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_KEBABCASE( "FooBar" )
+* STDLIB_KEBABCASE( "foo bar" )
 *
 * @example
-* STDLIB_KEBABCASE( A2:A )
+* STDLIB_KEBABCASE( A2:A100 )
 *
 * @example
 * STDLIB_KEBABCASE( A2:D100 )
@@ -445,14 +445,14 @@ var __STDLIB_PASCALCASE = ns.tools.s_o( ns.pascalcase );
 * Converts a string to Pascal case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_PASCALCASE( "foo_bar" )
+* STDLIB_PASCALCASE( "foo bar" )
 *
 * @example
-* STDLIB_PASCALCASE( A2:A )
+* STDLIB_PASCALCASE( A2:A100 )
 *
 * @example
 * STDLIB_PASCALCASE( A2:D100 )
@@ -643,17 +643,17 @@ function STDLIB_RANDOM_FRECHET( nrows, ncols, alpha, s, m, seed, seedValue ) {
 }
 var __STDLIB_UNCAPITALIZE = ns.tools.s_o( ns.uncapitalize ); 
 /**
-* Lowercases the first character in a string.
+* Lowercases the first character of a string.
 *
 * @customfunction
-* @param {string|Range<string>} value - input string(s)
-* @returns {string|Range<string>} transformed string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_UNCAPITALIZE( "Beep boop" )
+* STDLIB_UNCAPITALIZE( "Foo Bar" )
 *
 * @example
-* STDLIB_UNCAPITALIZE( A2:A )
+* STDLIB_UNCAPITALIZE( A2:A100 )
 *
 * @example
 * STDLIB_UNCAPITALIZE( A2:D100 )
@@ -721,14 +721,14 @@ var __STDLIB_STARTCASE = ns.tools.s_o( ns.startcase );
 * Converts a string to start case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_STARTCASE( "foo_bar" )
+* STDLIB_STARTCASE( "foo bar" )
 *
 * @example
-* STDLIB_STARTCASE( A2:A )
+* STDLIB_STARTCASE( A2:A100 )
 *
 * @example
 * STDLIB_STARTCASE( A2:D100 )
@@ -1001,14 +1001,14 @@ var __STDLIB_LOWERCASE = ns.tools.s_o( ns.lowercase );
 * Converts a string to lowercase.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_LOWERCASE( "FooBar" )
+* STDLIB_LOWERCASE( "Foo Bar" )
 *
 * @example
-* STDLIB_LOWERCASE( A2:A )
+* STDLIB_LOWERCASE( A2:A100 )
 *
 * @example
 * STDLIB_LOWERCASE( A2:D100 )
@@ -1055,17 +1055,17 @@ function STDLIB_RANDOM_BOX_MULLER( nrows, ncols, seed, seedValue ) {
 }
 var __STDLIB_CAPITALIZE = ns.tools.s_o( ns.capitalize ); 
 /**
-* Capitalizes the first character in a string.
+* Capitalizes the first character of a string.
 *
 * @customfunction
-* @param {string|Range<string>} value - input string(s)
-* @returns {string|Range<string>} transformed string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CAPITALIZE( "beep boop" )
+* STDLIB_CAPITALIZE( "foo bar" )
 *
 * @example
-* STDLIB_CAPITALIZE( A2:A )
+* STDLIB_CAPITALIZE( A2:A100 )
 *
 * @example
 * STDLIB_CAPITALIZE( A2:D100 )
@@ -1117,14 +1117,14 @@ var __STDLIB_CONSTANTCASE = ns.tools.s_o( ns.constantcase );
 * Converts a string to constant case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CONSTANTCASE( "FooBar" )
+* STDLIB_CONSTANTCASE( "foo bar" )
 *
 * @example
-* STDLIB_CONSTANTCASE( A2:A )
+* STDLIB_CONSTANTCASE( A2:A100 )
 *
 * @example
 * STDLIB_CONSTANTCASE( A2:D100 )
@@ -1518,14 +1518,14 @@ var __STDLIB_CAMELCASE = ns.tools.s_o( ns.camelcase );
 * Converts a string to camel case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CAMELCASE( "foo_bar" )
+* STDLIB_CAMELCASE( "foo bar" )
 *
 * @example
-* STDLIB_CAMELCASE( A2:A )
+* STDLIB_CAMELCASE( A2:A100 )
 *
 * @example
 * STDLIB_CAMELCASE( A2:D100 )
@@ -1707,14 +1707,14 @@ var __STDLIB_SNAKECASE = ns.tools.s_o( ns.snakecase );
 * Converts a string to snake case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_SNAKECASE( "FooBar" )
+* STDLIB_SNAKECASE( "foo bar" )
 *
 * @example
-* STDLIB_SNAKECASE( A2:A )
+* STDLIB_SNAKECASE( A2:A100 )
 *
 * @example
 * STDLIB_SNAKECASE( A2:D100 )
@@ -1730,14 +1730,14 @@ var __STDLIB_UPPERCASE = ns.tools.s_o( ns.uppercase );
 * Converts a string to uppercase.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_UPPERCASE( "FooBar" )
+* STDLIB_UPPERCASE( "foo bar" )
 *
 * @example
-* STDLIB_UPPERCASE( A2:A )
+* STDLIB_UPPERCASE( A2:A100 )
 *
 * @example
 * STDLIB_UPPERCASE( A2:D100 )
