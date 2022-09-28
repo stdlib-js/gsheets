@@ -45,10 +45,10 @@ ns.erlang = require( '@stdlib/random-base-erlang' ).factory;
 ns.exponential = require( '@stdlib/random-base-exponential' ).factory;
 ns.f = require( '@stdlib/random-base-f' ).factory;
 ns.frechet = require( '@stdlib/random-base-frechet' ).factory;
-
 ns.gamma = require( '@stdlib/random-base-gamma' ).factory;
 ns.geometric = require( '@stdlib/random-base-geometric' ).factory;
 ns.gumbel = require( '@stdlib/random-base-gumbel' ).factory;
+
 ns.hypergeometric = require( '@stdlib/random-base-hypergeometric' ).factory;
 ns.improvedZiggurat = require( '@stdlib/random-base-improved-ziggurat' ).factory;
 ns.invgamma = require( '@stdlib/random-base-invgamma' ).factory;
@@ -72,7 +72,6 @@ ns.t = require( '@stdlib/random-base-t' ).factory;
 ns.triangular = require( '@stdlib/random-base-triangular' ).factory;
 
 ns.uniform = require( '@stdlib/random-base-uniform' ).factory;
-
 ns.weibull = require( '@stdlib/random-base-weibull' ).factory;
 
 
