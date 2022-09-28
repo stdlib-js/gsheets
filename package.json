@@ -276,6 +276,7 @@
     "@stdlib/string-uncapitalize": "^0.0.9",
     "@stdlib/string-uppercase": "^0.0.9",
     "@stdlib/utils-dirname": "^0.0.8",
+    "@stdlib/utils-keys": "^0.0.7",
     "@stdlib/utils-parse-json": "^0.0.8",
     "@stdlib/utils-regexp-from-string": "^0.0.9",
     "esbuild": "^0.14.38",

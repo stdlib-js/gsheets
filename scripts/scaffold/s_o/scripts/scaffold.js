@@ -22,8 +22,33 @@
 
 // MODULES //
 
+var resolve = require( 'path' ).resolve;
+var readFile = require( '@stdlib/fs-read-file' ).sync;
+var writeFile = require( '@stdlib/fs-write-file' ).sync;
+var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' ).sync;
+var replace = require( '@stdlib/string-replace' );
+var dirname = require( '@stdlib/utils-dirname' );
 var scaffold = require( './../lib' );
 var DATA = require( './data.json' );
+
+
+// VARIABLES //
+
+var OPTS = {
+	'encoding': 'utf8'
+};
+
+var ROOT_DIR = dirname( resolveParentPath( 'package.json', {
+	'dir': __dirname
+}));
+
+var DATA_DIR = resolve( __dirname, '..', 'data' );
+var NS_TEMPLATE = readFile( resolve( DATA_DIR, 'namespace__js.txt' ), OPTS );
+
+var DEST_DIR = resolve( ROOT_DIR, 'src', 'namespace', 's_o' );
+
+var CURRENT_YEAR = ( new Date() ).getFullYear().toString();
+var COPYRIGHT = 'The Stdlib Authors';
 
 
 // MAIN //
@@ -34,11 +59,21 @@ var DATA = require( './data.json' );
 * @private
 */
 function main() {
+	var file;
+	var ns;
+	var d;
 	var i;
 
+	// Generate the API files...
+	ns = [];
 	for ( i = 0; i < DATA.length; i++ ) {
-		scaffold( DATA[ i ] );
+		d = DATA[ i ];
+		scaffold( d );
+		ns.push( 'ns.' + d.alias + ' = require( \'@stdlib/' + replace( d.pkg, '/', '-' ) + '\' );'  ); // FIXME: no need to use replace once we install `@stdlib/stdlib` instead of standalone pkgs
 	}
+	// Generate the namespace...
+	file = replace( NS_TEMPLATE, '{{NAMESPACE}}', ns.join( '\n' ) );
+	writeFile( resolve( DEST_DIR, 'index.js' ), file, OPTS );
 }
 
 main();
