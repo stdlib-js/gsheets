@@ -32,6 +32,29 @@
     -   product support
     -   auto-migration functionality whenever we update APIs (e.g., rename `STDLIB_FOO` to `STDLIB_BAR`)
     -   the editor menu could be the paid product (user has to sign-up and login for help, search, tutorials, etc; this would also mean that functions could be used without paying, thus allowing sheets using stdlib functions to be sharable and still functional)
+    
+-   3D tensor representation
+
+    -   create a tensor from matrices listed according to a stride
+    -   need to be vertically arranged, since matrices are best in row-major order
+    -   for visual ease, each matrix should be separated by a blank line
+    -   can assemble the tensor in JavaScript by converting to row-major and omitting the blank row separating matrices
+    -   if a blank line is the convention/standard, for functions which explicitly operate on tensors (e.g., certain linear algebra functions?), can just assume that when given a range for a tensor argument along with the number of rows and columns per matrix, this can be converted to a tensor accordingly.
+        -   if assume tensor convention, no need to provide num rows and num cols, as we can determine that automatically in JavaScript by simple iteration
+        
+-   range operations
+
+    -   splice
+        -   would be useful for inserting a range within another range
+        -   e.g., replace a submatrix within a matrix
+    -   slice
+        -   for a simple range, this is more easily achieved with built-in ops; however, for tensors, things get more interesting
+    -   fliplr/ud etc for tensors/matrices
+        -   would be nice for demoing tensor/matrix operations, as can see value output
+    -   range2tensor3d
+        -   `range2tensor3d(rows_per_matrix)` where rows per matrix must evenly divide number of rows in range
+    -   tensor3d2range
+        -   tensor to compact representation
 
 
 
