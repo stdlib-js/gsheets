@@ -24,7 +24,7 @@
 
 // MODULES //
 
-var ns = require( './../namespace.js' );
+var ns = require( './../namespace' );
 
 
 // VARIABLES //
