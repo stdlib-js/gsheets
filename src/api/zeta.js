@@ -16,7 +16,9 @@
 * limitations under the License.
 */
 
-/* eslint-disable stdlib/jsdoc-doctest-marker, stdlib/jsdoc-doctest-quote-props, max-len */
+/* This is a generated file. Do not edit directly. */
+
+/* eslint-disable stdlib/jsdoc-doctest-marker, stdlib/jsdoc-doctest-quote-props */
 
 'use strict';
 
