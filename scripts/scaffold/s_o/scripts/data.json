@@ -1,7 +1,7 @@
 [
   {
     "alias": "camelcase",
-    "pkg": "string-camelcase",
+    "pkg": "string/camelcase",
     "desc": "Converts a string to camel case",
     "values": [
       "foo bar",
@@ -14,7 +14,7 @@
   },
   {
     "alias": "capitalize",
-    "pkg": "string-capitalize",
+    "pkg": "string/capitalize",
     "desc": "Capitalizes the first character of a string",
     "values": [
       "foo bar",
@@ -27,7 +27,7 @@
   },
   {
     "alias": "constantcase",
-    "pkg": "string-constantcase",
+    "pkg": "string/constantcase",
     "desc": "Converts a string to constant case",
     "values": [
       "foo bar",
@@ -40,7 +40,7 @@
   },
   {
     "alias": "kebabcase",
-    "pkg": "string-kebabcase",
+    "pkg": "string/kebabcase",
     "desc": "Converts a string to kebab case",
     "values": [
       "foo bar",
@@ -53,7 +53,7 @@
   },
   {
     "alias": "lowercase",
-    "pkg": "string-lowercase",
+    "pkg": "string/lowercase",
     "desc": "Converts a string to lowercase",
     "values": [
       "Foo Bar",
@@ -66,7 +66,7 @@
   },
   {
     "alias": "pascalcase",
-    "pkg": "string-pascalcase",
+    "pkg": "string/pascalcase",
     "desc": "Converts a string to Pascal case",
     "values": [
       "foo bar",
@@ -79,7 +79,7 @@
   },
   {
     "alias": "snakecase",
-    "pkg": "string-snakecase",
+    "pkg": "string/snakecase",
     "desc": "Converts a string to snake case",
     "values": [
       "foo bar",
@@ -92,7 +92,7 @@
   },
   {
     "alias": "startcase",
-    "pkg": "string-startcase",
+    "pkg": "string/startcase",
     "desc": "Converts a string to start case",
     "values": [
       "foo bar",
@@ -105,7 +105,7 @@
   },
   {
     "alias": "uncapitalize",
-    "pkg": "string-uncapitalize",
+    "pkg": "string/uncapitalize",
     "desc": "Lowercases the first character of a string",
     "values": [
       "Foo Bar",
@@ -118,7 +118,7 @@
   },
   {
     "alias": "uppercase",
-    "pkg": "string-uppercase",
+    "pkg": "string/uppercase",
     "desc": "Converts a string to uppercase",
     "values": [
       "foo bar",
