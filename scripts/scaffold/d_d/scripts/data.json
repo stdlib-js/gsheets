@@ -1,0 +1,17 @@
+[
+  {
+    "alias": "zeta",
+    "pkg": "math-base-special-riemann-zeta",
+    "desc": "Evaluates the Riemann zeta function as a function of a real variable",
+    "values": [
+      1.2,
+      2.0,
+      3.1,
+      4.7,
+      5.5,
+      6.7
+    ],
+    "min": 1.1,
+    "max": 10.0
+  }
+]
