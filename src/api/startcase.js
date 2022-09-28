@@ -36,14 +36,14 @@ var __STDLIB_STARTCASE = ns.tools.s_o( ns.startcase ); // eslint-disable-line no
 * Converts a string to start case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_STARTCASE( "foo_bar" )
+* STDLIB_STARTCASE( "foo bar" )
 *
 * @example
-* STDLIB_STARTCASE( A2:A )
+* STDLIB_STARTCASE( A2:A100 )
 *
 * @example
 * STDLIB_STARTCASE( A2:D100 )

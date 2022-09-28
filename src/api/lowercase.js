@@ -36,14 +36,14 @@ var __STDLIB_LOWERCASE = ns.tools.s_o( ns.lowercase ); // eslint-disable-line no
 * Converts a string to lowercase.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_LOWERCASE( "FooBar" )
+* STDLIB_LOWERCASE( "Foo Bar" )
 *
 * @example
-* STDLIB_LOWERCASE( A2:A )
+* STDLIB_LOWERCASE( A2:A100 )
 *
 * @example
 * STDLIB_LOWERCASE( A2:D100 )

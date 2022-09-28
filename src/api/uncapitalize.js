@@ -33,17 +33,17 @@ var __STDLIB_UNCAPITALIZE = ns.tools.s_o( ns.uncapitalize ); // eslint-disable-l
 // MAIN //
 
 /**
-* Lowercases the first character in a string.
+* Lowercases the first character of a string.
 *
 * @customfunction
-* @param {string|Range<string>} value - input string(s)
-* @returns {string|Range<string>} transformed string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_UNCAPITALIZE( "Beep boop" )
+* STDLIB_UNCAPITALIZE( "Foo Bar" )
 *
 * @example
-* STDLIB_UNCAPITALIZE( A2:A )
+* STDLIB_UNCAPITALIZE( A2:A100 )
 *
 * @example
 * STDLIB_UNCAPITALIZE( A2:D100 )

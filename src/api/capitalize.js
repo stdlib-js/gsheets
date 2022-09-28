@@ -33,17 +33,17 @@ var __STDLIB_CAPITALIZE = ns.tools.s_o( ns.capitalize ); // eslint-disable-line 
 // MAIN //
 
 /**
-* Capitalizes the first character in a string.
+* Capitalizes the first character of a string.
 *
 * @customfunction
-* @param {string|Range<string>} value - input string(s)
-* @returns {string|Range<string>} transformed string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CAPITALIZE( "beep boop" )
+* STDLIB_CAPITALIZE( "foo bar" )
 *
 * @example
-* STDLIB_CAPITALIZE( A2:A )
+* STDLIB_CAPITALIZE( A2:A100 )
 *
 * @example
 * STDLIB_CAPITALIZE( A2:D100 )

@@ -36,14 +36,14 @@ var __STDLIB_UPPERCASE = ns.tools.s_o( ns.uppercase ); // eslint-disable-line no
 * Converts a string to uppercase.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_UPPERCASE( "FooBar" )
+* STDLIB_UPPERCASE( "foo bar" )
 *
 * @example
-* STDLIB_UPPERCASE( A2:A )
+* STDLIB_UPPERCASE( A2:A100 )
 *
 * @example
 * STDLIB_UPPERCASE( A2:D100 )

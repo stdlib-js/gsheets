@@ -36,14 +36,14 @@ var __STDLIB_PASCALCASE = ns.tools.s_o( ns.pascalcase ); // eslint-disable-line 
 * Converts a string to Pascal case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_PASCALCASE( "foo_bar" )
+* STDLIB_PASCALCASE( "foo bar" )
 *
 * @example
-* STDLIB_PASCALCASE( A2:A )
+* STDLIB_PASCALCASE( A2:A100 )
 *
 * @example
 * STDLIB_PASCALCASE( A2:D100 )

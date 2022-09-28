@@ -36,14 +36,14 @@ var __STDLIB_SNAKECASE = ns.tools.s_o( ns.snakecase ); // eslint-disable-line no
 * Converts a string to snake case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_SNAKECASE( "FooBar" )
+* STDLIB_SNAKECASE( "foo bar" )
 *
 * @example
-* STDLIB_SNAKECASE( A2:A )
+* STDLIB_SNAKECASE( A2:A100 )
 *
 * @example
 * STDLIB_SNAKECASE( A2:D100 )

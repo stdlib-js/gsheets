@@ -36,14 +36,14 @@ var __STDLIB_CONSTANTCASE = ns.tools.s_o( ns.constantcase ); // eslint-disable-l
 * Converts a string to constant case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CONSTANTCASE( "FooBar" )
+* STDLIB_CONSTANTCASE( "foo bar" )
 *
 * @example
-* STDLIB_CONSTANTCASE( A2:A )
+* STDLIB_CONSTANTCASE( A2:A100 )
 *
 * @example
 * STDLIB_CONSTANTCASE( A2:D100 )

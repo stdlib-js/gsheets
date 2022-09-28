@@ -36,14 +36,14 @@ var __STDLIB_CAMELCASE = ns.tools.s_o( ns.camelcase ); // eslint-disable-line no
 * Converts a string to camel case.
 *
 * @customfunction
-* @param {string|Range<string>} value - string(s) to convert
-* @returns {string|Range<string>} converted string(s)
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CAMELCASE( "foo_bar" )
+* STDLIB_CAMELCASE( "foo bar" )
 *
 * @example
-* STDLIB_CAMELCASE( A2:A )
+* STDLIB_CAMELCASE( A2:A100 )
 *
 * @example
 * STDLIB_CAMELCASE( A2:D100 )
