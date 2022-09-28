@@ -44,7 +44,7 @@ var ROOT_DIR = dirname( resolveParentPath( 'package.json', {
 
 var DATA_DIR = resolve( __dirname, '..', 'data' );
 var TEMPLATE = readFile( resolve( DATA_DIR, 'alias__js.txt' ), OPTS );
-var TEST_TEMPLATE = readFile( resolve( DATA_DIR, 'test.api.alias__js.txt' ), OPTS );
+var TEST_TEMPLATE = readFile( resolve( DATA_DIR, 'test.alias__js.txt' ), OPTS );
 
 var DEST_DIR = resolve( ROOT_DIR, 'src', 'api' );
 var TEST_DIR = resolve( ROOT_DIR, 'test', 'api' );
