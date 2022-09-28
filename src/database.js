@@ -55,6 +55,43 @@ ns.push({
 });
 
 ns.push({
+	'alias': 'camelcase',
+	'pkg': '@stdlib/string/camelcase',
+	'related': [
+		'constantcase',
+		'kebabcase',
+		'lowercase',
+		'pascalcase',
+		'snakecase',
+		'startcase',
+		'uppercase'
+	]
+});
+
+ns.push({
+	'alias': 'capitalize',
+	'pkg': '@stdlib/string/capitalize',
+	'related': [
+		'uncapitalize',
+		'uppercase'
+	]
+});
+
+ns.push({
+	'alias': 'constantcase',
+	'pkg': '@stdlib/string/constantcase',
+	'related': [
+		'camelcase',
+		'kebabcase',
+		'lowercase',
+		'pascalcase',
+		'snakecase',
+		'startcase',
+		'uppercase'
+	]
+});
+
+ns.push({
 	'alias': 'cumax',
 	'pkg': '@stdlib/stats/base/cumax',
 	'related': [
@@ -63,15 +100,47 @@ ns.push({
 });
 
 ns.push({
+	'alias': 'dists_normal_pdf',
+	'pkg': '@stdlib/stats/base/dists/normal/pdf',
+	'related': []
+});
+
+ns.push({
+	'alias': 'full',
+	'pkg': '@stdlib/array/full',
+	'related': [
+		'ones',
+		'zeros'
+	]
+});
+
+ns.push({
 	'alias': 'kebabcase',
 	'pkg': '@stdlib/string/kebabcase',
+	'related': [
+		'camelcase',
+		'constantcase',
+		'lowercase',
+		'pascalcase',
+		'snakecase',
+		'startcase',
+		'uppercase'
+	]
+});
+
+ns.push({
+	'alias': 'linspace',
+	'pkg': '@stdlib/array/linspace',
 	'related': []
 });
 
 ns.push({
 	'alias': 'lowercase',
 	'pkg': '@stdlib/string/lowercase',
-	'related': []
+	'related': [
+		'uncapitalize',
+		'uppercase'
+	]
 });
 
 ns.push({
@@ -93,11 +162,118 @@ ns.push({
 });
 
 ns.push({
+	'alias': 'ones',
+	'pkg': '@stdlib/array/ones',
+	'related': [
+		'full',
+		'zeros'
+	]
+});
+
+ns.push({
+	'alias': 'pascalcase',
+	'pkg': '@stdlib/string/pascalcase',
+	'related': [
+		'camelcase',
+		'constantcase',
+		'lowercase',
+		'kebabcase',
+		'snakecase',
+		'startcase',
+		'uppercase'
+	]
+});
+
+ns.push({
+	'alias': 'random_arcsine',
+	'pkg': '@stdlib/random/base/arcsine',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_bernoulli',
+	'pkg': '@stdlib/random/base/bernoulli',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_beta',
+	'pkg': '@stdlib/random/base/beta',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_betaprime',
+	'pkg': '@stdlib/random/base/betaprime',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_binomial',
+	'pkg': '@stdlib/random/base/binomial',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_box_muller',
+	'pkg': '@stdlib/random/base/box-muller',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_cauchy',
+	'pkg': '@stdlib/random/base/cauchy',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_chi',
+	'pkg': '@stdlib/random/base/chi',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_chisquare',
+	'pkg': '@stdlib/random/base/chisquare',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_cosine',
+	'pkg': '@stdlib/random/base/cosine',
+	'related': []
+});
+
+ns.push({
 	'alias': 'random_discrete_uniform',
 	'pkg': '@stdlib/random/base/discrete-uniform',
 	'related': [
 		'random_uniform'
 	]
+});
+
+ns.push({
+	'alias': 'random_erlang',
+	'pkg': '@stdlib/random/base/erlang',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_exponential',
+	'pkg': '@stdlib/random/base/exponential',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_f',
+	'pkg': '@stdlib/random/base/f',
+	'related': []
+});
+
+ns.push({
+	'alias': 'random_frechet',
+	'pkg': '@stdlib/random/base/frechet',
+	'related': []
 });
 
 ns.push({
@@ -121,7 +297,10 @@ ns.push({
 ns.push({
 	'alias': 'random_mt19937',
 	'pkg': '@stdlib/random/base/mt19937',
-	'related': []
+	'related': [
+		'random_minstd',
+		'random_minstd_shuffle'
+	]
 });
 
 ns.push({
@@ -144,6 +323,61 @@ ns.push({
 	'alias': 'sawtooth_wave',
 	'pkg': '@stdlib/simulate/iter/sawtooth-wave',
 	'related': []
+});
+
+ns.push({
+	'alias': 'snakecase',
+	'pkg': '@stdlib/string/snakecase',
+	'related': [
+		'camelcase',
+		'constantcase',
+		'lowercase',
+		'kebabcase',
+		'pascalcase',
+		'startcase',
+		'uppercase'
+	]
+});
+
+ns.push({
+	'alias': 'startcase',
+	'pkg': '@stdlib/string/startcase',
+	'related': [
+		'camelcase',
+		'constantcase',
+		'lowercase',
+		'kebabcase',
+		'pascalcase',
+		'snakecase',
+		'uppercase'
+	]
+});
+
+ns.push({
+	'alias': 'uncapitalize',
+	'pkg': '@stdlib/string/uncapitalize',
+	'related': [
+		'capitalize',
+		'lowercase'
+	]
+});
+
+ns.push({
+	'alias': 'uppercase',
+	'pkg': '@stdlib/string/uppercase',
+	'related': [
+		'capitalize',
+		'lowercase'
+	]
+});
+
+ns.push({
+	'alias': 'zeros',
+	'pkg': '@stdlib/array/zeros',
+	'related': [
+		'full',
+		'ones'
+	]
 });
 
 ns.push({
