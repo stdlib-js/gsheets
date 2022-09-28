@@ -35,7 +35,24 @@
 */
 var ns = {};
 
+ns.abs = require( '@stdlib/math-base-special-abs' );
+ns.abs2 = require( '@stdlib/math-base-special-abs2' );
+ns.acos = require( '@stdlib/math-base-special-acos' );
+ns.acosh = require( '@stdlib/math-base-special-acosh' );
+ns.acot = require( '@stdlib/math-base-special-acot' );
+ns.acovercos = require( '@stdlib/math-base-special-acovercos' );
+ns.acoversin = require( '@stdlib/math-base-special-acoversin' );
+ns.acsc = require( '@stdlib/math-base-special-acsc' );
+ns.acsch = require( '@stdlib/math-base-special-acsch' );
+ns.ahavercos = require( '@stdlib/math-base-special-ahavercos' );
+ns.ahaversin = require( '@stdlib/math-base-special-ahaversin' );
 ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
+ns.asin = require( '@stdlib/math-base-special-asin' );
+ns.asinh = require( '@stdlib/math-base-special-asinh' );
+ns.atan = require( '@stdlib/math-base-special-atan' );
+ns.atanh = require( '@stdlib/math-base-special-atanh' );
+ns.avercos = require( '@stdlib/math-base-special-avercos' );
+ns.aversin = require( '@stdlib/math-base-special-aversin' );
 
 ns.assert = {};
 ns.assert.isBoolean = require( './assert/is_boolean.js' );
