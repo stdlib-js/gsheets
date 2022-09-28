@@ -58,6 +58,188 @@
     "max": 10.0
   },
   {
+    "alias": "acot",
+    "pkg": "math/base/special/acot",
+    "desc": "Computes the inverse cotangent of a number (in radians)",
+    "values": [
+      2.0,
+      0.707,
+      0.866,
+      -0.5,
+      -3.5
+    ],
+    "min": -5.0,
+    "max": 5.0
+  },
+  {
+    "alias": "acovercos",
+    "pkg": "math/base/special/acovercos",
+    "desc": "Computes the inverse coversed cosine",
+    "values": [
+      0.0,
+      -1.77,
+      -1.5,
+      -0.89,
+      -0.74
+    ],
+    "min": -2.0,
+    "max": 0.0
+  },
+  {
+    "alias": "acoversin",
+    "pkg": "math/base/special/acoversin",
+    "desc": "Computes the inverse coversed sine",
+    "values": [
+      0.0,
+      1.77,
+      1.5,
+      0.89,
+      0.74
+    ],
+    "min": 0.0,
+    "max": 2.0
+  },
+  {
+    "alias": "acsc",
+    "pkg": "math/base/special/acsc",
+    "desc": "Computes the arccosecant",
+    "values": [
+      1.0,
+      1.707,
+      1.866,
+      -1.5,
+      -3.5
+    ],
+    "min": 1.0,
+    "max": 10.0
+  },
+  {
+    "alias": "acsch",
+    "pkg": "math/base/special/acsch",
+    "desc": "Computes the hyperbolic arccosecant",
+    "values": [
+      1.0,
+      1.707,
+      1.866,
+      -1.5,
+      -3.5
+    ],
+    "min": 1.0,
+    "max": 10.0
+  },
+  {
+    "alias": "ahavercos",
+    "pkg": "math/base/special/ahavercos",
+    "desc": "Computes the inverse half-value versed cosine",
+    "values": [
+      0.0,
+      0.77,
+      0.5,
+      0.89,
+      0.74
+    ],
+    "min": 0.0,
+    "max": 1.0
+  },
+  {
+    "alias": "ahaversin",
+    "pkg": "math/base/special/ahaversin",
+    "desc": "Computes the inverse half-value versed sine",
+    "values": [
+      0.0,
+      0.77,
+      0.5,
+      0.89,
+      0.74
+    ],
+    "min": 0.0,
+    "max": 1.0
+  },
+  {
+    "alias": "asin",
+    "pkg": "math/base/special/asin",
+    "desc": "Computes the arcsine of a number (in radians)",
+    "values": [
+      1.0,
+      0.707,
+      0.866,
+      -0.5,
+      -0.95
+    ],
+    "min": -1.0,
+    "max": 1.0
+  },
+  {
+    "alias": "asinh",
+    "pkg": "math/base/special/asinh",
+    "desc": "Computes the hyperbolic arcsine",
+    "values": [
+      1.0,
+      0.707,
+      0.866,
+      -2.5,
+      -0.5
+    ],
+    "min": -5.0,
+    "max": 5.0
+  },
+  {
+    "alias": "atan",
+    "pkg": "math/base/special/atan",
+    "desc": "Computes the arctangent of a number",
+    "values": [
+      1.0,
+      0.707,
+      0.866,
+      -0.5,
+      -0.95
+    ],
+    "min": -2.0,
+    "max": 2.0
+  },
+  {
+    "alias": "atanh",
+    "pkg": "math/base/special/atanh",
+    "desc": "Computes the hyperbolic arctangent",
+    "values": [
+      1.0,
+      0.707,
+      0.866,
+      -0.5,
+      -0.95
+    ],
+    "min": -1.0,
+    "max": 1.0
+  },
+  {
+    "alias": "avercos",
+    "pkg": "math/base/special/avercos",
+    "desc": "Computes the inverse versed cosine",
+    "values": [
+      0.0,
+      -0.77,
+      -1.5,
+      -0.89,
+      -1.74
+    ],
+    "min": -2.0,
+    "max": 0.0
+  },
+  {
+    "alias": "aversin",
+    "pkg": "math/base/special/aversin",
+    "desc": "Computes the inverse versed sine",
+    "values": [
+      0.0,
+      0.77,
+      1.5,
+      0.89,
+      1.74
+    ],
+    "min": 0.0,
+    "max": 2.0
+  },
+  {
     "alias": "zeta",
     "pkg": "math/base/special/riemann-zeta",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",
