@@ -159,6 +159,7 @@ ns.tools.d_d = require( './utils/d_d.js' );
 ns.tools.dd_d = require( './utils/dd_d.js' );
 ns.tools.ddd_d = require( './utils/ddd_d.js' );
 ns.tools.s_o = require( './utils/s_o.js' );
+ns.tools.ss_o = require( './utils/ss_o.js' );
 ns.tools.ternary2d = require( './utils/ternary2d.js' );
 ns.tools.unary2d = require( './utils/unary2d.js' );
 

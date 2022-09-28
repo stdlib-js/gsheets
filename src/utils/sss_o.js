@@ -27,7 +27,7 @@ var format = require( '@stdlib/string-format' );
 // MAIN //
 
 /**
-* Wraps a unary function which accepts a string.
+* Wraps a ternary function which accepts three strings.
 *
 * @private
 * @param {Function} fcn - function to apply
@@ -37,18 +37,28 @@ function wrap( fcn ) {
 	return wrapper;
 
 	/**
-	* Invokes a unary function.
+	* Invokes a ternary function.
 	*
 	* @private
-	* @param {string} value - input value
+	* @param {string} v1 - first argument
+	* @param {string} v2 - second argument
+	* @param {string} v3 - third argument
 	* @throws {TypeError} first argument must be a string or a range of strings
+	* @throws {TypeError} second argument must be a string or a range of strings
+	* @throws {TypeError} third argument must be a string or a range of strings
 	* @returns {string} result
 	*/
-	function wrapper( value ) {
-		if ( !isString( value ) ) {
-			throw new TypeError( format( 'invalid argument. First argument must be a string or a range of strings. Value: %s.', String( value ) ) );
+	function wrapper( v1, v2 ) {
+		if ( !isString( v1 ) ) {
+			throw new TypeError( format( 'invalid argument. First argument must be a string or a range of strings. Value: %s.', String( v1 ) ) );
 		}
-		return fcn( value );
+		if ( !isString( v2 ) ) {
+			throw new TypeError( format( 'invalid argument. Second argument must be a string or a range of strings. Value: %s.', String( v2 ) ) );
+		}
+		if ( !isString( v3 ) ) {
+			throw new TypeError( format( 'invalid argument. Third argument must be a string or a range of strings. Value: %s.', String( v3 ) ) );
+		}
+		return fcn( v1, v2, v3 );
 	}
 }
 
