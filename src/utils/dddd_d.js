@@ -29,10 +29,10 @@ var format = require( '@stdlib/string-format' );
 // MAIN //
 
 /**
-* Wraps a ternary function which accepts three numbers and returns a number.
+* Wraps a quaternary function which accepts four numbers and returns a number.
 *
 * @private
-* @param {Function} fcn - ternary function
+* @param {Function} fcn - quaternary function
 * @param {Object} opts - options
 * @param {*} opts.nonnumeric - value to return in place of raising an exception when an input value is not a number
 * @param {*} opts.nan - value to return in place of NaN
@@ -44,18 +44,20 @@ function wrap( fcn, opts ) {
 	return wrapper;
 
 	/**
-	* Invokes a ternary function.
+	* Invokes a quaternary function.
 	*
 	* @private
 	* @param {*} x1 - first argument
 	* @param {*} x2 - second argument
 	* @param {*} x3 - third argument
+	* @param {*} x4 - fourth argument
 	* @throws {TypeError} first argument must be a number or a range of numbers
 	* @throws {TypeError} second argument must be a number or a range of numbers
 	* @throws {TypeError} third argument must be a number or a range of numbers
+	* @throws {TypeError} fourth argument must be a number or a range of numbers
 	* @returns {number} result
 	*/
-	function wrapper( x1, x2, x3 ) {
+	function wrapper( x1, x2, x3, x4 ) {
 		var v;
 		if ( !isNumber( x1 ) ) {
 			if ( opts.nonnumeric === void 0 ) {
@@ -75,7 +77,13 @@ function wrap( fcn, opts ) {
 			}
 			return opts.nonnumeric;
 		}
-		v = fcn( x1, x2, x3 );
+		if ( !isNumber( x4 ) ) {
+			if ( opts.nonnumeric === void 0 ) {
+				throw new TypeError( format( 'invalid argument. Fourth argument must be a number or a range of numbers. Value: %s.', String( x4 ) ) );
+			}
+			return opts.nonnumeric;
+		}
+		v = fcn( x1, x2, x3, x4 );
 		if ( v !== v ) {
 			return opts.nan;
 		}
