@@ -1,7 +1,7 @@
 [
   {
     "alias": "abs",
-    "pkg": "math-base-special-abs",
+    "pkg": "math/base/special/abs",
     "desc": "Computes the absolute value",
     "values": [
       -1.2,
@@ -16,7 +16,7 @@
   },
   {
     "alias": "abs2",
-    "pkg": "math-base-special-abs2",
+    "pkg": "math/base/special/abs2",
     "desc": "Computes the squared absolute value",
     "values": [
       -1.2,
@@ -31,7 +31,7 @@
   },
   {
     "alias": "acos",
-    "pkg": "math-base-special-acos",
+    "pkg": "math/base/special/acos",
     "desc": "Computes the arccosine of a number (in radians)",
     "values": [
       1.0,
@@ -45,7 +45,7 @@
   },
   {
     "alias": "acosh",
-    "pkg": "math-base-special-acosh",
+    "pkg": "math/base/special/acosh",
     "desc": "Computes the hyperbolic arccosine",
     "values": [
       1.0,
@@ -59,7 +59,7 @@
   },
   {
     "alias": "zeta",
-    "pkg": "math-base-special-riemann-zeta",
+    "pkg": "math/base/special/riemann-zeta",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",
     "values": [
       1.2,

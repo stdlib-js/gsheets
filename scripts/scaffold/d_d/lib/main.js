@@ -97,7 +97,7 @@ function scaffold( opts ) {
 	writeFile( fname, file, OPTS );
 
 	file = replace( TEST_TEMPLATE, '{{ALIAS}}', opts.alias );
-	file = replace( file, '{{REF_PKG}}', opts.pkg );
+	file = replace( file, '{{REF_PKG}}', replace( opts.pkg, '/', '-' ) ); // FIXME: no need to replace once we install `@stdlib/stdlib` instead of standalone pkgs
 	file = replace( file, '{{DESC}}', uncapitalize( opts.desc ) );
 	file = replace( file, '{{RAND_MIN}}', num2str( opts.min ) );
 	file = replace( file, '{{RAND_MAX}}', num2str( opts.max ) );
