@@ -257,6 +257,66 @@
     "prng": "uniform"
   },
   {
+    "alias": "besselj0",
+    "pkg": "math/base/special/besselj0",
+    "desc": "Computes the Bessel function of the first kind of order zero",
+    "values": [
+      0.0,
+      0.77,
+      1.5,
+      0.89,
+      1.74
+    ],
+    "min": 0.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "besselj1",
+    "pkg": "math/base/special/besselj1",
+    "desc": "Computes the Bessel function of the first kind of order one",
+    "values": [
+      0.0,
+      0.77,
+      1.5,
+      0.89,
+      1.74
+    ],
+    "min": 0.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "bessely0",
+    "pkg": "math/base/special/bessely0",
+    "desc": "Computes the Bessel function of the second kind of order zero",
+    "values": [
+      0.0,
+      0.77,
+      1.5,
+      0.89,
+      1.74
+    ],
+    "min": 0.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "bessely1",
+    "pkg": "math/base/special/bessely1",
+    "desc": "Computes the Bessel function of the second kind of order one",
+    "values": [
+      0.0,
+      0.77,
+      1.5,
+      0.89,
+      1.74
+    ],
+    "min": 0.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
     "alias": "zeta",
     "pkg": "math/base/special/riemann-zeta",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",
