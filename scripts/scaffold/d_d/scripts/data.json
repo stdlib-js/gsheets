@@ -257,23 +257,6 @@
     "prng": "uniform"
   },
   {
-    "alias": "bernoulli",
-    "pkg": "math/base/special/bernoulli",
-    "desc": "Computes the nth Bernoulli number",
-    "values": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      20
-    ],
-    "min": 0,
-    "max": 280,
-    "prng": "discrete-uniform"
-  },
-  {
     "alias": "zeta",
     "pkg": "math/base/special/riemann-zeta",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",

@@ -49,7 +49,6 @@ ns.atan = require( '@stdlib/math-base-special-atan' );
 ns.atanh = require( '@stdlib/math-base-special-atanh' );
 ns.avercos = require( '@stdlib/math-base-special-avercos' );
 ns.aversin = require( '@stdlib/math-base-special-aversin' );
-ns.bernoulli = require( '@stdlib/math-base-special-bernoulli' );
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 
 
