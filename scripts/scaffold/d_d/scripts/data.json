@@ -317,6 +317,96 @@
     "prng": "uniform"
   },
   {
+    "alias": "binet",
+    "pkg": "math/base/special/binet",
+    "desc": "Evaluates Binet's formula extended to real numbers",
+    "values": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      3.14
+    ],
+    "min": 0,
+    "max": 79,
+    "prng": "discrete-uniform"
+  },
+  {
+    "alias": "cbrt",
+    "pkg": "math/base/special/cbrt",
+    "desc": "Computes the cube root",
+    "values": [
+      64.0,
+      27.0,
+      0.0,
+      -9.0,
+      -27.0
+    ],
+    "min": -100.0,
+    "max": 100.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "ceil",
+    "pkg": "math/base/special/ceil",
+    "desc": "Rounds a number toward positive infinity",
+    "values": [
+      0.0,
+      100.77,
+      11.5,
+      10.89,
+      11.74
+    ],
+    "min": -50.0,
+    "max": 50.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "ceil10",
+    "pkg": "math/base/special/ceil10",
+    "desc": "Rounds a number to the nearest power of 10 toward positive infinity",
+    "values": [
+      0.0,
+      100.77,
+      1.5,
+      10.89,
+      11.74
+    ],
+    "min": -50.0,
+    "max": 50.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "ceil2",
+    "pkg": "math/base/special/ceil2",
+    "desc": "Rounds a number to the nearest power of 2 toward positive infinity",
+    "values": [
+      -4.2,
+      -4.5,
+      9.9999,
+      9.5,
+      13.0
+    ],
+    "min": -50.0,
+    "max": 50.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "cos",
+    "pkg": "math/base/special/cos",
+    "desc": "Computes the cosine of a number (in radians)",
+    "values": [
+      0.0,
+      0.75,
+      -0.5,
+      1.0,
+      0.45
+    ],
+    "min": 0.0,
+    "max": 6.28,
+    "prng": "uniform"
+  },
+  {
     "alias": "zeta",
     "pkg": "math/base/special/riemann-zeta",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",

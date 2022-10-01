@@ -53,6 +53,12 @@ ns.besselj0 = require( '@stdlib/math-base-special-besselj0' );
 ns.besselj1 = require( '@stdlib/math-base-special-besselj1' );
 ns.bessely0 = require( '@stdlib/math-base-special-bessely0' );
 ns.bessely1 = require( '@stdlib/math-base-special-bessely1' );
+ns.binet = require( '@stdlib/math-base-special-binet' );
+ns.cbrt = require( '@stdlib/math-base-special-cbrt' );
+ns.ceil = require( '@stdlib/math-base-special-ceil' );
+ns.ceil10 = require( '@stdlib/math-base-special-ceil10' );
+ns.ceil2 = require( '@stdlib/math-base-special-ceil2' );
+ns.cos = require( '@stdlib/math-base-special-cos' );
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 
 
