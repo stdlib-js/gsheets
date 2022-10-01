@@ -23,7 +23,7 @@
 var tape = require( 'tape' );
 var ref = require( '@stdlib/{{REF_PKG}}' );
 var isArray = require( '@stdlib/assert-is-array' );
-var uniform = require( '@stdlib/random-base-uniform' ).factory;
+var uniform = require( '@stdlib/random-base-{{PRNG}}' ).factory;
 var flatten2d = require( './../../src/utils/flatten2d.js' );
 var {{ALIAS}} = require( './../../src/api/{{ALIAS}}.js' );
 

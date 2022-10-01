@@ -81,6 +81,7 @@ function num2str( x ) {
 * @param {string} opts.desc - description
 * @param {string} opts.pkg - reference package
 * @param {Array} opts.values - test values
+* @param {string} opts.prng - PRNG name
 */
 function scaffold( opts ) {
 	var fname;
@@ -99,8 +100,9 @@ function scaffold( opts ) {
 	file = replace( TEST_TEMPLATE, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{REF_PKG}}', replace( opts.pkg, '/', '-' ) ); // FIXME: no need to replace once we install `@stdlib/stdlib` instead of standalone pkgs
 	file = replace( file, '{{DESC}}', uncapitalize( opts.desc ) );
-	file = replace( file, '{{RAND_MIN}}', num2str( opts.min ) );
-	file = replace( file, '{{RAND_MAX}}', num2str( opts.max ) );
+	file = replace( file, '{{PRNG}}', opts.prng );
+	file = replace( file, '{{RAND_MIN}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.min ) : num2str( opts.min ) );
+	file = replace( file, '{{RAND_MAX}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.max ) : num2str( opts.max ) );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 
