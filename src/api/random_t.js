@@ -26,39 +26,39 @@ var ns = require( './../namespace' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from an exponential distribution.
+* Generates pseudorandom numbers drawn from a Student's t-distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} lambda - rate parameter
+* @param {number} v - degrees of freedom
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_EXPONENTIAL( 10, 1, 7.9, "seed", 1234 )
+* STDLIB_RANDOM_T( 10, 1, 2.4, "seed", 1234 )
 */
-function STDLIB_RANDOM_EXPONENTIAL( nrows, ncols, lambda, seed, seedValue ) { // eslint-disable-line no-unused-vars
+function STDLIB_RANDOM_T( nrows, ncols, v, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;
 	var s;
 	var o;
-	var v;
+	var a;
 	var i;
 
 	for ( i = 3; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
-		v = arguments[ i+1 ];
+		a = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			s = ns.assert.verifyPRNGSeed( v );
+			s = ns.assert.verifyPRNGSeed( a );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( lambda, 'Rate parameter' );
+	ns.assert.isPositiveNumber( v, 'Degrees of freedom' );
 
-	rand = ns.random.exponential( lambda, {
+	rand = ns.random.t( v, {
 		'seed': s
 	});
 	return ns.filledBy( nrows, ncols, rand );
@@ -67,4 +67,4 @@ function STDLIB_RANDOM_EXPONENTIAL( nrows, ncols, lambda, seed, seedValue ) { //
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_EXPONENTIAL;
+module.exports = STDLIB_RANDOM_T;

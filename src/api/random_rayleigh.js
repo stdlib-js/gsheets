@@ -26,20 +26,20 @@ var ns = require( './../namespace' );
 // MAIN //
 
 /**
-* Generates pseudorandom numbers drawn from an exponential distribution.
+* Generates pseudorandom numbers drawn from a Rayleigh distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} lambda - rate parameter
+* @param {number} sigma - scale parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<integer>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_EXPONENTIAL( 10, 1, 7.9, "seed", 1234 )
+* STDLIB_RANDOM_RAYLEIGH( 10, 1, 2.5, "seed", 1234 )
 */
-function STDLIB_RANDOM_EXPONENTIAL( nrows, ncols, lambda, seed, seedValue ) { // eslint-disable-line no-unused-vars
+function STDLIB_RANDOM_RAYLEIGH( nrows, ncols, sigma, seed, seedValue ) { // eslint-disable-line no-unused-vars
 	var rand;
 	var s;
 	var o;
@@ -56,9 +56,9 @@ function STDLIB_RANDOM_EXPONENTIAL( nrows, ncols, lambda, seed, seedValue ) { //
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( lambda, 'Rate parameter' );
+	ns.assert.isPositiveNumber( sigma, 'Scale parameter' );
 
-	rand = ns.random.exponential( lambda, {
+	rand = ns.random.rayleigh( sigma, {
 		'seed': s
 	});
 	return ns.filledBy( nrows, ncols, rand );
@@ -67,4 +67,4 @@ function STDLIB_RANDOM_EXPONENTIAL( nrows, ncols, lambda, seed, seedValue ) { //
 
 // EXPORTS //
 
-module.exports = STDLIB_RANDOM_EXPONENTIAL;
+module.exports = STDLIB_RANDOM_RAYLEIGH;

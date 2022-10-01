@@ -48,7 +48,6 @@ ns.frechet = require( '@stdlib/random-base-frechet' ).factory;
 ns.gamma = require( '@stdlib/random-base-gamma' ).factory;
 ns.geometric = require( '@stdlib/random-base-geometric' ).factory;
 ns.gumbel = require( '@stdlib/random-base-gumbel' ).factory;
-
 ns.hypergeometric = require( '@stdlib/random-base-hypergeometric' ).factory;
 ns.improvedZiggurat = require( '@stdlib/random-base-improved-ziggurat' ).factory;
 ns.invgamma = require( '@stdlib/random-base-invgamma' ).factory;
@@ -57,20 +56,16 @@ ns.laplace = require( '@stdlib/random-base-laplace' ).factory;
 ns.levy = require( '@stdlib/random-base-levy' ).factory;
 ns.logistic = require( '@stdlib/random-base-logistic' ).factory;
 ns.lognormal = require( '@stdlib/random-base-lognormal' ).factory;
-
 ns.minstd = require( '@stdlib/random-base-minstd' ).factory;
 ns.minstdShuffle = require( '@stdlib/random-base-minstd-shuffle' ).factory;
 ns.mt19937 = require( '@stdlib/random-base-mt19937' ).factory;
-
 ns.negativeBinomial = require( '@stdlib/random-base-negative-binomial' ).factory;
-
 ns.normal = require( '@stdlib/random-base-normal' ).factory;
-ns.paretoType1 = require( '@stdlib/random-base-pareto-type1' ).factory;
+ns.pareto1 = require( '@stdlib/random-base-pareto-type1' ).factory;
 ns.poisson = require( '@stdlib/random-base-poisson' ).factory;
 ns.rayleigh = require( '@stdlib/random-base-rayleigh' ).factory;
 ns.t = require( '@stdlib/random-base-t' ).factory;
 ns.triangular = require( '@stdlib/random-base-triangular' ).factory;
-
 ns.uniform = require( '@stdlib/random-base-uniform' ).factory;
 ns.weibull = require( '@stdlib/random-base-weibull' ).factory;
 

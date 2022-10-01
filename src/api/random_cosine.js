@@ -56,7 +56,7 @@ function STDLIB_RANDOM_COSINE( nrows, ncols, mu, s, seed, seedValue ) { // eslin
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
 	ns.assert.isNumber( mu, 'Mean' );
 	ns.assert.isPositiveNumber( s, 'Scale parameter' );
 

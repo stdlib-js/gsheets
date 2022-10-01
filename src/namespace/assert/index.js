@@ -28,6 +28,7 @@
 * @type {Namespace}
 */
 var ns = {};
+ns.isBetween = require( './../../assert/is_between.js' );
 ns.isBoolean = require( './../../assert/is_boolean.js' );
 ns.isBroadcastCompatible = require( './../../assert/is_broadcast_compatible.js' );
 ns.isBroadcastCompatibleWith = require( './../../assert/is_broadcast_compatible_with.js' );

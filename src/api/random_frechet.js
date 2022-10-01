@@ -57,7 +57,7 @@ function STDLIB_RANDOM_FRECHET( nrows, ncols, alpha, s, m, seed, seedValue ) { /
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
 	ns.assert.isPositiveNumber( alpha, 'Shape parameter' );
 	ns.assert.isPositiveNumber( s, 'Scale parameter' );
 	ns.assert.isNumber( m, 'Location parameter' );
