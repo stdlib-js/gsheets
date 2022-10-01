@@ -85,7 +85,7 @@ tape( 'the function throws an error if not provided a number (nested array)', fu
 	}
 });
 
-tape( 'the function evaluates Binet's formula extended to real numbers (primitive)', function test( t ) {
+tape( 'the function evaluates Binet\'s formula extended to real numbers (primitive)', function test( t ) {
 	var expected;
 	var actual;
 	var v;
@@ -100,7 +100,7 @@ tape( 'the function evaluates Binet's formula extended to real numbers (primitiv
 	t.end();
 });
 
-tape( 'the function evaluates Binet's formula extended to real numbers (nested array)', function test( t ) {
+tape( 'the function evaluates Binet\'s formula extended to real numbers (nested array)', function test( t ) {
 	var expected;
 	var actual;
 	var arr;
