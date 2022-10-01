@@ -63,6 +63,10 @@
     -   x: boolean
     -   o: generic/any
     -   z: complex128/complex
+    
+-   shape( range )
+
+    -   return the number of rows and columns for a provided range
 
 
 ## Packages
