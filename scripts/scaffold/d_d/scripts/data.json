@@ -407,6 +407,21 @@
     "prng": "uniform"
   },
   {
+    "alias": "sin",
+    "pkg": "math/base/special/sin",
+    "desc": "Computes the sine of a number (in radians)",
+    "values": [
+      0.0,
+      0.75,
+      -0.5,
+      1.0,
+      0.45
+    ],
+    "min": 0.0,
+    "max": 6.28,
+    "prng": "uniform"
+  },
+  {
     "alias": "sqrt",
     "pkg": "math/base/special/sqrt",
     "desc": "Computes the principal root",
