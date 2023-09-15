@@ -342,6 +342,14 @@ ns.push({
 });
 
 ns.push({
+	'alias': 'sqrt',
+	'pkg': '@stdlib/math/base/special/sqrt',
+	'related': [
+		'cbrt'
+	]
+});
+
+ns.push({
 	'alias': 'startcase',
 	'pkg': '@stdlib/string/startcase',
 	'related': [

@@ -30,7 +30,7 @@ var ns = require( './../namespace' );
 // MAIN //
 
 /**
-* Computes the arcsine of a number (in radians).
+* Computes the principal root.
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
@@ -45,18 +45,18 @@ var ns = require( './../namespace' );
 * @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_ASIN( 1.0 )
+* STDLIB_SQRT( 64.0 )
 *
 * @example
-* STDLIB_ASIN( A1:A100 )
+* STDLIB_SQRT( A1:A100 )
 *
 * @example
-* STDLIB_ASIN( A1:D100 )
+* STDLIB_SQRT( A1:D100 )
 *
 * @example
-* STDLIB_ASIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_SQRT( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_ASIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
+function STDLIB_SQRT( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
 	var opts;
 	var f;
 	var o;
@@ -76,7 +76,7 @@ function STDLIB_ASIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	f = ns.tools.d_d( ns.asin, opts );
+	f = ns.tools.d_d( ns.sqrt, opts );
 	if ( ns.isArray( value ) ) {
 		return ns.tools.unary2d( value, f );
 	}
@@ -86,4 +86,4 @@ function STDLIB_ASIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 
 // EXPORTS //
 
-module.exports = STDLIB_ASIN;
+module.exports = STDLIB_SQRT;

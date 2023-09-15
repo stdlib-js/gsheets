@@ -21,23 +21,23 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var ref = require( '@stdlib/math-base-special-ceil10' );
+var ref = require( '@stdlib/math-base-special-sqrt' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( './../../src/utils/flatten2d.js' );
-var ceil10 = require( './../../src/api/ceil10.js' );
+var sqrt = require( './../../src/api/sqrt.js' );
 
 
 // VARIABLES //
 
-var rand = uniform( -50.0, 50.0 );
+var rand = uniform( 0.0, 100.0 );
 
 
 // TESTS //
 
 tape( 'main export is a function', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof ceil10, 'function', 'main export is a function' );
+	t.strictEqual( typeof sqrt, 'function', 'main export is a function' );
 	t.end();
 });
 
@@ -58,7 +58,7 @@ tape( 'the function throws an error if not provided a number (primitive)', funct
 
 	function badValue( value ) {
 		return function badValue() {
-			ceil10( value );
+			sqrt( value );
 		}
 	}
 });
@@ -80,12 +80,12 @@ tape( 'the function throws an error if not provided a number (nested array)', fu
 
 	function badValue( value ) {
 		return function badValue() {
-			ceil10( [ [ value ] ] );
+			sqrt( [ [ value ] ] );
 		}
 	}
 });
 
-tape( 'the function rounds a number to the nearest power of 10 toward positive infinity (primitive)', function test( t ) {
+tape( 'the function computes the principal root (primitive)', function test( t ) {
 	var expected;
 	var actual;
 	var v;
@@ -93,14 +93,14 @@ tape( 'the function rounds a number to the nearest power of 10 toward positive i
 
 	for ( i = 0; i < 10; i++ ) {
 		v = rand();
-		actual = ceil10( v );
+		actual = sqrt( v );
 		expected = ref( v );
 		t.strictEqual( actual, expected, 'returns expected value when provided '+v );
 	}
 	t.end();
 });
 
-tape( 'the function rounds a number to the nearest power of 10 toward positive infinity (nested array)', function test( t ) {
+tape( 'the function computes the principal root (nested array)', function test( t ) {
 	var expected;
 	var actual;
 	var arr;
@@ -120,7 +120,7 @@ tape( 'the function rounds a number to the nearest power of 10 toward positive i
 		}
 		arr.push( tmp );
 	}
-	actual = ceil10( arr );
+	actual = sqrt( arr );
 
 	t.strictEqual( isArray( actual ), true, 'returns expected value' );
 	t.strictEqual( isArray( actual[ 0 ] ), true, 'returns expected value' );

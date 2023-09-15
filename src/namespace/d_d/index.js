@@ -59,6 +59,7 @@ ns.ceil = require( '@stdlib/math-base-special-ceil' );
 ns.ceil10 = require( '@stdlib/math-base-special-ceil10' );
 ns.ceil2 = require( '@stdlib/math-base-special-ceil2' );
 ns.cos = require( '@stdlib/math-base-special-cos' );
+ns.sqrt = require( '@stdlib/math-base-special-sqrt' );
 ns.zeta = require( '@stdlib/math-base-special-riemann-zeta' );
 
 
