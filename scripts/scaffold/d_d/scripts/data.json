@@ -407,6 +407,21 @@
     "prng": "uniform"
   },
   {
+    "alias": "sqrt",
+    "pkg": "math/base/special/sqrt",
+    "desc": "Computes the principal root",
+    "values": [
+      64.0,
+      27.0,
+      0.0,
+      81.0,
+      100.0
+    ],
+    "min": 0.0,
+    "max": 100.0,
+    "prng": "uniform"
+  },
+  {
     "alias": "zeta",
     "pkg": "math/base/special/riemann-zeta",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",
