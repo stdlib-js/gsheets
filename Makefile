@@ -402,7 +402,7 @@ inspect.%:
 # make install
 #/
 install:
-	$(NPM) install
+	$(QUIET) $(NPM) install
 
 .PHONY: install
 
