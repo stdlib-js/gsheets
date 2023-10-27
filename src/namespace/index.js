@@ -52,9 +52,13 @@ ns.broadcast = require( './../utils/broadcast.js' );
 
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
-ns.filled = require( './../utils/filled2d.js' );
-ns.filledBy = require( './../utils/filledby2d.js' );
+ns.filled = require( './../utils/filled.js' );
+ns.filledBy = require( './../utils/filled_by.js' );
 ns.flattenArray = require( './../utils/flatten2d.js' );
+
+ns.filled2d = require( '@stdlib/array-base-filled2d' );
+ns.ones2d = require( '@stdlib/array-base-ones2d' );
+ns.zeros2d = require( '@stdlib/array-base-zeros2d' );
 
 ns.isArray = require( '@stdlib/assert-is-array' );
 ns.isBoolean = require( '@stdlib/assert-is-boolean' ).isPrimitive;
