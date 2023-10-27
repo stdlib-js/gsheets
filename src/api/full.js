@@ -43,7 +43,7 @@ var ns = require( './../namespace' );
 function STDLIB_FULL( nrows, ncols, value ) {
 	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
 	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
-	return ns.filled( nrows, ncols, value );
+	return ns.filled2d( value, [ nrows, ncols ] );
 }
 
 
