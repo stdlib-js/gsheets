@@ -48,7 +48,7 @@ function wrap( fcn ) {
 	* @throws {TypeError} third argument must be a string or a range of strings
 	* @returns {string} result
 	*/
-	function wrapper( v1, v2 ) {
+	function wrapper( v1, v2, v3 ) {
 		if ( !isString( v1 ) ) {
 			throw new TypeError( format( 'invalid argument. First argument must be a string or a range of strings. Value: %s.', String( v1 ) ) );
 		}

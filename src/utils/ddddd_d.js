@@ -59,7 +59,7 @@ function wrap( fcn, opts ) {
 	* @throws {TypeError} fifth argument must be a number or a range of numbers
 	* @returns {number} result
 	*/
-	function wrapper( x1, x2, x3, x4 ) {
+	function wrapper( x1, x2, x3, x4, x5 ) {
 		var v;
 		if ( !isNumber( x1 ) ) {
 			if ( opts.nonnumeric === void 0 ) {
