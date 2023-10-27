@@ -20,13 +20,14 @@
 
 // MODULES //
 
-var fill = require( '@stdlib/array-base-filled' );
+var filled1dBy = require( '@stdlib/array-base-filled-by' );
+var filled2dBy = require( '@stdlib/array-base-filled2d-by' );
 
 
 // MAIN //
 
 /**
-* Returns a filled array.
+* Returns a filled array according to a provided callback function.
 *
 * ## Notes
 *
@@ -35,33 +36,31 @@ var fill = require( '@stdlib/array-base-filled' );
 * @private
 * @param {number} nrows - number of rows
 * @param {number} ncols - number of columns
-* @param {*} value - fill value
+* @param {Function} fcn - callback function
 * @returns {Array} filled array
 *
 * @example
-* var out = filled( 2, 2, 5 );
+* function constant( v ) {
+*     return 5;
+* }
+*
+* var out = filledBy( 2, 2, constant );
 * // returns [ [ 5, 5 ], [ 5, 5 ] ]
 *
-* out = filled( 1, 2, 5 );
+* out = filledBy( 1, 2, constant );
 * // returns [ [ 5, 5 ] ]
 *
-* out = filled( 2, 1, 5 );
+* out = filledBy( 2, 1, constant );
 * // returns [ 5, 5 ]
 */
-function filled( nrows, ncols, value ) {
-	var out;
-	var i;
+function filledBy( nrows, ncols, fcn ) {
 	if ( ncols === 1 ) {
-		return fill( value, nrows );
+		return filled1dBy( nrows, fcn );
 	}
-	out = [];
-	for ( i = 0; i < nrows; i++ ) {
-		out.push( fill( value, ncols ) );
-	}
-	return out;
+	return filled2dBy( [ nrows, ncols ], fcn );
 }
 
 
 // EXPORTS //
 
-module.exports = filled;
+module.exports = filledBy;
