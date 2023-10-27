@@ -45,8 +45,6 @@ var tmp;
 */
 var ns = {};
 
-ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
-
 ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
 ns.broadcast = require( './../utils/broadcast.js' );
 
@@ -82,6 +80,9 @@ tmp = require( './blas' );
 copy( tmp, ns.blas );
 
 tmp = require( './d_d' );
+copy( tmp, ns );
+
+tmp = require( './datasets' );
 copy( tmp, ns );
 
 ns.dists = {};
