@@ -67,6 +67,10 @@
 -   shape( range )
 
     -   return the number of rows and columns for a provided range
+    
+-   add tooling to track Code.gs bundle size
+
+    -   can also use tooling to inspect bundle contents and create a visual plot
 
 
 ## Packages
@@ -140,29 +144,30 @@
 
 ### datasets
 
--   [ ] afinn-111
--   [ ] afinn-96
+-   [x] afinn-111
+-   [x] afinn-96
 -   [x] anscombes-quartet
 -   [ ] berndt-cps-wages-1985
--   [ ] cdc-nchs-us-births-1969-1988
--   [ ] cdc-nchs-us-births-1994-2003
+-   [x] cdc-nchs-us-births-1969-1988
+-   [x] cdc-nchs-us-births-1994-2003
 -   [ ] cdc-nchs-us-infant-mortality-bw-1915-2013
 -   [ ] dale-chall-new
 -   [ ] female-first-names-en
 -   [ ] frb-sf-wage-rigidity
 -   [ ] harrison-boston-house-prices-corrected
 -   [ ] harrison-boston-house-prices
--   [ ] herndon-venus-semidiameters
+-   [x] herndon-venus-semidiameters
 -   [ ] liu-negative-opinion-words-en
 -   [ ] liu-positive-opinion-words-en
 -   [ ] male-first-names-en
 -   [ ] minard-napoleons-march
 -   [ ] month-names-en
--   [ ] nightingales-rose
+-   [x] nightingales-rose
 -   [ ] pace-boston-house-prices
--   [ ] ssa-us-births-2000-2014
+-   [x] ssa-us-births-2000-2014
 -   [ ] standard-card-deck
 -   [ ] stopwords-en
+-   [x] suthaharan-single-hop-sensor-network
 -   [ ] us-states-abbr
 -   [ ] us-states-capitals-names
 -   [ ] us-states-capitals
