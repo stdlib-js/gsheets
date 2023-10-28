@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/math-base-ops-mul' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
-var flatten2d = require( './../../../src/utils/flatten2d.js' );
+var flatten2d = require( '@stdlib/gsheets/utils/flatten2d' );
 var mul = require( './../../../src/api/generated/mul.js' );
 
 

@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/math-base-special-bessely0' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
-var flatten2d = require( './../../../src/utils/flatten2d.js' );
+var flatten2d = require( '@stdlib/gsheets/utils/flatten2d' );
 var bessely0 = require( './../../../src/api/generated/bessely0.js' );
 
 
