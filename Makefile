@@ -35,12 +35,6 @@ else
 endif
 endif
 
-# Define the `NODE_PATH` environment variable:
-NODE_PATH ?=
-
-# Define the `NODE_ENV` environment variable:
-NODE_ENV ?=
-
 
 # INTERNAL VARIABLES #
 
@@ -138,6 +132,9 @@ COVERAGE_DIR ?= $(REPORTS_DIR)/coverage
 # Define the top-level directory containing node module dependencies:
 NODE_MODULES ?= $(ROOT_DIR)/node_modules
 
+# Define the directory containing source node module dependencies:
+SRC_NODE_MODULES ?= $(ROOT_DIR)/src/node_modules
+
 # Define the top-level directory containing node module executables:
 BIN_DIR ?= $(NODE_MODULES)/.bin
 
@@ -189,18 +186,6 @@ EXAMPLES_PATTERN ?= *.js
 # Define a filename pattern for test files:
 TESTS_PATTERN ?= test*.js
 
-# Define Node environments:
-ifdef NODE_ENV
-	NODE_ENV_BENCHMARK := $(NODE_ENV)
-	NODE_ENV_EXAMPLES := $(NODE_ENV)
-	NODE_ENV_TEST := $(NODE_ENV)
-else
-	NODE_ENV ?=
-	NODE_ENV_BENCHMARK ?= benchmark
-	NODE_ENV_EXAMPLES ?= examples
-	NODE_ENV_TEST ?= test
-endif
-
 # Define whether delete operations should be safe (i.e., deleted items are sent to trash, rather than permanently deleted):
 SAFE_DELETE ?= false
 
@@ -221,6 +206,24 @@ else
 	OPEN ?= xdg-open
 endif
 # TODO: add Windows command
+
+# Define Node paths:
+NODE_PATH ?= $(SRC_NODE_MODULES)
+NODE_PATH_BENCHMARK ?= $(NODE_PATH)
+NODE_PATH_EXAMPLES ?= $(NODE_PATH)
+NODE_PATH_TEST ?= $(NODE_PATH)
+
+# Define Node environments:
+ifdef NODE_ENV
+	NODE_ENV_BENCHMARK := $(NODE_ENV)
+	NODE_ENV_EXAMPLES := $(NODE_ENV)
+	NODE_ENV_TEST := $(NODE_ENV)
+else
+	NODE_ENV ?=
+	NODE_ENV_BENCHMARK ?= benchmark
+	NODE_ENV_EXAMPLES ?= examples
+	NODE_ENV_TEST ?= test
+endif
 
 # Define the command for `node`:
 NODE ?= node
@@ -449,7 +452,7 @@ benchmark: $(NODE_MODULES)
 		echo ""; \
 		echo "Running benchmark: $$file"; \
 		NODE_ENV="$(NODE_ENV_BENCHMARK)" \
-		NODE_PATH="$(NODE_PATH)" \
+		NODE_PATH="$(NODE_PATH_BENCHMARK)" \
 		$(NODE) $$file || exit 1; \
 	done
 
@@ -477,7 +480,7 @@ examples: $(NODE_MODULES)
 		echo ""; \
 		echo "Running example: $$file"; \
 		NODE_ENV="$(NODE_ENV_EXAMPLES)" \
-		NODE_PATH="$(NODE_PATH)" \
+		NODE_PATH="$(NODE_PATH_EXAMPLES)" \
 		$(NODE) $$file || exit 1; \
 	done
 
@@ -505,7 +508,7 @@ test: $(NODE_MODULES)
 		echo ''; \
 		echo "Running test: $$test"; \
 		NODE_ENV="$(NODE_ENV_TEST)" \
-		NODE_PATH="$(NODE_PATH)" \
+		NODE_PATH="$(NODE_PATH_TEST)" \
 		$(JAVASCRIPT_TEST) \
 			$(JAVASCRIPT_TEST_FLAGS) \
 			$$test \
@@ -522,7 +525,7 @@ test: $(NODE_MODULES)
 #/
 test-cov: clean-cov
 	$(QUIET) NODE_ENV="$(NODE_ENV_TEST)" \
-	NODE_PATH="$(NODE_PATH)" \
+	NODE_PATH="$(NODE_PATH_TEST)" \
 	$(ISTANBUL_COVER) $(ISTANBUL_COVER_FLAGS) $(JAVASCRIPT_TEST) -- $$( $(FIND_TESTS_CMD) )
 
 .PHONY: test-cov
