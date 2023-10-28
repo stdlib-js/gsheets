@@ -82,6 +82,9 @@ copy( tmp, ns.blas );
 tmp = require( './d_d' );
 copy( tmp, ns );
 
+tmp = require( './dd_d' );
+copy( tmp, ns );
+
 tmp = require( './datasets' );
 copy( tmp, ns );
 
