@@ -28,6 +28,7 @@ var writeFile = require( '@stdlib/fs-write-file' ).sync;
 var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' ).sync;
 var replace = require( '@stdlib/string-replace' );
 var dirname = require( '@stdlib/utils-dirname' );
+var currentYear = require( '@stdlib/time-current-year' );
 var scaffold = require( './../lib' );
 var DATA = require( './data.json' );
 
@@ -47,7 +48,7 @@ var NS_TEMPLATE = readFile( resolve( DATA_DIR, 'namespace__js.txt' ), OPTS );
 
 var DEST_DIR = resolve( ROOT_DIR, 'src', 'namespace', 's_o' );
 
-var CURRENT_YEAR = ( new Date() ).getFullYear().toString();
+var CURRENT_YEAR = currentYear().toString();
 var COPYRIGHT = 'The Stdlib Authors';
 
 
@@ -73,6 +74,8 @@ function main() {
 	}
 	// Generate the namespace...
 	file = replace( NS_TEMPLATE, '{{NAMESPACE}}', ns.join( '\n' ) );
+	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	writeFile( resolve( DEST_DIR, 'index.js' ), file, OPTS );
 }
 
