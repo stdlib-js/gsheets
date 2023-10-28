@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2022 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -27,14 +27,14 @@ var ns = require( './../namespace' );
 
 // VARIABLES //
 
-var __STDLIB_DISTS_NORMAL_ENTROPY_DTYPES = [ 'number', 'number' ]; // eslint-disable-line no-underscore-dangle
-var __STDLIB_DISTS_NORMAL_ENTROPY_MSGS = [ 'First argument', 'Second argument' ]; // eslint-disable-line no-underscore-dangle
+var __STDLIB_DISTS_NORMAL_SKEWNESS_DTYPES = [ 'number', 'number' ]; // eslint-disable-line no-underscore-dangle
+var __STDLIB_DISTS_NORMAL_SKEWNESS_MSGS = [ 'First argument', 'Second argument' ]; // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //
 
 /**
-* Computes the differential entropy for a normal distribution.
+* Computes the skewness of a normal distribution.
 *
 * @customfunction
 * @param {number|Range<number>} mu - mean
@@ -50,18 +50,18 @@ var __STDLIB_DISTS_NORMAL_ENTROPY_MSGS = [ 'First argument', 'Second argument' ]
 * @returns {Range<number>} results
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 0, 1 )
+* STDLIB_DISTS_NORMAL_SKEWNESS( 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 0, B1:B100 )
+* STDLIB_DISTS_NORMAL_SKEWNESS( 0, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( A1:A100, B1:B100 )
+* STDLIB_DISTS_NORMAL_SKEWNESS( A1:A100, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_DISTS_NORMAL_SKEWNESS( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars, max-len
+function STDLIB_DISTS_NORMAL_SKEWNESS( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars, max-len
 	var arrays;
 	var opts;
 	var f;
@@ -82,12 +82,12 @@ function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, na
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_ENTROPY_DTYPES, __STDLIB_DISTS_NORMAL_ENTROPY_MSGS ); // eslint-disable-line max-len
-	f = ns.tools.dd_d( ns.dists.normal.entropy, opts );
+	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_SKEWNESS_DTYPES, __STDLIB_DISTS_NORMAL_SKEWNESS_MSGS ); // eslint-disable-line max-len
+	f = ns.tools.dd_d( ns.dists.normal.skewness, opts );
 	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
 }
 
 
 // EXPORTS //
 
-module.exports = STDLIB_DISTS_NORMAL_ENTROPY;
+module.exports = STDLIB_DISTS_NORMAL_SKEWNESS;

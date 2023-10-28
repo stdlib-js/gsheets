@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2022 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -27,18 +27,19 @@ var ns = require( './../namespace' );
 
 // VARIABLES //
 
-var __STDLIB_DISTS_NORMAL_ENTROPY_DTYPES = [ 'number', 'number' ]; // eslint-disable-line no-underscore-dangle
-var __STDLIB_DISTS_NORMAL_ENTROPY_MSGS = [ 'First argument', 'Second argument' ]; // eslint-disable-line no-underscore-dangle
+var __STDLIB_DISTS_NORMAL_MGF_DTYPES = [ 'number', 'number', 'number' ]; // eslint-disable-line no-underscore-dangle
+var __STDLIB_DISTS_NORMAL_MGF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //
 
 /**
-* Computes the differential entropy for a normal distribution.
+* Evaluates the moment-generating function (MGF) for a normal distribution.
 *
 * @customfunction
+* @param {number|Range<number>} t - value(s) at which to evaluate the MGF
 * @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation (in nats)
+* @param {number|Range<number>} sigma - standard deviation
 * @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
 * @param {*} nonnumericValue - non-numeric option value
 * @param {string} nan - option name for specifying the value to return in place of `NaN`
@@ -50,18 +51,18 @@ var __STDLIB_DISTS_NORMAL_ENTROPY_MSGS = [ 'First argument', 'Second argument' ]
 * @returns {Range<number>} results
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 0, 1 )
+* STDLIB_DISTS_NORMAL_MGF( 2, 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 0, B1:B100 )
+* STDLIB_DISTS_NORMAL_MGF( A1:A100, 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( A1:A100, B1:B100 )
+* STDLIB_DISTS_NORMAL_MGF( 2, A1:A100, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_DISTS_NORMAL_MGF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars, max-len
+function STDLIB_DISTS_NORMAL_MGF( t, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars, max-len, max-params
 	var arrays;
 	var opts;
 	var f;
@@ -74,7 +75,7 @@ function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, na
 		'pinf': Infinity,
 		'ninf': -Infinity
 	};
-	for ( i = 2; i < arguments.length; i += 2 ) {
+	for ( i = 3; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
 			opts[ o ] = arguments[ i+1 ];
@@ -82,12 +83,12 @@ function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, na
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_ENTROPY_DTYPES, __STDLIB_DISTS_NORMAL_ENTROPY_MSGS ); // eslint-disable-line max-len
-	f = ns.tools.dd_d( ns.dists.normal.entropy, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	arrays = ns.broadcast( [ t, mu, sigma ], __STDLIB_DISTS_NORMAL_MGF_DTYPES, __STDLIB_DISTS_NORMAL_MGF_MSGS ); // eslint-disable-line max-len
+	f = ns.tools.ddd_d( ns.dists.normal.mgf, opts );
+	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
 }
 
 
 // EXPORTS //
 
-module.exports = STDLIB_DISTS_NORMAL_ENTROPY;
+module.exports = STDLIB_DISTS_NORMAL_MGF;

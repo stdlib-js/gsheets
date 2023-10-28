@@ -32,8 +32,20 @@
 var ns = {};
 
 ns.normal = {};
+ns.normal.cdf = require( '@stdlib/stats-base-dists-normal-cdf' );
 ns.normal.entropy = require( '@stdlib/stats-base-dists-normal-entropy' );
+ns.normal.kurtosis = require( '@stdlib/stats-base-dists-normal-kurtosis' );
+ns.normal.logcdf = require( '@stdlib/stats-base-dists-normal-logcdf' );
+ns.normal.logpdf = require( '@stdlib/stats-base-dists-normal-logpdf' );
+ns.normal.mean = require( '@stdlib/stats-base-dists-normal-mean' );
+ns.normal.median = require( '@stdlib/stats-base-dists-normal-median' );
+ns.normal.mgf = require( '@stdlib/stats-base-dists-normal-mgf' );
+ns.normal.mode = require( '@stdlib/stats-base-dists-normal-mode' );
 ns.normal.pdf = require( '@stdlib/stats-base-dists-normal-pdf' );
+ns.normal.quantile = require( '@stdlib/stats-base-dists-normal-quantile' );
+ns.normal.skewness = require( '@stdlib/stats-base-dists-normal-skewness' );
+ns.normal.stdev = require( '@stdlib/stats-base-dists-normal-stdev' );
+ns.normal.variance = require( '@stdlib/stats-base-dists-normal-variance' );
 
 
 // EXPORTS //

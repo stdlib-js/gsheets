@@ -102,9 +102,131 @@ ns.push({
 });
 
 ns.push({
+	'alias': 'dists_normal_cdf',
+	'pkg': '@stdlib/stats/base/dists/normal/cdf',
+	'related': [
+		'dists_normal_logcdf',
+		'dists_normal_pdf'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_entropy',
+	'pkg': '@stdlib/stats/base/dists/normal/entropy',
+	'related': [
+		'dists_normal_mean',
+		'dists_normal_stdev'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_kurtosis',
+	'pkg': '@stdlib/stats/base/dists/normal/kurtosis',
+	'related': [
+		'dists_normal_mean',
+		'dists_normal_skewness',
+		'dists_normal_stdev'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_logcdf',
+	'pkg': '@stdlib/stats/base/dists/normal/logcdf',
+	'related': [
+		'dists_normal_cdf',
+		'dists_normal_logpdf'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_logpdf',
+	'pkg': '@stdlib/stats/base/dists/normal/logpdf',
+	'related': [
+		'dists_normal_pdf',
+		'dists_normal_logcdf'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_mean',
+	'pkg': '@stdlib/stats/base/dists/normal/mean',
+	'related': [
+		'dists_normal_median',
+		'dists_normal_stdev'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_median',
+	'pkg': '@stdlib/stats/base/dists/normal/median',
+	'related': [
+		'dists_normal_mean',
+		'dists_normal_stdev'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_mgf',
+	'pkg': '@stdlib/stats/base/dists/normal/mgf',
+	'related': [
+		'dists_normal_cdf',
+		'dists_normal_pdf'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_mode',
+	'pkg': '@stdlib/stats/base/dists/normal/mode',
+	'related': [
+		'dists_normal_mean',
+		'dists_normal_stdev'
+	]
+});
+
+ns.push({
 	'alias': 'dists_normal_pdf',
 	'pkg': '@stdlib/stats/base/dists/normal/pdf',
-	'related': []
+	'related': [
+		'dists_normal_cdf',
+		'dists_normal_logpdf'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_quantile',
+	'pkg': '@stdlib/stats/base/dists/normal/quantile',
+	'related': [
+		'dists_normal_cdf',
+		'dists_normal_pdf'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_skewness',
+	'pkg': '@stdlib/stats/base/dists/normal/skewness',
+	'related': [
+		'dists_normal_kurtosis',
+		'dists_normal_mean',
+		'dists_normal_stdev'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_stdev',
+	'pkg': '@stdlib/stats/base/dists/normal/stdev',
+	'related': [
+		'dists_normal_mean',
+		'dists_normal_variance'
+	]
+});
+
+ns.push({
+	'alias': 'dists_normal_variance',
+	'pkg': '@stdlib/stats/base/dists/normal/variance',
+	'related': [
+		'dists_normal_mean',
+		'dists_normal_stdev'
+	]
 });
 
 ns.push({
