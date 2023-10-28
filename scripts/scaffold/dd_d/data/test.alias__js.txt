@@ -133,6 +133,7 @@ tape( 'the function throws an error if not provided a number for the second argu
 tape( 'the function {{DESC}} (primitive)', function test( t ) {
 	var expected;
 	var actual;
+	var out;
 	var v1;
 	var v2;
 	var i;
@@ -141,8 +142,10 @@ tape( 'the function {{DESC}} (primitive)', function test( t ) {
 		v1 = rand1();
 		v2 = rand2();
 		actual = {{ALIAS}}( v1, v2 );
-		expected = ref( v1, v2 );
-		t.strictEqual( actual, expected, 'returns expected value when provided '+v );
+		expected = [ ref( v1, v2 ) ];
+		t.strictEqual( isArray( actual ), true, 'returns expected value' );
+		t.strictEqual( isArray( actual[ 0 ] ), true, 'returns expected value' );
+		t.deepEqual( flatten2d( actual ), expected, 'returns expected value' );
 	}
 	t.end();
 });
@@ -150,26 +153,32 @@ tape( 'the function {{DESC}} (primitive)', function test( t ) {
 tape( 'the function {{DESC}} (nested array)', function test( t ) {
 	var expected;
 	var actual;
-	var arr;
-	var tmp;
+	var X1;
+	var X2;
+	var x1;
+	var x2;
 	var v1;
 	var v2;
 	var i;
 	var j;
 
-	arr = [];
+	X1 = [];
+	X2 = [];
 	expected = [];
 	for ( i = 0; i < 10; i++ ) {
-		tmp = [];
+		x1 = [];
+		x2 = [];
 		for ( j = 0; j < 10; j++ ) {
 			v1 = rand1();
 			v2 = rand2();
-			tmp.push( v1, v2 );
+			x1.push( v1 );
+			x2.push( v2 );
 			expected.push( ref( v1, v2 ) );
 		}
-		arr.push( tmp );
+		X1.push( x1 );
+		X2.push( x2 );
 	}
-	actual = {{ALIAS}}( arr );
+	actual = {{ALIAS}}( X1, X2 );
 
 	t.strictEqual( isArray( actual ), true, 'returns expected value' );
 	t.strictEqual( isArray( actual[ 0 ] ), true, 'returns expected value' );

@@ -103,10 +103,10 @@ function scaffold( opts ) {
 	file = replace( file, '{{REF_PKG}}', replace( opts.pkg, '/', '-' ) ); // FIXME: no need to replace once we install `@stdlib/stdlib` instead of standalone pkgs
 	file = replace( file, '{{DESC}}', replace( uncapitalize( opts.desc ), '\'', '\\\'' ) );
 	file = replace( file, '{{PRNG}}', opts.prng );
-	file = replace( file, '{{X_RAND_MIN}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.min ) : num2str( opts.min ) );
-	file = replace( file, '{{X_RAND_MAX}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.max ) : num2str( opts.max ) );
-	file = replace( file, '{{Y_RAND_MIN}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.min ) : num2str( opts.min ) );
-	file = replace( file, '{{Y_RAND_MAX}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.max ) : num2str( opts.max ) );
+	file = replace( file, '{{X_RAND_MIN}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.min[ 0 ] ) : num2str( opts.min[ 0 ] ) );
+	file = replace( file, '{{X_RAND_MAX}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.max[ 0 ] ) : num2str( opts.max[ 0 ] ) );
+	file = replace( file, '{{Y_RAND_MIN}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.min[ 1 ] ) : num2str( opts.min[ 1 ] ) );
+	file = replace( file, '{{Y_RAND_MAX}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.max[ 1 ] ) : num2str( opts.max[ 1 ] ) );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 
