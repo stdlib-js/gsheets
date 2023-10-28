@@ -23,8 +23,8 @@
 var tape = require( 'tape' );
 var ref = require( '@stdlib/string-capitalize' );
 var isArray = require( '@stdlib/assert-is-array' );
-var flatten2d = require( './../../src/utils/flatten2d.js' );
-var capitalize = require( './../../src/api/capitalize.js' );
+var flatten2d = require( './../../../src/utils/flatten2d.js' );
+var capitalize = require( './../../../src/api/capitalize.js' );
 
 
 // TESTS //

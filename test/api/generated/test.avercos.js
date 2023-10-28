@@ -24,8 +24,8 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/math-base-special-avercos' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
-var flatten2d = require( './../../src/utils/flatten2d.js' );
-var avercos = require( './../../src/api/avercos.js' );
+var flatten2d = require( './../../../src/utils/flatten2d.js' );
+var avercos = require( './../../../src/api/avercos.js' );
 
 
 // VARIABLES //

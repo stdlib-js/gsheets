@@ -23,8 +23,8 @@
 var tape = require( 'tape' );
 var ref = require( '@stdlib/string-startcase' );
 var isArray = require( '@stdlib/assert-is-array' );
-var flatten2d = require( './../../src/utils/flatten2d.js' );
-var startcase = require( './../../src/api/startcase.js' );
+var flatten2d = require( './../../../src/utils/flatten2d.js' );
+var startcase = require( './../../../src/api/startcase.js' );
 
 
 // TESTS //

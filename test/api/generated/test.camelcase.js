@@ -23,8 +23,8 @@
 var tape = require( 'tape' );
 var ref = require( '@stdlib/string-camelcase' );
 var isArray = require( '@stdlib/assert-is-array' );
-var flatten2d = require( './../../src/utils/flatten2d.js' );
-var camelcase = require( './../../src/api/camelcase.js' );
+var flatten2d = require( './../../../src/utils/flatten2d.js' );
+var camelcase = require( './../../../src/api/camelcase.js' );
 
 
 // TESTS //

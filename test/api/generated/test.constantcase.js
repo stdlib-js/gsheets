@@ -23,8 +23,8 @@
 var tape = require( 'tape' );
 var ref = require( '@stdlib/string-constantcase' );
 var isArray = require( '@stdlib/assert-is-array' );
-var flatten2d = require( './../../src/utils/flatten2d.js' );
-var constantcase = require( './../../src/api/constantcase.js' );
+var flatten2d = require( './../../../src/utils/flatten2d.js' );
+var constantcase = require( './../../../src/api/constantcase.js' );
 
 
 // TESTS //
