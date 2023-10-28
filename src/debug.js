@@ -20,8 +20,8 @@
 
 // MODULES //
 
+var log = require( '@stdlib/gsheets/globals/logger' ).log;
 var DEBUG = require( './settings.json' ).debug;
-var log = require( './globals/logger.js' ).log;
 
 
 // MAIN //
