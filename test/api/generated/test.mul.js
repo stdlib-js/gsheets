@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-ops-mul' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( './../../../src/utils/flatten2d.js' );
-var mul = require( './../../../src/api/mul.js' );
+var mul = require( './../../../src/api/generated/mul.js' );
 
 
 // VARIABLES //

@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-asin' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( './../../../src/utils/flatten2d.js' );
-var asin = require( './../../../src/api/asin.js' );
+var asin = require( './../../../src/api/generated/asin.js' );
 
 
 // VARIABLES //

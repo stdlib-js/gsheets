@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-acos' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( './../../../src/utils/flatten2d.js' );
-var acos = require( './../../../src/api/acos.js' );
+var acos = require( './../../../src/api/generated/acos.js' );
 
 
 // VARIABLES //

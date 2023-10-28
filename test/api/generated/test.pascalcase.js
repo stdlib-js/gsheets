@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/string-pascalcase' );
 var isArray = require( '@stdlib/assert-is-array' );
 var flatten2d = require( './../../../src/utils/flatten2d.js' );
-var pascalcase = require( './../../../src/api/pascalcase.js' );
+var pascalcase = require( './../../../src/api/generated/pascalcase.js' );
 
 
 // TESTS //

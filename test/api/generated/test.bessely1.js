@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-bessely1' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( './../../../src/utils/flatten2d.js' );
-var bessely1 = require( './../../../src/api/bessely1.js' );
+var bessely1 = require( './../../../src/api/generated/bessely1.js' );
 
 
 // VARIABLES //

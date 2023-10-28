@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-sqrt' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( './../../../src/utils/flatten2d.js' );
-var sqrt = require( './../../../src/api/sqrt.js' );
+var sqrt = require( './../../../src/api/generated/sqrt.js' );
 
 
 // VARIABLES //

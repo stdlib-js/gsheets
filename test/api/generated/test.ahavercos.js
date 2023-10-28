@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-ahavercos' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( './../../../src/utils/flatten2d.js' );
-var ahavercos = require( './../../../src/api/ahavercos.js' );
+var ahavercos = require( './../../../src/api/generated/ahavercos.js' );
 
 
 // VARIABLES //
