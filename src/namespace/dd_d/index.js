@@ -33,6 +33,8 @@
 */
 var ns = {};
 ns.add = require( '@stdlib/math-base-ops-add' );
+ns.mul = require( '@stdlib/math-base-ops-mul' );
+ns.sub = require( '@stdlib/math-base-ops-sub' );
 
 
 // EXPORTS //

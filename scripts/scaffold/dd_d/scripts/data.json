@@ -29,6 +29,79 @@
       10.0,
       10.0
     ],
-    "prng": "uniform"
+    "prng": [
+      "uniform",
+      "uniform"
+    ]
+  },
+  {
+    "alias": "mul",
+    "pkg": "math/base/ops/mul",
+    "desc": "Computes the product",
+    "values": [
+      [
+        -1.2,
+        2.0,
+        -3.1,
+        -4.7,
+        5.5,
+        6.7
+      ],
+      [
+        3.1,
+        -4.2,
+        5.0,
+        -1.0,
+        -2.0,
+        6.2
+      ]
+    ],
+    "min": [
+      -10.0,
+      -10.0
+    ],
+    "max": [
+      10.0,
+      10.0
+    ],
+    "prng": [
+      "uniform",
+      "uniform"
+    ]
+  },
+  {
+    "alias": "sub",
+    "pkg": "math/base/ops/sub",
+    "desc": "Performs subtraction",
+    "values": [
+      [
+        -1.2,
+        2.0,
+        -3.1,
+        -4.7,
+        5.5,
+        6.7
+      ],
+      [
+        3.1,
+        -4.2,
+        5.0,
+        -1.0,
+        -2.0,
+        6.2
+      ]
+    ],
+    "min": [
+      -10.0,
+      -10.0
+    ],
+    "max": [
+      10.0,
+      10.0
+    ],
+    "prng": [
+      "uniform",
+      "uniform"
+    ]
   }
 ]

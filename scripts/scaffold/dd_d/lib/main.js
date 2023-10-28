@@ -102,11 +102,11 @@ function scaffold( opts ) {
 	file = replace( TEST_TEMPLATE, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{REF_PKG}}', replace( opts.pkg, '/', '-' ) ); // FIXME: no need to replace once we install `@stdlib/stdlib` instead of standalone pkgs
 	file = replace( file, '{{DESC}}', replace( uncapitalize( opts.desc ), '\'', '\\\'' ) );
-	file = replace( file, '{{PRNG}}', opts.prng );
-	file = replace( file, '{{X_RAND_MIN}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.min[ 0 ] ) : num2str( opts.min[ 0 ] ) );
-	file = replace( file, '{{X_RAND_MAX}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.max[ 0 ] ) : num2str( opts.max[ 0 ] ) );
-	file = replace( file, '{{Y_RAND_MIN}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.min[ 1 ] ) : num2str( opts.min[ 1 ] ) );
-	file = replace( file, '{{Y_RAND_MAX}}', ( opts.prng === 'discrete-uniform' ) ? String( opts.max[ 1 ] ) : num2str( opts.max[ 1 ] ) );
+	file = replace( file, '{{PRNG}}', opts.prng[ 0 ] ); // FIXME: need to be able to handle different PRNGs for the different arguments
+	file = replace( file, '{{X_RAND_MIN}}', ( opts.prng[ 0 ] === 'discrete-uniform' ) ? String( opts.min[ 0 ] ) : num2str( opts.min[ 0 ] ) );
+	file = replace( file, '{{X_RAND_MAX}}', ( opts.prng[ 0 ] === 'discrete-uniform' ) ? String( opts.max[ 0 ] ) : num2str( opts.max[ 0 ] ) );
+	file = replace( file, '{{Y_RAND_MIN}}', ( opts.prng[ 1 ] === 'discrete-uniform' ) ? String( opts.min[ 1 ] ) : num2str( opts.min[ 1 ] ) );
+	file = replace( file, '{{Y_RAND_MAX}}', ( opts.prng[ 1 ] === 'discrete-uniform' ) ? String( opts.max[ 1 ] ) : num2str( opts.max[ 1 ] ) );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 
