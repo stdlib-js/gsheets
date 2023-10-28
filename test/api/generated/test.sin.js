@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/math-base-special-sin' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
-var flatten2d = require( '@stdlib/gsheets/utils/flatten2d' );
+var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
 var sin = require( './../../../src/api/generated/sin.js' );
 
 

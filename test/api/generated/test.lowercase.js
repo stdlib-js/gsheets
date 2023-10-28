@@ -23,7 +23,7 @@
 var tape = require( 'tape' );
 var ref = require( '@stdlib/string-lowercase' );
 var isArray = require( '@stdlib/assert-is-array' );
-var flatten2d = require( '@stdlib/gsheets/utils/flatten2d' );
+var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
 var lowercase = require( './../../../src/api/generated/lowercase.js' );
 
 

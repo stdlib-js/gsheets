@@ -50,7 +50,7 @@ ns.broadcast = require( './../utils/broadcast.js' );
 
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
-ns.flattenArray = require( '@stdlib/gsheets/utils/flatten2d' );
+ns.flattenArray = require( '@stdlib/gsheets/array/flatten2d' );
 
 ns.filled2d = require( '@stdlib/array-base-filled2d' );
 ns.filled2dBy = require( '@stdlib/array-base-filled2d-by' );
