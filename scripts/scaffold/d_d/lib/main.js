@@ -29,6 +29,7 @@ var dirname = require( '@stdlib/utils-dirname' );
 var constantcase = require( '@stdlib/string-constantcase' );
 var snakecase = require( '@stdlib/string-snakecase' );
 var uncapitalize = require( '@stdlib/string-uncapitalize' );
+var currentYear = require( '@stdlib/time-current-year' );
 var isInteger = require( '@stdlib/assert-is-integer' ).isPrimitive;
 
 
@@ -49,7 +50,7 @@ var TEST_TEMPLATE = readFile( resolve( DATA_DIR, 'test.alias__js.txt' ), OPTS );
 var DEST_DIR = resolve( ROOT_DIR, 'src', 'api' );
 var TEST_DIR = resolve( ROOT_DIR, 'test', 'api' );
 
-var CURRENT_YEAR = ( new Date() ).getFullYear().toString();
+var CURRENT_YEAR = currentYear().toString();
 var COPYRIGHT = 'The Stdlib Authors';
 
 
