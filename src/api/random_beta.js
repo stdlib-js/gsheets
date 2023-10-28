@@ -63,7 +63,7 @@ function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) { // e
 	rand = ns.random.beta( alpha, beta, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

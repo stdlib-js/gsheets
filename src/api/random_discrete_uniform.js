@@ -64,7 +64,7 @@ function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) {
 	rand = ns.random.discreteUniform( a, b, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

@@ -63,7 +63,7 @@ function STDLIB_RANDOM_INVGAMMA( nrows, ncols, alpha, beta, seed, seedValue ) { 
 	rand = ns.random.invgamma( alpha, beta, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

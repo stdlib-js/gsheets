@@ -63,7 +63,7 @@ function STDLIB_RANDOM_LOGNORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { /
 	rand = ns.random.lognormal( mu, sigma, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

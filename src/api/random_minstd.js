@@ -81,7 +81,7 @@ function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normal
 	} else {
 		f = rand;
 	}
-	return ns.filledBy( nrows, ncols, f );
+	return ns.filled2dBy( [ nrows, ncols ], f );
 }
 
 

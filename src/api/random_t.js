@@ -61,7 +61,7 @@ function STDLIB_RANDOM_T( nrows, ncols, v, seed, seedValue ) { // eslint-disable
 	rand = ns.random.t( v, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

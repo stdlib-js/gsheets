@@ -61,7 +61,7 @@ function STDLIB_RANDOM_POISSON( nrows, ncols, lambda, seed, seedValue ) { // esl
 	rand = ns.random.poisson( lambda, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

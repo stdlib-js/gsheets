@@ -63,7 +63,7 @@ function STDLIB_RANDOM_LAPLACE( nrows, ncols, mu, b, seed, seedValue ) { // esli
 	rand = ns.random.laplace( mu, b, {
 		'seed': sd
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

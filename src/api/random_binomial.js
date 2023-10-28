@@ -63,7 +63,7 @@ function STDLIB_RANDOM_BINOMIAL( nrows, ncols, n, p, seed, seedValue ) { // esli
 	rand = ns.random.binomial( n, p, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

@@ -64,7 +64,7 @@ function STDLIB_RANDOM_ARCSINE( nrows, ncols, a, b, seed, seedValue ) { // eslin
 	rand = ns.random.arcsine( a, b, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

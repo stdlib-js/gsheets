@@ -63,7 +63,7 @@ function STDLIB_RANDOM_F( nrows, ncols, d1, d2, seed, seedValue ) { // eslint-di
 	rand = ns.random.f( d1, d2, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

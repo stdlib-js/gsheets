@@ -61,7 +61,7 @@ function STDLIB_RANDOM_CHISQUARE( nrows, ncols, k, seed, seedValue ) { // eslint
 	rand = ns.random.chisquare( k, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

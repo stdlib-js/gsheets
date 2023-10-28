@@ -23,7 +23,7 @@
 var isArray = require( '@stdlib/assert-is-array' );
 var isInteger = require( '@stdlib/assert-is-integer' ).isPrimitive;
 var format = require( '@stdlib/string-format' );
-var flattenArray = require( './../utils/flatten2d.js' );
+var flattenArray = require( '@stdlib/gsheets/utils/flatten2d' );
 
 
 // MAIN //

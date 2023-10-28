@@ -63,7 +63,7 @@ function STDLIB_RANDOM_COSINE( nrows, ncols, mu, s, seed, seedValue ) { // eslin
 	rand = ns.random.cosine( mu, s, {
 		'seed': sd
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

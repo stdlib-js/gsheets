@@ -26,7 +26,7 @@ var isBoolean = require( '@stdlib/assert-is-boolean' ).isPrimitive;
 var isArray = require( '@stdlib/assert-is-array' );
 var broadcastShapes = require( '@stdlib/ndarray-base-broadcast-shapes' );
 var format = require( '@stdlib/string-format' );
-var flatten = require( './flatten2d.js' );
+var flatten = require( '@stdlib/gsheets/utils/flatten2d' );
 
 
 // VARIABLES //

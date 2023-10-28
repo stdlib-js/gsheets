@@ -61,7 +61,7 @@ function STDLIB_RANDOM_CHI( nrows, ncols, k, seed, seedValue ) { // eslint-disab
 	rand = ns.random.chi( k, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

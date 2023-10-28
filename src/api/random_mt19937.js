@@ -81,7 +81,7 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 	} else {
 		f = rand;
 	}
-	return ns.filledBy( nrows, ncols, f );
+	return ns.filled2dBy( [ nrows, ncols ], f );
 }
 
 

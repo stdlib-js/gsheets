@@ -63,7 +63,7 @@ function STDLIB_RANDOM_WEIBULL( nrows, ncols, k, lambda, seed, seedValue ) { // 
 	rand = ns.random.weibull( k, lambda, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

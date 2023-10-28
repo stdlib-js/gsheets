@@ -65,7 +65,7 @@ function STDLIB_RANDOM_FRECHET( nrows, ncols, alpha, s, m, seed, seedValue ) { /
 	rand = ns.random.frechet( alpha, s, m, {
 		'seed': sd
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

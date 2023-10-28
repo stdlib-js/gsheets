@@ -61,7 +61,7 @@ function STDLIB_RANDOM_BERNOULLI( nrows, ncols, p, seed, seedValue ) { // eslint
 	rand = ns.random.bernoulli( p, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

@@ -63,7 +63,7 @@ function STDLIB_RANDOM_LOGISTIC( nrows, ncols, mu, s, seed, seedValue ) { // esl
 	rand = ns.random.logistic( mu, s, {
 		'seed': sd
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

@@ -61,7 +61,7 @@ function STDLIB_RANDOM_RAYLEIGH( nrows, ncols, sigma, seed, seedValue ) { // esl
 	rand = ns.random.rayleigh( sigma, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

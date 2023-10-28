@@ -63,7 +63,7 @@ function STDLIB_RANDOM_ERLANG( nrows, ncols, k, lambda, seed, seedValue ) { // e
 	rand = ns.random.erlang( k, lambda, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

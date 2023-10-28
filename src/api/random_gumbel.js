@@ -63,7 +63,7 @@ function STDLIB_RANDOM_GUMBEL( nrows, ncols, mu, beta, seed, seedValue ) { // es
 	rand = ns.random.gumbel( mu, beta, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

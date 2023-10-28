@@ -61,7 +61,7 @@ function STDLIB_RANDOM_GEOMETRIC( nrows, ncols, p, seed, seedValue ) { // eslint
 	rand = ns.random.geometric( p, {
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

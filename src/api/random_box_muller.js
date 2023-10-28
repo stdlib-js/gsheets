@@ -59,7 +59,7 @@ function STDLIB_RANDOM_BOX_MULLER( nrows, ncols, seed, seedValue ) { // eslint-d
 	rand = ns.random.boxMuller({
 		'seed': s
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 

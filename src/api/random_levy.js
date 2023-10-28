@@ -63,7 +63,7 @@ function STDLIB_RANDOM_LEVY( nrows, ncols, mu, c, seed, seedValue ) { // eslint-
 	rand = ns.random.levy( mu, c, {
 		'seed': sd
 	});
-	return ns.filledBy( nrows, ncols, rand );
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 
 
