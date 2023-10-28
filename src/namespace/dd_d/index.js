@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2023 The Stdlib Authors.
+* Copyright (c) {{YEAR}} {{COPYRIGHT}}.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -32,16 +32,6 @@
 * @type {Namespace}
 */
 var ns = {};
-ns.camelcase = require( '@stdlib/string-camelcase' );
-ns.capitalize = require( '@stdlib/string-capitalize' );
-ns.constantcase = require( '@stdlib/string-constantcase' );
-ns.kebabcase = require( '@stdlib/string-kebabcase' );
-ns.lowercase = require( '@stdlib/string-lowercase' );
-ns.pascalcase = require( '@stdlib/string-pascalcase' );
-ns.snakecase = require( '@stdlib/string-snakecase' );
-ns.startcase = require( '@stdlib/string-startcase' );
-ns.uncapitalize = require( '@stdlib/string-uncapitalize' );
-ns.uppercase = require( '@stdlib/string-uppercase' );
 
 
 // EXPORTS //
