@@ -71,6 +71,10 @@
 -   add tooling to track Code.gs bundle size
 
     -   can also use tooling to inspect bundle contents and create a visual plot
+    
+-   add tests for NaN and infinity output in d_d and dd_d APIs
+
+    -   need to test option values and expected output
 
 
 ## Packages
