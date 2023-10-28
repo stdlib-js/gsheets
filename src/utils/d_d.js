@@ -29,7 +29,7 @@ var format = require( '@stdlib/string-format' );
 // MAIN //
 
 /**
-* Wraps a unary function which accepts two numbers and returns a number.
+* Wraps a unary function which accepts a number and returns a number.
 *
 * @private
 * @param {Function} fcn - unary function
