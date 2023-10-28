@@ -106,6 +106,9 @@
     "@stdlib/math-base-special-versin"
   ],
   "binary": [
+    "@stdlib/math-base-ops-add",
+    "@stdlib/math-base-ops-mul",
+    "@stdlib/math-base-ops-sub",
     "@stdlib/math-base-special-atan2",
     "@stdlib/math-base-special-beta",
     "@stdlib/math-base-special-betaln",
