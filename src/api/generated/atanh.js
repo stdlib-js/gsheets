@@ -76,7 +76,7 @@ function STDLIB_ATANH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	f = ns.tools.d_d( ns.atanh, opts );
+	f = ns.math.tools.d_d( ns.atanh, opts );
 	if ( ns.isArray( value ) ) {
 		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
 		return value;

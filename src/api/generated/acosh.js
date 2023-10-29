@@ -76,7 +76,7 @@ function STDLIB_ACOSH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	f = ns.tools.d_d( ns.acosh, opts );
+	f = ns.math.tools.d_d( ns.acosh, opts );
 	if ( ns.isArray( value ) ) {
 		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
 		return value;

@@ -27,12 +27,6 @@
 var ns = require( './../../namespace' );
 
 
-// VARIABLES //
-
-var __STDLIB_SUB_DTYPES = [ 'number', 'number' ]; // eslint-disable-line no-underscore-dangle
-var __STDLIB_SUB_MSGS = [ 'First argument', 'Second argument' ]; // eslint-disable-line no-underscore-dangle
-
-
 // MAIN //
 
 /**
@@ -64,47 +58,14 @@ var __STDLIB_SUB_MSGS = [ 'First argument', 'Second argument' ]; // eslint-disab
 * STDLIB_SUB( A1:A100, B1:E100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_SUB( x, y, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
-	var shape;
 	var args;
-	var opts;
-	var out;
-	var f;
-	var o;
 	var i;
 
-	opts = {
-		'nonnumeric': void 0,
-		'nan': NaN,
-		'pinf': Infinity,
-		'ninf': -Infinity
-	};
-	for ( i = 2; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
-			opts[ o ] = arguments[ i+1 ];
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
 	}
-	// Normalize the provided arguments so we are always working with nested arrays:
-	args = ns.normalizeBroadcastArgs( [ x, y ], __STDLIB_SUB_DTYPES, __STDLIB_SUB_MSGS ); // eslint-disable-line max-len
-
-	// Resolve the shape of the broadcasted result:
-	shape = ns.broadcastShapes( args[ 1 ] );
-	if ( shape === null ) {
-		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
-	}
-	// Create an output array:
-	out = ns.zeros2d( shape );
-
-	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
-	f = ns.tools.dd_d( ns.sub, opts );
-
-	// Apply the function to broadcasted arrays:
-	args[ 0 ].push( out );
-	args[ 1 ].push( shape );
-	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
-	return out;
+	return ns.tools.binary2d( args, ns.sub );
 }
 
 
