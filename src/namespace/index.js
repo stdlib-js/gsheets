@@ -17,16 +17,16 @@
 */
 
 /**
-* This file contains all functions which should be exposed to `Code.gs`.
+* This file contains all functions which should be exposed to APIs made public in `Code.gs`.
 */
 
-/* eslint-disable node/no-unpublished-require, stdlib/require-order */
+/* eslint-disable node/no-unpublished-require */
 
 'use strict';
 
 // MODULES //
 
-var copy = require( './copy.js' );
+var copy = require( '@stdlib/gsheets/object/shallow-copy' );
 
 
 // VARIABLES //
@@ -46,16 +46,13 @@ var tmp;
 var ns = {};
 
 ns.bartlettTest = require( '@stdlib/stats-bartlett-test' );
-ns.broadcast = require( './../utils/broadcast.js' );
+ns.broadcastShapes = require( '@stdlib/ndarray-base-broadcast-shapes' );
 
 ns.cumax = require( '@stdlib/stats-base-cumax' ).ndarray;
 
-ns.flattenArray = require( '@stdlib/gsheets/array/flatten2d' );
-
 ns.filled2d = require( '@stdlib/array-base-filled2d' );
 ns.filled2dBy = require( '@stdlib/array-base-filled2d-by' );
-ns.ones2d = require( '@stdlib/array-base-ones2d' );
-ns.zeros2d = require( '@stdlib/array-base-zeros2d' );
+ns.flattenArray = require( '@stdlib/gsheets/array/flatten2d' );
 
 ns.isArray = require( '@stdlib/assert-is-array' );
 ns.isBoolean = require( '@stdlib/assert-is-boolean' ).isPrimitive;
@@ -70,13 +67,17 @@ ns.linspace = require( '@stdlib/array-linspace' );
 ns.max = require( '@stdlib/stats-base-max' ).ndarray;
 ns.mskmax = require( '@stdlib/stats-base-mskmax' ).ndarray;
 
-ns.assert = {};
-tmp = require( './assert' );
-copy( tmp, ns.assert );
+ns.normalizeBroadcastArgs = require( '@stdlib/gsheets/array/normalize-broadcast-args' );
 
-ns.blas = {};
+ns.ones2d = require( '@stdlib/array-base-ones2d' );
+
+ns.zeros2d = require( '@stdlib/array-base-zeros2d' );
+
+tmp = require( './assert' );
+ns.assert = copy( tmp, {} );
+
 tmp = require( './blas' );
-copy( tmp, ns.blas );
+ns.blas = copy( tmp, {} );
 
 tmp = require( './d_d' );
 copy( tmp, ns );
@@ -87,20 +88,17 @@ copy( tmp, ns );
 tmp = require( './datasets' );
 copy( tmp, ns );
 
-ns.dists = {};
 tmp = require( './dists' );
-copy( tmp, ns.dists );
+ns.dists = copy( tmp, {} );
 
 tmp = require( './s_o' );
 copy( tmp, ns );
 
-ns.random = {};
 tmp = require( './random' );
-copy( tmp, ns.random );
+ns.random = copy( tmp, {} );
 
-ns.tools = {};
 tmp = require( './tools' );
-copy( tmp, ns.tools );
+ns.tools = copy( tmp, {} );
 
 
 // EXPORTS //
