@@ -28,30 +28,29 @@
 * @type {Namespace}
 */
 var ns = {};
-ns.isBetween = require( './../../assert/is_between.js' );
-ns.isBoolean = require( './../../assert/is_boolean.js' );
-ns.isBroadcastCompatible = require( './../../assert/is_broadcast_compatible.js' );
-ns.isBroadcastCompatibleWith = require( './../../assert/is_broadcast_compatible_with.js' );
-ns.isDefined = require( './../../assert/is_defined.js' );
-ns.isGreaterThan = require( './../../assert/is_greater_than.js' );
-ns.isGreaterThanEqual = require( './../../assert/is_greater_than_equal.js' );
-ns.isInteger = require( './../../assert/is_integer.js' );
-ns.isLessThan = require( './../../assert/is_less_than.js' );
-ns.isLessThanEqual = require( './../../assert/is_less_than_equal.js' );
-ns.isNonNegativeInteger = require( './../../assert/is_nonnegative_integer.js' );
-ns.isNonNegativeNumber = require( './../../assert/is_nonnegative_number.js' );
-ns.isNumber = require( './../../assert/is_number.js' );
-ns.isOneOf = require( './../../assert/is_one_of.js' );
-ns.isPositiveInteger = require( './../../assert/is_positive_integer.js' );
-ns.isPositiveNumber = require( './../../assert/is_positive_number.js' );
-ns.isProbability = require( './../../assert/is_probability.js' );
-ns.isRange = require( './../../assert/is_range.js' );
-ns.isRange1d = require( './../../assert/is_range_1d.js' );
-ns.isSameShape = require( './../../assert/is_same_shape.js' );
-ns.isString = require( './../../assert/is_string.js' );
-ns.unrecognizedOptionName = require( './../../assert/unrecognized_option_name.js' );
-ns.verifyCommonPRNGArgs = require( './../../assert/verify_common_prng_args.js' );
-ns.verifyPRNGSeed = require( './../../assert/verify_prng_seed.js' );
+ns.isBetween = require( '@stdlib/gsheets/assert/is-between' );
+ns.isBoolean = require( '@stdlib/gsheets/assert/is-boolean' );
+ns.isBroadcastCompatible = require( '@stdlib/gsheets/assert/is-broadcast-compatible' );
+ns.isBroadcastCompatibleWith = require( '@stdlib/gsheets/assert/is-broadcast-compatible-with' );
+ns.isDefined = require( '@stdlib/gsheets/assert/is-defined' );
+ns.isGreaterThan = require( '@stdlib/gsheets/assert/is-greater-than' );
+ns.isGreaterThanEqual = require( '@stdlib/gsheets/assert/is-greater-than-equal' );
+ns.isInteger = require( '@stdlib/gsheets/assert/is-integer' );
+ns.isLessThan = require( '@stdlib/gsheets/assert/is-less-than' );
+ns.isLessThanEqual = require( '@stdlib/gsheets/assert/is-less-than-equal' );
+ns.isNonNegativeInteger = require( '@stdlib/gsheets/assert/is-nonnegative-integer' );
+ns.isNonNegativeNumber = require( '@stdlib/gsheets/assert/is-nonnegative-number' );
+ns.isNumber = require( '@stdlib/gsheets/assert/is-number' );
+ns.isOneOf = require( '@stdlib/gsheets/assert/is-one-of' );
+ns.isPositiveInteger = require( '@stdlib/gsheets/assert/is-positive-integer' );
+ns.isPositiveNumber = require( '@stdlib/gsheets/assert/is-positive-number' );
+ns.isProbability = require( '@stdlib/gsheets/assert/is-probability' );
+ns.isRange = require( '@stdlib/gsheets/assert/is-range' );
+ns.isRange1d = require( '@stdlib/gsheets/assert/is-range1d' );
+ns.isSameShape = require( '@stdlib/gsheets/assert/is-same-shape' );
+ns.isString = require( '@stdlib/gsheets/assert/is-string' );
+ns.unrecognizedOptionName = require( '@stdlib/gsheets/assert/unrecognized-option-name' );
+ns.verifyCommonPRNGArgs = require( '@stdlib/gsheets/assert/verify-common-prng-args' );
 
 
 // EXPORTS //
