@@ -16,6 +16,8 @@
 * limitations under the License.
 */
 
+/* eslint-disable node/no-unpublished-require */
+
 'use strict';
 
 // MAIN //
@@ -28,15 +30,18 @@
 * @type {Namespace}
 */
 var ns = {};
+ns.d_d = require( '@stdlib/gsheets/math/tools/wrap-unary' );
+ns.dd_d = require( '@stdlib/gsheets/math/tools/wrap-binary' );
+ns.ddd_d = require( '@stdlib/gsheets/math/tools/wrap-ternary' );
+ns.dddd_d = require( '@stdlib/gsheets/math/tools/wrap-quaternary' );
+ns.ddddd_d = require( '@stdlib/gsheets/math/tools/wrap-quinary' );
+ns.unary2d = require( '@stdlib/array-base-unary2d' );
+
 ns.binary2d = require( './../../utils/binary2d.js' );
-ns.d_d = require( './../../utils/d_d.js' );
-ns.dd_d = require( './../../utils/dd_d.js' );
-ns.ddd_d = require( './../../utils/ddd_d.js' );
 ns.s_o = require( './../../utils/s_o.js' );
 ns.ss_o = require( './../../utils/ss_o.js' );
 ns.sss_o = require( './../../utils/sss_o.js' );
 ns.ternary2d = require( './../../utils/ternary2d.js' );
-ns.unary2d = require( './../../utils/unary2d.js' );
 
 
 // EXPORTS //
