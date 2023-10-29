@@ -73,11 +73,13 @@ ns.ones2d = require( '@stdlib/array-base-ones2d' );
 
 ns.zeros2d = require( '@stdlib/array-base-zeros2d' );
 
-tmp = require( './assert' );
-ns.assert = copy( tmp, {} );
-
-tmp = require( './blas' );
-ns.blas = copy( tmp, {} );
+ns.assert = require( './assert' );
+ns.blas = require( './blas' );
+ns.datasets = require( './datasets' );
+ns.dists = require( './dists' );
+ns.math = require( './math' );
+ns.random = require( './random' );
+ns.tools = require( './tools' );
 
 tmp = require( './d_d' );
 copy( tmp, ns );
@@ -85,20 +87,8 @@ copy( tmp, ns );
 tmp = require( './dd_d' );
 copy( tmp, ns );
 
-tmp = require( './datasets' );
-copy( tmp, ns );
-
-tmp = require( './dists' );
-ns.dists = copy( tmp, {} );
-
 tmp = require( './s_o' );
 copy( tmp, ns );
-
-tmp = require( './random' );
-ns.random = copy( tmp, {} );
-
-tmp = require( './tools' );
-ns.tools = copy( tmp, {} );
 
 
 // EXPORTS //
