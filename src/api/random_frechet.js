@@ -52,7 +52,7 @@ function STDLIB_RANDOM_FRECHET( nrows, ncols, alpha, s, m, seed, seedValue ) { /
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			sd = ns.assert.verifyPRNGSeed( v );
+			sd = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}

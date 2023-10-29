@@ -51,7 +51,7 @@ function STDLIB_RANDOM_COSINE( nrows, ncols, mu, s, seed, seedValue ) { // eslin
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			sd = ns.assert.verifyPRNGSeed( v );
+			sd = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}

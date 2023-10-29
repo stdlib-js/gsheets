@@ -51,7 +51,7 @@ function STDLIB_RANDOM_LEVY( nrows, ncols, mu, c, seed, seedValue ) { // eslint-
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			sd = ns.assert.verifyPRNGSeed( v );
+			sd = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}

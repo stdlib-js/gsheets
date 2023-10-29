@@ -51,7 +51,7 @@ function STDLIB_RANDOM_LOGNORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { /
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			s = ns.assert.verifyPRNGSeed( v );
+			s = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}

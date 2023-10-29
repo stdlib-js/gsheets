@@ -50,7 +50,7 @@ function STDLIB_RANDOM_T( nrows, ncols, v, seed, seedValue ) { // eslint-disable
 		o = arguments[ i ];
 		a = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			s = ns.assert.verifyPRNGSeed( a );
+			s = ns.random.normalizeSeed( a );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}

@@ -51,7 +51,7 @@ function STDLIB_RANDOM_WEIBULL( nrows, ncols, k, lambda, seed, seedValue ) { // 
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			s = ns.assert.verifyPRNGSeed( v );
+			s = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}

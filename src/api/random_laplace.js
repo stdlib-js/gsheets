@@ -51,7 +51,7 @@ function STDLIB_RANDOM_LAPLACE( nrows, ncols, mu, b, seed, seedValue ) { // esli
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			sd = ns.assert.verifyPRNGSeed( v );
+			sd = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}

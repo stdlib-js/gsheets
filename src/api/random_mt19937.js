@@ -64,7 +64,7 @@ function STDLIB_RANDOM_MT19937( nrows, ncols, seed, seedValue, normalized, norma
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			s = ns.assert.verifyPRNGSeed( v );
+			s = ns.random.normalizeSeed( v );
 		} else if ( o === 'normalized' ) {
 			flg = v;
 		} else {
