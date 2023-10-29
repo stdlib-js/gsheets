@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/string-uncapitalize' );
 var isArray = require( '@stdlib/assert-is-array' );
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var uncapitalize = require( './../../../../src/api/generated/uncapitalize.js' );
+var uncapitalize = require( './../../../../src/api/string/generated/uncapitalize.js' );
 
 
 // TESTS //
