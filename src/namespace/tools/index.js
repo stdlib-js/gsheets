@@ -30,6 +30,7 @@
 * @type {Namespace}
 */
 var ns = {};
+ns.bbinary2d = require( '@stdlib/array-base-broadcasted-binary2d' );
 ns.d_d = require( '@stdlib/gsheets/math/tools/wrap-unary' );
 ns.dd_d = require( '@stdlib/gsheets/math/tools/wrap-binary' );
 ns.ddd_d = require( '@stdlib/gsheets/math/tools/wrap-ternary' );
@@ -39,9 +40,6 @@ ns.s_o = require( '@stdlib/gsheets/string/tools/wrap-unary' );
 ns.ss_o = require( '@stdlib/gsheets/string/tools/wrap-binary' );
 ns.sss_o = require( '@stdlib/gsheets/string/tools/wrap-ternary' );
 ns.unary2d = require( '@stdlib/array-base-unary2d' );
-
-ns.binary2d = require( './../../utils/binary2d.js' );
-ns.ternary2d = require( './../../utils/ternary2d.js' );
 
 
 // EXPORTS //
