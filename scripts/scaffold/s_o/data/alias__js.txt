@@ -52,7 +52,8 @@ var __STDLIB_{{ALIAS_CONSTANTCASE}} = ns.tools.s_o( ns.{{ALIAS}} ); // eslint-di
 */
 function STDLIB_{{ALIAS_CONSTANTCASE}}( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, __STDLIB_{{ALIAS_CONSTANTCASE}} );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_{{ALIAS_CONSTANTCASE}} );
+		return value;
 	}
 	return __STDLIB_{{ALIAS_CONSTANTCASE}}( value );
 }

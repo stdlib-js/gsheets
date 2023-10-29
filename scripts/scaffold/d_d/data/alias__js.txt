@@ -78,7 +78,8 @@ function STDLIB_{{ALIAS_CONSTANTCASE}}( value, nonnumeric, nonnumericValue, nan,
 	}
 	f = ns.tools.d_d( ns.{{ALIAS}}, opts );
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, f );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
+		return value;
 	}
 	return f( value );
 }
