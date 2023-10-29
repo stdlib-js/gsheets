@@ -52,7 +52,8 @@ var __STDLIB_STARTCASE = ns.tools.s_o( ns.startcase ); // eslint-disable-line no
 */
 function STDLIB_STARTCASE( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, __STDLIB_STARTCASE );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_STARTCASE );
+		return value;
 	}
 	return __STDLIB_STARTCASE( value );
 }

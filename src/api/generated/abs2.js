@@ -78,7 +78,8 @@ function STDLIB_ABS2( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 	}
 	f = ns.tools.d_d( ns.abs2, opts );
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, f );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
+		return value;
 	}
 	return f( value );
 }

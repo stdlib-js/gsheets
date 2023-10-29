@@ -52,7 +52,8 @@ var __STDLIB_CONSTANTCASE = ns.tools.s_o( ns.constantcase ); // eslint-disable-l
 */
 function STDLIB_CONSTANTCASE( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, __STDLIB_CONSTANTCASE );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CONSTANTCASE );
+		return value;
 	}
 	return __STDLIB_CONSTANTCASE( value );
 }

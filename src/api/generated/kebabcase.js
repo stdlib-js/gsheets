@@ -52,7 +52,8 @@ var __STDLIB_KEBABCASE = ns.tools.s_o( ns.kebabcase ); // eslint-disable-line no
 */
 function STDLIB_KEBABCASE( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, __STDLIB_KEBABCASE );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_KEBABCASE );
+		return value;
 	}
 	return __STDLIB_KEBABCASE( value );
 }

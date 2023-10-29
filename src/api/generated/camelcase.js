@@ -52,7 +52,8 @@ var __STDLIB_CAMELCASE = ns.tools.s_o( ns.camelcase ); // eslint-disable-line no
 */
 function STDLIB_CAMELCASE( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, __STDLIB_CAMELCASE );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CAMELCASE );
+		return value;
 	}
 	return __STDLIB_CAMELCASE( value );
 }

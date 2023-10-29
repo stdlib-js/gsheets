@@ -78,7 +78,8 @@ function STDLIB_ACSCH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 	}
 	f = ns.tools.d_d( ns.acsch, opts );
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, f );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
+		return value;
 	}
 	return f( value );
 }

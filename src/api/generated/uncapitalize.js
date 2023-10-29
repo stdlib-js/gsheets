@@ -52,7 +52,8 @@ var __STDLIB_UNCAPITALIZE = ns.tools.s_o( ns.uncapitalize ); // eslint-disable-l
 */
 function STDLIB_UNCAPITALIZE( value ) {
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, __STDLIB_UNCAPITALIZE );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_UNCAPITALIZE );
+		return value;
 	}
 	return __STDLIB_UNCAPITALIZE( value );
 }

@@ -78,7 +78,8 @@ function STDLIB_ASIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 	}
 	f = ns.tools.d_d( ns.asin, opts );
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, f );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
+		return value;
 	}
 	return f( value );
 }

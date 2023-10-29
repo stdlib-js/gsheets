@@ -78,7 +78,8 @@ function STDLIB_BESSELY1( value, nonnumeric, nonnumericValue, nan, nanValue, pin
 	}
 	f = ns.tools.d_d( ns.bessely1, opts );
 	if ( ns.isArray( value ) ) {
-		return ns.tools.unary2d( value, f );
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
+		return value;
 	}
 	return f( value );
 }
