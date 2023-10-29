@@ -29,7 +29,7 @@ var ns = require( './../../namespace' );
 
 // VARIABLES //
 
-var __STDLIB_CAPITALIZE = ns.tools.s_o( ns.capitalize ); // eslint-disable-line no-underscore-dangle
+var __STDLIB_CAPITALIZE = ns.string.tools.s_o( ns.capitalize ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //

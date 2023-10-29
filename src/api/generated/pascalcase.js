@@ -29,7 +29,7 @@ var ns = require( './../../namespace' );
 
 // VARIABLES //
 
-var __STDLIB_PASCALCASE = ns.tools.s_o( ns.pascalcase ); // eslint-disable-line no-underscore-dangle
+var __STDLIB_PASCALCASE = ns.string.tools.s_o( ns.pascalcase ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //
