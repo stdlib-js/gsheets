@@ -32,6 +32,9 @@
 var ns = {};
 ns.bbinary2d = require( '@stdlib/array-base-broadcasted-binary2d' );
 ns.unary2d = require( '@stdlib/array-base-unary2d' );
+ns.s_o = require( '@stdlib/gsheets/string/tools/wrap-unary' );
+ns.ss_o = require( '@stdlib/gsheets/string/tools/wrap-binary' );
+ns.sss_o = require( '@stdlib/gsheets/string/tools/wrap-ternary' );
 
 
 // EXPORTS //
