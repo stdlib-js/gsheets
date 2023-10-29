@@ -24,7 +24,7 @@
 
 // MODULES //
 
-var ns = require( './../../namespace' );
+var ns = require( './../../../namespace' );
 
 
 // MAIN //

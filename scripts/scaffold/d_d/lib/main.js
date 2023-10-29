@@ -47,8 +47,8 @@ var DATA_DIR = resolve( __dirname, '..', 'data' );
 var TEMPLATE = readFile( resolve( DATA_DIR, 'alias__js.txt' ), OPTS );
 var TEST_TEMPLATE = readFile( resolve( DATA_DIR, 'test.alias__js.txt' ), OPTS );
 
-var DEST_DIR = resolve( ROOT_DIR, 'src', 'api', 'generated' );
-var TEST_DIR = resolve( ROOT_DIR, 'test', 'api', 'generated' );
+var DEST_DIR = resolve( ROOT_DIR, 'src', 'api', 'math', 'generated' );
+var TEST_DIR = resolve( ROOT_DIR, 'test', 'api', 'math', 'generated' );
 
 var CURRENT_YEAR = currentYear().toString();
 var COPYRIGHT = 'The Stdlib Authors';
