@@ -34,6 +34,7 @@ ns.dd_d = require( '@stdlib/gsheets/math/tools/wrap-binary' );
 ns.ddd_d = require( '@stdlib/gsheets/math/tools/wrap-ternary' );
 ns.dddd_d = require( '@stdlib/gsheets/math/tools/wrap-quaternary' );
 ns.ddddd_d = require( '@stdlib/gsheets/math/tools/wrap-quinary' );
+ns.unary = require( '@stdlib/gsheets/math/tools/unary' );
 
 
 // EXPORTS //
