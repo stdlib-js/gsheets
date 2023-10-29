@@ -185,3 +185,63 @@ tape( 'the function {{DESC}} (nested array)', function test( t ) {
 	t.deepEqual( flatten2d( actual ), expected, 'returns expected value' );
 	t.end();
 });
+
+tape( 'the function {{DESC}} (nested array; broadcasting)', function test( t ) {
+	var expected;
+	var actual;
+	var X1;
+	var x1;
+	var v1;
+	var v2;
+	var i;
+	var j;
+
+	X1 = [];
+	v2 = rand2();
+	expected = [];
+	for ( i = 0; i < 10; i++ ) {
+		x1 = [];
+		for ( j = 0; j < 10; j++ ) {
+			v1 = rand1();
+			x1.push( v1 );
+			expected.push( ref( v1, v2 ) );
+		}
+		X1.push( x1 );
+	}
+	actual = {{ALIAS}}( X1, v2 );
+
+	t.strictEqual( isArray( actual ), true, 'returns expected value' );
+	t.strictEqual( isArray( actual[ 0 ] ), true, 'returns expected value' );
+	t.deepEqual( flatten2d( actual ), expected, 'returns expected value' );
+	t.end();
+});
+
+tape( 'the function {{DESC}} (nested array; broadcasting)', function test( t ) {
+	var expected;
+	var actual;
+	var X2;
+	var x2;
+	var v1;
+	var v2;
+	var i;
+	var j;
+
+	v1 = rand1();
+	X2 = [];
+	expected = [];
+	for ( i = 0; i < 10; i++ ) {
+		x2 = [];
+		for ( j = 0; j < 10; j++ ) {
+			v2 = rand2();
+			x2.push( v2 );
+			expected.push( ref( v1, v2 ) );
+		}
+		X2.push( x2 );
+	}
+	actual = {{ALIAS}}( v1, X2 );
+
+	t.strictEqual( isArray( actual ), true, 'returns expected value' );
+	t.strictEqual( isArray( actual[ 0 ] ), true, 'returns expected value' );
+	t.deepEqual( flatten2d( actual ), expected, 'returns expected value' );
+	t.end();
+});
