@@ -57,31 +57,14 @@ var ns = require( './../../namespace' );
 * STDLIB_ATANH( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_ATANH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars
-	var opts;
-	var f;
-	var o;
+	var args;
 	var i;
 
-	opts = {
-		'nonnumeric': void 0,
-		'nan': NaN,
-		'pinf': Infinity,
-		'ninf': -Infinity
-	};
-	for ( i = 1; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
-			opts[ o ] = arguments[ i+1 ];
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
 	}
-	f = ns.math.tools.d_d( ns.atanh, opts );
-	if ( ns.isArray( value ) ) {
-		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], f );
-		return value;
-	}
-	return f( value );
+	return ns.math.tools.unary( args, ns.atanh );
 }
 
 
