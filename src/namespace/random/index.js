@@ -69,6 +69,8 @@ ns.triangular = require( '@stdlib/random-base-triangular' ).factory;
 ns.uniform = require( '@stdlib/random-base-uniform' ).factory;
 ns.weibull = require( '@stdlib/random-base-weibull' ).factory;
 
+ns.normalizeSeed = require( '@stdlib/gsheets/random/normalize-seed' );
+
 
 // EXPORTS //
 
