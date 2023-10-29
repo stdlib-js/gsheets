@@ -65,7 +65,7 @@ function STDLIB_ADD( x, y, nonnumeric, nonnumericValue, nan, nanValue, pinf, pin
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.binary2d( args, ns.add );
+	return ns.math.tools.binary( args, ns.add );
 }
 
 

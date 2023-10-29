@@ -28,7 +28,7 @@
 * @type {Namespace}
 */
 var ns = {};
-ns.binary2d = require( '@stdlib/gsheets/math/tools/binary2d' );
+ns.binary = require( '@stdlib/gsheets/math/tools/binary' );
 ns.d_d = require( '@stdlib/gsheets/math/tools/wrap-unary' );
 ns.dd_d = require( '@stdlib/gsheets/math/tools/wrap-binary' );
 ns.ddd_d = require( '@stdlib/gsheets/math/tools/wrap-ternary' );
