@@ -79,6 +79,7 @@ ns.datasets = require( './datasets' );
 ns.dists = require( './dists' );
 ns.math = require( './math' );
 ns.random = require( './random' );
+ns.string = require( './string' );
 ns.tools = require( './tools' );
 
 tmp = require( './d_d' );
