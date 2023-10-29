@@ -48,6 +48,7 @@ var __STDLIB_DISTS_NORMAL_CDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -63,8 +64,10 @@ var __STDLIB_DISTS_NORMAL_CDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * STDLIB_DISTS_NORMAL_CDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_CDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { // eslint-disable-line no-unused-vars, max-len, max-params
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -83,9 +86,25 @@ function STDLIB_DISTS_NORMAL_CDF( x, mu, sigma, nonnumeric, nonnumericValue, nan
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_CDF_DTYPES, __STDLIB_DISTS_NORMAL_CDF_MSGS ); // eslint-disable-line max-len
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_CDF_DTYPES, __STDLIB_DISTS_NORMAL_CDF_MSGS ); // eslint-disable-line max-len
+
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.cdf, opts );
-	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 
 
