@@ -35,12 +35,12 @@ ns.dd_d = require( '@stdlib/gsheets/math/tools/wrap-binary' );
 ns.ddd_d = require( '@stdlib/gsheets/math/tools/wrap-ternary' );
 ns.dddd_d = require( '@stdlib/gsheets/math/tools/wrap-quaternary' );
 ns.ddddd_d = require( '@stdlib/gsheets/math/tools/wrap-quinary' );
+ns.s_o = require( '@stdlib/gsheets/string/tools/wrap-unary' );
+ns.ss_o = require( '@stdlib/gsheets/string/tools/wrap-binary' );
+ns.sss_o = require( '@stdlib/gsheets/string/tools/wrap-ternary' );
 ns.unary2d = require( '@stdlib/array-base-unary2d' );
 
 ns.binary2d = require( './../../utils/binary2d.js' );
-ns.s_o = require( './../../utils/s_o.js' );
-ns.ss_o = require( './../../utils/ss_o.js' );
-ns.sss_o = require( './../../utils/sss_o.js' );
 ns.ternary2d = require( './../../utils/ternary2d.js' );
 
 
