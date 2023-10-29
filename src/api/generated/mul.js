@@ -65,7 +65,7 @@ function STDLIB_MUL( x, y, nonnumeric, nonnumericValue, nan, nanValue, pinf, pin
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.tools.binary2d( args, ns.mul );
+	return ns.math.tools.binary2d( args, ns.mul );
 }
 
 
