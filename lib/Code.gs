@@ -2397,6 +2397,7 @@ var __STDLIB_DISTS_NORMAL_MEDIAN_MSGS = [ 'First argument', 'Second argument' ];
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -2412,8 +2413,10 @@ var __STDLIB_DISTS_NORMAL_MEDIAN_MSGS = [ 'First argument', 'Second argument' ];
 * STDLIB_DISTS_NORMAL_MEDIAN( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_MEDIAN( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -2431,9 +2434,22 @@ function STDLIB_DISTS_NORMAL_MEDIAN( mu, sigma, nonnumeric, nonnumericValue, nan
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_MEDIAN_DTYPES, __STDLIB_DISTS_NORMAL_MEDIAN_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_MEDIAN_DTYPES, __STDLIB_DISTS_NORMAL_MEDIAN_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.median, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers using the Mersenne Twister pseudorandom number generator.
@@ -2507,6 +2523,7 @@ var __STDLIB_DISTS_NORMAL_MODE_MSGS = [ 'First argument', 'Second argument' ];
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -2522,8 +2539,10 @@ var __STDLIB_DISTS_NORMAL_MODE_MSGS = [ 'First argument', 'Second argument' ];
 * STDLIB_DISTS_NORMAL_MODE( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_MODE( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -2541,9 +2560,22 @@ function STDLIB_DISTS_NORMAL_MODE( mu, sigma, nonnumeric, nonnumericValue, nan, 
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_MODE_DTYPES, __STDLIB_DISTS_NORMAL_MODE_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_MODE_DTYPES, __STDLIB_DISTS_NORMAL_MODE_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.mode, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers drawn from a continuous uniform distribution.
@@ -2638,6 +2670,7 @@ var __STDLIB_DISTS_NORMAL_MEAN_MSGS = [ 'First argument', 'Second argument' ];
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -2653,8 +2686,10 @@ var __STDLIB_DISTS_NORMAL_MEAN_MSGS = [ 'First argument', 'Second argument' ];
 * STDLIB_DISTS_NORMAL_MEAN( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_MEAN( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -2672,9 +2707,22 @@ function STDLIB_DISTS_NORMAL_MEAN( mu, sigma, nonnumeric, nonnumericValue, nan, 
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_MEAN_DTYPES, __STDLIB_DISTS_NORMAL_MEAN_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_MEAN_DTYPES, __STDLIB_DISTS_NORMAL_MEAN_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.mean, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 var __STDLIB_DISTS_NORMAL_ENTROPY_DTYPES = [ 'number', 'number' ]; 
 var __STDLIB_DISTS_NORMAL_ENTROPY_MSGS = [ 'First argument', 'Second argument' ]; 
@@ -2692,6 +2740,7 @@ var __STDLIB_DISTS_NORMAL_ENTROPY_MSGS = [ 'First argument', 'Second argument' ]
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -2707,8 +2756,10 @@ var __STDLIB_DISTS_NORMAL_ENTROPY_MSGS = [ 'First argument', 'Second argument' ]
 * STDLIB_DISTS_NORMAL_ENTROPY( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -2726,9 +2777,22 @@ function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, na
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_ENTROPY_DTYPES, __STDLIB_DISTS_NORMAL_ENTROPY_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_ENTROPY_DTYPES, __STDLIB_DISTS_NORMAL_ENTROPY_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.entropy, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 var __STDLIB_DISTS_NORMAL_KURTOSIS_DTYPES = [ 'number', 'number' ]; 
 var __STDLIB_DISTS_NORMAL_KURTOSIS_MSGS = [ 'First argument', 'Second argument' ]; 
@@ -2746,6 +2810,7 @@ var __STDLIB_DISTS_NORMAL_KURTOSIS_MSGS = [ 'First argument', 'Second argument' 
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -2761,8 +2826,10 @@ var __STDLIB_DISTS_NORMAL_KURTOSIS_MSGS = [ 'First argument', 'Second argument' 
 * STDLIB_DISTS_NORMAL_KURTOSIS( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_KURTOSIS( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -2780,9 +2847,22 @@ function STDLIB_DISTS_NORMAL_KURTOSIS( mu, sigma, nonnumeric, nonnumericValue, n
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_KURTOSIS_DTYPES, __STDLIB_DISTS_NORMAL_KURTOSIS_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_KURTOSIS_DTYPES, __STDLIB_DISTS_NORMAL_KURTOSIS_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.kurtosis, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers drawn from a Student's t-distribution.
@@ -3015,6 +3095,7 @@ var __STDLIB_DISTS_NORMAL_MGF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -3030,8 +3111,10 @@ var __STDLIB_DISTS_NORMAL_MGF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * STDLIB_DISTS_NORMAL_MGF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_MGF( t, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -3049,9 +3132,22 @@ function STDLIB_DISTS_NORMAL_MGF( t, mu, sigma, nonnumeric, nonnumericValue, nan
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ t, mu, sigma ], __STDLIB_DISTS_NORMAL_MGF_DTYPES, __STDLIB_DISTS_NORMAL_MGF_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ t, mu, sigma ], __STDLIB_DISTS_NORMAL_MGF_DTYPES, __STDLIB_DISTS_NORMAL_MGF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.mgf, opts );
-	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers drawn from a standard normal distribution using the Improved Ziggurat transform.
@@ -3435,6 +3531,7 @@ var __STDLIB_DISTS_NORMAL_LOGPDF_MSGS = [ 'First argument', 'Second argument', '
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -3450,8 +3547,10 @@ var __STDLIB_DISTS_NORMAL_LOGPDF_MSGS = [ 'First argument', 'Second argument', '
 * STDLIB_DISTS_NORMAL_LOGPDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_LOGPDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -3469,9 +3568,22 @@ function STDLIB_DISTS_NORMAL_LOGPDF( x, mu, sigma, nonnumeric, nonnumericValue, 
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_LOGPDF_DTYPES, __STDLIB_DISTS_NORMAL_LOGPDF_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_LOGPDF_DTYPES, __STDLIB_DISTS_NORMAL_LOGPDF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.logpdf, opts );
-	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 var __STDLIB_DISTS_NORMAL_SKEWNESS_DTYPES = [ 'number', 'number' ]; 
 var __STDLIB_DISTS_NORMAL_SKEWNESS_MSGS = [ 'First argument', 'Second argument' ]; 
@@ -3489,6 +3601,7 @@ var __STDLIB_DISTS_NORMAL_SKEWNESS_MSGS = [ 'First argument', 'Second argument' 
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -3504,8 +3617,10 @@ var __STDLIB_DISTS_NORMAL_SKEWNESS_MSGS = [ 'First argument', 'Second argument' 
 * STDLIB_DISTS_NORMAL_SKEWNESS( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_SKEWNESS( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -3523,9 +3638,22 @@ function STDLIB_DISTS_NORMAL_SKEWNESS( mu, sigma, nonnumeric, nonnumericValue, n
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_SKEWNESS_DTYPES, __STDLIB_DISTS_NORMAL_SKEWNESS_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_SKEWNESS_DTYPES, __STDLIB_DISTS_NORMAL_SKEWNESS_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.skewness, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers drawn from a triangular distribution.
@@ -3657,6 +3785,7 @@ var __STDLIB_DISTS_NORMAL_CDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -3672,8 +3801,10 @@ var __STDLIB_DISTS_NORMAL_CDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * STDLIB_DISTS_NORMAL_CDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_CDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -3691,9 +3822,22 @@ function STDLIB_DISTS_NORMAL_CDF( x, mu, sigma, nonnumeric, nonnumericValue, nan
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_CDF_DTYPES, __STDLIB_DISTS_NORMAL_CDF_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_CDF_DTYPES, __STDLIB_DISTS_NORMAL_CDF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.cdf, opts );
-	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 var __STDLIB_DISTS_NORMAL_STDEV_DTYPES = [ 'number', 'number' ]; 
 var __STDLIB_DISTS_NORMAL_STDEV_MSGS = [ 'First argument', 'Second argument' ]; 
@@ -3711,6 +3855,7 @@ var __STDLIB_DISTS_NORMAL_STDEV_MSGS = [ 'First argument', 'Second argument' ];
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -3726,8 +3871,10 @@ var __STDLIB_DISTS_NORMAL_STDEV_MSGS = [ 'First argument', 'Second argument' ];
 * STDLIB_DISTS_NORMAL_STDEV( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_STDEV( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -3745,9 +3892,22 @@ function STDLIB_DISTS_NORMAL_STDEV( mu, sigma, nonnumeric, nonnumericValue, nan,
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_STDEV_DTYPES, __STDLIB_DISTS_NORMAL_STDEV_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_STDEV_DTYPES, __STDLIB_DISTS_NORMAL_STDEV_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.stdev, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers drawn from a Poisson distribution.
@@ -4023,6 +4183,7 @@ var __STDLIB_DISTS_NORMAL_QUANTILE_MSGS = [ 'First argument', 'Second argument',
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -4038,8 +4199,10 @@ var __STDLIB_DISTS_NORMAL_QUANTILE_MSGS = [ 'First argument', 'Second argument',
 * STDLIB_DISTS_NORMAL_QUANTILE( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_QUANTILE( p, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -4057,9 +4220,22 @@ function STDLIB_DISTS_NORMAL_QUANTILE( p, mu, sigma, nonnumeric, nonnumericValue
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ p, mu, sigma ], __STDLIB_DISTS_NORMAL_QUANTILE_DTYPES, __STDLIB_DISTS_NORMAL_QUANTILE_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ p, mu, sigma ], __STDLIB_DISTS_NORMAL_QUANTILE_DTYPES, __STDLIB_DISTS_NORMAL_QUANTILE_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.quantile, opts );
-	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers drawn from a logistic distribution.
@@ -4343,6 +4519,7 @@ var __STDLIB_DISTS_NORMAL_PDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -4358,8 +4535,10 @@ var __STDLIB_DISTS_NORMAL_PDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * STDLIB_DISTS_NORMAL_PDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -4377,9 +4556,22 @@ function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma, nonnumeric, nonnumericValue, nan
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_PDF_DTYPES, __STDLIB_DISTS_NORMAL_PDF_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_PDF_DTYPES, __STDLIB_DISTS_NORMAL_PDF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.pdf, opts );
-	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates a sawtooth wave.
@@ -4631,6 +4823,7 @@ var __STDLIB_DISTS_NORMAL_LOGCDF_MSGS = [ 'First argument', 'Second argument', '
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -4646,8 +4839,10 @@ var __STDLIB_DISTS_NORMAL_LOGCDF_MSGS = [ 'First argument', 'Second argument', '
 * STDLIB_DISTS_NORMAL_LOGCDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_LOGCDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -4665,9 +4860,22 @@ function STDLIB_DISTS_NORMAL_LOGCDF( x, mu, sigma, nonnumeric, nonnumericValue, 
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_LOGCDF_DTYPES, __STDLIB_DISTS_NORMAL_LOGCDF_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_LOGCDF_DTYPES, __STDLIB_DISTS_NORMAL_LOGCDF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.logcdf, opts );
-	return ns.tools.ternary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Generates pseudorandom numbers drawn from a lognormal distribution.
@@ -4835,6 +5043,7 @@ var __STDLIB_DISTS_NORMAL_VARIANCE_MSGS = [ 'First argument', 'Second argument' 
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
 * @returns {Range<number>} results
 *
 * @example
@@ -4850,8 +5059,10 @@ var __STDLIB_DISTS_NORMAL_VARIANCE_MSGS = [ 'First argument', 'Second argument' 
 * STDLIB_DISTS_NORMAL_VARIANCE( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_DISTS_NORMAL_VARIANCE( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var arrays;
+	var shape;
+	var args;
 	var opts;
+	var out;
 	var f;
 	var o;
 	var i;
@@ -4869,7 +5080,20 @@ function STDLIB_DISTS_NORMAL_VARIANCE( mu, sigma, nonnumeric, nonnumericValue, n
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	arrays = ns.broadcast( [ mu, sigma ], __STDLIB_DISTS_NORMAL_VARIANCE_DTYPES, __STDLIB_DISTS_NORMAL_VARIANCE_MSGS ); 
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ mu, sigma ], __STDLIB_DISTS_NORMAL_VARIANCE_DTYPES, __STDLIB_DISTS_NORMAL_VARIANCE_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.dd_d( ns.dists.normal.variance, opts );
-	return ns.tools.binary2d( arrays[ 0 ], arrays[ 1 ], arrays[ 2 ], f );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bbinary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
