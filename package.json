@@ -305,6 +305,7 @@
     "@stdlib/string-uncapitalize": "^0.1.1",
     "@stdlib/string-uppercase": "^0.1.1",
     "@stdlib/time-current-year": "^0.1.1",
+    "@stdlib/utils-define-read-only-property": "^0.1.1",
     "@stdlib/utils-dirname": "^0.1.0",
     "@stdlib/utils-keys": "^0.1.0",
     "@stdlib/utils-parse-json": "^0.1.0",
