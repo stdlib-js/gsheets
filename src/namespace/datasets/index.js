@@ -30,7 +30,6 @@
 * @type {Namespace}
 */
 var ns = {};
-
 ns.AFINN_111 = require( '@stdlib/datasets-afinn-111' );
 ns.AFINN_96 = require( '@stdlib/datasets-afinn-96' );
 ns.ANSCOMBES_QUARTET = require( '@stdlib/datasets-anscombes-quartet' );
