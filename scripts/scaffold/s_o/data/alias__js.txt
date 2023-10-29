@@ -29,7 +29,7 @@ var ns = require( './../../namespace' );
 
 // VARIABLES //
 
-var __STDLIB_{{ALIAS_CONSTANTCASE}} = ns.tools.s_o( ns.{{ALIAS}} ); // eslint-disable-line no-underscore-dangle
+var __STDLIB_{{ALIAS_CONSTANTCASE}} = ns.string.tools.s_o( ns.{{ALIAS}} ); // eslint-disable-line no-underscore-dangle
 
 
 // MAIN //
