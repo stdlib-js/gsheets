@@ -87,16 +87,16 @@ var v = {{ALIAS}}( [ [ NaN ] ], {{Y_VALUES_1}}, 'nan', '' );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var uniform = require( '@stdlib/random-base-{{PRNG}}' ).factory;
+{{PRNGS}}
 var filled2dBy = require( '@stdlib/array-base-filled2d-by' );
 var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{PKG_NAME}}' );
 
 var shape = [ 3, 3 ];
 
-var x = filled2dBy( shape, uniform( {{X_RAND_MIN}}, {{X_RAND_MAX}} ) );
+var x = filled2dBy( shape, {{X_PRNG_ALIAS}}( {{X_RAND_MIN}}, {{X_RAND_MAX}} ) );
 console.log( x );
 
-var y = filled2dBy( shape, uniform( {{Y_RAND_MIN}}, {{Y_RAND_MAX}} ) );
+var y = filled2dBy( shape, {{Y_PRNG_ALIAS}}( {{Y_RAND_MIN}}, {{Y_RAND_MAX}} ) );
 console.log( y );
 
 var z = {{ALIAS}}( x, y );

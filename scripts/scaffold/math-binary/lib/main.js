@@ -110,6 +110,50 @@ function approx2str( x ) {
 }
 
 /**
+* Returns a PRNG alias.
+*
+* @private
+* @param {Array} prngs - PRNG names
+* @param {NonNegativeInteger} idx - variable index
+* @returns {string} alias
+*/
+function prngAlias( prngs, idx ) {
+	if ( prngs[ 0 ] === prngs[ 1 ] ) {
+		return 'prng';
+	}
+	if ( idx === 0 ) {
+		return 'prng1';
+	}
+	return 'prng2';
+}
+
+/**
+* Renders PRNG require statements.
+*
+* @private
+* @param {Array} prngs - PRNG names
+* @returns {string} rendered template
+*/
+function renderPRNGRequires( prngs ) {
+	if ( prngs[ 0 ] === prngs[ 1 ] ) {
+		return [
+			'var prng = require( \'@stdlib/random-base-',
+			prngs[ 0 ],
+			'\' ).factory;'
+		].join( '' );
+	}
+	return [
+		'var prng1 = require( \'@stdlib/random-base-',
+		prngs[ 0 ],
+		'\' ).factory;',
+		'\n',
+		'var prng2 = require( \'@stdlib/random-base-',
+		prngs[ 1 ],
+		'\' ).factory;'
+	].join( '' );
+}
+
+/**
 * Renders a benchmark template.
 *
 * @private
@@ -121,16 +165,18 @@ function approx2str( x ) {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderBenchmark( opts ) {
 	var file = replace( TEMPLATES.benchmark, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{PRNG}}', opts.prng[ 0 ] ); // FIXME: need to be able to handle different PRNGs for the different arguments
+	file = replace( file, '{{PRNGS}}', renderPRNGRequires( opts.prng ) );
+	file = replace( file, '{{X_PRNG_ALIAS}}', prngAlias( opts.prng, 0 ) );
+	file = replace( file, '{{Y_PRNG_ALIAS}}', prngAlias( opts.prng, 1 ) );
 	file = replace( file, '{{X_RAND_MIN}}', opts.min[ 0 ] );
 	file = replace( file, '{{X_RAND_MAX}}', opts.max[ 0 ] );
 	file = replace( file, '{{Y_RAND_MIN}}', opts.min[ 1 ] );
@@ -150,16 +196,18 @@ function renderBenchmark( opts ) {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderExamples( opts ) {
 	var file = replace( TEMPLATES.examples, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{PRNG}}', opts.prng[ 0 ] ); // FIXME: need to be able to handle different PRNGs for the different arguments
+	file = replace( file, '{{PRNGS}}', renderPRNGRequires( opts.prng ) );
+	file = replace( file, '{{X_PRNG_ALIAS}}', prngAlias( opts.prng, 0 ) );
+	file = replace( file, '{{Y_PRNG_ALIAS}}', prngAlias( opts.prng, 1 ) );
 	file = replace( file, '{{X_RAND_MIN}}', opts.min[ 0 ] );
 	file = replace( file, '{{X_RAND_MAX}}', opts.max[ 0 ] );
 	file = replace( file, '{{Y_RAND_MIN}}', opts.min[ 1 ] );
@@ -179,9 +227,9 @@ function renderExamples( opts ) {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderLibIndex( opts ) {
@@ -208,9 +256,9 @@ function renderLibIndex( opts ) {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderLibMain( opts ) {
@@ -236,9 +284,9 @@ function renderLibMain( opts ) {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderMakefile() {
@@ -259,9 +307,9 @@ function renderMakefile() {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderPackageJSON( opts ) {
@@ -282,16 +330,18 @@ function renderPackageJSON( opts ) {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderTest( opts ) {
 	var file = replace( TEMPLATES.test, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{PRNG}}', opts.prng[ 0 ] ); // FIXME: need to be able to handle different PRNGs for the different arguments
+	file = replace( file, '{{PRNGS}}', renderPRNGRequires( opts.prng ) );
+	file = replace( file, '{{X_PRNG_ALIAS}}', prngAlias( opts.prng, 0 ) );
+	file = replace( file, '{{Y_PRNG_ALIAS}}', prngAlias( opts.prng, 1 ) );
 	file = replace( file, '{{X_RAND_MIN}}', opts.min[ 0 ] );
 	file = replace( file, '{{X_RAND_MAX}}', opts.max[ 0 ] );
 	file = replace( file, '{{Y_RAND_MIN}}', opts.min[ 1 ] );
@@ -313,9 +363,9 @@ function renderTest( opts ) {
 * @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
-* @param {string} opts.min - minimum value
-* @param {string} opts.max - maximum value
-* @param {string} opts.prng - PRNG name
+* @param {string} opts.min - minimum values
+* @param {string} opts.max - maximum values
+* @param {string} opts.prng - PRNG names
 * @returns {string} rendered template
 */
 function renderREADME( opts ) {
@@ -324,7 +374,9 @@ function renderREADME( opts ) {
 	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{PRNG}}', opts.prng[ 0 ] ); // FIXME: need to be able to handle different PRNGs for the different arguments
+	file = replace( file, '{{PRNGS}}', renderPRNGRequires( opts.prng ) );
+	file = replace( file, '{{X_PRNG_ALIAS}}', prngAlias( opts.prng, 0 ) );
+	file = replace( file, '{{Y_PRNG_ALIAS}}', prngAlias( opts.prng, 1 ) );
 	file = replace( file, '{{X_RAND_MIN}}', opts.min[ 0 ] );
 	file = replace( file, '{{X_RAND_MAX}}', opts.max[ 0 ] );
 	file = replace( file, '{{Y_RAND_MIN}}', opts.min[ 1 ] );
@@ -348,9 +400,9 @@ function renderREADME( opts ) {
 * @param {string} options.pkg_desc - package description
 * @param {string} options.desc - API description
 * @param {Array} options.values - test values
-* @param {number} options.min - minimum value
-* @param {number} options.max - maximum value
-* @param {string} options.prng - PRNG name
+* @param {number} options.min - minimum values
+* @param {number} options.max - maximum values
+* @param {string} options.prng - PRNG names
 */
 function scaffold( options ) {
 	var fname;

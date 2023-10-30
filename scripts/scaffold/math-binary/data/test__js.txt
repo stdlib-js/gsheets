@@ -23,15 +23,15 @@
 var tape = require( 'tape' );
 var ref = require( '@stdlib/{{REF_PKG}}' );
 var isArray = require( '@stdlib/assert-is-array' );
-var uniform = require( '@stdlib/random-base-{{PRNG}}' ).factory;
+{{PRNGS}}
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
 var {{ALIAS}} = require( './../lib' );
 
 
 // VARIABLES //
 
-var rand1 = uniform( {{X_RAND_MIN}}, {{X_RAND_MAX}} );
-var rand2 = uniform( {{Y_RAND_MIN}}, {{Y_RAND_MAX}} );
+var rand1 = {{X_PRNG_ALIAS}}( {{X_RAND_MIN}}, {{X_RAND_MAX}} );
+var rand2 = {{Y_PRNG_ALIAS}}( {{Y_RAND_MIN}}, {{Y_RAND_MAX}} );
 
 
 // TESTS //
