@@ -59,7 +59,7 @@ tape( 'the function throws an error if not provided a number (primitive)', funct
 	function badValue( value ) {
 		return function badValue() {
 			{{ALIAS}}( value );
-		}
+		};
 	}
 });
 
@@ -81,7 +81,7 @@ tape( 'the function throws an error if not provided a number (nested array)', fu
 	function badValue( value ) {
 		return function badValue() {
 			{{ALIAS}}( [ [ value ] ] );
-		}
+		};
 	}
 });
 
