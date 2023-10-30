@@ -3224,7 +3224,7 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 		v = arguments[ i+1 ];
 		if ( o === 'groups' ) {
 			ns.assert.isRange( v, 'Groups' );
-			opts[ o ] = ns.flattenArray( v );
+			opts[ o ] = ns.array.flattenArray( v );
 		} else if ( o === 'alpha' ) {
 			ns.assert.isNumber( v, 'Significance level' );
 			opts[ o ] = v;
