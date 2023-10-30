@@ -128,6 +128,9 @@ APP_DIR ?= $(ROOT_DIR)/lib
 # Define the root directory for storing temporary files:
 TMP_DIR ?= $(ROOT_DIR)/tmp
 
+# Define the root directory for storing scripts:
+SCRIPTS_DIR ?= $(ROOT_DIR)/scripts
+
 # Define the directories for writing reports, including code coverage:
 REPORTS_DIR ?= $(ROOT_DIR)/reports
 COVERAGE_DIR ?= $(REPORTS_DIR)/coverage
@@ -752,3 +755,36 @@ build-app: $(NODE_MODULES) build-api-pkgs build-bundle build-preamble
 		>> $(APP_DIR)/tmp.js
 
 .PHONY: build-app
+
+#/
+# Scaffolds unary math APIs.
+#
+# @example
+# make scaffold-math-unary
+#/
+scaffold-math-unary: $(NODE_MODULES)
+	$(QUIET) $(NODE) $(SCRIPTS_DIR)/math-unary/scripts/scaffold.js
+
+.PHONY: scaffold-math-unary
+
+#/
+# Scaffolds binary math APIs.
+#
+# @example
+# make scaffold-math-binary
+#/
+scaffold-math-binary: $(NODE_MODULES)
+	$(QUIET) $(NODE) $(SCRIPTS_DIR)/math-binary/scripts/scaffold.js
+
+.PHONY: scaffold-math-binary
+
+#/
+# Scaffolds unary string APIs.
+#
+# @example
+# make scaffold-string-unary
+#/
+scaffold-string-unary: $(NODE_MODULES)
+	$(QUIET) $(NODE) $(SCRIPTS_DIR)/string-unary/scripts/scaffold.js
+
+.PHONY: scaffold-string-unary
