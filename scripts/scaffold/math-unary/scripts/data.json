@@ -4,6 +4,10 @@
     "pkg": "math/base/special/abs",
     "pkg_desc": "Compute the absolute value",
     "desc": "Computes the absolute value",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       -1.2,
       2.0,
@@ -21,6 +25,10 @@
     "pkg": "math/base/special/abs2",
     "pkg_desc": "Compute the squared absolute value",
     "desc": "Computes the squared absolute value",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       -1.2,
       2.0,
@@ -38,6 +46,10 @@
     "pkg": "math/base/special/acos",
     "pkg_desc": "Compute the arccosine of a number (in radians)",
     "desc": "Computes the arccosine of a number (in radians)",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       0.707,
@@ -54,6 +66,10 @@
     "pkg": "math/base/special/acosh",
     "pkg_desc": "Compute the hyperbolic arccosine",
     "desc": "Computes the hyperbolic arccosine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       2.0,
@@ -70,6 +86,10 @@
     "pkg": "math/base/special/acot",
     "pkg_desc": "Compute the inverse cotangent of a number (in radians)",
     "desc": "Computes the inverse cotangent of a number (in radians)",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       2.0,
       0.707,
@@ -86,6 +106,10 @@
     "pkg": "math/base/special/acovercos",
     "pkg_desc": "Compute the inverse coversed cosine",
     "desc": "Computes the inverse coversed cosine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       -1.77,
@@ -102,6 +126,10 @@
     "pkg": "math/base/special/acoversin",
     "pkg_desc": "Compute the inverse coversed sine",
     "desc": "Computes the inverse coversed sine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       1.77,
@@ -118,6 +146,10 @@
     "pkg": "math/base/special/acsc",
     "pkg_desc": "Compute the arccosecant",
     "desc": "Computes the arccosecant",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       1.707,
@@ -134,6 +166,10 @@
     "pkg": "math/base/special/acsch",
     "pkg_desc": "Compute the hyperbolic arccosecant",
     "desc": "Computes the hyperbolic arccosecant",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       1.707,
@@ -150,6 +186,10 @@
     "pkg": "math/base/special/ahavercos",
     "pkg_desc": "Compute the inverse half-value versed cosine",
     "desc": "Computes the inverse half-value versed cosine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.77,
@@ -166,6 +206,10 @@
     "pkg": "math/base/special/ahaversin",
     "pkg_desc": "Compute the inverse half-value versed sine",
     "desc": "Computes the inverse half-value versed sine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.77,
@@ -182,6 +226,10 @@
     "pkg": "math/base/special/asin",
     "pkg_desc": "Compute the arcsine of a number (in radians)",
     "desc": "Computes the arcsine of a number (in radians)",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       0.707,
@@ -198,6 +246,10 @@
     "pkg": "math/base/special/asinh",
     "pkg_desc": "Compute the hyperbolic arcsine",
     "desc": "Computes the hyperbolic arcsine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       0.707,
@@ -214,6 +266,10 @@
     "pkg": "math/base/special/atan",
     "pkg_desc": "Compute the arctangent of a number",
     "desc": "Computes the arctangent of a number",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       0.707,
@@ -230,6 +286,10 @@
     "pkg": "math/base/special/atanh",
     "pkg_desc": "Compute the hyperbolic arctangent",
     "desc": "Computes the hyperbolic arctangent",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.0,
       0.707,
@@ -246,6 +306,10 @@
     "pkg": "math/base/special/avercos",
     "pkg_desc": "Compute the inverse versed cosine",
     "desc": "Computes the inverse versed cosine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       -0.77,
@@ -262,6 +326,10 @@
     "pkg": "math/base/special/aversin",
     "pkg_desc": "Compute the inverse versed sine",
     "desc": "Computes the inverse versed sine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.77,
@@ -278,6 +346,10 @@
     "pkg": "math/base/special/besselj0",
     "pkg_desc": "Compute the Bessel function of the first kind of order zero",
     "desc": "Computes the Bessel function of the first kind of order zero",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.77,
@@ -294,6 +366,10 @@
     "pkg": "math/base/special/besselj1",
     "pkg_desc": "Compute the Bessel function of the first kind of order one",
     "desc": "Computes the Bessel function of the first kind of order one",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.77,
@@ -310,6 +386,10 @@
     "pkg": "math/base/special/bessely0",
     "pkg_desc": "Compute the Bessel function of the second kind of order zero",
     "desc": "Computes the Bessel function of the second kind of order zero",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.77,
@@ -326,6 +406,10 @@
     "pkg": "math/base/special/bessely1",
     "pkg_desc": "Compute the Bessel function of the second kind of order one",
     "desc": "Computes the Bessel function of the second kind of order one",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.77,
@@ -342,6 +426,10 @@
     "pkg": "math/base/special/binet",
     "pkg_desc": "Evaluate Binet's formula extended to real numbers",
     "desc": "Evaluates Binet's formula extended to real numbers",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       1.0,
@@ -358,6 +446,10 @@
     "pkg": "math/base/special/cbrt",
     "pkg_desc": "Compute the cube root",
     "desc": "Computes the cube root",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       64.0,
       27.0,
@@ -374,6 +466,10 @@
     "pkg": "math/base/special/ceil",
     "pkg_desc": "Round a number toward positive infinity",
     "desc": "Rounds a number toward positive infinity",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       100.77,
@@ -390,6 +486,10 @@
     "pkg": "math/base/special/ceil10",
     "pkg_desc": "Round a number to the nearest power of 10 toward positive infinity",
     "desc": "Rounds a number to the nearest power of 10 toward positive infinity",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       100.77,
@@ -406,6 +506,10 @@
     "pkg": "math/base/special/ceil2",
     "pkg_desc": "Round a number to the nearest power of 2 toward positive infinity",
     "desc": "Rounds a number to the nearest power of 2 toward positive infinity",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       -4.2,
       -4.5,
@@ -422,6 +526,10 @@
     "pkg": "math/base/special/cos",
     "pkg_desc": "Compute the cosine of a number (in radians)",
     "desc": "Computes the cosine of a number (in radians)",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.75,
@@ -438,6 +546,10 @@
     "pkg": "math/base/special/sin",
     "pkg_desc": "Compute the sine of a number (in radians)",
     "desc": "Computes the sine of a number (in radians)",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       0.0,
       0.75,
@@ -454,6 +566,10 @@
     "pkg": "math/base/special/sqrt",
     "pkg_desc": "Compute the principal root",
     "desc": "Computes the principal root",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       64.0,
       27.0,
@@ -470,6 +586,10 @@
     "pkg": "math/base/special/riemann-zeta",
     "pkg_desc": "Evaluate the Riemann zeta function as a function of a real variable",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
     "values": [
       1.2,
       2.0,

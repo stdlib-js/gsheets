@@ -4,6 +4,10 @@
     "pkg": "string/camelcase",
     "pkg_desc": "Convert a string to camel case",
     "desc": "Converts a string to camel case",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",
@@ -18,6 +22,10 @@
     "pkg": "string/capitalize",
     "pkg_desc": "Capitalize the first character of a string",
     "desc": "Capitalizes the first character of a string",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",
@@ -32,6 +40,10 @@
     "pkg": "string/constantcase",
     "pkg_desc": "Convert a string to constant case",
     "desc": "Converts a string to constant case",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",
@@ -46,6 +58,10 @@
     "pkg": "string/kebabcase",
     "pkg_desc": "Convert a string to kebab case",
     "desc": "Converts a string to kebab case",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",
@@ -60,6 +76,10 @@
     "pkg": "string/lowercase",
     "pkg_desc": "Convert a string to lowercase",
     "desc": "Converts a string to lowercase",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "Foo Bar",
       "foo bar",
@@ -74,6 +94,10 @@
     "pkg": "string/pascalcase",
     "pkg_desc": "Convert a string to Pascal case",
     "desc": "Converts a string to Pascal case",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",
@@ -88,6 +112,10 @@
     "pkg": "string/snakecase",
     "pkg_desc": "Convert a string to snake case",
     "desc": "Converts a string to snake case",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",
@@ -102,6 +130,10 @@
     "pkg": "string/startcase",
     "pkg_desc": "Convert a string to start case",
     "desc": "Converts a string to start case",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",
@@ -116,6 +148,10 @@
     "pkg": "string/uncapitalize",
     "pkg_desc": "Lowercase the first character of a string",
     "desc": "Lowercases the first character of a string",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "Foo Bar",
       "foo bar",
@@ -130,6 +166,10 @@
     "pkg": "string/uppercase",
     "pkg_desc": "Convert a string to uppercase",
     "desc": "Converts a string to uppercase",
+    "dtypes": [
+      "string",
+      "string"
+    ],
     "values": [
       "foo bar",
       "Foo Bar",

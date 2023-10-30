@@ -4,6 +4,11 @@
     "pkg": "math/base/ops/add",
     "pkg_desc": "Compute the sum",
     "desc": "Computes the sum",
+    "dtypes": [
+      "float64",
+      "float64",
+      "float64"
+    ],
     "values": [
       [
         -1.2,
@@ -36,10 +41,56 @@
     ]
   },
   {
+    "alias": "floorn",
+    "pkg": "math/base/special/floorn",
+    "pkg_desc": "Round a number to the nearest multiple of 10^n toward negative infinity",
+    "desc": "Rounds a number to the nearest multiple of 10^n toward negative infinity",
+    "dtypes": [
+      "float64",
+      "int32",
+      "float64"
+    ],
+    "values": [
+      [
+        3.141592653589793,
+        3.141592653589793,
+        12368.0,
+        1.23456,
+        -12.3456,
+        100.0
+      ],
+      [
+        -4,
+        0,
+        3,
+        -2,
+        1,
+        -2
+      ]
+    ],
+    "min": [
+      -10.0,
+      -10
+    ],
+    "max": [
+      10.0,
+      0
+    ],
+    "prng": [
+      "uniform",
+      "discrete-uniform"
+    ]
+  },
+  {
     "alias": "mul",
     "pkg": "math/base/ops/mul",
     "pkg_desc": "Compute the product",
     "desc": "Computes the product",
+    "dtypes": [
+      "float64",
+      "float64",
+      "float64"
+    ],
     "values": [
       [
         -1.2,
@@ -56,6 +107,47 @@
         -1.0,
         -2.0,
         6.2
+      ]
+    ],
+    "min": [
+      -10.0,
+      -10.0
+    ],
+    "max": [
+      10.0,
+      10.0
+    ],
+    "prng": [
+      "uniform",
+      "uniform"
+    ]
+  },
+  {
+    "alias": "pow",
+    "pkg": "math/base/special/pow",
+    "pkg_desc": "Evaluate the exponential function",
+    "desc": "Evaluates the exponential function",
+    "dtypes": [
+      "float64",
+      "float64",
+      "float64"
+    ],
+    "values": [
+      [
+        2.0,
+        4.0,
+        100.0,
+        3.14,
+        3.14,
+        -10.0
+      ],
+      [
+        3.0,
+        0.5,
+        0.0,
+        5.0,
+        -0.2,
+        4.0
       ]
     ],
     "min": [
@@ -76,6 +168,11 @@
     "pkg": "math/base/ops/sub",
     "pkg_desc": "Perform subtraction",
     "desc": "Performs subtraction",
+    "dtypes": [
+      "float64",
+      "float64",
+      "float64"
+    ],
     "values": [
       [
         -1.2,
