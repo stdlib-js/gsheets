@@ -144,11 +144,26 @@ ROOT_PACKAGE_JSON ?= $(ROOT_DIR)/package.json
 # Define the folder name convention for source files requiring compilation:
 SRC_FOLDER ?= src
 
+# Define the folder name convention for executable files:
+BIN_FOLDER ?= bin
+
+# Define the folder name convention for implementation files:
+SOURCE_FOLDER ?= lib
+
+# Define the folder name convention for data files:
+DATA_FOLDER ?= data
+
 # Define the folder name convention for documentation files:
 DOCUMENTATION_FOLDER ?= docs
 
 # Define the folder name convention for configuration files:
 CONFIG_FOLDER ?= etc
+
+# Define the folder name convention for scripts:
+SCRIPTS_FOLDER ?= scripts
+
+# Define the folder name convention for distributable files:
+DIST_FOLDER ?= dist
 
 # Define the folder name convention for benchmark files:
 BENCHMARKS_FOLDER ?= benchmark
@@ -185,6 +200,12 @@ EXAMPLES_PATTERN ?= *.js
 
 # Define a filename pattern for test files:
 TESTS_PATTERN ?= test*.js
+
+# Define a filename pattern for identifying packages:
+PACKAGES_PATTERN ?= package.json
+
+# Define a filepath pattern for packages:
+PACKAGES_FILTER ?= .*/.*
 
 # Define whether delete operations should be safe (i.e., deleted items are sent to trash, rather than permanently deleted):
 SAFE_DELETE ?= false
@@ -349,6 +370,35 @@ endif
 
 # Define a command to list test files:
 FIND_TESTS_CMD ?= find $(find_kernel_prefix) $(ROOT_DIR) $(FIND_TESTS_FLAGS)
+
+# Packages exclude flags:
+FIND_PACKAGES_EXCLUDE_FLAGS ?= \
+	$(FIND_COMMON_EXCLUDE_FLAGS) \
+	'!' -path "$(ROOT_DIR)/**/$(BENCHMARKS_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(BIN_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(DATA_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(DIST_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(EXAMPLES_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(SOURCE_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(TESTS_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(CONFIG_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(DOCUMENTATION_FOLDER)/*" \
+	'!' -path "$(ROOT_DIR)/**/$(SCRIPTS_FOLDER)/*"
+
+# Define the command flags:
+FIND_PACKAGES_FLAGS ?= \
+	-type f \
+	-name "$(PACKAGES_PATTERN)" \
+	-regex "$(PACKAGES_FILTER)" \
+	$(FIND_PACKAGES_EXCLUDE_FLAGS) \
+	-exec dirname {} \;
+
+ifneq ($(OS), Darwin)
+	FIND_PACKAGES_FLAGS := -regextype posix-extended $(FIND_PACKAGES_FLAGS)
+endif
+
+# Define a command for listing packages:
+FIND_PACKAGES_CMD ?= find $(find_kernel_prefix) "$(ROOT_DIR)" $(FIND_PACKAGES_FLAGS)
 
 
 # RULES #
@@ -549,3 +599,43 @@ view-cov:
 #/
 clean-cov:
 	$(QUIET) $(DELETE) $(DELETE_FLAGS) $(COVERAGE_DIR)
+
+#/
+# Prints a list of all packages.
+#
+# ## Notes
+#
+# -   This recipe excludes the `node_modules`, `build`, and `reports` directories.
+#/
+# @param {string} [PACKAGES_PATTERN='package.json'] - filename pattern for identifying packages
+# @param {string} [PACKAGES_FILTER='.*/.*'] - filepath pattern for finding packages
+#
+# @example
+# make list-pkgs
+#
+# @example
+# make list-pkgs PACKAGES_FILTER='.*/math/base/special/.*'
+#/
+list-pkgs:
+	$(QUIET) find $(find_kernel_prefix) "$(ROOT_DIR)" $(FIND_PACKAGES_FLAGS) | xargs printf '%s\n'
+
+.PHONY: list-pkgs
+
+#/
+# Generates API package build artifacts.
+#
+# @example
+# make build-pkgs
+#/
+build-pkgs: $(NODE_MODULES)
+	$(QUIET) $(FIND_PACKAGES_CMD) | while read -r pkg; do \
+		if echo "$$pkg" | grep -v '^\/.*\|^[a-zA-Z]:.*' >/dev/null; then \
+			continue; \
+		fi; \
+		echo ''; \
+		echo "Building package artifact: $$pkg"; \
+		cd $$pkg && $(MAKE) build \
+		|| { echo "Error: failed to build package artifact: $$pkg"; exit 0; } \
+	done
+
+.PHONY: build-pkgs
