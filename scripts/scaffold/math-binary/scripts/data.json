@@ -2,6 +2,7 @@
   {
     "alias": "add",
     "pkg": "math/base/ops/add",
+    "pkg_desc": "Compute the sum",
     "desc": "Computes the sum",
     "values": [
       [
@@ -37,6 +38,7 @@
   {
     "alias": "mul",
     "pkg": "math/base/ops/mul",
+    "pkg_desc": "Compute the product",
     "desc": "Computes the product",
     "values": [
       [
@@ -72,6 +74,7 @@
   {
     "alias": "sub",
     "pkg": "math/base/ops/sub",
+    "pkg_desc": "Perform subtraction",
     "desc": "Performs subtraction",
     "values": [
       [

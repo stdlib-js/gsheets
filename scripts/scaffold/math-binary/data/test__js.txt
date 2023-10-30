@@ -25,7 +25,7 @@ var ref = require( '@stdlib/{{REF_PKG}}' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-{{PRNG}}' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var {{ALIAS}} = require( '@stdlib/gsheets/api/math/generated/{{ALIAS}}.js' );
+var {{ALIAS}} = require( './../lib' );
 
 
 // VARIABLES //
