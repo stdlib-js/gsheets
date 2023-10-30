@@ -672,9 +672,34 @@ build-api-pkgs: $(NODE_MODULES)
 			continue; \
 		fi; \
 		echo ''; \
-		echo "Building package artifact: $$pkg"; \
+		echo "Building package artifacts: $$pkg"; \
 		cd $$pkg && $(MAKE) build \
-		|| { echo "Error: failed to build package artifact: $$pkg"; exit 0; } \
+		|| { echo "Error: failed to build package artifacts: $$pkg"; exit 0; } \
 	done
 
 .PHONY: build-api-pkgs
+
+#/
+# Removes API package build artifacts.
+#
+# @param {string} [PACKAGES_PATTERN='package.json'] - filename pattern for identifying packages
+# @param {string} [PACKAGES_FILTER='.*/.*'] - filepath pattern for finding packages
+#
+# @example
+# make clean-api-pkgs
+#
+# @example
+# make clean-api-pkgs PACKAGES_FILTER='.*/math/.*'
+#/
+clean-api-pkgs: $(NODE_MODULES)
+	$(QUIET) $(FIND_API_PACKAGES_CMD) | while read -r pkg; do \
+		if echo "$$pkg" | grep -v '^\/.*\|^[a-zA-Z]:.*' >/dev/null; then \
+			continue; \
+		fi; \
+		echo ''; \
+		echo "Cleaning package artifacts: $$pkg"; \
+		cd $$pkg && $(MAKE) clean \
+		|| { echo "Error: failed to clean package artifacts: $$pkg"; exit 0; } \
+	done
+
+.PHONY: clean-api-pkgs
