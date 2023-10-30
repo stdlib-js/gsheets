@@ -122,6 +122,9 @@ BUILD_DIR ?= $(ROOT_DIR)/build
 # Define the root directory for storing distributable files:
 DIST_DIR ?= $(ROOT_DIR)/dist
 
+# Define the root directory for storing application files:
+APP_DIR ?= $(ROOT_DIR)/lib
+
 # Define the root directory for storing temporary files:
 TMP_DIR ?= $(ROOT_DIR)/tmp
 
@@ -486,7 +489,7 @@ clean-node:
 # @example
 # make clean
 #/
-clean: clean-node clean-cov
+clean: clean-node clean-cov clean-api-pkgs
 	$(QUIET) $(DELETE) $(DELETE_FLAGS) $(BUILD_DIR)
 	$(QUIET) $(DELETE) $(DELETE_FLAGS) $(REPORTS_DIR)
 
@@ -703,3 +706,44 @@ clean-api-pkgs: $(NODE_MODULES)
 	done
 
 .PHONY: clean-api-pkgs
+
+#/
+# Creates the application bundle.
+#
+# @example
+# make build-bundle
+#/
+build-bundle: $(NODE_MODULES)
+	$(QUIET) $(BIN_DIR)/esbuild $(ROOT_DIR)/src/index.js \
+		--bundle \
+		--minify \
+		--format=iife \
+		--legal-comments=none \
+		--global-name=ns \
+		--outfile=$(BUILD_DIR)/bundle.js
+
+.PHONY: build-bundle
+
+#/
+# Creates a bundle preamble.
+#
+# @example
+# make build-preamble
+#/
+build-preamble: $(NODE_MODULES)
+	$(QUIET) echo $$'/** @OnlyCurrentDoc */\nvar global = {};' > $(BUILD_DIR)/preamble.js
+
+.PHONY: build-preamble
+
+#/
+# Creates the application.
+#
+# @example
+# make build-app
+#/
+build-app: $(NODE_MODULES) build-api-pkgs build-bundle build-preamble
+	$(QUIET) cat $(BUILD_DIR)/preamble.js $(BUILD_DIR)/bundle.js > $(APP_DIR)/tmp.js && \
+		find $(SRC_NODE_MODULES)/@stdlib/gsheets/api -type f -path "$(ROOT_DIR)/**/build/*" -name '*.js' -exec sh -c 'cat {}' \; \
+		>> $(APP_DIR)/tmp.js
+
+.PHONY: build-app
