@@ -14,54 +14,6 @@ var global = {};
 \f\v\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF`,Orr="\u180E";function nxr(){return Srr.call(ixr)===""&&Srr.call(Orr)===Orr}Trr.exports=nxr});var Lrr=s((I6e,_rr)=>{"use strict";var axr=Ut(),sxr=/^[\u0020\f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]*([\S\s]*?)[\u0020\f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]*$/;function uxr(r){return axr(r,sxr,"$1")}_rr.exports=uxr});var Rrr=s((_6e,Prr)=>{"use strict";var oxr=nv();function fxr(r){return oxr.call(r)}Prr.exports=fxr});var Vi=s((L6e,Frr)=>{"use strict";var vxr=Nrr(),cxr=Irr(),lxr=Lrr(),pxr=Rrr(),av;vxr&&cxr()?av=pxr:av=lxr;Frr.exports=av});var Brr=s((P6e,Mrr)=>{"use strict";var gxr=fu(),mxr=Gi(),vu=Ut(),dxr=Vi(),hxr=/\s+/g,qxr=/[-!"'(),–.:;<>?`{}|~\/\\\[\]_#$*&^@%]+/g,yxr=/(?:\s|^)([^\s]+)(?=\s|$)/g,bxr=/([a-z0-9])([A-Z])/g;function wxr(r,e,t){return e=mxr(e),t===0?e:gxr(e)}function Exr(r){return r=vu(r,qxr," "),r=vu(r,hxr," "),r=vu(r,bxr,"$1 $2"),r=dxr(r),vu(r,yxr,wxr)}Mrr.exports=Exr});var jrr=s((R6e,krr)=>{"use strict";var Nxr=Brr();krr.exports=Nxr});var Grr=s((F6e,Crr)=>{"use strict";var Axr=K().isPrimitive,Sxr=y(),Oxr=jrr();function Txr(r){if(!Axr(r))throw new TypeError(Sxr("invalid argument. First argument must be a string. Value: `%s`.",r));return Oxr(r)}Crr.exports=Txr});var Urr=s((M6e,Vrr)=>{"use strict";var Ixr=Grr();Vrr.exports=Ixr});var Wrr=s((B6e,Hrr)=>{"use strict";var _xr=K().isPrimitive,Lxr=y(),Pxr=fu();function Rxr(r){if(!_xr(r))throw new TypeError(Lxr("invalid argument. First argument must be a string. Value: `%s`.",r));return Pxr(r)}Hrr.exports=Rxr});var zrr=s((k6e,Drr)=>{"use strict";var Fxr=Wrr();Drr.exports=Fxr});var Jrr=s((j6e,Xrr)=>{"use strict";function Mxr(r){return r.toUpperCase()}Xrr.exports=Mxr});var Yrr=s((C6e,xrr)=>{"use strict";var Bxr=Jrr();xrr.exports=Bxr});var $rr=s((G6e,Zrr)=>{"use strict";var kxr=Yrr(),sv=Ut(),jxr=Vi(),Cxr=/\s+/g,Gxr=/[\-!"'(),–.:;<>?`{}|~\/\\\[\]_#$*&^@%]+/g,Vxr=/([a-z0-9])([A-Z])/g;function Uxr(r){return r=sv(r,Gxr," "),r=sv(r,Vxr,"$1 $2"),r=jxr(r),r=sv(r,Cxr,"_"),kxr(r)}Zrr.exports=Uxr});var Krr=s((V6e,Qrr)=>{"use strict";var Hxr=$rr();Qrr.exports=Hxr});var eer=s((U6e,rer)=>{"use strict";var Wxr=K().isPrimitive,Dxr=y(),zxr=Krr();function Xxr(r){if(!Wxr(r))throw new TypeError(Dxr("invalid argument. Must provide a string. Value: `%s`.",r));return zxr(r)}rer.exports=Xxr});var ier=s((H6e,ter)=>{"use strict";var Jxr=eer();ter.exports=Jxr});var aer=s((W6e,ner)=>{"use strict";var xxr=Gi(),uv=Ut(),Yxr=Vi(),Zxr=/\s+/g,$xr=/[!"'(),–.:;<>?`{}|~\/\\\[\]_#$*&^@%]+/g,Qxr=/([a-z0-9])([A-Z])/g;function Kxr(r){return r=uv(r,$xr," "),r=uv(r,Qxr,"$1 $2"),r=Yxr(r),r=uv(r,Zxr,"-"),xxr(r)}ner.exports=Kxr});var uer=s((D6e,ser)=>{"use strict";var rYr=aer();ser.exports=rYr});var fer=s((z6e,oer)=>{"use strict";var eYr=K().isPrimitive,tYr=y(),iYr=uer();function nYr(r){if(!eYr(r))throw new TypeError(tYr("invalid argument. Must provide a string. Value: `%s`.",r));return iYr(r)}oer.exports=nYr});var cer=s((X6e,ver)=>{"use strict";var aYr=fer();ver.exports=aYr});var per=s((J6e,ler)=>{"use strict";var sYr=K().isPrimitive,uYr=y(),oYr=Gi();function fYr(r){if(!sYr(r))throw new TypeError(uYr("invalid argument. Must provide a string. Value: `%s`.",r));return oYr(r)}ler.exports=fYr});var mer=s((x6e,ger)=>{"use strict";var vYr=per();ger.exports=vYr});var her=s((Y6e,der)=>{"use strict";var cYr=fu(),lYr=Gi(),cu=Ut(),pYr=Vi(),gYr=/\s+/g,mYr=/[-!"'(),–.:;<>?`{}|~\/\\\[\]_#$*&^@%]+/g,dYr=/(?:\s|^)([^\s]+)(?=\s|$)/g,hYr=/([a-z0-9])([A-Z])/g;function qYr(r,e){return cYr(lYr(e))}function yYr(r){return r=cu(r,mYr," "),r=cu(r,gYr," "),r=cu(r,hYr,"$1 $2"),r=pYr(r),cu(r,dYr,qYr)}der.exports=yYr});var yer=s((Z6e,qer)=>{"use strict";var bYr=her();qer.exports=bYr});var wer=s(($6e,ber)=>{"use strict";var wYr=K().isPrimitive,EYr=y(),NYr=yer();function AYr(r){if(!wYr(r))throw new TypeError(EYr("invalid argument. First argument must be a string. Value: `%s`.",r));return NYr(r)}ber.exports=AYr});var Ner=s((Q6e,Eer)=>{"use strict";var SYr=wer();Eer.exports=SYr});var Ser=s((K6e,Aer)=>{"use strict";var OYr=Gi(),ov=Ut(),TYr=Vi(),IYr=/\s+/g,_Yr=/[\-!"'(),–.:;<>?`{}|~\/\\\[\]_#$*&^@%]+/g,LYr=/([a-z0-9])([A-Z])/g;function PYr(r){return r=ov(r,_Yr," "),r=ov(r,LYr,"$1 $2"),r=TYr(r),r=ov(r,IYr,"_"),OYr(r)}Aer.exports=PYr});var Ter=s((r8e,Oer)=>{"use strict";var RYr=Ser();Oer.exports=RYr});var _er=s((e8e,Ier)=>{"use strict";var FYr=K().isPrimitive,MYr=y(),BYr=Ter();function kYr(r){if(!FYr(r))throw new TypeError(MYr("invalid argument. Must provide a string. Value: `%s`.",r));return BYr(r)}Ier.exports=kYr});var Per=s((t8e,Ler)=>{"use strict";var jYr=_er();Ler.exports=jYr});var Mer=s((i8e,Fer)=>{"use strict";var CYr=I(),Rer=S(),GYr=or().isPrimitive,VYr=K().isPrimitive,fv=y();function UYr(r,e){return CYr(e)?Rer(e,"flags")&&(r.flags=e.flags,!VYr(r.flags))?new TypeError(fv("invalid option. `%s` option must be a string. Option: `%s`.","flags",r.flags)):Rer(e,"capture")&&(r.capture=e.capture,!GYr(r.capture))?new TypeError(fv("invalid option. `%s` option must be a boolean. Option: `%s`.","capture",r.capture)):null:new TypeError(fv("invalid argument. Options argument must be an object. Value: `%s`.",e))}Fer.exports=UYr});var lu=s((n8e,ker)=>{"use strict";var HYr=Mer(),Ber=`[	
 \v\f\r \x85\xA0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]`;function WYr(r){var e,t;if(arguments.length>0){if(e={},t=HYr(e,r),t)throw t;return e.capture?new RegExp("("+Ber+")",e.flags):new RegExp(Ber,e.flags)}return/[\u0009\u000A\u000B\u000C\u000D\u0020\u0085\u00A0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]/}ker.exports=WYr});var Cer=s((a8e,jer)=>{"use strict";var DYr=lu(),zYr=DYr({capture:!0});jer.exports=zYr});var Ver=s((s8e,Ger)=>{"use strict";var XYr=lu(),JYr=XYr();Ger.exports=JYr});var Wer=s((u8e,Her)=>{"use strict";var Uer=w(),vv=lu(),xYr=Cer(),YYr=Ver();Uer(vv,"REGEXP",YYr);Uer(vv,"REGEXP_CAPTURE",xYr);Her.exports=vv});var zer=s((o8e,Der)=>{"use strict";var ZYr=Wer().REGEXP;function $Yr(r){var e,t,i,n;for(e=!0,t="",n=0;n<r.length;n++)i=r.charAt(n),ZYr.test(i)?e=!0:e&&(i=i.toUpperCase(),e=!1),t+=i;return t}Der.exports=$Yr});var Jer=s((f8e,Xer)=>{"use strict";var QYr=zer();Xer.exports=QYr});var Yer=s((v8e,xer)=>{"use strict";var KYr=K().isPrimitive,rZr=y(),eZr=Jer();function tZr(r){if(!KYr(r))throw new TypeError(rZr("invalid argument. Must provide a string. Value: `%s`.",r));return eZr(r)}xer.exports=tZr});var $er=s((c8e,Zer)=>{"use strict";var iZr=Yer();Zer.exports=iZr});var Ker=s((l8e,Qer)=>{"use strict";function nZr(r){return r===""?"":r.charAt(0).toLowerCase()+r.slice(1)}Qer.exports=nZr});var etr=s((p8e,rtr)=>{"use strict";var aZr=Ker();rtr.exports=aZr});var itr=s((g8e,ttr)=>{"use strict";var sZr=K().isPrimitive,uZr=y(),oZr=etr();function fZr(r){if(!sZr(r))throw new TypeError(uZr("invalid argument. First argument must be a string. Value: `%s`.",r));return oZr(r)}ttr.exports=fZr});var atr=s((m8e,ntr)=>{"use strict";var vZr=itr();ntr.exports=vZr});var utr=s((d8e,str)=>{"use strict";var cZr=K().isPrimitive,lZr=y();function pZr(r){if(!cZr(r))throw new TypeError(lZr("invalid argument. Must provide a string. Value: `%s`.",r));return r.toUpperCase()}str.exports=pZr});var ftr=s((h8e,otr)=>{"use strict";var gZr=utr();otr.exports=gZr});var ctr=s((q8e,vtr)=>{"use strict";var Wr={};Wr.camelcase=Urr();Wr.capitalize=zrr();Wr.constantcase=ier();Wr.kebabcase=cer();Wr.lowercase=mer();Wr.pascalcase=Ner();Wr.snakecase=Per();Wr.startcase=$er();Wr.uncapitalize=atr();Wr.uppercase=ftr();vtr.exports=Wr});var ptr=s((y8e,ltr)=>{"use strict";var z=hu(),cv=G6(),mZr=Hy(),dZr=w2(),hZr=rb().ndarray,qZr=_a(),yZr=ub(),bZr=A2(),wZr=cr(),EZr=or().isPrimitive,NZr=k().isPrimitive,AZr=W().isPrimitive,SZr=K().isPrimitive,OZr=MA(),TZr=hS(),IZr=IO(),_Zr=jO().ndarray,LZr=XO().ndarray,PZr=s1(),RZr=KO(),FZr=u1(),MZr=q_(),BZr=O_(),kZr=hP(),jZr=uM(),CZr=tB(),GZr=VY(),VZr=aZ(),UZr=uZ(),HZr=QK(),WZr=lrr(),DZr=ctr();function zZr(){var r={};return z(r,"bartlettTest",mZr),z(r,"broadcastShapes",dZr),z(r,"cumax",hZr),z(r,"filled2d",qZr),z(r,"filled2dBy",yZr),z(r,"flattenArray",bZr),z(r,"isArray",wZr),z(r,"isBoolean",EZr),z(r,"isNumber",NZr),z(r,"isPositiveNumber",AZr),z(r,"isString",SZr),z(r,"iterator2array",OZr),z(r,"iterSawtoothWave",TZr),z(r,"linspace",IZr),z(r,"max",_Zr),z(r,"mskmax",LZr),z(r,"normalizeBroadcastArgs",PZr),z(r,"ones2d",RZr),z(r,"zeros2d",FZr),z(r,"assert",MZr),z(r,"blas",BZr),z(r,"datasets",kZr),z(r,"dists",jZr),z(r,"math",CZr),z(r,"random",GZr),z(r,"string",VZr),z(r,"tools",UZr),cv(HZr,r),cv(WZr,r),cv(DZr,r),r}ltr.exports=zZr});var mtr=s((b8e,gtr)=>{"use strict";var XZr=w(),lv=ptr();XZr(lv,"CACHED",lv());gtr.exports=lv});var xZr=s((w8e,dtr)=>{var JZr=mtr().CACHED;dtr.exports=JZr});return xZr();})();
 /**
-* Generates a linearly spaced range over a specified interval.
-*
-* ## Notes
-*
-* -   If `length` is `1`, the function returns a range containing `stop`, but not `start`, when the endpoint option is `TRUE`; otherwise, the function returns a range containing `start`, but not `stop`.
-* -   When the output array length is greater than `1` and endpoint option value is `TRUE`, the output range is guaranteed to include the interval start and end values. Beware, however, that values between the interval start and end values are subject to floating-point rounding errors.
-* -   When the endpoint option value is `FALSE`, the function generates `length + 1` linearly spaced values over the interval `[start, stop]` and only writes `length` values to the output range, thus excluding `stop` from the output range. Accordingly, for a fixed `length`, the spacing between adjacent values in the output range changes depending on the endpoint option value.
-* -   By default, the function generates a linearly spaced range over the closed interval `[start, stop]`. To generate linearly spaced values over the half-open interval `[start, stop)`, set the endpoint option value to `FALSE`.
-* -   If `start` is less than `stop`, the output range will contain ascending values, and, if `start` is greater than `stop`, the output range will contain descending values.
-*
-* @customfunction
-* @param {number} start - start of interval
-* @param {number} stop - end of interval
-* @param {integer} length - range length
-* @param {string} endpoint - endpoint option name
-* @param {boolean} endpointValue - endpoint option value indicating whether to include the stop value in the output range (default: `TRUE`)
-* @returns {Range<number>} linearly spaced range
-*
-* @example
-* STDLIB_LINSPACE( 1, 10, 100 )
-*
-* @example
-* STDLIB_LINSPACE( 1, 10, 100, "endpoint", FALSE )
-*/
-function STDLIB_LINSPACE( start, stop, length, endpoint, endpointValue ) { 
-	var opts;
-	var o;
-	var v;
-	var i;
-	ns.assert.isNumber( start, 'Start of interval' );
-	ns.assert.isNumber( stop, 'End of interval' );
-	ns.assert.isPositiveInteger( length, 'Range length' );
-	opts = {
-		'dtype': 'generic'
-	};
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'endpoint' ) {
-			ns.assert.isBoolean( v, 'Endpoint' );
-			opts[ o ] = v;
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	return ns.linspace( start, stop, length, opts );
-}
-/**
 * Multiplies a vector by a constant and adds the result to another vector.
 *
 * @customfunction
@@ -130,32 +82,104 @@ function STDLIB_BLAS_DAXPY( N, alpha, x, strideX, offsetX, y, strideY, offsetY )
 	return out;
 }
 /**
-* Anscombe's quartet.
+* Fills one or more cells with a specified value.
 *
 * @customfunction
-* @returns {Range<number>} dataset
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {*} value - fill value
+* @returns {Range} filled range
 *
 * @example
-* STDLIB_ANSCOMBES_QUARTET()
+* STDLIB_FULL( 10, 1, 5 )
+*
+* @example
+* STDLIB_FULL( 10, 1, "beep" )
 */
-function STDLIB_ANSCOMBES_QUARTET() {
-	var data;
-	var out;
-	var tmp;
-	var d;
+function STDLIB_FULL( nrows, ncols, value ) {
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
+	return ns.filled2d( value, [ nrows, ncols ] );
+}
+/**
+* Fills one or more cells with zeros.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @returns {Range<integer>} zeros
+*
+* @example
+* STDLIB_ZEROS( 10, 1 )
+*/
+function STDLIB_ZEROS( nrows, ncols ) {
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
+	return ns.zeros2d( [ nrows, ncols ] );
+}
+/**
+* Fills one or more cells with ones.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @returns {Range<integer>} ones
+*
+* @example
+* STDLIB_ONES( 10, 1 )
+*/
+function STDLIB_ONES( nrows, ncols ) {
+	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
+	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
+	return ns.ones2d( [ nrows, ncols ] );
+}
+/**
+* Generates a linearly spaced range over a specified interval.
+*
+* ## Notes
+*
+* -   If `length` is `1`, the function returns a range containing `stop`, but not `start`, when the endpoint option is `TRUE`; otherwise, the function returns a range containing `start`, but not `stop`.
+* -   When the output array length is greater than `1` and endpoint option value is `TRUE`, the output range is guaranteed to include the interval start and end values. Beware, however, that values between the interval start and end values are subject to floating-point rounding errors.
+* -   When the endpoint option value is `FALSE`, the function generates `length + 1` linearly spaced values over the interval `[start, stop]` and only writes `length` values to the output range, thus excluding `stop` from the output range. Accordingly, for a fixed `length`, the spacing between adjacent values in the output range changes depending on the endpoint option value.
+* -   By default, the function generates a linearly spaced range over the closed interval `[start, stop]`. To generate linearly spaced values over the half-open interval `[start, stop)`, set the endpoint option value to `FALSE`.
+* -   If `start` is less than `stop`, the output range will contain ascending values, and, if `start` is greater than `stop`, the output range will contain descending values.
+*
+* @customfunction
+* @param {number} start - start of interval
+* @param {number} stop - end of interval
+* @param {integer} length - range length
+* @param {string} endpoint - endpoint option name
+* @param {boolean} endpointValue - endpoint option value indicating whether to include the stop value in the output range (default: `TRUE`)
+* @returns {Range<number>} linearly spaced range
+*
+* @example
+* STDLIB_LINSPACE( 1, 10, 100 )
+*
+* @example
+* STDLIB_LINSPACE( 1, 10, 100, "endpoint", FALSE )
+*/
+function STDLIB_LINSPACE( start, stop, length, endpoint, endpointValue ) { 
+	var opts;
+	var o;
+	var v;
 	var i;
-	var j;
-	data = ns.datasets.ANSCOMBES_QUARTET(); 
-	out = [];
-	for ( i = 0; i < data.length; i++ ) {
-		d = data[ i ];
-		for ( j = 0; j < d.length; j++ ) {
-			tmp = d[ j ];
-			tmp.push( i+1 );
-			out.push( tmp );
+	ns.assert.isNumber( start, 'Start of interval' );
+	ns.assert.isNumber( stop, 'End of interval' );
+	ns.assert.isPositiveInteger( length, 'Range length' );
+	opts = {
+		'dtype': 'generic'
+	};
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'endpoint' ) {
+			ns.assert.isBoolean( v, 'Endpoint' );
+			opts[ o ] = v;
+		} else {
+			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	return out;
+	return ns.linspace( start, stop, length, opts );
 }
 /**
 * Generates a sawtooth wave.
@@ -215,164 +239,32 @@ function STDLIB_SAWTOOTH_WAVE( N, period, periodValue, amplitude, amplitudeValue
 	return ns.iterator2array( it );
 }
 /**
-* Fills one or more cells with zeros.
+* Anscombe's quartet.
 *
 * @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @returns {Range<integer>} zeros
+* @returns {Range<number>} dataset
 *
 * @example
-* STDLIB_ZEROS( 10, 1 )
+* STDLIB_ANSCOMBES_QUARTET()
 */
-function STDLIB_ZEROS( nrows, ncols ) {
-	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
-	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
-	return ns.zeros2d( [ nrows, ncols ] );
-}
-/**
-* Computes the squared absolute value.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ABS2( -1.2 )
-*
-* @example
-* STDLIB_ABS2( A1:A100 )
-*
-* @example
-* STDLIB_ABS2( A1:D100 )
-*
-* @example
-* STDLIB_ABS2( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ABS2( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
+function STDLIB_ANSCOMBES_QUARTET() {
+	var data;
+	var out;
+	var tmp;
+	var d;
 	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
+	var j;
+	data = ns.datasets.ANSCOMBES_QUARTET(); 
+	out = [];
+	for ( i = 0; i < data.length; i++ ) {
+		d = data[ i ];
+		for ( j = 0; j < d.length; j++ ) {
+			tmp = d[ j ];
+			tmp.push( i+1 );
+			out.push( tmp );
+		}
 	}
-	return ns.math.tools.unary( args, ns.abs2 );
-}
-/**
-* Computes the inverse coversed cosine.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ACOVERCOS( 0.0 )
-*
-* @example
-* STDLIB_ACOVERCOS( A1:A100 )
-*
-* @example
-* STDLIB_ACOVERCOS( A1:D100 )
-*
-* @example
-* STDLIB_ACOVERCOS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ACOVERCOS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.acovercos );
-}
-/**
-* Computes the cosine of a number (in radians).
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_COS( 0.0 )
-*
-* @example
-* STDLIB_COS( A1:A100 )
-*
-* @example
-* STDLIB_COS( A1:D100 )
-*
-* @example
-* STDLIB_COS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_COS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.cos );
-}
-/**
-* Computes the arcsine of a number (in radians).
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ASIN( 1.0 )
-*
-* @example
-* STDLIB_ASIN( A1:A100 )
-*
-* @example
-* STDLIB_ASIN( A1:D100 )
-*
-* @example
-* STDLIB_ASIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ASIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.asin );
+	return out;
 }
 /**
 * Evaluates Binet's formula extended to real numbers.
@@ -411,6 +303,42 @@ function STDLIB_BINET( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 	return ns.math.tools.unary( args, ns.binet );
 }
 /**
+* Computes the Bessel function of the second kind of order zero.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_BESSELY0( 0.0 )
+*
+* @example
+* STDLIB_BESSELY0( A1:A100 )
+*
+* @example
+* STDLIB_BESSELY0( A1:D100 )
+*
+* @example
+* STDLIB_BESSELY0( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_BESSELY0( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.bessely0 );
+}
+/**
 * Rounds a number toward positive infinity.
 *
 * @customfunction
@@ -447,7 +375,7 @@ function STDLIB_CEIL( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 	return ns.math.tools.unary( args, ns.ceil );
 }
 /**
-* Computes the absolute value.
+* Computes the inverse versed cosine.
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
@@ -462,169 +390,25 @@ function STDLIB_CEIL( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 * @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_ABS( -1.2 )
+* STDLIB_AVERCOS( 0.0 )
 *
 * @example
-* STDLIB_ABS( A1:A100 )
+* STDLIB_AVERCOS( A1:A100 )
 *
 * @example
-* STDLIB_ABS( A1:D100 )
+* STDLIB_AVERCOS( A1:D100 )
 *
 * @example
-* STDLIB_ABS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_AVERCOS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_ABS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_AVERCOS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
 	var i;
 	args = [];
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.unary( args, ns.abs );
-}
-/**
-* Computes the hyperbolic arccosine.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ACOSH( 1.0 )
-*
-* @example
-* STDLIB_ACOSH( A1:A100 )
-*
-* @example
-* STDLIB_ACOSH( A1:D100 )
-*
-* @example
-* STDLIB_ACOSH( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ACOSH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.acosh );
-}
-/**
-* Computes the inverse cotangent of a number (in radians).
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ACOT( 2.0 )
-*
-* @example
-* STDLIB_ACOT( A1:A100 )
-*
-* @example
-* STDLIB_ACOT( A1:D100 )
-*
-* @example
-* STDLIB_ACOT( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ACOT( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.acot );
-}
-/**
-* Computes the hyperbolic arcsine.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ASINH( 1.0 )
-*
-* @example
-* STDLIB_ASINH( A1:A100 )
-*
-* @example
-* STDLIB_ASINH( A1:D100 )
-*
-* @example
-* STDLIB_ASINH( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ASINH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.asinh );
-}
-/**
-* Computes the Bessel function of the first kind of order zero.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_BESSELJ0( 0.0 )
-*
-* @example
-* STDLIB_BESSELJ0( A1:A100 )
-*
-* @example
-* STDLIB_BESSELJ0( A1:D100 )
-*
-* @example
-* STDLIB_BESSELJ0( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_BESSELJ0( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.besselj0 );
+	return ns.math.tools.unary( args, ns.avercos );
 }
 /**
 * Computes the Bessel function of the second kind of order one.
@@ -663,403 +447,6 @@ function STDLIB_BESSELY1( value, nonnumeric, nonnumericValue, nan, nanValue, pin
 	return ns.math.tools.unary( args, ns.bessely1 );
 }
 /**
-* Evaluates the Riemann zeta function as a function of a real variable.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ZETA( 1.2 )
-*
-* @example
-* STDLIB_ZETA( A1:A100 )
-*
-* @example
-* STDLIB_ZETA( A1:D100 )
-*
-* @example
-* STDLIB_ZETA( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ZETA( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.zeta );
-}
-/**
-* Computes the inverse half-value versed sine.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_AHAVERSIN( 0.0 )
-*
-* @example
-* STDLIB_AHAVERSIN( A1:A100 )
-*
-* @example
-* STDLIB_AHAVERSIN( A1:D100 )
-*
-* @example
-* STDLIB_AHAVERSIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_AHAVERSIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.ahaversin );
-}
-/**
-* Computes the principal root.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_SQRT( 64.0 )
-*
-* @example
-* STDLIB_SQRT( A1:A100 )
-*
-* @example
-* STDLIB_SQRT( A1:D100 )
-*
-* @example
-* STDLIB_SQRT( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_SQRT( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.sqrt );
-}
-/**
-* Computes the Bessel function of the first kind of order one.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_BESSELJ1( 0.0 )
-*
-* @example
-* STDLIB_BESSELJ1( A1:A100 )
-*
-* @example
-* STDLIB_BESSELJ1( A1:D100 )
-*
-* @example
-* STDLIB_BESSELJ1( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_BESSELJ1( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.besselj1 );
-}
-/**
-* Computes the Bessel function of the second kind of order zero.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_BESSELY0( 0.0 )
-*
-* @example
-* STDLIB_BESSELY0( A1:A100 )
-*
-* @example
-* STDLIB_BESSELY0( A1:D100 )
-*
-* @example
-* STDLIB_BESSELY0( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_BESSELY0( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.bessely0 );
-}
-/**
-* Rounds a number to the nearest power of 2 toward positive infinity.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_CEIL2( -4.2 )
-*
-* @example
-* STDLIB_CEIL2( A1:A100 )
-*
-* @example
-* STDLIB_CEIL2( A1:D100 )
-*
-* @example
-* STDLIB_CEIL2( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_CEIL2( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.ceil2 );
-}
-/**
-* Computes the sum.
-*
-* @customfunction
-* @param {number|Range<number>} x - input value(s)
-* @param {number|Range<number>} y - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {Range<number>} result(s)
-*
-* @example
-* STDLIB_ADD( -1.2, 3.1 )
-*
-* @example
-* STDLIB_ADD( A1:A100, B1:B100 )
-*
-* @example
-* STDLIB_ADD( A1:D100, 3.1 )
-*
-* @example
-* STDLIB_ADD( A1:A100, B1:E100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ADD( x, y, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.binary( args, ns.add );
-}
-/**
-* Computes the inverse versed sine.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_AVERSIN( 0.0 )
-*
-* @example
-* STDLIB_AVERSIN( A1:A100 )
-*
-* @example
-* STDLIB_AVERSIN( A1:D100 )
-*
-* @example
-* STDLIB_AVERSIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_AVERSIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.aversin );
-}
-/**
-* Computes the inverse coversed sine.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ACOVERSIN( 0.0 )
-*
-* @example
-* STDLIB_ACOVERSIN( A1:A100 )
-*
-* @example
-* STDLIB_ACOVERSIN( A1:D100 )
-*
-* @example
-* STDLIB_ACOVERSIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ACOVERSIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.acoversin );
-}
-/**
-* Computes the sine of a number (in radians).
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_SIN( 0.0 )
-*
-* @example
-* STDLIB_SIN( A1:A100 )
-*
-* @example
-* STDLIB_SIN( A1:D100 )
-*
-* @example
-* STDLIB_SIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_SIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.sin );
-}
-/**
-* Computes the cube root.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_CBRT( 64.0 )
-*
-* @example
-* STDLIB_CBRT( A1:A100 )
-*
-* @example
-* STDLIB_CBRT( A1:D100 )
-*
-* @example
-* STDLIB_CBRT( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_CBRT( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.cbrt );
-}
-/**
 * Computes the hyperbolic arctangent.
 *
 * @customfunction
@@ -1096,7 +483,7 @@ function STDLIB_ATANH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 	return ns.math.tools.unary( args, ns.atanh );
 }
 /**
-* Computes the arccosine of a number (in radians).
+* Rounds a number to the nearest power of 10 toward positive infinity.
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
@@ -1111,61 +498,25 @@ function STDLIB_ATANH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 * @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_ACOS( 1.0 )
+* STDLIB_CEIL10( 0.0 )
 *
 * @example
-* STDLIB_ACOS( A1:A100 )
+* STDLIB_CEIL10( A1:A100 )
 *
 * @example
-* STDLIB_ACOS( A1:D100 )
+* STDLIB_CEIL10( A1:D100 )
 *
 * @example
-* STDLIB_ACOS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_CEIL10( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_ACOS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_CEIL10( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
 	var i;
 	args = [];
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.unary( args, ns.acos );
-}
-/**
-* Computes the arctangent of a number.
-*
-* @customfunction
-* @param {number|Range<number>} value - input value(s)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @returns {number|Range<number>} result(s)
-*
-* @example
-* STDLIB_ATAN( 1.0 )
-*
-* @example
-* STDLIB_ATAN( A1:A100 )
-*
-* @example
-* STDLIB_ATAN( A1:D100 )
-*
-* @example
-* STDLIB_ATAN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_ATAN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.unary( args, ns.atan );
+	return ns.math.tools.unary( args, ns.ceil10 );
 }
 /**
 * Computes the product.
@@ -1184,13 +535,13 @@ function STDLIB_ATAN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 * @returns {Range<number>} result(s)
 *
 * @example
-* STDLIB_MUL( -1.2, 3.1 )
+* STDLIB_MUL( -1.2, 2.0 )
 *
 * @example
 * STDLIB_MUL( A1:A100, B1:B100 )
 *
 * @example
-* STDLIB_MUL( A1:D100, 3.1 )
+* STDLIB_MUL( A1:D100, 2.0 )
 *
 * @example
 * STDLIB_MUL( A1:A100, B1:E100, "nan", "", "pinf", "", "ninf", "" )
@@ -1241,7 +592,7 @@ function STDLIB_ACSCH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 	return ns.math.tools.unary( args, ns.acsch );
 }
 /**
-* Computes the inverse versed cosine.
+* Computes the inverse versed sine.
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
@@ -1256,32 +607,31 @@ function STDLIB_ACSCH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 * @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_AVERCOS( 0.0 )
+* STDLIB_AVERSIN( 0.0 )
 *
 * @example
-* STDLIB_AVERCOS( A1:A100 )
+* STDLIB_AVERSIN( A1:A100 )
 *
 * @example
-* STDLIB_AVERCOS( A1:D100 )
+* STDLIB_AVERSIN( A1:D100 )
 *
 * @example
-* STDLIB_AVERCOS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_AVERSIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_AVERCOS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_AVERSIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
 	var i;
 	args = [];
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.unary( args, ns.avercos );
+	return ns.math.tools.unary( args, ns.aversin );
 }
 /**
-* Performs subtraction.
+* Rounds a number to the nearest power of 2 toward positive infinity.
 *
 * @customfunction
-* @param {number|Range<number>} x - input value(s)
-* @param {number|Range<number>} y - input value(s)
+* @param {number|Range<number>} value - input value(s)
 * @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
 * @param {*} nonnumericValue - non-numeric option value
 * @param {string} nan - option name for specifying the value to return in place of `NaN`
@@ -1290,28 +640,352 @@ function STDLIB_AVERCOS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf
 * @param {*} pinfValue - positive infinity option value
 * @param {string} ninf - option name for specifying the value to return in place of negative infinity
 * @param {*} ninfValue - negative infinity option value
-* @returns {Range<number>} result(s)
+* @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_SUB( -1.2, 3.1 )
+* STDLIB_CEIL2( -4.2 )
 *
 * @example
-* STDLIB_SUB( A1:A100, B1:B100 )
+* STDLIB_CEIL2( A1:A100 )
 *
 * @example
-* STDLIB_SUB( A1:D100, 3.1 )
+* STDLIB_CEIL2( A1:D100 )
 *
 * @example
-* STDLIB_SUB( A1:A100, B1:E100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_CEIL2( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_SUB( x, y, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_CEIL2( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
 	var i;
 	args = [];
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.binary( args, ns.sub );
+	return ns.math.tools.unary( args, ns.ceil2 );
+}
+/**
+* Computes the squared absolute value.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ABS2( -1.2 )
+*
+* @example
+* STDLIB_ABS2( A1:A100 )
+*
+* @example
+* STDLIB_ABS2( A1:D100 )
+*
+* @example
+* STDLIB_ABS2( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ABS2( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.abs2 );
+}
+/**
+* Computes the sine of a number (in radians).
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_SIN( 0.0 )
+*
+* @example
+* STDLIB_SIN( A1:A100 )
+*
+* @example
+* STDLIB_SIN( A1:D100 )
+*
+* @example
+* STDLIB_SIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_SIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.sin );
+}
+/**
+* Computes the inverse cotangent of a number (in radians).
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ACOT( 2.0 )
+*
+* @example
+* STDLIB_ACOT( A1:A100 )
+*
+* @example
+* STDLIB_ACOT( A1:D100 )
+*
+* @example
+* STDLIB_ACOT( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ACOT( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.acot );
+}
+/**
+* Computes the arccosine of a number (in radians).
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ACOS( 1.0 )
+*
+* @example
+* STDLIB_ACOS( A1:A100 )
+*
+* @example
+* STDLIB_ACOS( A1:D100 )
+*
+* @example
+* STDLIB_ACOS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ACOS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.acos );
+}
+/**
+* Computes the hyperbolic arcsine.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ASINH( 1.0 )
+*
+* @example
+* STDLIB_ASINH( A1:A100 )
+*
+* @example
+* STDLIB_ASINH( A1:D100 )
+*
+* @example
+* STDLIB_ASINH( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ASINH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.asinh );
+}
+/**
+* Computes the arcsine of a number (in radians).
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ASIN( 1.0 )
+*
+* @example
+* STDLIB_ASIN( A1:A100 )
+*
+* @example
+* STDLIB_ASIN( A1:D100 )
+*
+* @example
+* STDLIB_ASIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ASIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.asin );
+}
+/**
+* Computes the cosine of a number (in radians).
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_COS( 0.0 )
+*
+* @example
+* STDLIB_COS( A1:A100 )
+*
+* @example
+* STDLIB_COS( A1:D100 )
+*
+* @example
+* STDLIB_COS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_COS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.cos );
+}
+/**
+* Evaluates the Riemann zeta function as a function of a real variable.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ZETA( 1.2 )
+*
+* @example
+* STDLIB_ZETA( A1:A100 )
+*
+* @example
+* STDLIB_ZETA( A1:D100 )
+*
+* @example
+* STDLIB_ZETA( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ZETA( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.zeta );
+}
+/**
+* Computes the principal root.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_SQRT( 64.0 )
+*
+* @example
+* STDLIB_SQRT( A1:A100 )
+*
+* @example
+* STDLIB_SQRT( A1:D100 )
+*
+* @example
+* STDLIB_SQRT( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_SQRT( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.sqrt );
 }
 /**
 * Computes the arccosecant.
@@ -1350,7 +1024,81 @@ function STDLIB_ACSC( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 	return ns.math.tools.unary( args, ns.acsc );
 }
 /**
-* Rounds a number to the nearest power of 10 toward positive infinity.
+* Performs subtraction.
+*
+* @customfunction
+* @param {number|Range<number>} x - input value(s)
+* @param {number|Range<number>} y - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {Range<number>} result(s)
+*
+* @example
+* STDLIB_SUB( -1.2, 2.0 )
+*
+* @example
+* STDLIB_SUB( A1:A100, B1:B100 )
+*
+* @example
+* STDLIB_SUB( A1:D100, 2.0 )
+*
+* @example
+* STDLIB_SUB( A1:A100, B1:E100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_SUB( x, y, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.binary( args, ns.sub );
+}
+/**
+* Computes the sum.
+*
+* @customfunction
+* @param {number|Range<number>} x - input value(s)
+* @param {number|Range<number>} y - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {Range<number>} result(s)
+*
+* @example
+* STDLIB_ADD( -1.2, 2.0 )
+*
+* @example
+* STDLIB_ADD( A1:A100, B1:B100 )
+*
+* @example
+* STDLIB_ADD( A1:D100, 2.0 )
+*
+* @example
+* STDLIB_ADD( A1:A100, B1:E100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ADD( x, y, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.binary( args, ns.add );
+}
+/**
+* Computes the absolute value.
 *
 * @customfunction
 * @param {number|Range<number>} value - input value(s)
@@ -1365,25 +1113,133 @@ function STDLIB_ACSC( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, p
 * @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_CEIL10( 0.0 )
+* STDLIB_ABS( -1.2 )
 *
 * @example
-* STDLIB_CEIL10( A1:A100 )
+* STDLIB_ABS( A1:A100 )
 *
 * @example
-* STDLIB_CEIL10( A1:D100 )
+* STDLIB_ABS( A1:D100 )
 *
 * @example
-* STDLIB_CEIL10( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_ABS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_CEIL10( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_ABS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
 	var i;
 	args = [];
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.unary( args, ns.ceil10 );
+	return ns.math.tools.unary( args, ns.abs );
+}
+/**
+* Computes the Bessel function of the first kind of order zero.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_BESSELJ0( 0.0 )
+*
+* @example
+* STDLIB_BESSELJ0( A1:A100 )
+*
+* @example
+* STDLIB_BESSELJ0( A1:D100 )
+*
+* @example
+* STDLIB_BESSELJ0( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_BESSELJ0( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.besselj0 );
+}
+/**
+* Computes the inverse coversed sine.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ACOVERSIN( 0.0 )
+*
+* @example
+* STDLIB_ACOVERSIN( A1:A100 )
+*
+* @example
+* STDLIB_ACOVERSIN( A1:D100 )
+*
+* @example
+* STDLIB_ACOVERSIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ACOVERSIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.acoversin );
+}
+/**
+* Computes the arctangent of a number.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ATAN( 1.0 )
+*
+* @example
+* STDLIB_ATAN( A1:A100 )
+*
+* @example
+* STDLIB_ATAN( A1:D100 )
+*
+* @example
+* STDLIB_ATAN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ATAN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.atan );
 }
 /**
 * Computes the inverse half-value versed cosine.
@@ -1422,20 +1278,184 @@ function STDLIB_AHAVERCOS( value, nonnumeric, nonnumericValue, nan, nanValue, pi
 	return ns.math.tools.unary( args, ns.ahavercos );
 }
 /**
-* Fills one or more cells with ones.
+* Computes the Bessel function of the first kind of order one.
 *
 * @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @returns {Range<integer>} ones
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_ONES( 10, 1 )
+* STDLIB_BESSELJ1( 0.0 )
+*
+* @example
+* STDLIB_BESSELJ1( A1:A100 )
+*
+* @example
+* STDLIB_BESSELJ1( A1:D100 )
+*
+* @example
+* STDLIB_BESSELJ1( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_ONES( nrows, ncols ) {
-	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
-	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
-	return ns.ones2d( [ nrows, ncols ] );
+function STDLIB_BESSELJ1( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.besselj1 );
+}
+/**
+* Computes the hyperbolic arccosine.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ACOSH( 1.0 )
+*
+* @example
+* STDLIB_ACOSH( A1:A100 )
+*
+* @example
+* STDLIB_ACOSH( A1:D100 )
+*
+* @example
+* STDLIB_ACOSH( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ACOSH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.acosh );
+}
+/**
+* Computes the inverse half-value versed sine.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_AHAVERSIN( 0.0 )
+*
+* @example
+* STDLIB_AHAVERSIN( A1:A100 )
+*
+* @example
+* STDLIB_AHAVERSIN( A1:D100 )
+*
+* @example
+* STDLIB_AHAVERSIN( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_AHAVERSIN( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.ahaversin );
+}
+/**
+* Computes the inverse coversed cosine.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_ACOVERCOS( 0.0 )
+*
+* @example
+* STDLIB_ACOVERCOS( A1:A100 )
+*
+* @example
+* STDLIB_ACOVERCOS( A1:D100 )
+*
+* @example
+* STDLIB_ACOVERCOS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_ACOVERCOS( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.acovercos );
+}
+/**
+* Computes the cube root.
+*
+* @customfunction
+* @param {number|Range<number>} value - input value(s)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @returns {number|Range<number>} result(s)
+*
+* @example
+* STDLIB_CBRT( 64.0 )
+*
+* @example
+* STDLIB_CBRT( A1:A100 )
+*
+* @example
+* STDLIB_CBRT( A1:D100 )
+*
+* @example
+* STDLIB_CBRT( A1:A100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_CBRT( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.unary( args, ns.cbrt );
 }
 var __STDLIB_KEBABCASE = ns.string.tools.s_o( ns.kebabcase ); 
 /**
@@ -1446,7 +1466,7 @@ var __STDLIB_KEBABCASE = ns.string.tools.s_o( ns.kebabcase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_KEBABCASE( "foo bar" )
+* STDLIB_KEBABCASE( 'foo bar' )
 *
 * @example
 * STDLIB_KEBABCASE( A2:A100 )
@@ -1461,54 +1481,6 @@ function STDLIB_KEBABCASE( value ) {
 	}
 	return __STDLIB_KEBABCASE( value );
 }
-var __STDLIB_PASCALCASE = ns.string.tools.s_o( ns.pascalcase ); 
-/**
-* Converts a string to Pascal case.
-*
-* @customfunction
-* @param {string|Range<string>} value - input value(s)
-* @returns {string|Range<string>} results
-*
-* @example
-* STDLIB_PASCALCASE( "foo bar" )
-*
-* @example
-* STDLIB_PASCALCASE( A2:A100 )
-*
-* @example
-* STDLIB_PASCALCASE( A2:D100 )
-*/
-function STDLIB_PASCALCASE( value ) {
-	if ( ns.isArray( value ) ) {
-		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_PASCALCASE );
-		return value;
-	}
-	return __STDLIB_PASCALCASE( value );
-}
-var __STDLIB_UNCAPITALIZE = ns.string.tools.s_o( ns.uncapitalize ); 
-/**
-* Lowercases the first character of a string.
-*
-* @customfunction
-* @param {string|Range<string>} value - input value(s)
-* @returns {string|Range<string>} results
-*
-* @example
-* STDLIB_UNCAPITALIZE( "Foo Bar" )
-*
-* @example
-* STDLIB_UNCAPITALIZE( A2:A100 )
-*
-* @example
-* STDLIB_UNCAPITALIZE( A2:D100 )
-*/
-function STDLIB_UNCAPITALIZE( value ) {
-	if ( ns.isArray( value ) ) {
-		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_UNCAPITALIZE );
-		return value;
-	}
-	return __STDLIB_UNCAPITALIZE( value );
-}
 var __STDLIB_STARTCASE = ns.string.tools.s_o( ns.startcase ); 
 /**
 * Converts a string to start case.
@@ -1518,7 +1490,7 @@ var __STDLIB_STARTCASE = ns.string.tools.s_o( ns.startcase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_STARTCASE( "foo bar" )
+* STDLIB_STARTCASE( 'foo bar' )
 *
 * @example
 * STDLIB_STARTCASE( A2:A100 )
@@ -1533,102 +1505,6 @@ function STDLIB_STARTCASE( value ) {
 	}
 	return __STDLIB_STARTCASE( value );
 }
-var __STDLIB_LOWERCASE = ns.string.tools.s_o( ns.lowercase ); 
-/**
-* Converts a string to lowercase.
-*
-* @customfunction
-* @param {string|Range<string>} value - input value(s)
-* @returns {string|Range<string>} results
-*
-* @example
-* STDLIB_LOWERCASE( "Foo Bar" )
-*
-* @example
-* STDLIB_LOWERCASE( A2:A100 )
-*
-* @example
-* STDLIB_LOWERCASE( A2:D100 )
-*/
-function STDLIB_LOWERCASE( value ) {
-	if ( ns.isArray( value ) ) {
-		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_LOWERCASE );
-		return value;
-	}
-	return __STDLIB_LOWERCASE( value );
-}
-var __STDLIB_CAPITALIZE = ns.string.tools.s_o( ns.capitalize ); 
-/**
-* Capitalizes the first character of a string.
-*
-* @customfunction
-* @param {string|Range<string>} value - input value(s)
-* @returns {string|Range<string>} results
-*
-* @example
-* STDLIB_CAPITALIZE( "foo bar" )
-*
-* @example
-* STDLIB_CAPITALIZE( A2:A100 )
-*
-* @example
-* STDLIB_CAPITALIZE( A2:D100 )
-*/
-function STDLIB_CAPITALIZE( value ) {
-	if ( ns.isArray( value ) ) {
-		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CAPITALIZE );
-		return value;
-	}
-	return __STDLIB_CAPITALIZE( value );
-}
-var __STDLIB_CONSTANTCASE = ns.string.tools.s_o( ns.constantcase ); 
-/**
-* Converts a string to constant case.
-*
-* @customfunction
-* @param {string|Range<string>} value - input value(s)
-* @returns {string|Range<string>} results
-*
-* @example
-* STDLIB_CONSTANTCASE( "foo bar" )
-*
-* @example
-* STDLIB_CONSTANTCASE( A2:A100 )
-*
-* @example
-* STDLIB_CONSTANTCASE( A2:D100 )
-*/
-function STDLIB_CONSTANTCASE( value ) {
-	if ( ns.isArray( value ) ) {
-		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CONSTANTCASE );
-		return value;
-	}
-	return __STDLIB_CONSTANTCASE( value );
-}
-var __STDLIB_CAMELCASE = ns.string.tools.s_o( ns.camelcase ); 
-/**
-* Converts a string to camel case.
-*
-* @customfunction
-* @param {string|Range<string>} value - input value(s)
-* @returns {string|Range<string>} results
-*
-* @example
-* STDLIB_CAMELCASE( "foo bar" )
-*
-* @example
-* STDLIB_CAMELCASE( A2:A100 )
-*
-* @example
-* STDLIB_CAMELCASE( A2:D100 )
-*/
-function STDLIB_CAMELCASE( value ) {
-	if ( ns.isArray( value ) ) {
-		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CAMELCASE );
-		return value;
-	}
-	return __STDLIB_CAMELCASE( value );
-}
 var __STDLIB_SNAKECASE = ns.string.tools.s_o( ns.snakecase ); 
 /**
 * Converts a string to snake case.
@@ -1638,7 +1514,7 @@ var __STDLIB_SNAKECASE = ns.string.tools.s_o( ns.snakecase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_SNAKECASE( "foo bar" )
+* STDLIB_SNAKECASE( 'foo bar' )
 *
 * @example
 * STDLIB_SNAKECASE( A2:A100 )
@@ -1662,7 +1538,7 @@ var __STDLIB_UPPERCASE = ns.string.tools.s_o( ns.uppercase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_UPPERCASE( "foo bar" )
+* STDLIB_UPPERCASE( 'foo bar' )
 *
 * @example
 * STDLIB_UPPERCASE( A2:A100 )
@@ -1677,98 +1553,166 @@ function STDLIB_UPPERCASE( value ) {
 	}
 	return __STDLIB_UPPERCASE( value );
 }
+var __STDLIB_CONSTANTCASE = ns.string.tools.s_o( ns.constantcase ); 
 /**
-* Fills one or more cells with a specified value.
+* Converts a string to constant case.
 *
 * @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {*} value - fill value
-* @returns {Range} filled range
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_FULL( 10, 1, 5 )
+* STDLIB_CONSTANTCASE( 'foo bar' )
 *
 * @example
-* STDLIB_FULL( 10, 1, "beep" )
+* STDLIB_CONSTANTCASE( A2:A100 )
+*
+* @example
+* STDLIB_CONSTANTCASE( A2:D100 )
 */
-function STDLIB_FULL( nrows, ncols, value ) {
-	ns.assert.isPositiveInteger( nrows, 'Number of rows' );
-	ns.assert.isPositiveInteger( ncols, 'Number of columns' );
-	return ns.filled2d( value, [ nrows, ncols ] );
+function STDLIB_CONSTANTCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CONSTANTCASE );
+		return value;
+	}
+	return __STDLIB_CONSTANTCASE( value );
+}
+var __STDLIB_UNCAPITALIZE = ns.string.tools.s_o( ns.uncapitalize ); 
+/**
+* Lowercases the first character of a string.
+*
+* @customfunction
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
+*
+* @example
+* STDLIB_UNCAPITALIZE( 'Foo Bar' )
+*
+* @example
+* STDLIB_UNCAPITALIZE( A2:A100 )
+*
+* @example
+* STDLIB_UNCAPITALIZE( A2:D100 )
+*/
+function STDLIB_UNCAPITALIZE( value ) {
+	if ( ns.isArray( value ) ) {
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_UNCAPITALIZE );
+		return value;
+	}
+	return __STDLIB_UNCAPITALIZE( value );
+}
+var __STDLIB_LOWERCASE = ns.string.tools.s_o( ns.lowercase ); 
+/**
+* Converts a string to lowercase.
+*
+* @customfunction
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
+*
+* @example
+* STDLIB_LOWERCASE( 'Foo Bar' )
+*
+* @example
+* STDLIB_LOWERCASE( A2:A100 )
+*
+* @example
+* STDLIB_LOWERCASE( A2:D100 )
+*/
+function STDLIB_LOWERCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_LOWERCASE );
+		return value;
+	}
+	return __STDLIB_LOWERCASE( value );
+}
+var __STDLIB_CAMELCASE = ns.string.tools.s_o( ns.camelcase ); 
+/**
+* Converts a string to camel case.
+*
+* @customfunction
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
+*
+* @example
+* STDLIB_CAMELCASE( 'foo bar' )
+*
+* @example
+* STDLIB_CAMELCASE( A2:A100 )
+*
+* @example
+* STDLIB_CAMELCASE( A2:D100 )
+*/
+function STDLIB_CAMELCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CAMELCASE );
+		return value;
+	}
+	return __STDLIB_CAMELCASE( value );
+}
+var __STDLIB_CAPITALIZE = ns.string.tools.s_o( ns.capitalize ); 
+/**
+* Capitalizes the first character of a string.
+*
+* @customfunction
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
+*
+* @example
+* STDLIB_CAPITALIZE( 'foo bar' )
+*
+* @example
+* STDLIB_CAPITALIZE( A2:A100 )
+*
+* @example
+* STDLIB_CAPITALIZE( A2:D100 )
+*/
+function STDLIB_CAPITALIZE( value ) {
+	if ( ns.isArray( value ) ) {
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_CAPITALIZE );
+		return value;
+	}
+	return __STDLIB_CAPITALIZE( value );
+}
+var __STDLIB_PASCALCASE = ns.string.tools.s_o( ns.pascalcase ); 
+/**
+* Converts a string to Pascal case.
+*
+* @customfunction
+* @param {string|Range<string>} value - input value(s)
+* @returns {string|Range<string>} results
+*
+* @example
+* STDLIB_PASCALCASE( 'foo bar' )
+*
+* @example
+* STDLIB_PASCALCASE( A2:A100 )
+*
+* @example
+* STDLIB_PASCALCASE( A2:D100 )
+*/
+function STDLIB_PASCALCASE( value ) {
+	if ( ns.isArray( value ) ) {
+		ns.tools.unary2d( [ value, value ], [ value.length, value[ 0 ].length ], __STDLIB_PASCALCASE );
+		return value;
+	}
+	return __STDLIB_PASCALCASE( value );
 }
 /**
-* Generates pseudorandom numbers using a linear congruential pseudorandom number generator (LCG) whose output is shuffled.
-*
-* ## Notes
-*
-* -   Without normalization, generates numbers on the closed interval `[0, 2147483646]`.
-* -   With normalization, generates numbers on the half-open interval `[0, 1)`.
+* Generates pseudorandom numbers drawn from a beta distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
+* @param {number} alpha - first shape parameter
+* @param {number} beta - second shape parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @param {string} normalized - normalized option name
-* @param {boolean} normalizedValue - normalized option value (default: `FALSE`)
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234, "normalized", FALSE )
-*
-* @example
-* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234, "normalized", TRUE )
+* STDLIB_RANDOM_BETA( 10, 1, 1, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { 
-	var rand;
-	var flg;
-	var s;
-	var o;
-	var v;
-	var f;
-	var i;
-	for ( i = 2; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else if ( o === 'normalized' ) {
-			flg = v;
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	rand = ns.random.minstdShuffle({
-		'seed': s
-	});
-	if ( flg ) {
-		f = rand.normalized;
-	} else {
-		f = rand;
-	}
-	return ns.filled2dBy( [ nrows, ncols ], f );
-}
-/**
-* Generates pseudorandom numbers drawn from an arcsine distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} a - minimum support
-* @param {number} b - maximum support
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_ARCSINE( 10, 1, 0, 10, "seed", 1234 )
-*/
-function STDLIB_RANDOM_ARCSINE( nrows, ncols, a, b, seed, seedValue ) { 
+function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -1784,36 +1728,34 @@ function STDLIB_RANDOM_ARCSINE( nrows, ncols, a, b, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( a, 'Minimum support' );
-	ns.assert.isNumber( b, 'Maximum support' );
-	ns.assert.isLessThan( a, b, 'Minimum support', 'maximum support' );
-	rand = ns.random.arcsine( a, b, {
+	ns.assert.isPositiveNumber( alpha, 'First shape parameter' );
+	ns.assert.isPositiveNumber( beta, 'Second shape parameter' );
+	rand = ns.random.beta( alpha, beta, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from Kumaraswamy's double bounded distribution.
+* Generates pseudorandom numbers drawn from a chi distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} a - first shape parameter
-* @param {number} b - second shape parameter
+* @param {number} k - degrees of freedom
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_KUMARASWAMY( 10, 1, 2, 5, "seed", 1234 )
+* STDLIB_RANDOM_CHI( 10, 1, 2, "seed", 1234 )
 */
-function STDLIB_RANDOM_KUMARASWAMY( nrows, ncols, a, b, seed, seedValue ) { 
+function STDLIB_RANDOM_CHI( nrows, ncols, k, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
 	var v;
 	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
+	for ( i = 3; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
@@ -1823,9 +1765,8 @@ function STDLIB_RANDOM_KUMARASWAMY( nrows, ncols, a, b, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( a, 'First shape parameter' );
-	ns.assert.isPositiveNumber( b, 'Second shape parameter' );
-	rand = ns.random.kumaraswamy( a, b, {
+	ns.assert.isPositiveNumber( k, 'Degrees of freedom' );
+	rand = ns.random.chi( k, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
@@ -1869,21 +1810,21 @@ function STDLIB_RANDOM_LOGISTIC( nrows, ncols, mu, s, seed, seedValue ) {
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from a beta distribution.
+* Generates pseudorandom numbers drawn from a gamma distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} alpha - first shape parameter
-* @param {number} beta - second shape parameter
+* @param {number} alpha - shape parameter
+* @param {number} beta - rate parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_BETA( 10, 1, 1, 10, "seed", 1234 )
+* STDLIB_RANDOM_GAMMA( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) { 
+function STDLIB_RANDOM_GAMMA( nrows, ncols, alpha, beta, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -1899,66 +1840,28 @@ function STDLIB_RANDOM_BETA( nrows, ncols, alpha, beta, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( alpha, 'First shape parameter' );
-	ns.assert.isPositiveNumber( beta, 'Second shape parameter' );
-	rand = ns.random.beta( alpha, beta, {
+	ns.assert.isPositiveNumber( alpha, 'Shape parameter' );
+	ns.assert.isPositiveNumber( beta, 'Rate parameter' );
+	rand = ns.random.gamma( alpha, beta, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from a normal distribution.
+* Generates pseudorandom numbers drawn from a Bernoulli distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} mu - mean
-* @param {number} sigma - standard deviation
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( mu, 'Mean' );
-	ns.assert.isPositiveNumber( sigma, 'Standard deviation' );
-	rand = ns.random.normal( mu, sigma, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a Poisson distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} lambda - mean parameter
+* @param {number} p - success probability
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<integer>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_POISSON( 10, 1, 7.9, "seed", 1234 )
+* STDLIB_RANDOM_BERNOULLI( 10, 1, 0.5, "seed", 1234 )
 */
-function STDLIB_RANDOM_POISSON( nrows, ncols, lambda, seed, seedValue ) { 
+function STDLIB_RANDOM_BERNOULLI( nrows, ncols, p, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -1974,80 +1877,8 @@ function STDLIB_RANDOM_POISSON( nrows, ncols, lambda, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( lambda, 'Mean parameter' );
-	rand = ns.random.poisson( lambda, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a Cauchy distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} x0 - location parameter
-* @param {number} gamma - scale parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_CAUCHY( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_CAUCHY( nrows, ncols, x0, gamma, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( x0, 'Location parameter' );
-	ns.assert.isPositiveNumber( gamma, 'Scale parameter' );
-	rand = ns.random.cauchy( x0, gamma, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a standard normal distribution using the Box-Muller transform.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_BOX_MULLER( 10, 1, "seed", 1234 )
-*/
-function STDLIB_RANDOM_BOX_MULLER( nrows, ncols, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 2; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	rand = ns.random.boxMuller({
+	ns.assert.isProbability( p, 'Success probability' );
+	rand = ns.random.bernoulli( p, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
@@ -2094,57 +1925,21 @@ function STDLIB_RANDOM_TRIANGULAR( nrows, ncols, a, b, c, seed, seedValue ) {
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from an exponential distribution.
+* Generates pseudorandom numbers drawn from a Weibull distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} lambda - rate parameter
+* @param {number} k - scale parameter
+* @param {number} lambda - shape parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
+* @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_EXPONENTIAL( 10, 1, 7.9, "seed", 1234 )
+* STDLIB_RANDOM_WEIBULL( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_EXPONENTIAL( nrows, ncols, lambda, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( lambda, 'Rate parameter' );
-	rand = ns.random.exponential( lambda, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a negative binomial distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} r - number of successes until experiment is stopped
-* @param {number} p - success probability
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_NEGATIVE_BINOMIAL( 10, 1, 20, 0.8, "seed", 1234 )
-*/
-function STDLIB_RANDOM_NEGATIVE_BINOMIAL( nrows, ncols, r, p, seed, seedValue ) { 
+function STDLIB_RANDOM_WEIBULL( nrows, ncols, k, lambda, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -2160,91 +1955,15 @@ function STDLIB_RANDOM_NEGATIVE_BINOMIAL( nrows, ncols, r, p, seed, seedValue ) 
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( r, 'Number of successes until experiment is stopped' );
-	ns.assert.isBetween( p, 0.0, 1.0, 'open', 'open', 'Success probability' );
-	rand = ns.random.negativeBinomial( r, p, {
+	ns.assert.isPositiveNumber( k, 'Scale parameter' );
+	ns.assert.isPositiveNumber( lambda, 'Shape parameter' );
+	rand = ns.random.weibull( k, lambda, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from a raised cosine distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} mu - mean
-* @param {number} s - scale parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_COSINE( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_COSINE( nrows, ncols, mu, s, seed, seedValue ) { 
-	var rand;
-	var sd;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			sd = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
-	ns.assert.isNumber( mu, 'Mean' );
-	ns.assert.isPositiveNumber( s, 'Scale parameter' );
-	rand = ns.random.cosine( mu, s, {
-		'seed': sd
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a Laplace (double exponential) distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} mu - mean
-* @param {number} b - scale parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_LAPLACE( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_LAPLACE( nrows, ncols, mu, b, seed, seedValue ) { 
-	var rand;
-	var sd;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			sd = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
-	ns.assert.isNumber( mu, 'Mean' );
-	ns.assert.isPositiveNumber( b, 'Scale parameter' );
-	rand = ns.random.laplace( mu, b, {
-		'seed': sd
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a standard normal distribution using the Improved Ziggurat transform.
+* Generates pseudorandom numbers drawn from a standard normal distribution using the Box-Muller transform.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
@@ -2254,9 +1973,9 @@ function STDLIB_RANDOM_LAPLACE( nrows, ncols, mu, b, seed, seedValue ) {
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_IMPROVED_ZIGGURAT( 10, 1, "seed", 1234 )
+* STDLIB_RANDOM_BOX_MULLER( 10, 1, "seed", 1234 )
 */
-function STDLIB_RANDOM_IMPROVED_ZIGGURAT( nrows, ncols, seed, seedValue ) { 
+function STDLIB_RANDOM_BOX_MULLER( nrows, ncols, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -2272,45 +1991,7 @@ function STDLIB_RANDOM_IMPROVED_ZIGGURAT( nrows, ncols, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	rand = ns.random.improvedZiggurat({
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from an inverse gamma distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} alpha - shape parameter
-* @param {number} beta - scale parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_INVGAMMA( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_INVGAMMA( nrows, ncols, alpha, beta, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( alpha, 'Shape parameter' );
-	ns.assert.isPositiveNumber( beta, 'Scale parameter' );
-	rand = ns.random.invgamma( alpha, beta, {
+	rand = ns.random.boxMuller({
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
@@ -2354,57 +2035,97 @@ function STDLIB_RANDOM_PARETO1( nrows, ncols, alpha, beta, seed, seedValue ) {
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from a geometric distribution.
+* Generates pseudorandom numbers drawn from a Lévy distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} p - success probability
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_GEOMETRIC( 10, 1, 0.5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_GEOMETRIC( nrows, ncols, p, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isProbability( p, 'Success probability' );
-	rand = ns.random.geometric( p, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a Weibull distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} k - scale parameter
-* @param {number} lambda - shape parameter
+* @param {number} mu - location parameter
+* @param {number} c - scale parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_WEIBULL( 10, 1, 2, 5, "seed", 1234 )
+* STDLIB_RANDOM_LEVY( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_WEIBULL( nrows, ncols, k, lambda, seed, seedValue ) { 
+function STDLIB_RANDOM_LEVY( nrows, ncols, mu, c, seed, seedValue ) { 
+	var rand;
+	var sd;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			sd = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
+	ns.assert.isNumber( mu, 'Location parameter' );
+	ns.assert.isPositiveNumber( c, 'Scale parameter' );
+	rand = ns.random.levy( mu, c, {
+		'seed': sd
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a raised cosine distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} mu - mean
+* @param {number} s - scale parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_COSINE( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_COSINE( nrows, ncols, mu, s, seed, seedValue ) { 
+	var rand;
+	var sd;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			sd = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
+	ns.assert.isNumber( mu, 'Mean' );
+	ns.assert.isPositiveNumber( s, 'Scale parameter' );
+	rand = ns.random.cosine( mu, s, {
+		'seed': sd
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from Kumaraswamy's double bounded distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} a - first shape parameter
+* @param {number} b - second shape parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_KUMARASWAMY( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_KUMARASWAMY( nrows, ncols, a, b, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -2420,144 +2141,108 @@ function STDLIB_RANDOM_WEIBULL( nrows, ncols, k, lambda, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( k, 'Scale parameter' );
-	ns.assert.isPositiveNumber( lambda, 'Shape parameter' );
-	rand = ns.random.weibull( k, lambda, {
+	ns.assert.isPositiveNumber( a, 'First shape parameter' );
+	ns.assert.isPositiveNumber( b, 'Second shape parameter' );
+	rand = ns.random.kumaraswamy( a, b, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from an Erlang distribution.
+* Generates pseudorandom numbers drawn from a hypergeometric distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {integer} k - shape parameter
+* @param {integer} N - population size
+* @param {integer} K - subpopulation size
+* @param {integer} n - number of draws
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_HYPERGEOMETRIC( 10, 1, 20, 10, 7, "seed", 1234 )
+*/
+function STDLIB_RANDOM_HYPERGEOMETRIC( nrows, ncols, N, K, n, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 5; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isNonNegativeInteger( N, 'Population size' );
+	ns.assert.isNonNegativeInteger( K, 'Subpopulation size' );
+	ns.assert.isNonNegativeInteger( n, 'Number of draws' );
+	ns.assert.isLessThanEqual( n, N, 'Number of draws', 'population size' );
+	ns.assert.isLessThanEqual( K, N, 'Subpopulation size', 'population size' );
+	rand = ns.random.hypergeometric( N, K, n, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a Laplace (double exponential) distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} mu - mean
+* @param {number} b - scale parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_LAPLACE( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_LAPLACE( nrows, ncols, mu, b, seed, seedValue ) { 
+	var rand;
+	var sd;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			sd = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
+	ns.assert.isNumber( mu, 'Mean' );
+	ns.assert.isPositiveNumber( b, 'Scale parameter' );
+	rand = ns.random.laplace( mu, b, {
+		'seed': sd
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from an exponential distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
 * @param {number} lambda - rate parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_ERLANG( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_ERLANG( nrows, ncols, k, lambda, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveInteger( k, 'Shape parameter' );
-	ns.assert.isPositiveNumber( lambda, 'Rate parameter' );
-	rand = ns.random.erlang( k, lambda, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a discrete uniform distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {integer} a - minimum support (inclusive)
-* @param {integer} b - maximum support (inclusive)
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<integer>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
+* STDLIB_RANDOM_EXPONENTIAL( 10, 1, 7.9, "seed", 1234 )
 */
-function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isInteger( a, 'Minimum support' );
-	ns.assert.isInteger( b, 'Maximum support' );
-	ns.assert.isLessThanEqual( a, b, 'Minimum support', 'maximum support' );
-	rand = ns.random.discreteUniform( a, b, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a continuous uniform distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} a - minimum support (inclusive)
-* @param {number} b - maximum support (exclusive)
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
-*/
-function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( a, 'Minimum support' );
-	ns.assert.isNumber( b, 'Maximum support' );
-	ns.assert.isLessThan( a, b, 'Minimum support', 'maximum support' );
-	rand = ns.random.uniform( a, b, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a Bernoulli distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} p - success probability
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_BERNOULLI( 10, 1, 0.5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_BERNOULLI( nrows, ncols, p, seed, seedValue ) { 
+function STDLIB_RANDOM_EXPONENTIAL( nrows, ncols, lambda, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -2573,67 +2258,11 @@ function STDLIB_RANDOM_BERNOULLI( nrows, ncols, p, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isProbability( p, 'Success probability' );
-	rand = ns.random.bernoulli( p, {
+	ns.assert.isPositiveNumber( lambda, 'Rate parameter' );
+	rand = ns.random.exponential( lambda, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers using a linear congruential pseudorandom number generator (LCG).
-*
-* ## Notes
-*
-* -   Without normalization, generates numbers on the closed interval `[0, 2147483646]`.
-* -   With normalization, generates numbers on the half-open interval `[0, 1)`.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @param {string} normalized - normalized option name
-* @param {boolean} normalizedValue - normalized option value (default: `FALSE`)
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234 )
-*
-* @example
-* STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234, "normalized", FALSE )
-*
-* @example
-* STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234, "normalized", TRUE )
-*/
-function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { 
-	var rand;
-	var flg;
-	var s;
-	var o;
-	var v;
-	var f;
-	var i;
-	for ( i = 2; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else if ( o === 'normalized' ) {
-			flg = v;
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	rand = ns.random.minstd({
-		'seed': s
-	});
-	if ( flg ) {
-		f = rand.normalized;
-	} else {
-		f = rand;
-	}
-	return ns.filled2dBy( [ nrows, ncols ], f );
 }
 /**
 * Generates pseudorandom numbers using the Mersenne Twister pseudorandom number generator.
@@ -2730,57 +2359,21 @@ function STDLIB_RANDOM_BINOMIAL( nrows, ncols, n, p, seed, seedValue ) {
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from a Student's t-distribution.
+* Generates pseudorandom numbers drawn from a continuous uniform distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} v - degrees of freedom
+* @param {number} a - minimum support (inclusive)
+* @param {number} b - maximum support (exclusive)
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_T( 10, 1, 2.4, "seed", 1234 )
+* STDLIB_RANDOM_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
 */
-function STDLIB_RANDOM_T( nrows, ncols, v, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var a;
-	var i;
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		a = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( a );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( v, 'Degrees of freedom' );
-	rand = ns.random.t( v, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a gamma distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} alpha - shape parameter
-* @param {number} beta - rate parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_GAMMA( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_GAMMA( nrows, ncols, alpha, beta, seed, seedValue ) { 
+function STDLIB_RANDOM_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -2796,199 +2389,10 @@ function STDLIB_RANDOM_GAMMA( nrows, ncols, alpha, beta, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( alpha, 'Shape parameter' );
-	ns.assert.isPositiveNumber( beta, 'Rate parameter' );
-	rand = ns.random.gamma( alpha, beta, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a lognormal distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} mu - location parameter
-* @param {number} sigma - scale parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_LOGNORMAL( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_LOGNORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( mu, 'Location parameter' );
-	ns.assert.isPositiveNumber( sigma, 'Scale parameter' );
-	rand = ns.random.lognormal( mu, sigma, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a Gumbel distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} mu - mean
-* @param {number} beta - scale parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_GUMBEL( 10, 1, 2, 5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_GUMBEL( nrows, ncols, mu, beta, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 4; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNumber( mu, 'Mean' );
-	ns.assert.isPositiveNumber( beta, 'Scale parameter' );
-	rand = ns.random.gumbel( mu, beta, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a Rayleigh distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} sigma - scale parameter
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_RAYLEIGH( 10, 1, 2.5, "seed", 1234 )
-*/
-function STDLIB_RANDOM_RAYLEIGH( nrows, ncols, sigma, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( sigma, 'Scale parameter' );
-	rand = ns.random.rayleigh( sigma, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a chi-square distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {number} k - degrees of freedom
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<number>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_CHISQUARE( 10, 1, 2, "seed", 1234 )
-*/
-function STDLIB_RANDOM_CHISQUARE( nrows, ncols, k, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( k, 'Degrees of freedom' );
-	rand = ns.random.chisquare( k, {
-		'seed': s
-	});
-	return ns.filled2dBy( [ nrows, ncols ], rand );
-}
-/**
-* Generates pseudorandom numbers drawn from a hypergeometric distribution.
-*
-* @customfunction
-* @param {integer} nrows - number of rows
-* @param {integer} ncols - number of columns
-* @param {integer} N - population size
-* @param {integer} K - subpopulation size
-* @param {integer} n - number of draws
-* @param {string} seed - seed option name
-* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
-* @returns {Range<integer>} pseudorandom numbers
-*
-* @example
-* STDLIB_RANDOM_HYPERGEOMETRIC( 10, 1, 20, 10, 7, "seed", 1234 )
-*/
-function STDLIB_RANDOM_HYPERGEOMETRIC( nrows, ncols, N, K, n, seed, seedValue ) { 
-	var rand;
-	var s;
-	var o;
-	var v;
-	var i;
-	for ( i = 5; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		v = arguments[ i+1 ];
-		if ( o === 'seed' ) {
-			s = ns.random.normalizeSeed( v );
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isNonNegativeInteger( N, 'Population size' );
-	ns.assert.isNonNegativeInteger( K, 'Subpopulation size' );
-	ns.assert.isNonNegativeInteger( n, 'Number of draws' );
-	ns.assert.isLessThanEqual( n, N, 'Number of draws', 'population size' );
-	ns.assert.isLessThanEqual( K, N, 'Subpopulation size', 'population size' );
-	rand = ns.random.hypergeometric( N, K, n, {
+	ns.assert.isNumber( a, 'Minimum support' );
+	ns.assert.isNumber( b, 'Maximum support' );
+	ns.assert.isLessThan( a, b, 'Minimum support', 'maximum support' );
+	rand = ns.random.uniform( a, b, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
@@ -3032,23 +2436,23 @@ function STDLIB_RANDOM_BETAPRIME( nrows, ncols, alpha, beta, seed, seedValue ) {
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from a Lévy distribution.
+* Generates pseudorandom numbers drawn from an Erlang distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} mu - location parameter
-* @param {number} c - scale parameter
+* @param {integer} k - shape parameter
+* @param {number} lambda - rate parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_LEVY( 10, 1, 2, 5, "seed", 1234 )
+* STDLIB_RANDOM_ERLANG( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_LEVY( nrows, ncols, mu, c, seed, seedValue ) { 
+function STDLIB_RANDOM_ERLANG( nrows, ncols, k, lambda, seed, seedValue ) { 
 	var rand;
-	var sd;
+	var s;
 	var o;
 	var v;
 	var i;
@@ -3056,16 +2460,88 @@ function STDLIB_RANDOM_LEVY( nrows, ncols, mu, c, seed, seedValue ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
 		if ( o === 'seed' ) {
-			sd = ns.random.normalizeSeed( v );
+			s = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	ns.assert.verifyCommonPRNGArgs( nrows, ncols, sd );
-	ns.assert.isNumber( mu, 'Location parameter' );
-	ns.assert.isPositiveNumber( c, 'Scale parameter' );
-	rand = ns.random.levy( mu, c, {
-		'seed': sd
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveInteger( k, 'Shape parameter' );
+	ns.assert.isPositiveNumber( lambda, 'Rate parameter' );
+	rand = ns.random.erlang( k, lambda, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a geometric distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} p - success probability
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_GEOMETRIC( 10, 1, 0.5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_GEOMETRIC( nrows, ncols, p, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isProbability( p, 'Success probability' );
+	rand = ns.random.geometric( p, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a Student's t-distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} v - degrees of freedom
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_T( 10, 1, 2.4, "seed", 1234 )
+*/
+function STDLIB_RANDOM_T( nrows, ncols, v, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var a;
+	var i;
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		a = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( a );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( v, 'Degrees of freedom' );
+	rand = ns.random.t( v, {
+		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
@@ -3103,6 +2579,212 @@ function STDLIB_RANDOM_F( nrows, ncols, d1, d2, seed, seedValue ) {
 	ns.assert.isPositiveNumber( d1, 'Degrees of freedom' );
 	ns.assert.isPositiveNumber( d2, 'Degrees of freedom' );
 	rand = ns.random.f( d1, d2, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a Cauchy distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} x0 - location parameter
+* @param {number} gamma - scale parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_CAUCHY( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_CAUCHY( nrows, ncols, x0, gamma, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isNumber( x0, 'Location parameter' );
+	ns.assert.isPositiveNumber( gamma, 'Scale parameter' );
+	rand = ns.random.cauchy( x0, gamma, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers using a linear congruential pseudorandom number generator (LCG).
+*
+* ## Notes
+*
+* -   Without normalization, generates numbers on the closed interval `[0, 2147483646]`.
+* -   With normalization, generates numbers on the half-open interval `[0, 1)`.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @param {string} normalized - normalized option name
+* @param {boolean} normalizedValue - normalized option value (default: `FALSE`)
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234 )
+*
+* @example
+* STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234, "normalized", FALSE )
+*
+* @example
+* STDLIB_RANDOM_MINSTD( 10, 1, "seed", 1234, "normalized", TRUE )
+*/
+function STDLIB_RANDOM_MINSTD( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { 
+	var rand;
+	var flg;
+	var s;
+	var o;
+	var v;
+	var f;
+	var i;
+	for ( i = 2; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else if ( o === 'normalized' ) {
+			flg = v;
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	rand = ns.random.minstd({
+		'seed': s
+	});
+	if ( flg ) {
+		f = rand.normalized;
+	} else {
+		f = rand;
+	}
+	return ns.filled2dBy( [ nrows, ncols ], f );
+}
+/**
+* Generates pseudorandom numbers drawn from a chi-square distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} k - degrees of freedom
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_CHISQUARE( 10, 1, 2, "seed", 1234 )
+*/
+function STDLIB_RANDOM_CHISQUARE( nrows, ncols, k, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( k, 'Degrees of freedom' );
+	rand = ns.random.chisquare( k, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from an inverse gamma distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} alpha - shape parameter
+* @param {number} beta - scale parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_INVGAMMA( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_INVGAMMA( nrows, ncols, alpha, beta, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( alpha, 'Shape parameter' );
+	ns.assert.isPositiveNumber( beta, 'Scale parameter' );
+	rand = ns.random.invgamma( alpha, beta, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a negative binomial distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} r - number of successes until experiment is stopped
+* @param {number} p - success probability
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_NEGATIVE_BINOMIAL( 10, 1, 20, 0.8, "seed", 1234 )
+*/
+function STDLIB_RANDOM_NEGATIVE_BINOMIAL( nrows, ncols, r, p, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( r, 'Number of successes until experiment is stopped' );
+	ns.assert.isBetween( p, 0.0, 1.0, 'open', 'open', 'Success probability' );
+	rand = ns.random.negativeBinomial( r, p, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
@@ -3148,20 +2830,58 @@ function STDLIB_RANDOM_FRECHET( nrows, ncols, alpha, s, m, seed, seedValue ) {
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Generates pseudorandom numbers drawn from a chi distribution.
+* Generates pseudorandom numbers drawn from a Gumbel distribution.
 *
 * @customfunction
 * @param {integer} nrows - number of rows
 * @param {integer} ncols - number of columns
-* @param {number} k - degrees of freedom
+* @param {number} mu - mean
+* @param {number} beta - scale parameter
 * @param {string} seed - seed option name
 * @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
 * @returns {Range<number>} pseudorandom numbers
 *
 * @example
-* STDLIB_RANDOM_CHI( 10, 1, 2, "seed", 1234 )
+* STDLIB_RANDOM_GUMBEL( 10, 1, 2, 5, "seed", 1234 )
 */
-function STDLIB_RANDOM_CHI( nrows, ncols, k, seed, seedValue ) { 
+function STDLIB_RANDOM_GUMBEL( nrows, ncols, mu, beta, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isNumber( mu, 'Mean' );
+	ns.assert.isPositiveNumber( beta, 'Scale parameter' );
+	rand = ns.random.gumbel( mu, beta, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a Poisson distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} lambda - mean parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_POISSON( 10, 1, 7.9, "seed", 1234 )
+*/
+function STDLIB_RANDOM_POISSON( nrows, ncols, lambda, seed, seedValue ) { 
 	var rand;
 	var s;
 	var o;
@@ -3177,75 +2897,291 @@ function STDLIB_RANDOM_CHI( nrows, ncols, k, seed, seedValue ) {
 		}
 	}
 	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
-	ns.assert.isPositiveNumber( k, 'Degrees of freedom' );
-	rand = ns.random.chi( k, {
+	ns.assert.isPositiveNumber( lambda, 'Mean parameter' );
+	rand = ns.random.poisson( lambda, {
 		'seed': s
 	});
 	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
-* Computes the maximum value.
+* Generates pseudorandom numbers drawn from a Rayleigh distribution.
 *
 * @customfunction
-* @param {Range<number>} x - range
-* @param {string} axis - axis option name
-* @param {integer} axisValue - axis option value (where `0` indicates across columns and `1` indicates across rows; default: `1`)
-* @returns {Range<number>} results
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} sigma - scale parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
 *
 * @example
-* STDLIB_MAX( A1:A100 )
-*
-* @example
-* STDLIB_MAX( A1:C100, "axis", 1 )
-*
-* @example
-* STDLIB_MAX( A1:C100, "axis", 0 )
+* STDLIB_RANDOM_RAYLEIGH( 10, 1, 2.5, "seed", 1234 )
 */
-function STDLIB_MAX( x, axis, axisValue ) { 
-	var sarray;
-	var offset;
-	var out;
-	var ax;
-	var M;
-	var N;
+function STDLIB_RANDOM_RAYLEIGH( nrows, ncols, sigma, seed, seedValue ) { 
+	var rand;
+	var s;
 	var o;
 	var v;
 	var i;
-	ns.assert.isRange( x, 'First argument' );
-	ax = 1;
-	for ( i = 1; i < arguments.length; i += 2 ) {
+	for ( i = 3; i < arguments.length; i += 2 ) {
 		o = arguments[ i ];
 		v = arguments[ i+1 ];
-		if ( o === 'axis' ) {
-			ns.assert.isOneOf( v, [ 0, 1 ], 'axis' );
-			ax = v;
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
 		} else {
 			ns.assert.unrecognizedOptionName( o );
 		}
 	}
-	out = [];
-	// Check for the simple case where we're provided a range in row-major order and asked to operate across columns...
-	if ( ax === 0 ) {
-		M = x.length;
-		N = x[ 0 ].length;
-		for ( i = 0; i < M; i++ ) {
-			out.push( ns.max( N, x[ i ], 1, 0 ) );
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isPositiveNumber( sigma, 'Scale parameter' );
+	rand = ns.random.rayleigh( sigma, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a normal distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} mu - mean
+* @param {number} sigma - standard deviation
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_NORMAL( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_NORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
 		}
-		return out;
 	}
-	// More complex case where we're provided a range in row-major order, but asked to operate across rows...
-	M = x[ 0 ].length; // number of columns
-	N = x.length;      // number of rows
-	// Flatten the input array to a strided array in row-major order:
-	sarray = ns.flattenArray( x );
-	// Set the offset which defines the pointer to the first indexed element in a column:
-	offset = 0;
-	// Iterate over rows...
-	for ( i = 0; i < M; i++ ) {
-		out.push( ns.max( N, sarray, M, offset ) );
-		offset += 1;
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isNumber( mu, 'Mean' );
+	ns.assert.isPositiveNumber( sigma, 'Standard deviation' );
+	rand = ns.random.normal( mu, sigma, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a discrete uniform distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {integer} a - minimum support (inclusive)
+* @param {integer} b - maximum support (inclusive)
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<integer>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_DISCRETE_UNIFORM( 10, 1, 0, 10, "seed", 1234 )
+*/
+function STDLIB_RANDOM_DISCRETE_UNIFORM( nrows, ncols, a, b, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
 	}
-	return [ out ];
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isInteger( a, 'Minimum support' );
+	ns.assert.isInteger( b, 'Maximum support' );
+	ns.assert.isLessThanEqual( a, b, 'Minimum support', 'maximum support' );
+	rand = ns.random.discreteUniform( a, b, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from a standard normal distribution using the Improved Ziggurat transform.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_IMPROVED_ZIGGURAT( 10, 1, "seed", 1234 )
+*/
+function STDLIB_RANDOM_IMPROVED_ZIGGURAT( nrows, ncols, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 2; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	rand = ns.random.improvedZiggurat({
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers using a linear congruential pseudorandom number generator (LCG) whose output is shuffled.
+*
+* ## Notes
+*
+* -   Without normalization, generates numbers on the closed interval `[0, 2147483646]`.
+* -   With normalization, generates numbers on the half-open interval `[0, 1)`.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @param {string} normalized - normalized option name
+* @param {boolean} normalizedValue - normalized option value (default: `FALSE`)
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234 )
+*
+* @example
+* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234, "normalized", FALSE )
+*
+* @example
+* STDLIB_RANDOM_MINSTD_SHUFFLE( 10, 1, "seed", 1234, "normalized", TRUE )
+*/
+function STDLIB_RANDOM_MINSTD_SHUFFLE( nrows, ncols, seed, seedValue, normalized, normalizedValue ) { 
+	var rand;
+	var flg;
+	var s;
+	var o;
+	var v;
+	var f;
+	var i;
+	for ( i = 2; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else if ( o === 'normalized' ) {
+			flg = v;
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	rand = ns.random.minstdShuffle({
+		'seed': s
+	});
+	if ( flg ) {
+		f = rand.normalized;
+	} else {
+		f = rand;
+	}
+	return ns.filled2dBy( [ nrows, ncols ], f );
+}
+/**
+* Generates pseudorandom numbers drawn from a lognormal distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} mu - location parameter
+* @param {number} sigma - scale parameter
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_LOGNORMAL( 10, 1, 2, 5, "seed", 1234 )
+*/
+function STDLIB_RANDOM_LOGNORMAL( nrows, ncols, mu, sigma, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isNumber( mu, 'Location parameter' );
+	ns.assert.isPositiveNumber( sigma, 'Scale parameter' );
+	rand = ns.random.lognormal( mu, sigma, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
+}
+/**
+* Generates pseudorandom numbers drawn from an arcsine distribution.
+*
+* @customfunction
+* @param {integer} nrows - number of rows
+* @param {integer} ncols - number of columns
+* @param {number} a - minimum support
+* @param {number} b - maximum support
+* @param {string} seed - seed option name
+* @param {integer|Range<integer>} seedValue - pseudorandom number generator seed value
+* @returns {Range<number>} pseudorandom numbers
+*
+* @example
+* STDLIB_RANDOM_ARCSINE( 10, 1, 0, 10, "seed", 1234 )
+*/
+function STDLIB_RANDOM_ARCSINE( nrows, ncols, a, b, seed, seedValue ) { 
+	var rand;
+	var s;
+	var o;
+	var v;
+	var i;
+	for ( i = 4; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'seed' ) {
+			s = ns.random.normalizeSeed( v );
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	ns.assert.verifyCommonPRNGArgs( nrows, ncols, s );
+	ns.assert.isNumber( a, 'Minimum support' );
+	ns.assert.isNumber( b, 'Maximum support' );
+	ns.assert.isLessThan( a, b, 'Minimum support', 'maximum support' );
+	rand = ns.random.arcsine( a, b, {
+		'seed': s
+	});
+	return ns.filled2dBy( [ nrows, ncols ], rand );
 }
 /**
 * Tests the null hypothesis that the variances in all groups are the same.
@@ -3311,6 +3247,70 @@ function STDLIB_BARTLETT_TEST( values, groups, groupsValue, alpha, alphaValue, f
 		];
 	}
 	return out.print();
+}
+/**
+* Computes the maximum value.
+*
+* @customfunction
+* @param {Range<number>} x - range
+* @param {string} axis - axis option name
+* @param {integer} axisValue - axis option value (where `0` indicates across columns and `1` indicates across rows; default: `1`)
+* @returns {Range<number>} results
+*
+* @example
+* STDLIB_MAX( A1:A100 )
+*
+* @example
+* STDLIB_MAX( A1:C100, "axis", 1 )
+*
+* @example
+* STDLIB_MAX( A1:C100, "axis", 0 )
+*/
+function STDLIB_MAX( x, axis, axisValue ) { 
+	var sarray;
+	var offset;
+	var out;
+	var ax;
+	var M;
+	var N;
+	var o;
+	var v;
+	var i;
+	ns.assert.isRange( x, 'First argument' );
+	ax = 1;
+	for ( i = 1; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		v = arguments[ i+1 ];
+		if ( o === 'axis' ) {
+			ns.assert.isOneOf( v, [ 0, 1 ], 'axis' );
+			ax = v;
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	out = [];
+	// Check for the simple case where we're provided a range in row-major order and asked to operate across columns...
+	if ( ax === 0 ) {
+		M = x.length;
+		N = x[ 0 ].length;
+		for ( i = 0; i < M; i++ ) {
+			out.push( ns.max( N, x[ i ], 1, 0 ) );
+		}
+		return out;
+	}
+	// More complex case where we're provided a range in row-major order, but asked to operate across rows...
+	M = x[ 0 ].length; // number of columns
+	N = x.length;      // number of rows
+	// Flatten the input array to a strided array in row-major order:
+	sarray = ns.flattenArray( x );
+	// Set the offset which defines the pointer to the first indexed element in a column:
+	offset = 0;
+	// Iterate over rows...
+	for ( i = 0; i < M; i++ ) {
+		out.push( ns.max( N, sarray, M, offset ) );
+		offset += 1;
+	}
+	return [ out ];
 }
 /**
 * Computes the maximum value according to a mask.
@@ -3543,150 +3543,8 @@ function STDLIB_DISTS_NORMAL_VARIANCE( mu, sigma, nonnumeric, nonnumericValue, n
 	}
 	return ns.math.tools.binary( args, ns.dists.normal.variance );
 }
-var __STDLIB_DISTS_NORMAL_LOGCDF_DTYPES = [ 'number', 'number', 'number' ]; 
-var __STDLIB_DISTS_NORMAL_LOGCDF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
 /**
-* Evaluates the natural logarithm of the cumulative density function (CDF) for a normal distribution.
-*
-* @customfunction
-* @param {number|Range<number>} x - value(s) at which to evaluate the CDF
-* @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @throws {Error} input arguments must be broadcast compatible
-* @returns {Range<number>} results
-*
-* @example
-* STDLIB_DISTS_NORMAL_LOGCDF( 2, 0, 1 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_LOGCDF( A1:A100, 0, 1 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_LOGCDF( 2, A1:A100, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_LOGCDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_DISTS_NORMAL_LOGCDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var shape;
-	var args;
-	var opts;
-	var out;
-	var f;
-	var o;
-	var i;
-	opts = {
-		'nonnumeric': void 0,
-		'nan': NaN,
-		'pinf': Infinity,
-		'ninf': -Infinity
-	};
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
-			opts[ o ] = arguments[ i+1 ];
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	// Normalize the provided arguments so we are always working with nested arrays:
-	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_LOGCDF_DTYPES, __STDLIB_DISTS_NORMAL_LOGCDF_MSGS ); 
-	// Resolve the shape of the broadcasted result:
-	shape = ns.broadcastShapes( args[ 1 ] );
-	if ( shape === null ) {
-		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
-	}
-	// Create an output array:
-	out = ns.zeros2d( shape );
-	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
-	f = ns.tools.ddd_d( ns.dists.normal.logcdf, opts );
-	// Apply the function to broadcasted arrays:
-	args[ 0 ].push( out );
-	args[ 1 ].push( shape );
-	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
-	return out;
-}
-var __STDLIB_DISTS_NORMAL_PDF_DTYPES = [ 'number', 'number', 'number' ]; 
-var __STDLIB_DISTS_NORMAL_PDF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
-/**
-* Evaluates the probability density function (PDF) for a normal distribution.
-*
-* @customfunction
-* @param {number|Range<number>} x - value(s) at which to evaluate the PDF
-* @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @throws {Error} input arguments must be broadcast compatible
-* @returns {Range<number>} results
-*
-* @example
-* STDLIB_DISTS_NORMAL_PDF( 2, 0, 1 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_PDF( A1:A100, 0, 1 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_PDF( 2, A1:A100, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_PDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var shape;
-	var args;
-	var opts;
-	var out;
-	var f;
-	var o;
-	var i;
-	opts = {
-		'nonnumeric': void 0,
-		'nan': NaN,
-		'pinf': Infinity,
-		'ninf': -Infinity
-	};
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
-			opts[ o ] = arguments[ i+1 ];
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
-	}
-	// Normalize the provided arguments so we are always working with nested arrays:
-	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_PDF_DTYPES, __STDLIB_DISTS_NORMAL_PDF_MSGS ); 
-	// Resolve the shape of the broadcasted result:
-	shape = ns.broadcastShapes( args[ 1 ] );
-	if ( shape === null ) {
-		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
-	}
-	// Create an output array:
-	out = ns.zeros2d( shape );
-	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
-	f = ns.tools.ddd_d( ns.dists.normal.pdf, opts );
-	// Apply the function to broadcasted arrays:
-	args[ 0 ].push( out );
-	args[ 1 ].push( shape );
-	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
-	return out;
-}
-/**
-* Computes the standard deviation of a normal distribution.
+* Computes the expected value of a normal distribution.
 *
 * @customfunction
 * @param {number|Range<number>} mu - mean
@@ -3703,63 +3561,25 @@ function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma, nonnumeric, nonnumericValue, nan
 * @returns {Range<number>} results
 *
 * @example
-* STDLIB_DISTS_NORMAL_STDEV( 0, 1 )
+* STDLIB_DISTS_NORMAL_MEAN( 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_STDEV( 0, B1:B100 )
+* STDLIB_DISTS_NORMAL_MEAN( 0, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_STDEV( A1:A100, B1:B100 )
+* STDLIB_DISTS_NORMAL_MEAN( A1:A100, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_STDEV( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_DISTS_NORMAL_MEAN( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_DISTS_NORMAL_STDEV( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_DISTS_NORMAL_MEAN( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
 	var i;
 	args = [];
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.binary( args, ns.dists.normal.stdev );
-}
-/**
-* Computes the skewness of a normal distribution.
-*
-* @customfunction
-* @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation (in nats)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @throws {Error} input arguments must be broadcast compatible
-* @returns {Range<number>} results
-*
-* @example
-* STDLIB_DISTS_NORMAL_SKEWNESS( 0, 1 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_SKEWNESS( 0, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_SKEWNESS( A1:A100, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_SKEWNESS( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_DISTS_NORMAL_SKEWNESS( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.binary( args, ns.dists.normal.skewness );
+	return ns.math.tools.binary( args, ns.dists.normal.mean );
 }
 var __STDLIB_DISTS_NORMAL_LOGPDF_DTYPES = [ 'number', 'number', 'number' ]; 
 var __STDLIB_DISTS_NORMAL_LOGPDF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
@@ -3832,15 +3652,12 @@ function STDLIB_DISTS_NORMAL_LOGPDF( x, mu, sigma, nonnumeric, nonnumericValue, 
 	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
 	return out;
 }
-var __STDLIB_DISTS_NORMAL_CDF_DTYPES = [ 'number', 'number', 'number' ]; 
-var __STDLIB_DISTS_NORMAL_CDF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
 /**
-* Evaluates the cumulative density function (CDF) for a normal distribution.
+* Computes the mode of a normal distribution.
 *
 * @customfunction
-* @param {number|Range<number>} x - value(s) at which to evaluate the CDF
 * @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation
+* @param {number|Range<number>} sigma - standard deviation (in nats)
 * @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
 * @param {*} nonnumericValue - non-numeric option value
 * @param {string} nan - option name for specifying the value to return in place of `NaN`
@@ -3853,55 +3670,63 @@ var __STDLIB_DISTS_NORMAL_CDF_MSGS = [ 'First argument', 'Second argument', 'Thi
 * @returns {Range<number>} results
 *
 * @example
-* STDLIB_DISTS_NORMAL_CDF( 2, 0, 1 )
+* STDLIB_DISTS_NORMAL_MODE( 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_CDF( A1:A100, 0, 1 )
+* STDLIB_DISTS_NORMAL_MODE( 0, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_CDF( 2, A1:A100, B1:B100 )
+* STDLIB_DISTS_NORMAL_MODE( A1:A100, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_CDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_DISTS_NORMAL_MODE( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_DISTS_NORMAL_CDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var shape;
+function STDLIB_DISTS_NORMAL_MODE( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
-	var opts;
-	var out;
-	var f;
-	var o;
 	var i;
-	opts = {
-		'nonnumeric': void 0,
-		'nan': NaN,
-		'pinf': Infinity,
-		'ninf': -Infinity
-	};
-	for ( i = 3; i < arguments.length; i += 2 ) {
-		o = arguments[ i ];
-		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
-			opts[ o ] = arguments[ i+1 ];
-		} else {
-			ns.assert.unrecognizedOptionName( o );
-		}
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
 	}
-	// Normalize the provided arguments so we are always working with nested arrays:
-	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_CDF_DTYPES, __STDLIB_DISTS_NORMAL_CDF_MSGS ); 
-	// Resolve the shape of the broadcasted result:
-	shape = ns.broadcastShapes( args[ 1 ] );
-	if ( shape === null ) {
-		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	return ns.math.tools.binary( args, ns.dists.normal.mode );
+}
+/**
+* Computes the expected value of a normal distribution.
+*
+* @customfunction
+* @param {number|Range<number>} mu - mean
+* @param {number|Range<number>} sigma - standard deviation (in nats)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
+* @returns {Range<number>} results
+*
+* @example
+* STDLIB_DISTS_NORMAL_MEDIAN( 0, 1 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_MEDIAN( 0, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_MEDIAN( A1:A100, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_MEDIAN( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_DISTS_NORMAL_MEDIAN( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
 	}
-	// Create an output array:
-	out = ns.zeros2d( shape );
-	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
-	f = ns.tools.ddd_d( ns.dists.normal.cdf, opts );
-	// Apply the function to broadcasted arrays:
-	args[ 0 ].push( out );
-	args[ 1 ].push( shape );
-	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
-	return out;
+	return ns.math.tools.binary( args, ns.dists.normal.median );
 }
 var __STDLIB_DISTS_NORMAL_QUANTILE_DTYPES = [ 'number', 'number', 'number' ]; 
 var __STDLIB_DISTS_NORMAL_QUANTILE_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
@@ -3968,6 +3793,115 @@ function STDLIB_DISTS_NORMAL_QUANTILE( p, mu, sigma, nonnumeric, nonnumericValue
 	out = ns.zeros2d( shape );
 	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
 	f = ns.tools.ddd_d( ns.dists.normal.quantile, opts );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
+}
+/**
+* Computes the differential entropy for a normal distribution.
+*
+* @customfunction
+* @param {number|Range<number>} mu - mean
+* @param {number|Range<number>} sigma - standard deviation (in nats)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
+* @returns {Range<number>} results
+*
+* @example
+* STDLIB_DISTS_NORMAL_ENTROPY( 0, 1 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_ENTROPY( 0, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_ENTROPY( A1:A100, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_ENTROPY( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.binary( args, ns.dists.normal.entropy );
+}
+var __STDLIB_DISTS_NORMAL_PDF_DTYPES = [ 'number', 'number', 'number' ]; 
+var __STDLIB_DISTS_NORMAL_PDF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
+/**
+* Evaluates the probability density function (PDF) for a normal distribution.
+*
+* @customfunction
+* @param {number|Range<number>} x - value(s) at which to evaluate the PDF
+* @param {number|Range<number>} mu - mean
+* @param {number|Range<number>} sigma - standard deviation
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
+* @returns {Range<number>} results
+*
+* @example
+* STDLIB_DISTS_NORMAL_PDF( 2, 0, 1 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_PDF( A1:A100, 0, 1 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_PDF( 2, A1:A100, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_PDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_DISTS_NORMAL_PDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var shape;
+	var args;
+	var opts;
+	var out;
+	var f;
+	var o;
+	var i;
+	opts = {
+		'nonnumeric': void 0,
+		'nan': NaN,
+		'pinf': Infinity,
+		'ninf': -Infinity
+	};
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
+			opts[ o ] = arguments[ i+1 ];
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_PDF_DTYPES, __STDLIB_DISTS_NORMAL_PDF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
+	f = ns.tools.ddd_d( ns.dists.normal.pdf, opts );
 	// Apply the function to broadcasted arrays:
 	args[ 0 ].push( out );
 	args[ 1 ].push( shape );
@@ -4045,12 +3979,15 @@ function STDLIB_DISTS_NORMAL_MGF( t, mu, sigma, nonnumeric, nonnumericValue, nan
 	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
 	return out;
 }
+var __STDLIB_DISTS_NORMAL_CDF_DTYPES = [ 'number', 'number', 'number' ]; 
+var __STDLIB_DISTS_NORMAL_CDF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
 /**
-* Computes the differential entropy for a normal distribution.
+* Evaluates the cumulative density function (CDF) for a normal distribution.
 *
 * @customfunction
+* @param {number|Range<number>} x - value(s) at which to evaluate the CDF
 * @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation (in nats)
+* @param {number|Range<number>} sigma - standard deviation
 * @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
 * @param {*} nonnumericValue - non-numeric option value
 * @param {string} nan - option name for specifying the value to return in place of `NaN`
@@ -4063,101 +4000,55 @@ function STDLIB_DISTS_NORMAL_MGF( t, mu, sigma, nonnumeric, nonnumericValue, nan
 * @returns {Range<number>} results
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 0, 1 )
+* STDLIB_DISTS_NORMAL_CDF( 2, 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 0, B1:B100 )
+* STDLIB_DISTS_NORMAL_CDF( A1:A100, 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( A1:A100, B1:B100 )
+* STDLIB_DISTS_NORMAL_CDF( 2, A1:A100, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_ENTROPY( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_DISTS_NORMAL_CDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_DISTS_NORMAL_ENTROPY( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_DISTS_NORMAL_CDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var shape;
 	var args;
+	var opts;
+	var out;
+	var f;
+	var o;
 	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
+	opts = {
+		'nonnumeric': void 0,
+		'nan': NaN,
+		'pinf': Infinity,
+		'ninf': -Infinity
+	};
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
+			opts[ o ] = arguments[ i+1 ];
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
 	}
-	return ns.math.tools.binary( args, ns.dists.normal.entropy );
-}
-/**
-* Computes the mode of a normal distribution.
-*
-* @customfunction
-* @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation (in nats)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @throws {Error} input arguments must be broadcast compatible
-* @returns {Range<number>} results
-*
-* @example
-* STDLIB_DISTS_NORMAL_MODE( 0, 1 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_MODE( 0, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_MODE( A1:A100, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_MODE( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_DISTS_NORMAL_MODE( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_CDF_DTYPES, __STDLIB_DISTS_NORMAL_CDF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
 	}
-	return ns.math.tools.binary( args, ns.dists.normal.mode );
-}
-/**
-* Computes the expected value of a normal distribution.
-*
-* @customfunction
-* @param {number|Range<number>} mu - mean
-* @param {number|Range<number>} sigma - standard deviation (in nats)
-* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
-* @param {*} nonnumericValue - non-numeric option value
-* @param {string} nan - option name for specifying the value to return in place of `NaN`
-* @param {*} nanValue - `NaN` option value
-* @param {string} pinf - option name for specifying the value to return in place of positive infinity
-* @param {*} pinfValue - positive infinity option value
-* @param {string} ninf - option name for specifying the value to return in place of negative infinity
-* @param {*} ninfValue - negative infinity option value
-* @throws {Error} input arguments must be broadcast compatible
-* @returns {Range<number>} results
-*
-* @example
-* STDLIB_DISTS_NORMAL_MEAN( 0, 1 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_MEAN( 0, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_MEAN( A1:A100, B1:B100 )
-*
-* @example
-* STDLIB_DISTS_NORMAL_MEAN( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
-*/
-function STDLIB_DISTS_NORMAL_MEAN( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
-	var args;
-	var i;
-	args = [];
-	for ( i = 0; i < arguments.length; i++ ) {
-		args.push( arguments[ i ] );
-	}
-	return ns.math.tools.binary( args, ns.dists.normal.mean );
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
+	f = ns.tools.ddd_d( ns.dists.normal.cdf, opts );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
 }
 /**
 * Computes the excess kurtosis for a normal distribution.
@@ -4198,7 +4089,7 @@ function STDLIB_DISTS_NORMAL_KURTOSIS( mu, sigma, nonnumeric, nonnumericValue, n
 	return ns.math.tools.binary( args, ns.dists.normal.kurtosis );
 }
 /**
-* Computes the expected value of a normal distribution.
+* Computes the standard deviation of a normal distribution.
 *
 * @customfunction
 * @param {number|Range<number>} mu - mean
@@ -4215,23 +4106,132 @@ function STDLIB_DISTS_NORMAL_KURTOSIS( mu, sigma, nonnumeric, nonnumericValue, n
 * @returns {Range<number>} results
 *
 * @example
-* STDLIB_DISTS_NORMAL_MEDIAN( 0, 1 )
+* STDLIB_DISTS_NORMAL_STDEV( 0, 1 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_MEDIAN( 0, B1:B100 )
+* STDLIB_DISTS_NORMAL_STDEV( 0, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_MEDIAN( A1:A100, B1:B100 )
+* STDLIB_DISTS_NORMAL_STDEV( A1:A100, B1:B100 )
 *
 * @example
-* STDLIB_DISTS_NORMAL_MEDIAN( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+* STDLIB_DISTS_NORMAL_STDEV( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
 */
-function STDLIB_DISTS_NORMAL_MEDIAN( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+function STDLIB_DISTS_NORMAL_STDEV( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
 	var args;
 	var i;
 	args = [];
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.binary( args, ns.dists.normal.median );
+	return ns.math.tools.binary( args, ns.dists.normal.stdev );
+}
+var __STDLIB_DISTS_NORMAL_LOGCDF_DTYPES = [ 'number', 'number', 'number' ]; 
+var __STDLIB_DISTS_NORMAL_LOGCDF_MSGS = [ 'First argument', 'Second argument', 'Third argument' ]; 
+/**
+* Evaluates the natural logarithm of the cumulative density function (CDF) for a normal distribution.
+*
+* @customfunction
+* @param {number|Range<number>} x - value(s) at which to evaluate the CDF
+* @param {number|Range<number>} mu - mean
+* @param {number|Range<number>} sigma - standard deviation
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
+* @returns {Range<number>} results
+*
+* @example
+* STDLIB_DISTS_NORMAL_LOGCDF( 2, 0, 1 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_LOGCDF( A1:A100, 0, 1 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_LOGCDF( 2, A1:A100, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_LOGCDF( A1:A100, 0, 1, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_DISTS_NORMAL_LOGCDF( x, mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var shape;
+	var args;
+	var opts;
+	var out;
+	var f;
+	var o;
+	var i;
+	opts = {
+		'nonnumeric': void 0,
+		'nan': NaN,
+		'pinf': Infinity,
+		'ninf': -Infinity
+	};
+	for ( i = 3; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		if ( o === 'nonnumeric' || o === 'nan' || o === 'pinf' || o === 'ninf' ) {
+			opts[ o ] = arguments[ i+1 ];
+		} else {
+			ns.assert.unrecognizedOptionName( o );
+		}
+	}
+	// Normalize the provided arguments so we are always working with nested arrays:
+	args = ns.normalizeBroadcastArgs( [ x, mu, sigma ], __STDLIB_DISTS_NORMAL_LOGCDF_DTYPES, __STDLIB_DISTS_NORMAL_LOGCDF_MSGS ); 
+	// Resolve the shape of the broadcasted result:
+	shape = ns.broadcastShapes( args[ 1 ] );
+	if ( shape === null ) {
+		throw new Error( 'invalid argument. Input arguments are not broadcast compatible.' );
+	}
+	// Create an output array:
+	out = ns.zeros2d( shape );
+	// Wrap the lower-level function to ensure proper handling of input arguments and return values:
+	f = ns.tools.ddd_d( ns.dists.normal.logcdf, opts );
+	// Apply the function to broadcasted arrays:
+	args[ 0 ].push( out );
+	args[ 1 ].push( shape );
+	ns.tools.bternary2d( args[ 0 ], args[ 1 ], f );
+	return out;
+}
+/**
+* Computes the skewness of a normal distribution.
+*
+* @customfunction
+* @param {number|Range<number>} mu - mean
+* @param {number|Range<number>} sigma - standard deviation (in nats)
+* @param {string} nonnumeric - option name for specifying the value to return in place of raising an exception when an input value is not a number
+* @param {*} nonnumericValue - non-numeric option value
+* @param {string} nan - option name for specifying the value to return in place of `NaN`
+* @param {*} nanValue - `NaN` option value
+* @param {string} pinf - option name for specifying the value to return in place of positive infinity
+* @param {*} pinfValue - positive infinity option value
+* @param {string} ninf - option name for specifying the value to return in place of negative infinity
+* @param {*} ninfValue - negative infinity option value
+* @throws {Error} input arguments must be broadcast compatible
+* @returns {Range<number>} results
+*
+* @example
+* STDLIB_DISTS_NORMAL_SKEWNESS( 0, 1 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_SKEWNESS( 0, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_SKEWNESS( A1:A100, B1:B100 )
+*
+* @example
+* STDLIB_DISTS_NORMAL_SKEWNESS( 1, B1:B100, "nan", "", "pinf", "", "ninf", "" )
+*/
+function STDLIB_DISTS_NORMAL_SKEWNESS( mu, sigma, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue ) { 
+	var args;
+	var i;
+	args = [];
+	for ( i = 0; i < arguments.length; i++ ) {
+		args.push( arguments[ i ] );
+	}
+	return ns.math.tools.binary( args, ns.dists.normal.skewness );
 }
