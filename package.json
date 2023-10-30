@@ -28,7 +28,7 @@
     "clasp:pull": "./node_modules/.bin/clasp pull",
     "clasp:push": "./node_modules/.bin/clasp push",
     "clasp:status": "./node_modules/.bin/clasp status",
-    "publish": "npm run build && ((git add . && git commit -m 'Build app' && git push origin main) || echo 'Nothing to publish') && npm run clasp:push",
+    "publish": "npm run build && ((git add . && git commit -m 'build: regenerate app' && git push origin main) || echo 'Nothing to publish') && npm run clasp:push",
     "test": "make test",
     "test-cov": "make test-cov"
   },
