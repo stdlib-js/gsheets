@@ -743,7 +743,12 @@ build-preamble: $(NODE_MODULES)
 #/
 build-app: $(NODE_MODULES) build-api-pkgs build-bundle build-preamble
 	$(QUIET) cat $(BUILD_DIR)/preamble.js $(BUILD_DIR)/bundle.js > $(APP_DIR)/tmp.js && \
-		find $(SRC_NODE_MODULES)/@stdlib/gsheets/api -type f -path "$(ROOT_DIR)/**/build/*" -name '*.js' -exec sh -c 'cat {}' \; \
+		find $(SRC_NODE_MODULES)/@stdlib/gsheets/api \
+			-type f \
+			-path "$(ROOT_DIR)/**/build/*" \
+			-name '*.js' \
+			-exec sh \
+			-c 'cat {}' \; \
 		>> $(APP_DIR)/tmp.js
 
 .PHONY: build-app
