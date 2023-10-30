@@ -763,7 +763,7 @@ build-app: $(NODE_MODULES) build-api-pkgs build-bundle build-preamble
 # make scaffold-math-unary
 #/
 scaffold-math-unary: $(NODE_MODULES)
-	$(QUIET) $(NODE) $(SCRIPTS_DIR)/math-unary/scripts/scaffold.js
+	$(QUIET) $(NODE) $(SCRIPTS_DIR)/scaffold/math-unary/scripts/scaffold.js
 
 .PHONY: scaffold-math-unary
 
@@ -774,7 +774,7 @@ scaffold-math-unary: $(NODE_MODULES)
 # make scaffold-math-binary
 #/
 scaffold-math-binary: $(NODE_MODULES)
-	$(QUIET) $(NODE) $(SCRIPTS_DIR)/math-binary/scripts/scaffold.js
+	$(QUIET) $(NODE) $(SCRIPTS_DIR)/scaffold/math-binary/scripts/scaffold.js
 
 .PHONY: scaffold-math-binary
 
@@ -785,6 +785,6 @@ scaffold-math-binary: $(NODE_MODULES)
 # make scaffold-string-unary
 #/
 scaffold-string-unary: $(NODE_MODULES)
-	$(QUIET) $(NODE) $(SCRIPTS_DIR)/string-unary/scripts/scaffold.js
+	$(QUIET) $(NODE) $(SCRIPTS_DIR)/scaffold/string-unary/scripts/scaffold.js
 
 .PHONY: scaffold-string-unary
