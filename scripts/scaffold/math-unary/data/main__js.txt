@@ -45,7 +45,7 @@ var ns = require( '@stdlib/gsheets/namespace' ).CACHED;
 * @returns {number|Range<number>} result(s)
 *
 * @example
-* STDLIB_{{ALIAS_CONSTANTCASE}}( {{VALUES_LEN_1}} )
+* STDLIB_{{ALIAS_CONSTANTCASE}}( {{VALUES_1}} )
 *
 * @example
 * STDLIB_{{ALIAS_CONSTANTCASE}}( A1:A100 )

@@ -186,8 +186,8 @@ function renderLibIndex( opts ) {
 	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{VALUES_LEN_1}}', num2str( opts.values[ 0 ] ) );
-	file = replace( file, '{{EXPECTED_LEN_1}}', approx2str( opts.expected[ 0 ] ) );
+	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ] ) );
+	file = replace( file, '{{EXPECTED_1}}', approx2str( opts.expected[ 0 ] ) );
 	return file;
 }
 
@@ -214,7 +214,7 @@ function renderLibMain( opts ) {
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	file = replace( file, '{{DESC}}', opts.desc );
 	file = replace( file, '{{ALIAS_CONSTANTCASE}}', constantcase( opts.alias ) );
-	file = replace( file, '{{VALUES_LEN_1}}', num2str( opts.values[ 0 ] ) );
+	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ] ) );
 	return file;
 }
 
@@ -320,8 +320,8 @@ function renderREADME( opts ) {
 	file = replace( file, '{{RAND_MIN}}', opts.min );
 	file = replace( file, '{{RAND_MAX}}', opts.max );
 	file = replace( file, '{{DESC}}', opts.desc );
-	file = replace( file, '{{VALUES_LEN_1}}', num2str( opts.values[ 0 ] ) );
-	file = replace( file, '{{EXPECTED_LEN_1}}', approx2str( opts.expected[ 0 ] ) );
+	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ] ) );
+	file = replace( file, '{{EXPECTED_1}}', approx2str( opts.expected[ 0 ] ) );
 	return file;
 }
 

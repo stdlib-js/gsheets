@@ -43,11 +43,11 @@ var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{PKG_NAME}}' );
 {{DESC}}.
 
 ```javascript
-var v = {{ALIAS}}( {{VALUES_LEN_1}} );
-// returns {{EXPECTED_LEN_1}}
+var v = {{ALIAS}}( {{VALUES_1}} );
+// returns {{EXPECTED_1}}
 
-v = {{ALIAS}}( [ [ {{VALUES_LEN_1}} ] ] );
-// returns [ [ {{EXPECTED_LEN_1}} ] ]
+v = {{ALIAS}}( [ [ {{VALUES_1}} ] ] );
+// returns [ [ {{EXPECTED_1}} ] ]
 ```
 
 The function accepts the following arguments:
