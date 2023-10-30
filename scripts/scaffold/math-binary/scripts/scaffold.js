@@ -46,7 +46,7 @@ var ROOT_DIR = dirname( resolveParentPath( 'package.json', {
 var DATA_DIR = resolve( __dirname, '..', 'data' );
 var NS_TEMPLATE = readFile( resolve( DATA_DIR, 'namespace__js.txt' ), OPTS );
 
-var DEST_DIR = resolve( ROOT_DIR, 'src', 'lib', 'node_modules', '@stdlib', 'gsheets', 'namespace', 'lib', 'dd_d' );
+var DEST_DIR = resolve( ROOT_DIR, 'src', 'node_modules', '@stdlib', 'gsheets', 'namespace', 'lib', 'math', 'binary' );
 
 var CURRENT_YEAR = currentYear().toString();
 var COPYRIGHT = 'The Stdlib Authors';
@@ -60,20 +60,24 @@ var COPYRIGHT = 'The Stdlib Authors';
 * @private
 */
 function main() {
+	var requires;
+	var assigns;
 	var file;
-	var ns;
 	var d;
 	var i;
 
 	// Generate the API files...
-	ns = [];
+	requires = [];
+	assigns = [];
 	for ( i = 0; i < DATA.length; i++ ) {
 		d = DATA[ i ];
 		scaffold( d );
-		ns.push( 'ns.' + d.alias + ' = require( \'@stdlib/' + replace( d.pkg, '/', '-' ) + '\' );'  ); // FIXME: no need to use replace once we install `@stdlib/stdlib` instead of standalone pkgs
+		requires.push( 'var ' + d.alias + ' = require( \'@stdlib/' + replace( d.pkg, '/', '-' ) + '\' );'  ); // FIXME: no need to use replace once we install `@stdlib/stdlib` instead of standalone pkgs
+		assigns.push( 'setReadOnly( dest, \'' + d.alias + '\', ' + d.alias + ' );' );
 	}
 	// Generate the namespace...
-	file = replace( NS_TEMPLATE, '{{NAMESPACE}}', ns.join( '\n' ) );
+	file = replace( NS_TEMPLATE, '{{NAMESPACE_REQUIRES}}', requires.join( '\n' ) );
+	file = replace( file, '{{NAMESPACE_ASSIGNMENTS}}', assigns.join( '\n\t' ) );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	writeFile( resolve( DEST_DIR, 'index.js' ), file, OPTS );

@@ -18,23 +18,29 @@
 
 /* This is a generated file. Do not edit directly. */
 
-/* eslint-disable node/no-unpublished-require */
-
 'use strict';
+
+// MODULES //
+
+var setReadOnly = require( '@stdlib/utils-define-read-only-property' );
+{{NAMESPACE_REQUIRES}}
+
 
 // MAIN //
 
 /**
-* Namespace.
+* Adds APIs to a provided namespace.
 *
-* @name ns
-* @constant
-* @type {Namespace}
+* @private
+* @param {Object} dest - destination namespace
+* @returns {Object} destination namespace
 */
-var ns = {};
-{{NAMESPACE}}
+function namespace( dest ) {
+	{{NAMESPACE_ASSIGNMENTS}}
+	return dest;
+}
 
 
 // EXPORTS //
 
-module.exports = ns;
+module.exports = namespace;

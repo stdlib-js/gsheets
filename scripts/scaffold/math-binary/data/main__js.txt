@@ -65,7 +65,7 @@ function STDLIB_{{ALIAS_CONSTANTCASE}}( x, y, nonnumeric, nonnumericValue, nan, 
 	for ( i = 0; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
-	return ns.math.tools.binary( args, ns.{{ALIAS}} );
+	return ns.math.tools.binary( args, ns.math.{{ALIAS}} );
 }
 
 
