@@ -393,12 +393,24 @@ FIND_PACKAGES_FLAGS ?= \
 	$(FIND_PACKAGES_EXCLUDE_FLAGS) \
 	-exec dirname {} \;
 
+# Define the command flags:
+FIND_API_PACKAGES_FLAGS ?= \
+	-type f \
+	-path "$(ROOT_DIR)/**/api/**" \
+	-name "$(PACKAGES_PATTERN)" \
+	-regex "$(PACKAGES_FILTER)" \
+	$(FIND_PACKAGES_EXCLUDE_FLAGS) \
+	-exec dirname {} \;
+
 ifneq ($(OS), Darwin)
 	FIND_PACKAGES_FLAGS := -regextype posix-extended $(FIND_PACKAGES_FLAGS)
 endif
 
 # Define a command for listing packages:
 FIND_PACKAGES_CMD ?= find $(find_kernel_prefix) "$(ROOT_DIR)" $(FIND_PACKAGES_FLAGS)
+
+# Define a command for listing API packages:
+FIND_API_PACKAGES_CMD ?= find $(find_kernel_prefix) "$(ROOT_DIR)" $(FIND_API_PACKAGES_FLAGS)
 
 
 # RULES #
@@ -606,7 +618,7 @@ clean-cov:
 # ## Notes
 #
 # -   This recipe excludes the `node_modules`, `build`, and `reports` directories.
-#/
+#
 # @param {string} [PACKAGES_PATTERN='package.json'] - filename pattern for identifying packages
 # @param {string} [PACKAGES_FILTER='.*/.*'] - filepath pattern for finding packages
 #
@@ -614,7 +626,7 @@ clean-cov:
 # make list-pkgs
 #
 # @example
-# make list-pkgs PACKAGES_FILTER='.*/math/base/special/.*'
+# make list-pkgs PACKAGES_FILTER='.*/math/.*'
 #/
 list-pkgs:
 	$(QUIET) find $(find_kernel_prefix) "$(ROOT_DIR)" $(FIND_PACKAGES_FLAGS) | xargs printf '%s\n'
@@ -622,13 +634,40 @@ list-pkgs:
 .PHONY: list-pkgs
 
 #/
-# Generates API package build artifacts.
+# Prints a list of all API packages.
+#
+# ## Notes
+#
+# -   This recipe excludes the `node_modules`, `build`, and `reports` directories.
+#
+# @param {string} [PACKAGES_PATTERN='package.json'] - filename pattern for identifying packages
+# @param {string} [PACKAGES_FILTER='.*/.*'] - filepath pattern for finding packages
 #
 # @example
-# make build-pkgs
+# make list-api-pkgs
+#
+# @example
+# make list-api-pkgs PACKAGES_FILTER='.*/math/.*'
 #/
-build-pkgs: $(NODE_MODULES)
-	$(QUIET) $(FIND_PACKAGES_CMD) | while read -r pkg; do \
+list-api-pkgs:
+	$(QUIET) find $(find_kernel_prefix) "$(ROOT_DIR)" $(FIND_API_PACKAGES_FLAGS) | xargs printf '%s\n'
+
+.PHONY: list-api-pkgs
+
+#/
+# Generates API package build artifacts.
+#
+# @param {string} [PACKAGES_PATTERN='package.json'] - filename pattern for identifying packages
+# @param {string} [PACKAGES_FILTER='.*/.*'] - filepath pattern for finding packages
+#
+# @example
+# make build-api-pkgs
+#
+# @example
+# make build-api-pkgs PACKAGES_FILTER='.*/math/.*'
+#/
+build-api-pkgs: $(NODE_MODULES)
+	$(QUIET) $(FIND_API_PACKAGES_CMD) | while read -r pkg; do \
 		if echo "$$pkg" | grep -v '^\/.*\|^[a-zA-Z]:.*' >/dev/null; then \
 			continue; \
 		fi; \
@@ -638,4 +677,4 @@ build-pkgs: $(NODE_MODULES)
 		|| { echo "Error: failed to build package artifact: $$pkg"; exit 0; } \
 	done
 
-.PHONY: build-pkgs
+.PHONY: build-api-pkgs
