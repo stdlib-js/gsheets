@@ -20,7 +20,7 @@
 
 // MODULES //
 
-var ns = require( './../namespace' );
+var ns = require( '@stdlib/gsheets/namespace' );
 
 
 // MAIN //
