@@ -16,18 +16,22 @@
 * limitations under the License.
 */
 
+/* eslint-disable node/no-unpublished-require */
+
 'use strict';
 
 // MODULES //
 
 var resolve = require( 'path' ).resolve;
+var basename = require( 'path' ).basename;
+var mkdirp = require( 'mkdirp' ).sync;
 var readFile = require( '@stdlib/fs-read-file' ).sync;
 var writeFile = require( '@stdlib/fs-write-file' ).sync;
 var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' ).sync;
 var replace = require( '@stdlib/string-replace' );
 var dirname = require( '@stdlib/utils-dirname' );
 var constantcase = require( '@stdlib/string-constantcase' );
-var snakecase = require( '@stdlib/string-snakecase' );
+var kebabcase = require( '@stdlib/string-kebabcase' );
 var uncapitalize = require( '@stdlib/string-uncapitalize' );
 var currentYear = require( '@stdlib/time-current-year' );
 
@@ -43,14 +47,250 @@ var ROOT_DIR = dirname( resolveParentPath( 'package.json', {
 }));
 
 var DATA_DIR = resolve( __dirname, '..', 'data' );
-var TEMPLATE = readFile( resolve( DATA_DIR, 'alias__js.txt' ), OPTS );
-var TEST_TEMPLATE = readFile( resolve( DATA_DIR, 'test.alias__js.txt' ), OPTS );
+var TEMPLATES = {
+	'benchmark': readFile( resolve( DATA_DIR, 'benchmark__js.txt' ), OPTS ),
+	'examples': readFile( resolve( DATA_DIR, 'examples__js.txt' ), OPTS ),
+	'lib_index': readFile( resolve( DATA_DIR, 'index__js.txt' ), OPTS ),
+	'lib_main': readFile( resolve( DATA_DIR, 'main__js.txt' ), OPTS ),
+	'test': readFile( resolve( DATA_DIR, 'test__js.txt' ), OPTS ),
+	'makefile': readFile( resolve( DATA_DIR, 'Makefile.txt' ), OPTS ),
+	'package_json': readFile( resolve( DATA_DIR, 'package__json.txt' ), OPTS ),
+	'readme': readFile( resolve( DATA_DIR, 'readme__md.txt' ), OPTS )
+};
 
-var DEST_DIR = resolve( ROOT_DIR, 'src', 'api', 'string', 'generated' );
-var TEST_DIR = resolve( ROOT_DIR, 'test', 'api', 'string', 'generated' );
+var DEST_DIR = resolve( ROOT_DIR, 'src', 'node_modules', '@stdlib', 'gsheets', 'api', 'string' );
 
 var CURRENT_YEAR = currentYear().toString();
 var COPYRIGHT = 'The Stdlib Authors';
+
+
+// FUNCTIONS //
+
+/**
+* Renders individual values.
+*
+* @private
+* @param {string} tmpl - template string
+* @param {string} prefix - template prefix
+* @param {Array} values - values
+* @returns {string} rendered template
+*/
+function renderValues( tmpl, prefix, values ) {
+	var i;
+	for ( i = 0; i < values.length; i++ ) {
+		tmpl = replace( tmpl, '{{'+prefix+'_'+(i+1)+'}}', String( values[ i ] ) );
+	}
+	return tmpl;
+}
+
+/**
+* Renders a benchmark template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderBenchmark( opts ) {
+	var file = replace( TEMPLATES.benchmark, '{{ALIAS}}', opts.alias );
+	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	file = replace( file, '{{VALUES_LEN_6}}', '\''+opts.values.slice( 0, 6 ).join( '\',\n\t\t\'' )+'\'' );
+	return file;
+}
+
+/**
+* Renders an examples template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderExamples( opts ) {
+	var file = replace( TEMPLATES.examples, '{{ALIAS}}', opts.alias );
+	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	file = renderValues( file, 'VALUES', opts.values );
+	file = renderValues( file, 'EXPECTED', opts.expected );
+	return file;
+}
+
+/**
+* Renders a `lib/index.js` template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderLibIndex( opts ) {
+	var file = replace( TEMPLATES.lib_index, '{{ALIAS}}', opts.alias );
+	file = replace( file, '{{PKG_NAME}}', opts.pkg_name );
+	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
+	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	file = renderValues( file, 'VALUES', opts.values );
+	file = renderValues( file, 'EXPECTED', opts.expected );
+	return file;
+}
+
+/**
+* Renders a `lib/main.js` template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderLibMain( opts ) {
+	var file = replace( TEMPLATES.lib_main, '{{ALIAS}}', opts.alias );
+	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	file = replace( file, '{{DESC}}', opts.desc );
+	file = replace( file, '{{ALIAS_CONSTANTCASE}}', constantcase( opts.alias ) );
+	file = renderValues( file, 'VALUES', opts.values );
+	file = renderValues( file, 'EXPECTED', opts.expected );
+	return file;
+}
+
+/**
+* Renders a Makefile template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderMakefile() {
+	var file = replace( TEMPLATES.makefile, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	return file;
+}
+
+/**
+* Renders a `package.json` template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderPackageJSON( opts ) {
+	var file = replace( TEMPLATES.package_json, '{{PKG_NAME}}', opts.pkg_name );
+	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
+	return file;
+}
+
+/**
+* Renders a test template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderTest( opts ) {
+	var file = replace( TEMPLATES.test, '{{ALIAS}}', opts.alias );
+	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	file = replace( file, '{{REF_PKG}}', replace( opts.pkg, '/', '-' ) ); // FIXME: no need to replace once we install `@stdlib/stdlib` instead of standalone pkgs
+	file = replace( file, '{{DESC}}', replace( uncapitalize( opts.desc ), '\'', '\\\'' ) );
+	file = replace( file, '{{VALUES_LEN_4}}', '\''+opts.values.slice( 0, 4 ).join( '\', \'' )+'\'' );
+	return file;
+}
+
+/**
+* Renders a README template.
+*
+* @private
+* @param {Object} opts - options
+* @param {string} opts.alias - alias
+* @param {string} opts.desc - API description
+* @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
+* @param {string} opts.min - minimum value
+* @param {string} opts.max - maximum value
+* @param {string} opts.prng - PRNG name
+* @returns {string} rendered template
+*/
+function renderREADME( opts ) {
+	var file = replace( TEMPLATES.readme, '{{ALIAS}}', opts.alias );
+	file = replace( file, '{{PKG_NAME}}', opts.pkg_name );
+	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
+	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
+	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	file = replace( file, '{{DESC}}', opts.desc );
+	file = renderValues( file, 'VALUES', opts.values );
+	file = renderValues( file, 'EXPECTED', opts.expected );
+	return file;
+}
 
 
 // MAIN //
@@ -58,34 +298,81 @@ var COPYRIGHT = 'The Stdlib Authors';
 /**
 * Scaffolds an API.
 *
-* @param {Object} opts - options
-* @param {string} opts.alias - alias
-* @param {string} opts.desc - description
-* @param {string} opts.pkg - reference package
-* @param {Array} opts.values - test values
+* @param {Object} options - options
+* @param {string} options.alias - alias
+* @param {string} options.pkg - reference package
+* @param {string} options.pkg_desc - package description
+* @param {string} options.desc - API description
+* @param {Array} options.values - test values
 */
-function scaffold( opts ) {
+function scaffold( options ) {
 	var fname;
+	var opts;
 	var file;
+	var dir;
+	var ref;
+	var i;
 
-	file = replace( TEMPLATE, '{{ALIAS}}', opts.alias );
-	file = replace( file, '{{ALIAS_CONSTANTCASE}}', constantcase( opts.alias ) );
-	file = replace( file, '{{DESC}}', opts.desc );
-	file = replace( file, '{{VALUES_LEN_1}}', '"'+String( opts.values[ 0 ] )+'"' );
-	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
-	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	opts = {
+		'alias': options.alias,
+		'pkg': options.pkg,
+		'pkg_name': basename( options.pkg ),
+		'pkg_desc': options.pkg_desc,
+		'desc': options.desc,
+		'values': options.values.slice(),
+		'expected': []
+	};
+	ref = require( '@stdlib/' + kebabcase( opts.pkg ) ); // eslint-disable-line stdlib/no-dynamic-require
+	for ( i = 0; i < opts.values.length; i++ ) {
+		opts.expected.push( ref( opts.values[ i ] ) );
+	}
 
-	fname = resolve( DEST_DIR, snakecase( opts.alias )+'.js' );
+	file = renderBenchmark( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'benchmark' );
+	fname = resolve( dir, 'benchmark.js' );
+	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
-	file = replace( TEST_TEMPLATE, '{{ALIAS}}', opts.alias );
-	file = replace( file, '{{REF_PKG}}', replace( opts.pkg, '/', '-' ) ); // FIXME: no need to replace once we install `@stdlib/stdlib`, rather than standalone pkgs
-	file = replace( file, '{{DESC}}', uncapitalize( opts.desc ) );
-	file = replace( file, '{{VALUES_LEN_4}}', '\''+opts.values.slice( 0, 4 ).join( '\', \'' )+'\'' );
-	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
-	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
+	file = renderExamples( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'examples' );
+	fname = resolve( dir, 'index.js' );
+	mkdirp( dir );
+	writeFile( fname, file, OPTS );
 
-	fname = resolve( TEST_DIR, 'test.'+snakecase( opts.alias )+'.js' );
+	file = renderLibIndex( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'lib' );
+	fname = resolve( dir, 'index.js' );
+	mkdirp( dir );
+	writeFile( fname, file, OPTS );
+
+	file = renderLibMain( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'lib' );
+	fname = resolve( dir, 'main.js' );
+	mkdirp( dir );
+	writeFile( fname, file, OPTS );
+
+	file = renderMakefile( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name );
+	fname = resolve( dir, 'Makefile' );
+	mkdirp( dir );
+	writeFile( fname, file, OPTS );
+
+	file = renderPackageJSON( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name );
+	fname = resolve( dir, 'package.json' );
+	mkdirp( dir );
+	writeFile( fname, file, OPTS );
+
+	file = renderREADME( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name );
+	fname = resolve( dir, 'README.md' );
+	mkdirp( dir );
+	writeFile( fname, file, OPTS );
+
+	file = renderTest( opts );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'test' );
+	fname = resolve( dir, 'test.js' );
+	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 }
 

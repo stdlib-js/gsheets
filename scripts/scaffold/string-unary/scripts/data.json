@@ -2,6 +2,7 @@
   {
     "alias": "camelcase",
     "pkg": "string/camelcase",
+    "pkg_desc": "Convert a string to camel case",
     "desc": "Converts a string to camel case",
     "values": [
       "foo bar",
@@ -15,6 +16,7 @@
   {
     "alias": "capitalize",
     "pkg": "string/capitalize",
+    "pkg_desc": "Capitalize the first character of a string",
     "desc": "Capitalizes the first character of a string",
     "values": [
       "foo bar",
@@ -28,6 +30,7 @@
   {
     "alias": "constantcase",
     "pkg": "string/constantcase",
+    "pkg_desc": "Convert a string to constant case",
     "desc": "Converts a string to constant case",
     "values": [
       "foo bar",
@@ -41,6 +44,7 @@
   {
     "alias": "kebabcase",
     "pkg": "string/kebabcase",
+    "pkg_desc": "Convert a string to kebab case",
     "desc": "Converts a string to kebab case",
     "values": [
       "foo bar",
@@ -54,6 +58,7 @@
   {
     "alias": "lowercase",
     "pkg": "string/lowercase",
+    "pkg_desc": "Convert a string to lowercase",
     "desc": "Converts a string to lowercase",
     "values": [
       "Foo Bar",
@@ -67,6 +72,7 @@
   {
     "alias": "pascalcase",
     "pkg": "string/pascalcase",
+    "pkg_desc": "Convert a string to Pascal case",
     "desc": "Converts a string to Pascal case",
     "values": [
       "foo bar",
@@ -80,6 +86,7 @@
   {
     "alias": "snakecase",
     "pkg": "string/snakecase",
+    "pkg_desc": "Convert a string to snake case",
     "desc": "Converts a string to snake case",
     "values": [
       "foo bar",
@@ -93,6 +100,7 @@
   {
     "alias": "startcase",
     "pkg": "string/startcase",
+    "pkg_desc": "Convert a string to start case",
     "desc": "Converts a string to start case",
     "values": [
       "foo bar",
@@ -106,6 +114,7 @@
   {
     "alias": "uncapitalize",
     "pkg": "string/uncapitalize",
+    "pkg_desc": "Lowercase the first character of a string",
     "desc": "Lowercases the first character of a string",
     "values": [
       "Foo Bar",
@@ -119,6 +128,7 @@
   {
     "alias": "uppercase",
     "pkg": "string/uppercase",
+    "pkg_desc": "Convert a string to uppercase",
     "desc": "Converts a string to uppercase",
     "values": [
       "foo bar",
