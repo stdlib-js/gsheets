@@ -43,11 +43,11 @@ var {{ALIAS}} = require( '@stdlib/gsheets/api/string/{{PKG_NAME}}' );
 {{DESC}}.
 
 ```javascript
-var v = {{ALIAS}}( '{{VALUES_1}}' );
-// returns '{{EXPECTED_1}}'
+var v = {{ALIAS}}( {{VALUES_1}} );
+// returns {{EXPECTED_1}}
 
-v = {{ALIAS}}( [ [ '{{VALUES_1}}' ] ] );
-// returns [ [ '{{EXPECTED_1}}' ] ]
+v = {{ALIAS}}( [ [ {{VALUES_1}} ] ] );
+// returns [ [ {{EXPECTED_1}} ] ]
 ```
 
 The function accepts the following arguments:
@@ -73,23 +73,23 @@ The function accepts the following arguments:
 ```javascript
 var {{ALIAS}} = require( '@stdlib/gsheets/api/string/{{PKG_NAME}}' );
 
-var v = {{ALIAS}}( '{{VALUES_1}}' );
-// returns '{{EXPECTED_1}}'
+var v = {{ALIAS}}( {{VALUES_1}} );
+// returns {{EXPECTED_1}}
 
-v = {{ALIAS}}( '{{VALUES_2}}' );
-// returns '{{EXPECTED_2}}'
+v = {{ALIAS}}( {{VALUES_2}} );
+// returns {{EXPECTED_2}}
 
-v = {{ALIAS}}( '{{VALUES_3}}' );
-// returns '{{EXPECTED_3}}'
+v = {{ALIAS}}( {{VALUES_3}} );
+// returns {{EXPECTED_3}}
 
-v = {{ALIAS}}( '{{VALUES_4}}' );
-// returns '{{EXPECTED_4}}'
+v = {{ALIAS}}( {{VALUES_4}} );
+// returns {{EXPECTED_4}}
 
-v = {{ALIAS}}( '{{VALUES_5}}' );
-// returns '{{EXPECTED_5}}'
+v = {{ALIAS}}( {{VALUES_5}} );
+// returns {{EXPECTED_5}}
 
-v = {{ALIAS}}( '{{VALUES_6}}' );
-// returns '{{EXPECTED_6}}'
+v = {{ALIAS}}( {{VALUES_6}} );
+// returns {{EXPECTED_6}}
 ```
 
 </section>

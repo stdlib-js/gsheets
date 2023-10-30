@@ -42,7 +42,7 @@ var __STDLIB_{{ALIAS_CONSTANTCASE}} = ns.string.tools.s_o( ns.{{ALIAS}} ); // es
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_{{ALIAS_CONSTANTCASE}}( "{{VALUES_1}}" )
+* STDLIB_{{ALIAS_CONSTANTCASE}}( {{VALUES_1}} )
 *
 * @example
 * STDLIB_{{ALIAS_CONSTANTCASE}}( A2:A100 )

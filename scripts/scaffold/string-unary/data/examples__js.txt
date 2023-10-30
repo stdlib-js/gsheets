@@ -22,26 +22,26 @@
 
 var {{ALIAS}} = require( './../lib' );
 
-var v = {{ALIAS}}( '{{VALUES_1}}' );
+var v = {{ALIAS}}( {{VALUES_1}} );
 console.log( v );
-// => '{{EXPECTED_1}}'
+// => {{EXPECTED_1}}
 
-v = {{ALIAS}}( '{{VALUES_2}}' );
+v = {{ALIAS}}( {{VALUES_2}} );
 console.log( v );
-// => '{{EXPECTED_2}}'
+// => {{EXPECTED_2}}
 
-v = {{ALIAS}}( '{{VALUES_3}}' );
+v = {{ALIAS}}( {{VALUES_3}} );
 console.log( v );
-// => '{{EXPECTED_3}}'
+// => {{EXPECTED_3}}
 
-v = {{ALIAS}}( '{{VALUES_4}}' );
+v = {{ALIAS}}( {{VALUES_4}} );
 console.log( v );
-// => '{{EXPECTED_4}}'
+// => {{EXPECTED_4}}
 
-v = {{ALIAS}}( '{{VALUES_5}}' );
+v = {{ALIAS}}( {{VALUES_5}} );
 console.log( v );
-// => '{{EXPECTED_5}}'
+// => {{EXPECTED_5}}
 
-v = {{ALIAS}}( '{{VALUES_6}}' );
+v = {{ALIAS}}( {{VALUES_6}} );
 console.log( v );
-// => '{{EXPECTED_6}}'
+// => {{EXPECTED_6}}

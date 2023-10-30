@@ -76,9 +76,15 @@ var COPYRIGHT = 'The Stdlib Authors';
 * @returns {string} rendered template
 */
 function renderValues( tmpl, prefix, values ) {
+	var v;
 	var i;
 	for ( i = 0; i < values.length; i++ ) {
-		tmpl = replace( tmpl, '{{'+prefix+'_'+(i+1)+'}}', String( values[ i ] ) );
+		v = values[ i ];
+		if ( typeof v === 'string' && ( v[ 0 ] !== '\'' && v[ 0 ] !== '"' ) ) {
+			// Default to single quotes:
+			v = '\'' + v + '\'';
+		}
+		tmpl = replace( tmpl, '{{'+prefix+'_'+(i+1)+'}}', String( v ) );
 	}
 	return tmpl;
 }
@@ -104,7 +110,7 @@ function renderBenchmark( opts ) {
 	var file = replace( TEMPLATES.benchmark, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{VALUES_LEN_6}}', '\''+opts.values.slice( 0, 6 ).join( '\',\n\t\t\'' )+'\'' );
+	file = replace( file, '{{VALUES_LEN_6}}', opts.values.slice( 0, 6 ).join( ',\n\t\t' ) );
 	return file;
 }
 
@@ -180,12 +186,25 @@ function renderLibIndex( opts ) {
 * @returns {string} rendered template
 */
 function renderLibMain( opts ) {
-	var file = replace( TEMPLATES.lib_main, '{{ALIAS}}', opts.alias );
+	var values;
+	var file;
+	var v;
+	var i;
+
+	values = opts.values.slice();
+	for ( i = 0; i < values.length; i++ ) {
+		v = values[ i ];
+		v = replace( v, /^'/, '"' );
+		v = replace( v, /'$/, '"' );
+		values[ i ] = v;
+	}
+
+	file = replace( TEMPLATES.lib_main, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	file = replace( file, '{{DESC}}', opts.desc );
 	file = replace( file, '{{ALIAS_CONSTANTCASE}}', constantcase( opts.alias ) );
-	file = renderValues( file, 'VALUES', opts.values );
+	file = renderValues( file, 'VALUES', values );
 	file = renderValues( file, 'EXPECTED', opts.expected );
 	return file;
 }
@@ -259,7 +278,7 @@ function renderTest( opts ) {
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	file = replace( file, '{{REF_PKG}}', replace( opts.pkg, '/', '-' ) ); // FIXME: no need to replace once we install `@stdlib/stdlib` instead of standalone pkgs
 	file = replace( file, '{{DESC}}', replace( uncapitalize( opts.desc ), '\'', '\\\'' ) );
-	file = replace( file, '{{VALUES_LEN_4}}', '\''+opts.values.slice( 0, 4 ).join( '\', \'' )+'\'' );
+	file = replace( file, '{{VALUES_LEN_4}}', opts.values.slice( 0, 4 ).join( ', ' ) );
 	return file;
 }
 
@@ -311,6 +330,7 @@ function scaffold( options ) {
 	var file;
 	var dir;
 	var ref;
+	var v;
 	var i;
 
 	opts = {
@@ -325,6 +345,13 @@ function scaffold( options ) {
 	ref = require( '@stdlib/' + kebabcase( opts.pkg ) ); // eslint-disable-line stdlib/no-dynamic-require
 	for ( i = 0; i < opts.values.length; i++ ) {
 		opts.expected.push( ref( opts.values[ i ] ) );
+	}
+	for ( i = 0; i < opts.values.length; i++) {
+		v = options.values[ i ];
+		if ( typeof v === 'string' ) {
+			v = '\'' + v + '\'';
+		}
+		opts.values[ i ] = v;
 	}
 
 	file = renderBenchmark( opts );
