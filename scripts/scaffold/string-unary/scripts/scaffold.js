@@ -46,7 +46,7 @@ var ROOT_DIR = dirname( resolveParentPath( 'package.json', {
 var DATA_DIR = resolve( __dirname, '..', 'data' );
 var NS_TEMPLATE = readFile( resolve( DATA_DIR, 'namespace__js.txt' ), OPTS );
 
-var DEST_DIR = resolve( ROOT_DIR, 'src', 'namespace', 's_o' );
+var DEST_DIR = resolve( ROOT_DIR, 'src', 'lib', 'node_modules', '@stdlib', 'gsheets', 'namespace', 'lib', 's_o' );
 
 var CURRENT_YEAR = currentYear().toString();
 var COPYRIGHT = 'The Stdlib Authors';
