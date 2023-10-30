@@ -1466,7 +1466,7 @@ var __STDLIB_KEBABCASE = ns.string.tools.s_o( ns.kebabcase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_KEBABCASE( 'foo bar' )
+* STDLIB_KEBABCASE( "foo bar" )
 *
 * @example
 * STDLIB_KEBABCASE( A2:A100 )
@@ -1490,7 +1490,7 @@ var __STDLIB_STARTCASE = ns.string.tools.s_o( ns.startcase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_STARTCASE( 'foo bar' )
+* STDLIB_STARTCASE( "foo bar" )
 *
 * @example
 * STDLIB_STARTCASE( A2:A100 )
@@ -1514,7 +1514,7 @@ var __STDLIB_SNAKECASE = ns.string.tools.s_o( ns.snakecase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_SNAKECASE( 'foo bar' )
+* STDLIB_SNAKECASE( "foo bar" )
 *
 * @example
 * STDLIB_SNAKECASE( A2:A100 )
@@ -1538,7 +1538,7 @@ var __STDLIB_UPPERCASE = ns.string.tools.s_o( ns.uppercase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_UPPERCASE( 'foo bar' )
+* STDLIB_UPPERCASE( "foo bar" )
 *
 * @example
 * STDLIB_UPPERCASE( A2:A100 )
@@ -1562,7 +1562,7 @@ var __STDLIB_CONSTANTCASE = ns.string.tools.s_o( ns.constantcase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CONSTANTCASE( 'foo bar' )
+* STDLIB_CONSTANTCASE( "foo bar" )
 *
 * @example
 * STDLIB_CONSTANTCASE( A2:A100 )
@@ -1586,7 +1586,7 @@ var __STDLIB_UNCAPITALIZE = ns.string.tools.s_o( ns.uncapitalize );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_UNCAPITALIZE( 'Foo Bar' )
+* STDLIB_UNCAPITALIZE( "Foo Bar" )
 *
 * @example
 * STDLIB_UNCAPITALIZE( A2:A100 )
@@ -1610,7 +1610,7 @@ var __STDLIB_LOWERCASE = ns.string.tools.s_o( ns.lowercase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_LOWERCASE( 'Foo Bar' )
+* STDLIB_LOWERCASE( "Foo Bar" )
 *
 * @example
 * STDLIB_LOWERCASE( A2:A100 )
@@ -1634,7 +1634,7 @@ var __STDLIB_CAMELCASE = ns.string.tools.s_o( ns.camelcase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CAMELCASE( 'foo bar' )
+* STDLIB_CAMELCASE( "foo bar" )
 *
 * @example
 * STDLIB_CAMELCASE( A2:A100 )
@@ -1658,7 +1658,7 @@ var __STDLIB_CAPITALIZE = ns.string.tools.s_o( ns.capitalize );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_CAPITALIZE( 'foo bar' )
+* STDLIB_CAPITALIZE( "foo bar" )
 *
 * @example
 * STDLIB_CAPITALIZE( A2:A100 )
@@ -1682,7 +1682,7 @@ var __STDLIB_PASCALCASE = ns.string.tools.s_o( ns.pascalcase );
 * @returns {string|Range<string>} results
 *
 * @example
-* STDLIB_PASCALCASE( 'foo bar' )
+* STDLIB_PASCALCASE( "foo bar" )
 *
 * @example
 * STDLIB_PASCALCASE( A2:A100 )
