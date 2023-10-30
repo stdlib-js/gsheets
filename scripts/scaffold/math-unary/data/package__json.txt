@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "@stdlib/gsheets/api/math/{{ALIAS_KEBABCASE}}",
+  "name": "@stdlib/gsheets/api/math/{{PKG_NAME}}",
   "version": "0.0.0",
   "license": "Apache-2.0",
-  "description": "{{DESC}}.",
+  "description": "{{PKG_DESC}}.",
   "author": {
     "name": "The Stdlib Authors",
     "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"

@@ -2,6 +2,7 @@
   {
     "alias": "abs",
     "pkg": "math/base/special/abs",
+    "pkg_desc": "Compute the absolute value",
     "desc": "Computes the absolute value",
     "values": [
       -1.2,
@@ -18,6 +19,7 @@
   {
     "alias": "abs2",
     "pkg": "math/base/special/abs2",
+    "pkg_desc": "Compute the squared absolute value",
     "desc": "Computes the squared absolute value",
     "values": [
       -1.2,
@@ -34,6 +36,7 @@
   {
     "alias": "acos",
     "pkg": "math/base/special/acos",
+    "pkg_desc": "Compute the arccosine of a number (in radians)",
     "desc": "Computes the arccosine of a number (in radians)",
     "values": [
       1.0,
@@ -49,6 +52,7 @@
   {
     "alias": "acosh",
     "pkg": "math/base/special/acosh",
+    "pkg_desc": "Compute the hyperbolic arccosine",
     "desc": "Computes the hyperbolic arccosine",
     "values": [
       1.0,
@@ -64,6 +68,7 @@
   {
     "alias": "acot",
     "pkg": "math/base/special/acot",
+    "pkg_desc": "Compute the inverse cotangent of a number (in radians)",
     "desc": "Computes the inverse cotangent of a number (in radians)",
     "values": [
       2.0,
@@ -79,6 +84,7 @@
   {
     "alias": "acovercos",
     "pkg": "math/base/special/acovercos",
+    "pkg_desc": "Compute the inverse coversed cosine",
     "desc": "Computes the inverse coversed cosine",
     "values": [
       0.0,
@@ -94,6 +100,7 @@
   {
     "alias": "acoversin",
     "pkg": "math/base/special/acoversin",
+    "pkg_desc": "Compute the inverse coversed sine",
     "desc": "Computes the inverse coversed sine",
     "values": [
       0.0,
@@ -109,6 +116,7 @@
   {
     "alias": "acsc",
     "pkg": "math/base/special/acsc",
+    "pkg_desc": "Compute the arccosecant",
     "desc": "Computes the arccosecant",
     "values": [
       1.0,
@@ -124,6 +132,7 @@
   {
     "alias": "acsch",
     "pkg": "math/base/special/acsch",
+    "pkg_desc": "Compute the hyperbolic arccosecant",
     "desc": "Computes the hyperbolic arccosecant",
     "values": [
       1.0,
@@ -139,6 +148,7 @@
   {
     "alias": "ahavercos",
     "pkg": "math/base/special/ahavercos",
+    "pkg_desc": "Compute the inverse half-value versed cosine",
     "desc": "Computes the inverse half-value versed cosine",
     "values": [
       0.0,
@@ -154,6 +164,7 @@
   {
     "alias": "ahaversin",
     "pkg": "math/base/special/ahaversin",
+    "pkg_desc": "Compute the inverse half-value versed sine",
     "desc": "Computes the inverse half-value versed sine",
     "values": [
       0.0,
@@ -169,6 +180,7 @@
   {
     "alias": "asin",
     "pkg": "math/base/special/asin",
+    "pkg_desc": "Compute the arcsine of a number (in radians)",
     "desc": "Computes the arcsine of a number (in radians)",
     "values": [
       1.0,
@@ -184,6 +196,7 @@
   {
     "alias": "asinh",
     "pkg": "math/base/special/asinh",
+    "pkg_desc": "Compute the hyperbolic arcsine",
     "desc": "Computes the hyperbolic arcsine",
     "values": [
       1.0,
@@ -199,6 +212,7 @@
   {
     "alias": "atan",
     "pkg": "math/base/special/atan",
+    "pkg_desc": "Compute the arctangent of a number",
     "desc": "Computes the arctangent of a number",
     "values": [
       1.0,
@@ -214,6 +228,7 @@
   {
     "alias": "atanh",
     "pkg": "math/base/special/atanh",
+    "pkg_desc": "Compute the hyperbolic arctangent",
     "desc": "Computes the hyperbolic arctangent",
     "values": [
       1.0,
@@ -229,6 +244,7 @@
   {
     "alias": "avercos",
     "pkg": "math/base/special/avercos",
+    "pkg_desc": "Compute the inverse versed cosine",
     "desc": "Computes the inverse versed cosine",
     "values": [
       0.0,
@@ -244,6 +260,7 @@
   {
     "alias": "aversin",
     "pkg": "math/base/special/aversin",
+    "pkg_desc": "Compute the inverse versed sine",
     "desc": "Computes the inverse versed sine",
     "values": [
       0.0,
@@ -259,6 +276,7 @@
   {
     "alias": "besselj0",
     "pkg": "math/base/special/besselj0",
+    "pkg_desc": "Compute the Bessel function of the first kind of order zero",
     "desc": "Computes the Bessel function of the first kind of order zero",
     "values": [
       0.0,
@@ -274,6 +292,7 @@
   {
     "alias": "besselj1",
     "pkg": "math/base/special/besselj1",
+    "pkg_desc": "Compute the Bessel function of the first kind of order one",
     "desc": "Computes the Bessel function of the first kind of order one",
     "values": [
       0.0,
@@ -289,6 +308,7 @@
   {
     "alias": "bessely0",
     "pkg": "math/base/special/bessely0",
+    "pkg_desc": "Compute the Bessel function of the second kind of order zero",
     "desc": "Computes the Bessel function of the second kind of order zero",
     "values": [
       0.0,
@@ -304,6 +324,7 @@
   {
     "alias": "bessely1",
     "pkg": "math/base/special/bessely1",
+    "pkg_desc": "Compute the Bessel function of the second kind of order one",
     "desc": "Computes the Bessel function of the second kind of order one",
     "values": [
       0.0,
@@ -319,6 +340,7 @@
   {
     "alias": "binet",
     "pkg": "math/base/special/binet",
+    "pkg_desc": "Evaluate Binet's formula extended to real numbers",
     "desc": "Evaluates Binet's formula extended to real numbers",
     "values": [
       0.0,
@@ -334,6 +356,7 @@
   {
     "alias": "cbrt",
     "pkg": "math/base/special/cbrt",
+    "pkg_desc": "Compute the cube root",
     "desc": "Computes the cube root",
     "values": [
       64.0,
@@ -349,6 +372,7 @@
   {
     "alias": "ceil",
     "pkg": "math/base/special/ceil",
+    "pkg_desc": "Round a number toward positive infinity",
     "desc": "Rounds a number toward positive infinity",
     "values": [
       0.0,
@@ -364,6 +388,7 @@
   {
     "alias": "ceil10",
     "pkg": "math/base/special/ceil10",
+    "pkg_desc": "Round a number to the nearest power of 10 toward positive infinity",
     "desc": "Rounds a number to the nearest power of 10 toward positive infinity",
     "values": [
       0.0,
@@ -379,6 +404,7 @@
   {
     "alias": "ceil2",
     "pkg": "math/base/special/ceil2",
+    "pkg_desc": "Round a number to the nearest power of 2 toward positive infinity",
     "desc": "Rounds a number to the nearest power of 2 toward positive infinity",
     "values": [
       -4.2,
@@ -394,6 +420,7 @@
   {
     "alias": "cos",
     "pkg": "math/base/special/cos",
+    "pkg_desc": "Compute the cosine of a number (in radians)",
     "desc": "Computes the cosine of a number (in radians)",
     "values": [
       0.0,
@@ -409,6 +436,7 @@
   {
     "alias": "sin",
     "pkg": "math/base/special/sin",
+    "pkg_desc": "Compute the sine of a number (in radians)",
     "desc": "Computes the sine of a number (in radians)",
     "values": [
       0.0,
@@ -424,6 +452,7 @@
   {
     "alias": "sqrt",
     "pkg": "math/base/special/sqrt",
+    "pkg_desc": "Compute the principal root",
     "desc": "Computes the principal root",
     "values": [
       64.0,
@@ -439,6 +468,7 @@
   {
     "alias": "zeta",
     "pkg": "math/base/special/riemann-zeta",
+    "pkg_desc": "Evaluate the Riemann zeta function as a function of a real variable",
     "desc": "Evaluates the Riemann zeta function as a function of a real variable",
     "values": [
       1.2,

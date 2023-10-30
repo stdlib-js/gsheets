@@ -23,6 +23,7 @@
 // MODULES //
 
 var resolve = require( 'path' ).resolve;
+var basename = require( 'path' ).basename;
 var mkdirp = require( 'mkdirp' ).sync;
 var readFile = require( '@stdlib/fs-read-file' ).sync;
 var writeFile = require( '@stdlib/fs-write-file' ).sync;
@@ -34,6 +35,7 @@ var kebabcase = require( '@stdlib/string-kebabcase' );
 var uncapitalize = require( '@stdlib/string-uncapitalize' );
 var currentYear = require( '@stdlib/time-current-year' );
 var isInteger = require( '@stdlib/assert-is-integer' ).isPrimitive;
+var roundn = require( '@stdlib/math-base-special-roundn' );
 
 
 // VARIABLES //
@@ -82,14 +84,43 @@ function num2str( x ) {
 }
 
 /**
+* Rounds and converts a number to a string.
+*
+* @private
+* @param {number} x - input value
+* @returns {string} serialized value
+*/
+function approx2str( x ) {
+	var xs;
+	var xr;
+
+	xr = roundn( x, -5 );
+	if ( x === xr ) {
+		xs = x.toString();
+		if ( isInteger( x ) ) {
+			xs += '.0';
+		}
+		return xs;
+	}
+	xs = '~' + xr.toString();
+	if ( isInteger( xr ) ) {
+		xs += '.0';
+	}
+	return xs;
+}
+
+/**
 * Renders a benchmark template.
 *
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
@@ -111,9 +142,12 @@ function renderBenchmark( opts ) {
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
@@ -135,9 +169,12 @@ function renderExamples( opts ) {
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
@@ -145,10 +182,12 @@ function renderExamples( opts ) {
 */
 function renderLibIndex( opts ) {
 	var file = replace( TEMPLATES.lib_index, '{{ALIAS}}', opts.alias );
-	file = replace( file, '{{ALIAS_KEBABCASE}}', kebabcase( opts.alias ) );
+	file = replace( file, '{{PKG_NAME}}', opts.pkg_name );
+	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{DESC}}', opts.desc );
+	file = replace( file, '{{VALUES_LEN_1}}', num2str( opts.values[ 0 ] ) );
+	file = replace( file, '{{EXPECTED_LEN_1}}', approx2str( opts.expected[ 0 ] ) );
 	return file;
 }
 
@@ -158,9 +197,12 @@ function renderLibIndex( opts ) {
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
@@ -182,9 +224,12 @@ function renderLibMain( opts ) {
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
@@ -202,17 +247,20 @@ function renderMakefile() {
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
 * @returns {string} rendered template
 */
 function renderPackageJSON( opts ) {
-	var file = replace( TEMPLATES.package_json, '{{ALIAS_KEBABCASE}}', kebabcase( opts.alias ) );
-	file = replace( file, '{{DESC}}', opts.desc );
+	var file = replace( TEMPLATES.package_json, '{{PKG_NAME}}', opts.pkg_name );
+	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
 	return file;
 }
 
@@ -222,9 +270,12 @@ function renderPackageJSON( opts ) {
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
@@ -248,9 +299,12 @@ function renderTest( opts ) {
 * @private
 * @param {Object} opts - options
 * @param {string} opts.alias - alias
-* @param {string} opts.desc - description
+* @param {string} opts.desc - API description
 * @param {string} opts.pkg - reference package
+* @param {string} opts.pkg_desc - package description
+* @param {string} opts.pkg_name - reference package name
 * @param {Array} opts.values - test values
+* @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
 * @param {string} opts.max - maximum value
 * @param {string} opts.prng - PRNG name
@@ -258,13 +312,16 @@ function renderTest( opts ) {
 */
 function renderREADME( opts ) {
 	var file = replace( TEMPLATES.readme, '{{ALIAS}}', opts.alias );
-	file = replace( file, '{{ALIAS_KEBABCASE}}', kebabcase( opts.alias ) );
+	file = replace( file, '{{PKG_NAME}}', opts.pkg_name );
+	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	file = replace( file, '{{PRNG}}', opts.prng );
 	file = replace( file, '{{RAND_MIN}}', opts.min );
 	file = replace( file, '{{RAND_MAX}}', opts.max );
 	file = replace( file, '{{DESC}}', opts.desc );
+	file = replace( file, '{{VALUES_LEN_1}}', num2str( opts.values[ 0 ] ) );
+	file = replace( file, '{{EXPECTED_LEN_1}}', approx2str( opts.expected[ 0 ] ) );
 	return file;
 }
 
@@ -276,77 +333,83 @@ function renderREADME( opts ) {
 *
 * @param {Object} options - options
 * @param {string} options.alias - alias
-* @param {string} options.desc - description
 * @param {string} options.pkg - reference package
+* @param {string} options.pkg_desc - package description
+* @param {string} options.desc - API description
 * @param {Array} options.values - test values
 * @param {number} options.min - minimum value
 * @param {number} options.max - maximum value
 * @param {string} options.prng - PRNG name
 */
 function scaffold( options ) {
-	var folder;
 	var fname;
 	var opts;
 	var file;
 	var dir;
+	var ref;
+	var i;
 
 	opts = {
 		'alias': options.alias,
-		'desc': options.desc,
 		'pkg': options.pkg,
+		'pkg_name': basename( options.pkg ),
+		'pkg_desc': options.pkg_desc,
+		'desc': options.desc,
 		'values': options.values.slice(),
 		'min': ( options.prng === 'discrete-uniform' ) ? String( options.min ) : num2str( options.min ),
 		'max': ( options.prng === 'discrete-uniform' ) ? String( options.max ) : num2str( options.max ),
-		'prng': options.prng
+		'prng': options.prng,
+		'expected': []
 	};
-	folder = kebabcase( opts.alias ); // FIXME: make configurable
-
-	// FIXME: make package description configurable
+	ref = require( '@stdlib/' + kebabcase( opts.pkg ) ); // eslint-disable-line stdlib/no-dynamic-require
+	for ( i = 0; i < opts.values.length; i++ ) {
+		opts.expected.push( ref( opts.values[ i ] ) );
+	}
 
 	file = renderBenchmark( opts );
-	dir = resolve( DEST_DIR, folder, 'benchmark' );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'benchmark' );
 	fname = resolve( dir, 'benchmark.js' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
 	file = renderExamples( opts );
-	dir = resolve( DEST_DIR, folder, 'examples' );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'examples' );
 	fname = resolve( dir, 'index.js' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
 	file = renderLibIndex( opts );
-	dir = resolve( DEST_DIR, folder, 'lib' );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'lib' );
 	fname = resolve( dir, 'index.js' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
 	file = renderLibMain( opts );
-	dir = resolve( DEST_DIR, folder, 'lib' );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'lib' );
 	fname = resolve( dir, 'main.js' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
 	file = renderMakefile( opts );
-	dir = resolve( DEST_DIR, folder );
+	dir = resolve( DEST_DIR, opts.pkg_name );
 	fname = resolve( dir, 'Makefile' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
 	file = renderPackageJSON( opts );
-	dir = resolve( DEST_DIR, folder );
+	dir = resolve( DEST_DIR, opts.pkg_name );
 	fname = resolve( dir, 'package.json' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
 	file = renderREADME( opts );
-	dir = resolve( DEST_DIR, folder );
+	dir = resolve( DEST_DIR, opts.pkg_name );
 	fname = resolve( dir, 'README.md' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );
 
 	file = renderTest( opts );
-	dir = resolve( DEST_DIR, folder, 'test' );
+	dir = resolve( DEST_DIR, opts.pkg_name, 'test' );
 	fname = resolve( dir, 'test.js' );
 	mkdirp( dir );
 	writeFile( fname, file, OPTS );

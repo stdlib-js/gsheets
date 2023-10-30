@@ -21,14 +21,18 @@
 'use strict';
 
 /**
-* {{DESC}}.
+* {{PKG_DESC}}.
 *
-* @module @stdlib/gsheets/api/math/{{ALIAS_KEBABCASE}}
+* @module @stdlib/gsheets/api/math/{{PKG_NAME}}
 *
 * @example
-* var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{ALIAS_KEBABCASE}}' );
+* var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{PKG_NAME}}' );
 *
-* // TODO
+* var v = {{ALIAS}}( {{VALUES_LEN_1}} );
+* // returns {{EXPECTED_LEN_1}}
+*
+* v = {{ALIAS}}( [ [ {{VALUES_LEN_1}} ] ] );
+* // returns [ [ {{EXPECTED_LEN_1}} ] ]
 */
 
 // MODULES //

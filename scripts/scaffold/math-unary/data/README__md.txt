@@ -22,7 +22,7 @@ limitations under the License.
 
 # {{ALIAS}}
 
-> {{DESC}}.
+> {{PKG_DESC}}.
 
 <section class="intro">
 
@@ -35,7 +35,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{ALIAS_KEBABCASE}}' );
+var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{PKG_NAME}}' );
 ```
 
 #### {{ALIAS}}( value\[, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue] )
@@ -43,7 +43,11 @@ var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{ALIAS_KEBABCASE}}' );
 {{DESC}}.
 
 ```javascript
-// TODO
+var v = {{ALIAS}}( {{VALUES_LEN_1}} );
+// returns {{EXPECTED_LEN_1}}
+
+v = {{ALIAS}}( [ [ {{VALUES_LEN_1}} ] ] );
+// returns [ [ {{EXPECTED_LEN_1}} ] ]
 ```
 
 The function accepts the following arguments:
@@ -84,7 +88,7 @@ var v = {{ALIAS}}( [ [ NaN ] ], 'nan', '' );
 ```javascript
 var uniform = require( '@stdlib/random-base-{{PRNG}}' ).factory;
 var filled2dBy = require( '@stdlib/array-base-filled2d-by' );
-var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{ALIAS_KEBABCASE}}' );
+var {{ALIAS}} = require( '@stdlib/gsheets/api/math/{{PKG_NAME}}' );
 
 var shape = [ 3, 3 ];
 
