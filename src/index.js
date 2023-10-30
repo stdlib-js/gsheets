@@ -16,11 +16,15 @@
 * limitations under the License.
 */
 
+/*
+* This file contains all functions which should be exposed to APIs made public in `Code.gs`.
+*/
+
 'use strict';
 
 // MODULES //
 
-var ns = require( './namespace' );
+var ns = require( '@stdlib/gsheets/namespace' ).CACHED;
 
 
 // EXPORTS //
