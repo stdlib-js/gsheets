@@ -326,6 +326,7 @@
     "@stdlib/utils-parse-json": "^0.1.0",
     "@stdlib/utils-regexp-from-string": "^0.1.0",
     "esbuild": "^0.14.38",
+    "mkdirp": "^0.5.6",
     "tap-spec": "^5.0.0",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby"
   },
