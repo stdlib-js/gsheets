@@ -9,14 +9,6 @@
 -   add benchmarks
 
 -   add unit tests
-
--   POC distribution functions
-
--   POC msk API
-
--   create a scaffold for unary mathematical functions
-
-    -   database with alias, stdlib pkg name, description, and example value
     
 -   monetization strategy
 
