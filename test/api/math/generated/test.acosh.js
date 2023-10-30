@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-acosh' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var acosh = require( './../../../../src/api/math/generated/acosh.js' );
+var acosh = require( '@stdlib/gsheets/api/math/generated/acosh.js' );
 
 
 // VARIABLES //

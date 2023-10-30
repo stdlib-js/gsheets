@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/string-startcase' );
 var isArray = require( '@stdlib/assert-is-array' );
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var startcase = require( './../../../../src/api/string/generated/startcase.js' );
+var startcase = require( '@stdlib/gsheets/api/string/generated/startcase.js' );
 
 
 // TESTS //

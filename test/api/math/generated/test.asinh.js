@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-asinh' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var asinh = require( './../../../../src/api/math/generated/asinh.js' );
+var asinh = require( '@stdlib/gsheets/api/math/generated/asinh.js' );
 
 
 // VARIABLES //

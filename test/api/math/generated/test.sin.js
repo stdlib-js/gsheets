@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-sin' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var sin = require( './../../../../src/api/math/generated/sin.js' );
+var sin = require( '@stdlib/gsheets/api/math/generated/sin.js' );
 
 
 // VARIABLES //

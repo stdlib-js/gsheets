@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-acovercos' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var acovercos = require( './../../../../src/api/math/generated/acovercos.js' );
+var acovercos = require( '@stdlib/gsheets/api/math/generated/acovercos.js' );
 
 
 // VARIABLES //

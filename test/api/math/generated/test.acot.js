@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-acot' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var acot = require( './../../../../src/api/math/generated/acot.js' );
+var acot = require( '@stdlib/gsheets/api/math/generated/acot.js' );
 
 
 // VARIABLES //

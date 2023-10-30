@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-avercos' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var avercos = require( './../../../../src/api/math/generated/avercos.js' );
+var avercos = require( '@stdlib/gsheets/api/math/generated/avercos.js' );
 
 
 // VARIABLES //

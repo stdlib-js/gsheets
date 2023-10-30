@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-cos' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var cos = require( './../../../../src/api/math/generated/cos.js' );
+var cos = require( '@stdlib/gsheets/api/math/generated/cos.js' );
 
 
 // VARIABLES //

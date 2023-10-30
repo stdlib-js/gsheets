@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-ceil' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var ceil = require( './../../../../src/api/math/generated/ceil.js' );
+var ceil = require( '@stdlib/gsheets/api/math/generated/ceil.js' );
 
 
 // VARIABLES //

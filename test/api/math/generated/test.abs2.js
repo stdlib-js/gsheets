@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-abs2' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var abs2 = require( './../../../../src/api/math/generated/abs2.js' );
+var abs2 = require( '@stdlib/gsheets/api/math/generated/abs2.js' );
 
 
 // VARIABLES //

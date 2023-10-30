@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-aversin' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var aversin = require( './../../../../src/api/math/generated/aversin.js' );
+var aversin = require( '@stdlib/gsheets/api/math/generated/aversin.js' );
 
 
 // VARIABLES //

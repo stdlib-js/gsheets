@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-binet' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var binet = require( './../../../../src/api/math/generated/binet.js' );
+var binet = require( '@stdlib/gsheets/api/math/generated/binet.js' );
 
 
 // VARIABLES //

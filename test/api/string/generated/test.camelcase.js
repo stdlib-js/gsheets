@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/string-camelcase' );
 var isArray = require( '@stdlib/assert-is-array' );
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var camelcase = require( './../../../../src/api/string/generated/camelcase.js' );
+var camelcase = require( '@stdlib/gsheets/api/string/generated/camelcase.js' );
 
 
 // TESTS //

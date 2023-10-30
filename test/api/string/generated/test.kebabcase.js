@@ -24,7 +24,7 @@ var tape = require( 'tape' );
 var ref = require( '@stdlib/string-kebabcase' );
 var isArray = require( '@stdlib/assert-is-array' );
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var kebabcase = require( './../../../../src/api/string/generated/kebabcase.js' );
+var kebabcase = require( '@stdlib/gsheets/api/string/generated/kebabcase.js' );
 
 
 // TESTS //

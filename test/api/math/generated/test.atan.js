@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-atan' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var atan = require( './../../../../src/api/math/generated/atan.js' );
+var atan = require( '@stdlib/gsheets/api/math/generated/atan.js' );
 
 
 // VARIABLES //

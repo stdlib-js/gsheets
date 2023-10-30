@@ -25,7 +25,7 @@ var ref = require( '@stdlib/math-base-special-riemann-zeta' );
 var isArray = require( '@stdlib/assert-is-array' );
 var uniform = require( '@stdlib/random-base-uniform' ).factory;
 var flatten2d = require( '@stdlib/gsheets/array/flatten2d' );
-var zeta = require( './../../../../src/api/math/generated/zeta.js' );
+var zeta = require( '@stdlib/gsheets/api/math/generated/zeta.js' );
 
 
 // VARIABLES //
