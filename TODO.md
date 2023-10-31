@@ -73,11 +73,16 @@
                         
     -   what if we supported header info?
     
-        -   e.g., scan the first few elements of the flattened array for shape, strides, offset, and order info; once find two consecutive numbers, then we've reached the end of the header
+        -   e.g., scan the first few elements of the flattened array for dtype, shape, strides, offset, and order info; once find two consecutive numbers, then we've reached the end of the header
             -   how does that work for shape and strides which are comprised of multiple elements?
             -   maybe instead, we have a header followed by a blank line and then the data; or actually, just require a "data" header to indicate the start of the data
+                -   **UPDATE**: yes
         -   if support header info, then if "view" is TRUE, we can just return the input data but with updated header info!
             -   when "view" is FALSE, we return a new data range
+            
+    -   slicing syntax?
+    
+        -   obviously no slicing objects, but can support subsequence strings!
     
 -   support ability to specify an array computation graph?
 
