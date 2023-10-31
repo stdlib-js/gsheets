@@ -36,6 +36,7 @@ var uncapitalize = require( '@stdlib/string-uncapitalize' );
 var currentYear = require( '@stdlib/time-current-year' );
 var isInteger = require( '@stdlib/assert-is-integer' ).isPrimitive;
 var roundn = require( '@stdlib/math-base-special-roundn' );
+var format = require( '@stdlib/string-format' );
 
 
 // VARIABLES //
@@ -69,15 +70,30 @@ var COPYRIGHT = 'The Stdlib Authors';
 // FUNCTIONS //
 
 /**
+* Tests whether a provided string is an integer dtype.
+*
+* @private
+* @param {string} dt - input dtype
+* @returns {boolean} boolean indicating whether a provided value is an integer dtype
+*/
+function isIntegerDtype( dt ) {
+	if ( dt === 'int32' || dt === 'uint32' ) {
+		return true;
+	}
+	return false;
+}
+
+/**
 * Converts a number to a string.
 *
 * @private
 * @param {number} x - input value
+* @param {string} dtype - value dtype
 * @returns {string} serialized value
 */
-function num2str( x ) {
+function num2str( x, dtype ) {
 	var v = String( x );
-	if ( isInteger( x ) ) {
+	if ( isIntegerDtype( dtype ) === false && isInteger( x ) ) {
 		v += '.0';
 	}
 	return v;
@@ -88,12 +104,17 @@ function num2str( x ) {
 *
 * @private
 * @param {number} x - input value
+* @param {string} dtype - value dtype
+* @throws {TypeError} unexpected error
 * @returns {string} serialized value
 */
-function approx2str( x ) {
+function approx2str( x, dtype ) {
 	var xs;
 	var xr;
 
+	if ( isIntegerDtype( dtype ) && isInteger( x ) === false ) {
+		throw new TypeError( format( 'unexpected error. Value should be an integer. Value: `%f`.', x ) );
+	}
 	xr = roundn( x, -5 );
 	if ( x === xr ) {
 		xs = x.toString();
@@ -119,6 +140,7 @@ function approx2str( x ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -146,6 +168,7 @@ function renderBenchmark( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -173,6 +196,7 @@ function renderExamples( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -186,8 +210,8 @@ function renderLibIndex( opts ) {
 	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ] ) );
-	file = replace( file, '{{EXPECTED_1}}', approx2str( opts.expected[ 0 ] ) );
+	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ], opts.dtypes[ 0 ] ) );
+	file = replace( file, '{{EXPECTED_1}}', approx2str( opts.expected[ 0 ], opts.dtypes[ 1 ] ) );
 	return file;
 }
 
@@ -201,6 +225,7 @@ function renderLibIndex( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -214,7 +239,7 @@ function renderLibMain( opts ) {
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	file = replace( file, '{{DESC}}', opts.desc );
 	file = replace( file, '{{ALIAS_CONSTANTCASE}}', constantcase( opts.alias ) );
-	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ] ) );
+	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ], opts.dtypes[ 0 ] ) );
 	return file;
 }
 
@@ -228,6 +253,7 @@ function renderLibMain( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -251,6 +277,7 @@ function renderMakefile() {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -274,6 +301,7 @@ function renderPackageJSON( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -303,6 +331,7 @@ function renderTest( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -320,8 +349,8 @@ function renderREADME( opts ) {
 	file = replace( file, '{{RAND_MIN}}', opts.min );
 	file = replace( file, '{{RAND_MAX}}', opts.max );
 	file = replace( file, '{{DESC}}', opts.desc );
-	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ] ) );
-	file = replace( file, '{{EXPECTED_1}}', approx2str( opts.expected[ 0 ] ) );
+	file = replace( file, '{{VALUES_1}}', num2str( opts.values[ 0 ], opts.dtypes[ 0 ] ) );
+	file = replace( file, '{{EXPECTED_1}}', approx2str( opts.expected[ 0 ], opts.dtypes[ 1 ] ) );
 	return file;
 }
 
@@ -336,6 +365,7 @@ function renderREADME( opts ) {
 * @param {string} options.pkg - reference package
 * @param {string} options.pkg_desc - package description
 * @param {string} options.desc - API description
+* @param {Array} options.dtypes - signature dtypes
 * @param {Array} options.values - test values
 * @param {number} options.min - minimum value
 * @param {number} options.max - maximum value
@@ -355,9 +385,10 @@ function scaffold( options ) {
 		'pkg_name': basename( options.pkg ),
 		'pkg_desc': options.pkg_desc,
 		'desc': options.desc,
+		'dtypes': options.dtypes.slice(),
 		'values': options.values.slice(),
-		'min': ( options.prng === 'discrete-uniform' ) ? String( options.min ) : num2str( options.min ),
-		'max': ( options.prng === 'discrete-uniform' ) ? String( options.max ) : num2str( options.max ),
+		'min': num2str( options.min, options.dtypes[ 0 ] ),
+		'max': num2str( options.max, options.dtypes[ 1 ] ),
 		'prng': options.prng,
 		'expected': []
 	};

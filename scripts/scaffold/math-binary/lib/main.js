@@ -449,9 +449,18 @@ function scaffold( options ) {
 		'pkg_desc': options.pkg_desc,
 		'desc': options.desc,
 		'dtypes': options.dtypes.slice(),
-		'values': [ options.values[ 0 ].slice(), options.values[ 1 ].slice() ],
-		'min': ( options.prng === 'discrete-uniform' ) ? [ String( options.min[ 0 ] ), String( options.min[ 1 ] ) ] : [ num2str( options.min[ 0 ], options.dtypes[ 0 ] ), num2str( options.min[ 1 ], options.dtypes[ 1 ] ) ],
-		'max': ( options.prng === 'discrete-uniform' ) ? [ String( options.max[ 0 ] ), String( options.max[ 1 ] ) ] : [ num2str( options.max[ 0 ], options.dtypes[ 0 ] ), num2str( options.max[ 1 ], options.dtypes[ 1 ] ) ],
+		'values': [
+			options.values[ 0 ].slice(),
+			options.values[ 1 ].slice()
+		],
+		'min': [
+			num2str( options.min[ 0 ], options.dtypes[ 0 ] ),
+			num2str( options.min[ 1 ], options.dtypes[ 1 ] )
+		],
+		'max': [
+			num2str( options.max[ 0 ], options.dtypes[ 0 ] ),
+			num2str( options.max[ 1 ], options.dtypes[ 1 ] )
+		],
 		'prng': options.prng.slice(),
 		'expected': []
 	};

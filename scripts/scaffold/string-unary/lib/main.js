@@ -72,15 +72,16 @@ var COPYRIGHT = 'The Stdlib Authors';
 * @private
 * @param {string} tmpl - template string
 * @param {string} prefix - template prefix
+* @param {string} dtype - value dtype
 * @param {Array} values - values
 * @returns {string} rendered template
 */
-function renderValues( tmpl, prefix, values ) {
+function renderValues( tmpl, prefix, dtype, values ) {
 	var v;
 	var i;
 	for ( i = 0; i < values.length; i++ ) {
 		v = values[ i ];
-		if ( typeof v === 'string' && ( v[ 0 ] !== '\'' && v[ 0 ] !== '"' ) ) {
+		if ( dtype === 'string' && ( v[ 0 ] !== '\'' && v[ 0 ] !== '"' ) ) {
 			// Default to single quotes:
 			v = '\'' + v + '\'';
 		}
@@ -99,6 +100,7 @@ function renderValues( tmpl, prefix, values ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -124,6 +126,7 @@ function renderBenchmark( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -135,8 +138,8 @@ function renderExamples( opts ) {
 	var file = replace( TEMPLATES.examples, '{{ALIAS}}', opts.alias );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = renderValues( file, 'VALUES', opts.values );
-	file = renderValues( file, 'EXPECTED', opts.expected );
+	file = renderValues( file, 'VALUES', opts.dtypes[ 0 ], opts.values );
+	file = renderValues( file, 'EXPECTED', opts.dtypes[ 1 ], opts.expected );
 	return file;
 }
 
@@ -150,6 +153,7 @@ function renderExamples( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -163,8 +167,8 @@ function renderLibIndex( opts ) {
 	file = replace( file, '{{PKG_DESC}}', opts.pkg_desc );
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
-	file = renderValues( file, 'VALUES', opts.values );
-	file = renderValues( file, 'EXPECTED', opts.expected );
+	file = renderValues( file, 'VALUES', opts.dtypes[ 0 ], opts.values );
+	file = renderValues( file, 'EXPECTED', opts.dtypes[ 1 ], opts.expected );
 	return file;
 }
 
@@ -178,6 +182,7 @@ function renderLibIndex( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -204,8 +209,8 @@ function renderLibMain( opts ) {
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	file = replace( file, '{{DESC}}', opts.desc );
 	file = replace( file, '{{ALIAS_CONSTANTCASE}}', constantcase( opts.alias ) );
-	file = renderValues( file, 'VALUES', values );
-	file = renderValues( file, 'EXPECTED', opts.expected );
+	file = renderValues( file, 'VALUES', opts.dtypes[ 0 ], values );
+	file = renderValues( file, 'EXPECTED', opts.dtypes[ 1 ], opts.expected );
 	return file;
 }
 
@@ -219,6 +224,7 @@ function renderLibMain( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -242,6 +248,7 @@ function renderMakefile() {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -265,6 +272,7 @@ function renderPackageJSON( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -292,6 +300,7 @@ function renderTest( opts ) {
 * @param {string} opts.pkg - reference package
 * @param {string} opts.pkg_desc - package description
 * @param {string} opts.pkg_name - reference package name
+* @param {Array} opts.dtypes - signature dtypes
 * @param {Array} opts.values - test values
 * @param {Array} opts.expected - expected test value results
 * @param {string} opts.min - minimum value
@@ -306,8 +315,8 @@ function renderREADME( opts ) {
 	file = replace( file, '{{YEAR}}', CURRENT_YEAR );
 	file = replace( file, '{{COPYRIGHT}}', COPYRIGHT );
 	file = replace( file, '{{DESC}}', opts.desc );
-	file = renderValues( file, 'VALUES', opts.values );
-	file = renderValues( file, 'EXPECTED', opts.expected );
+	file = renderValues( file, 'VALUES', opts.dtypes[ 0 ], opts.values );
+	file = renderValues( file, 'EXPECTED', opts.dtypes[ 1 ], opts.expected );
 	return file;
 }
 
@@ -322,6 +331,7 @@ function renderREADME( opts ) {
 * @param {string} options.pkg - reference package
 * @param {string} options.pkg_desc - package description
 * @param {string} options.desc - API description
+* @param {Array} options.dtypes - signature dtypes
 * @param {Array} options.values - test values
 */
 function scaffold( options ) {
@@ -339,6 +349,7 @@ function scaffold( options ) {
 		'pkg_name': basename( options.pkg ),
 		'pkg_desc': options.pkg_desc,
 		'desc': options.desc,
+		'dtypes': options.dtypes.slice(),
 		'values': options.values.slice(),
 		'expected': []
 	};
@@ -348,7 +359,7 @@ function scaffold( options ) {
 	}
 	for ( i = 0; i < opts.values.length; i++) {
 		v = options.values[ i ];
-		if ( typeof v === 'string' ) {
+		if ( options.dtypes[ 0 ] === 'string' ) {
 			v = '\'' + v + '\'';
 		}
 		opts.values[ i ] = v;
