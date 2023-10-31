@@ -242,6 +242,7 @@
     "@stdlib/math-base-special-xlogy": "^0.1.1",
     "@stdlib/ndarray-base-broadcast-shapes": "^0.1.0",
     "@stdlib/ndarray-base-numel": "^0.1.1",
+    "@stdlib/ndarray-base-shape2strides": "^0.1.1",
     "@stdlib/ndarray-base-to-array": "^0.1.0",
     "@stdlib/ndarray-base-zeros": "^0.1.0",
     "@stdlib/process-read-stdin": "^0.1.0",
