@@ -33,6 +33,56 @@
     -   can assemble the tensor in JavaScript by converting to row-major and omitting the blank row separating matrices
     -   if a blank line is the convention/standard, for functions which explicitly operate on tensors (e.g., certain linear algebra functions?), can just assume that when given a range for a tensor argument along with the number of rows and columns per matrix, this can be converted to a tensor accordingly.
         -   if assume tensor convention, no need to provide num rows and num cols, as we can determine that automatically in JavaScript by simple iteration
+    -   **UPDATE**: allow users to specify the delimiter
+        -   e.g., may want to use blank cells to represent "missing"/ignored values
+        
+-   4D tensor representation
+
+    -   same as 3D representation, but with blank columns indicating the next dimension (e.g., time)
+        -   **UPDATE**: allow users to specify the delimiter
+    -   this would not be the most efficient storage representation given nested arrays, as the fourth dimension would be delineated within each row (i.e., row 1 would have the row 1s for each tensor, etc)
+        -   while nested arrays are more problematic, if flattened to an ndarray, this isn't as much an issue, as this is equivalent to having reordered axes/dimensions
+        
+-   ND tensor representation
+
+    -   in general, we should be able to generalize to more than 4D by allowing for separate delimiters to delineate each dimension
+        -   in this case, each dimension >1 corresponds to a tile, and, as move from inner to outer dimensions, the outer dimensions contain nested tiles (nested dolls)
+        
+-   can we support allowing a user to indicate that a linear (flat) array (column/row) is a tensor of a specified shape?
+
+    -   e.g., suppose I have a column of 100 values, and I want to perform operations such that it is interpreted as a 2x5x10 three-dimensional array.
+    -   this would allow users to go beyond 3D tensor representation
+    -   this would allow for leveraging slicing operations (e.g., more readily reversing elements along a dimension, etc)
+        -   requires copying the reversed elements to a new linear array (i.e., we always need to copy to a new array which is single-segment contiguous)
+            -   meaning, if a user reverses elements along a dimension, they should see that elements actually moved in the resulting range; in other words, we cannot rely on views
+                -   but what if want to retain the original buffer in the output?
+                
+                    ```
+                    STDLIB_NDREVERSE_DIMENSION( A1:A200, 2, "shape", {2, 5, 10}, "strides", {100, 20, 2}, "offset", 50, "order", "row-major", "view", FALSE)
+                    ```
+
+                    by default,
+
+                    -   strides = shape2strides( shape, order )
+                    -   offset = strides2offset( shape, strides )
+                    -   order = "row-major"
+                    -   view = TRUE
+                        -   when TRUE, we ndarray/base/assign from the updated view into a copy of the original range
+                        -   when FALSE, we serialize according to iteration order to a new range (i.e., the returned ndarray should have all positive strides, similar to how we serialize an ndarray to JSON)
+                        -   **UPDATE**: see below on header info
+                        
+    -   what if we supported header info?
+    
+        -   e.g., scan the first few elements of the flattened array for shape, strides, offset, and order info; once find two consecutive numbers, then we've reached the end of the header
+            -   how does that work for shape and strides which are comprised of multiple elements?
+            -   maybe instead, we have a header followed by a blank line and then the data; or actually, just require a "data" header to indicate the start of the data
+        -   if support header info, then if "view" is TRUE, we can just return the input data but with updated header info!
+            -   when "view" is FALSE, we return a new data range
+    
+-   support ability to specify an array computation graph?
+
+    -   i.e., a sequence of operations on a provided range
+    -   can we also support the ability to "print" out intermediate results so that users can see how each operation in a sequence transforms the results of the previous operation?
         
 -   range operations
 
@@ -110,7 +160,7 @@
 -   [ ] is-capitalized
 -   [ ] is-composite
 -   [ ] is-cube-number
--   [ ] is-current-year (need to be careful here due to timezones)
+-   [ ] is-current-year (need to be careful here due to timezones and the difference between where appscript is running and the timezone of the user's sheet)
 -   [ ] is-digit-string
 -   [ ] is-email-address
 -   [ ] is-empty-string
@@ -118,12 +168,12 @@
 -   [ ] is-falsy
 -   [ ] is-finite
 -   [ ] is-hex-string
--   [ ] is-infinite (??? are infinities allowed in sheet cells?)
+-   [ ] is-infinite (??? are infinities allowed in sheet cells? No.)
 -   [ ] is-integer
 -   [ ] is-leap-year
 -   [ ] is-localhost
 -   [ ] is-lowercase
--   [ ] is-nan (??? is NaN allowed in sheet cells?)
+-   [ ] is-nan (??? is NaN allowed in sheet cells? No.)
 -   [ ] is-negative-integer
 -   [ ] is-negative-number
 -   [ ] is-nonnegative-integer
@@ -233,32 +283,32 @@
 -   [x] base/exponential
 -   [x] base/f
 -   [x] base/frechet
--   [ ] base/gamma
--   [ ] base/geometric
--   [ ] base/gumbel
--   [ ] base/hypergeometric
--   [ ] base/improved-ziggurat
--   [ ] base/invgamma
--   [ ] base/kumaraswamy
--   [ ] base/laplace
--   [ ] base/levy
--   [ ] base/logistic
--   [ ] base/lognormal
+-   [x] base/gamma
+-   [x] base/geometric
+-   [x] base/gumbel
+-   [x] base/hypergeometric
+-   [x] base/improved-ziggurat
+-   [x] base/invgamma
+-   [x] base/kumaraswamy
+-   [x] base/laplace
+-   [x] base/levy
+-   [x] base/logistic
+-   [x] base/lognormal
 -   [x] base/minstd-shuffle
 -   [x] base/minstd
 -   [x] base/mt19937
--   [ ] base/negative-binomial
+-   [x] base/negative-binomial
 -   [x] base/normal
--   [ ] base/pareto-type1
--   [ ] base/poisson
+-   [x] base/pareto-type1
+-   [x] base/poisson
 -   [ ] base/randi
 -   [ ] base/randn
 -   [ ] base/randu
--   [ ] base/rayleigh
--   [ ] base/t
--   [ ] base/triangular
+-   [x] base/rayleigh
+-   [x] base/t
+-   [x] base/triangular
 -   [x] base/uniform
--   [ ] base/weibull
+-   [x] base/weibull
 -   [ ] sample (needs refactoring)
 -   [ ] shuffle (needs refactoring)
 
@@ -312,7 +362,7 @@
 -   [ ] code-point-at (???)
 -   [x] constantcase
 -   [ ] ends-with (`endsWith( value|range, value|range )` with support for broadcasting, which would allow, e.g., testing multiple values against an input range)
--   [ ] format (idea: be able to broadcast arguments, similar to `@stdlib/array/log`)
+-   [ ] format (idea: be able to broadcast arguments, similar to `@stdlib/console/log-each`)
 -   [ ] from-code-point
 -   [x] kebabcase
 -   [ ] left-pad
@@ -349,14 +399,14 @@
 
 ### utils
 
--   [ ] any
+-   [ ] any => for >1D, ability to specify axis?
 -   [ ] bifurcate
 -   [ ] convert-path
 -   [ ] dirname
 -   [ ] dsv/parse (???)
 -   [ ] every
 -   [ ] extname
--   [ ] flatten-array
+-   [ ] flatten-array => use array/base/flatten instead?
 -   [ ] group
 -   [ ] index-of
 -   [ ] none
