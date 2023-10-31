@@ -132,12 +132,16 @@
     "@stdlib/math-base-special-copysign",
     "@stdlib/math-base-special-falling-factorial",
     "@stdlib/math-base-special-flipsign",
+
     "@stdlib/math-base-special-floorn",
+
     "@stdlib/math-base-special-gcd",
     "@stdlib/math-base-special-hypot",
     "@stdlib/math-base-special-logaddexp",
     "@stdlib/math-base-special-polygamma",
+
     "@stdlib/math-base-special-pow",
+
     "@stdlib/math-base-special-powm1",
     "@stdlib/math-base-special-rising-factorial",
     "@stdlib/math-base-special-roundn",

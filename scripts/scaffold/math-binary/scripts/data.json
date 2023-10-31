@@ -151,16 +151,16 @@
       ]
     ],
     "min": [
-      -10.0,
+      0.0,
       -10.0
     ],
     "max": [
-      10.0,
+      100.0,
       10.0
     ],
     "prng": [
       "uniform",
-      "uniform"
+      "discrete-uniform"
     ]
   },
   {
