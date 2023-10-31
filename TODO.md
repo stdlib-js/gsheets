@@ -67,6 +67,10 @@
 -   add tests for NaN and infinity output in d_d and dd_d APIs
 
     -   need to test option values and expected output
+    
+-   determine whether gsheets/object/shallow-copy is needed anymore
+
+-   remove array/broadcasted-ternary2d once stdlib pkg available
 
 
 ## Packages
@@ -81,6 +85,13 @@
 -   [x] ones
 -   [ ] unitspace
 -   [x] zeros
+-   [ ] cartesian-square
+-   [ ] cartesian-product
+-   [ ] cartesian-power
+-   [ ] n-cartesian-product
+-   [ ] one-to
+-   [ ] zero-to
+-   [ ] take
 
 ### assert
 
