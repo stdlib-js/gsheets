@@ -388,7 +388,7 @@ function scaffold( options ) {
 		'dtypes': options.dtypes.slice(),
 		'values': options.values.slice(),
 		'min': num2str( options.min, options.dtypes[ 0 ] ),
-		'max': num2str( options.max, options.dtypes[ 1 ] ),
+		'max': num2str( options.max, options.dtypes[ 0 ] ),
 		'prng': options.prng,
 		'expected': []
 	};

@@ -17,9 +17,7 @@
     "@stdlib/math-base-special-atanh",
     "@stdlib/math-base-special-avercos",
     "@stdlib/math-base-special-aversin",
-
     "@stdlib/math-base-special-bernoulli",
-
     "@stdlib/math-base-special-besselj0",
     "@stdlib/math-base-special-besselj1",
     "@stdlib/math-base-special-bessely0",
