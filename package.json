@@ -51,6 +51,7 @@
     "@stdlib/array-base-flatten2d": "^0.1.0",
     "@stdlib/array-base-ones2d": "^0.1.0",
     "@stdlib/array-base-unary2d": "^0.1.0",
+    "@stdlib/array-base-zeros": "^0.1.1",
     "@stdlib/array-base-zeros2d": "^0.1.0",
     "@stdlib/array-from-iterator": "^0.1.0",
     "@stdlib/array-linspace": "^0.1.0",
