@@ -725,6 +725,141 @@ function STDLIB_NDARRAY( data, shape, shapeValue, strides, stridesValue, offset,
 	return ns.ndarray.toArray( arr, [ len, 1 ], [ 1, 1 ], 0, 'row-major' ); // TODO: replace with @stdlib/array/base/equivalent
 }
 /**
+* Displays a printable stacked representation of an ndarray.
+*
+* @customfunction
+* @param {Range} x - input ndarray
+* @returns {Range} stacked representation of an ndarray
+*
+* @example
+* STDLIB_NDARRAY_STACKED_REPR( A1:A100 )
+*/
+function STDLIB_NDARRAY_STACKED_REPR( x ) { 
+	var strides;
+	var offset;
+	var shape;
+	var order;
+	var ndims;
+	var total;
+	var hlen;
+	var arr;
+	var out;
+	var row;
+	var it;
+	var N;
+	var M;
+	var s;
+	var o;
+	var i;
+	for ( i = 1; i < arguments.length; i += 2 ) {
+		o = arguments[ i ];
+		ns.assert.unrecognizedOptionName( o );
+	}
+	ns.assert.isRange1d( x, 'First argument' );
+	x = ns.array.flatten2d( x );
+	// Resolve ndarray meta data...
+	ns.assert.isString( x[ 0 ], 'First range element' );
+	for ( i = 0; i < x.length; i++ ) {
+		o = ns.string.lowercase( x[ i ] );
+		if ( o === 'shape' ) {
+			i += 1;
+			shape = [];
+			for ( ; i < x.length; i++ ) {
+				if ( !ns.assert.base.isNumber( x[ i ] ) ) {
+					i -= 1;
+					break;
+				}
+				shape.push( x[ i ] );
+			}
+		} else if ( o === 'strides' ) {
+			i += 1;
+			strides = [];
+			for ( ; i < x.length; i++ ) {
+				if ( !ns.assert.base.isNumber( x[ i ] ) ) {
+					i -= 1;
+					break;
+				}
+				strides.push( x[ i ] );
+			}
+		} else if ( o === 'offset' ) {
+			i += 1;
+			offset = x[ i ];
+		} else if ( o === 'order' ) {
+			i += 1;
+			order = x[ i ];
+		} else if ( o === 'dtype' || o === 'length' || o === 'capacity' ) {
+			i += 1;
+		} else if ( o === 'data' ) {
+			i += 1;
+			break;
+		} else {
+			throw new TypeError( 'invalid argument. First argument is not a valid ndarray. Unrecognized meta data field.' );
+		}
+	}
+	if ( !ns.assert.base.isArray( shape ) || ( shape.length && !ns.assert.base.isNonNegativeIntegerArray( shape ) ) ) {
+		throw new TypeError( 'invalid argument. First argument is not a valid ndarray. Shape must only contain nonnegative integer values.' );
+	}
+	ndims = shape.length;
+	if ( !ns.assert.base.isArray( strides ) || ( strides.length && !ns.assert.base.isIntegerArray( strides ) ) ) {
+		throw new TypeError( 'invalid argument. First argument is not a valid ndarray. Strides must only contain integer values.' );
+	}
+	if ( ndims > 0 && strides.length !== ndims ) {
+		throw new TypeError( 'invalid argument. First argument is not a valid ndarray. Number of strides does not match the number of dimensions.' );
+	} else if ( ndims === 0 && ( strides.length !== 1 || strides[ 0 ] !== 0 ) ) {
+		throw new TypeError( 'invalid argument. First argument is not a valid ndarray. A zero-dimensional ndarray should have a single stride equal to 0.' );
+	}
+	if ( !ns.assert.base.isNonNegativeInteger( offset ) ) {
+		throw new TypeError( 'invalid argument. First argument is not a valid ndarray. Offset must be a nonnegative integer.' );
+	}
+	// TODO: validate order
+	// TODO: validate dtype
+	// Calculate the header length: 8 field names + 2 fields having length rank(shape) + 5 fields having one value
+	hlen = 8 + ndims + strides.length + (5*1);
+	// Create an ndarray view, adjusting the offset to account for the header info:
+	arr = new ns.ndarray.ndarray( 'generic', x, shape, strides, offset+hlen, order );
+	if ( ndims === 0 ) {
+		return [
+			[ 'STDLIB_NDSLICE(x, "") =' ],
+			[ arr.get() ]
+		];
+	}
+	if ( ndims === 1 ) {
+		out = [ [ 'STDLIB_NDSLICE(x, ":") =' ] ];
+		if ( arr.length === 0 ) {
+			out.push( [ '(empty)' ] );
+			return out;
+		}
+		return out.concat( ns.ndarray.toArray( arr, [ arr.length, 1 ], [ 1, 1 ], 0, 'row-major' ) ); // TODO: replace with @stdlib/array/base/equivalent
+	}
+	// Determine the number of rows and columns per matrix:
+	N = shape[ ndims-2 ];
+	M = shape[ ndims ];
+	// Compute the total number of stacks:
+	total = arr.length / ( N*M );
+	// Create an iterator which iterates over each row in the ndarray:
+	it = ns.ndarray.iterRows( arr );
+	// Initialize counters:
+	i = 0;
+	row = 0;
+	// Assemble the output nested array...
+	out = [ [ 'STDLIB_NDSLICE(x, ":,:") =' ] ]; // FIXME: indexing subsequence
+	while ( true ) {
+		s = it.next();
+		if ( s.done ) {
+			break;
+		}
+		s = s.value;
+		out.push( ns.ndarray.toArray( s, [ M ], s.strides, s.offset, s.order ) );
+		i += 1;
+		row = (row+1) % N;
+		if ( i < total && row === 0 ) {
+			out.push( ns.array.filled( '', shape[ M ] ) );
+			out.push( [ 'STDLIB_NDSLICE(x, ":,:") =' ] ); // FIXME: indexing subsequence
+		}
+	}
+	return out;
+}
+/**
 * Evaluates Binet's formula extended to real numbers.
 *
 * @customfunction
