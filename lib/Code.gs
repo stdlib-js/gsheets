@@ -439,7 +439,7 @@ function STDLIB_NDARRAY( data, shape, shapeValue, strides, stridesValue, offset,
 	ix += 1;
 	arr[ ix ] = 'dtype';
 	ix += 1;
-	arr[ ix ] = 'number';
+	arr[ ix ] = opts.dtype;
 	ix += 1;
 	arr[ ix ] = 'data';
 	ix += 1;
