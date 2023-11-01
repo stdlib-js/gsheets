@@ -840,7 +840,7 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	// Assemble the output nested array...
 	out = [ ns.array.filled( '', M ) ];
 	out[ 0 ][ 0 ] = shape.join( 'x' ) + ' ndarray:';
-	out = [ ns.array.filled( '', M ) ];
+	out.push( ns.array.filled( '', M ) );
 	while ( true ) {
 		s = it.next();
 		if ( s.done ) {
