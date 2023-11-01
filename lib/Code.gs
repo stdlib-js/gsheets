@@ -740,7 +740,6 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	var shape;
 	var order;
 	var ndims;
-	var total;
 	var hlen;
 	var arr;
 	var out;
@@ -834,29 +833,27 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	// Determine the number of rows and columns per matrix:
 	N = shape[ ndims-2 ];
 	M = shape[ ndims-1 ];
-	// Compute the total number of stacks:
-	total = arr.length / ( N*M );
 	// Create an iterator which iterates over each row in the ndarray:
 	it = ns.ndarray.iterRows( arr );
-	// Initialize counters:
-	i = 0;
+	// Initialize a row counter:
 	row = 0;
 	// Assemble the output nested array...
-	out = [ ns.array.filled( '', M ) ];
-	out[ 0 ][ 0 ] = 'STDLIB_NDSLICE(x, ":, :") ='; // FIXME: indexing subsequence
+	out = [];
 	while ( true ) {
 		s = it.next();
 		if ( s.done ) {
 			break;
 		}
-		s = s.value;
-		out.push( ns.ndarray.toArray( s, [ M ], s.strides, s.offset, s.order ) ); // TODO: replace with @stdlib/array/base equivalent
-		i += 1;
-		row = (row+1) % N;
-		if ( i < total && row === 0 ) {
-			out.push( ns.array.filled( '', M ) );
+		if ( row === 0 ) {
 			out.push( ns.array.filled( '', M ) );
 			out[ out.length-1 ][ 0 ] = 'STDLIB_NDSLICE(x, ":, :") ='; // FIXME: indexing subsequence
+			out.push( ns.array.filled( '', M ) );
+		}
+		s = s.value;
+		out.push( ns.ndarray.toArray( s, s.shape, s.strides, s.offset, s.order ) ); // TODO: replace with @stdlib/array/base equivalent
+		row = (row+1) % N;
+		if ( row === 0 ) {
+			out.push( ns.array.filled( '', M ) );
 		}
 	}
 	return out;
