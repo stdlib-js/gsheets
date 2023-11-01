@@ -829,7 +829,7 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 			out.push( [ '(empty)' ] );
 			return out;
 		}
-		return out.concat( ns.ndarray.toArray( arr, [ arr.length, 1 ], [ 1, 1 ], 0, 'row-major' ) ); // TODO: replace with @stdlib/array/base/equivalent
+		return out.concat( ns.ndarray.toArray( arr, [ arr.length, 1 ], [ 1, 1 ], 0, 'row-major' ) ); // TODO: replace with @stdlib/array/base equivalent
 	}
 	// Determine the number of rows and columns per matrix:
 	N = shape[ ndims-2 ];
@@ -842,19 +842,21 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	i = 0;
 	row = 0;
 	// Assemble the output nested array...
-	out = [ [ 'STDLIB_NDSLICE(x, ":,:") =' ] ]; // FIXME: indexing subsequence
+	out = [ ns.array.filled( '', M ) ];
+	out[ 0 ][ 0 ] = 'STDLIB_NDSLICE(x, ":, :") ='; // FIXME: indexing subsequence
 	while ( true ) {
 		s = it.next();
 		if ( s.done ) {
 			break;
 		}
 		s = s.value;
-		out.push( ns.ndarray.toArray( s, [ M ], s.strides, s.offset, s.order ) );
+		out.push( ns.ndarray.toArray( s, [ M ], s.strides, s.offset, s.order ) ); // TODO: replace with @stdlib/array/base equivalent
 		i += 1;
 		row = (row+1) % N;
 		if ( i < total && row === 0 ) {
-			out.push( ns.array.filled( '', shape[ M ] ) );
-			out.push( [ 'STDLIB_NDSLICE(x, ":,:") =' ] ); // FIXME: indexing subsequence
+			out.push( ns.array.filled( '', M ) );
+			out.push( ns.array.filled( '', M ) );
+			out[ out.length-1 ][ 0 ] = 'STDLIB_NDSLICE(x, ":, :") ='; // FIXME: indexing subsequence
 		}
 	}
 	return out;
