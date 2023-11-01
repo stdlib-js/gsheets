@@ -449,10 +449,15 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 		len = vhlen + vlen;
 		buf = ns.array.zeros( len );
 		// When returning a view, return elements in array iteration order...
-		strides = ns.ndarray.shape2strides( shape, order );
-		tmp = new ns.ndarray.ndarray( 'generic', buf, shape, strides, vhlen, order );
-		for ( i = 0; i < vlen; i++ ) {
-			tmp.iset( i, vx.iget( i ) );
+		if ( ndims > 0 ) {
+			strides = ns.ndarray.shape2strides( shape, order );
+			tmp = new ns.ndarray.ndarray( 'generic', buf, shape, strides, vhlen, order );
+			for ( i = 0; i < vlen; i++ ) {
+				tmp.iset( i, vx.iget( i ) );
+			}
+		} else {
+			strides = [ 0 ];
+			buf[ len-1 ] = vx.get();
 		}
 		// Reset the index offset as the strides should all be nonnegative integers:
 		offset = 0;
