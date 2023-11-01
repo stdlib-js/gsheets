@@ -818,12 +818,12 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	arr = new ns.ndarray.ndarray( 'generic', x, shape, strides, offset+hlen, order );
 	if ( ndims === 0 ) {
 		return [
-			[ 'STDLIB_NDSLICE(x, "") =' ],
+			[ 'STDLIB_NDSLICE(_, "") =' ],
 			[ arr.get() ]
 		];
 	}
 	if ( ndims === 1 ) {
-		out = [ [ 'STDLIB_NDSLICE(x, ":") =' ] ];
+		out = [ [ 'STDLIB_NDSLICE(_, ":") =' ] ];
 		if ( arr.length === 0 ) {
 			out.push( [ '(empty)' ] );
 			return out;
@@ -846,15 +846,12 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 		}
 		if ( row === 0 ) {
 			out.push( ns.array.filled( '', M ) );
-			out[ out.length-1 ][ 0 ] = 'STDLIB_NDSLICE(x, ":, :") ='; // FIXME: indexing subsequence
+			out[ out.length-1 ][ 0 ] = 'STDLIB_NDSLICE(_, ":, :") ='; // FIXME: indexing subsequence
 			out.push( ns.array.filled( '', M ) );
 		}
 		s = s.value;
-		out.push( ns.ndarray.toArray( s, s.shape, s.strides, s.offset, s.order ) ); // TODO: replace with @stdlib/array/base equivalent
+		out.push( ns.ndarray.toArray( s.data, s.shape, s.strides, s.offset, s.order ) ); // TODO: replace with @stdlib/array/base equivalent
 		row = (row+1) % N;
-		if ( row === 0 ) {
-			out.push( ns.array.filled( '', M ) );
-		}
 	}
 	return out;
 }
