@@ -360,6 +360,8 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 		} else if ( o === 'dtype' ) {
 			i += 1;
 			dtype = x[ i ];
+		} else if ( o === 'length' || o === 'capacity' ) {
+			i += 1;
 		} else if ( o === 'data' ) {
 			i += 1;
 			break;
@@ -410,7 +412,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 		}
 	}
 	// Calculate the header length: 6 field names + 2 fields having length rank(shape) + 3 fields having one value
-	hlen = 6 + (2*ndims) + (3*1);
+	hlen = 8 + (2*ndims) + (5*1);
 	// Create an ndarray view, adjusting the offset to account for the header info:
 	arr = new ns.ndarray.ndarray( 'generic', x, shape, strides, offset+hlen, order );
 	// Create the slice:
@@ -421,7 +423,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	strides = vx.strides;
 	order = vx.order;
 	// Calculate the header length for the slice:
-	vhlen = 6 + (2*ndims) + (3*1);
+	vhlen = 8 + (2*ndims) + (5*1);
 	// Revert the header info offset adjustment:
 	offset = vx.offset - hlen;
 	// Check whether we need to return the same data buffer as the input array...
@@ -479,6 +481,14 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	ih += 1;
 	buf[ ih ] = dtype;
 	ih += 1;
+	buf[ ih ] = 'length';
+	ih += 1;
+	buf[ ih ] = vlen;
+	ih += 1;
+	buf[ ih ] = 'capacity';
+	ih += 1;
+	buf[ ih ] = len - vhlen;
+	ih += 1;
 	buf[ ih ] = 'data';
 	if ( opts.as === 'row' ) {
 		return [ buf ];
@@ -505,6 +515,7 @@ function STDLIB_NDZEROS( shape, order, orderValue, as, asValue ) {
 	var offset;
 	var ndims;
 	var opts;
+	var hlen;
 	var arr;
 	var len;
 	var o;
@@ -527,9 +538,11 @@ function STDLIB_NDZEROS( shape, order, orderValue, as, asValue ) {
 	shape = ns.array.flatten2d( shape );
 	ns.assert.isValidShape( shape, 'First argument' );
 	ndims = shape.length;
-	// 6 field names + 2 fields having length rank(shape) + 3 fields having one value + the number of array elements
-	len = 6 + (2*ndims) + (3*1) + ns.ndarray.numel( shape );
-	arr = ns.array.zeros( len );
+	// Calculate the header length: 8 field names + 2 fields having length rank(shape) + 5 fields having one value
+	hlen = 8 + (2*ndims) + (5*1);
+	// Allocate an ndarray buffer which can accommodate both the header and data elements:
+	len = ns.ndarray.numel( shape );
+	arr = ns.array.zeros( hlen + len );
 	offset = 0;
 	arr[ offset ] = 'shape';
 	offset += 1;
@@ -556,12 +569,20 @@ function STDLIB_NDZEROS( shape, order, orderValue, as, asValue ) {
 	offset += 1;
 	arr[ offset ] = 'number';
 	offset += 1;
+	arr[ offset ] = 'length';
+	offset += 1;
+	arr[ offset ] = len;
+	offset += 1;
+	arr[ offset ] = 'capacity';
+	offset += 1;
+	arr[ offset ] = len;
+	offset += 1;
 	arr[ offset ] = 'data';
 	if ( opts.as === 'row' ) {
 		return [ arr ];
 	}
 	// opts.as === 'column'
-	return ns.ndarray.toArray( arr, [ len, 1 ], [ 1, 1 ], 0, 'row-major' ); // TODO: replace with @stdlib/array/base/equivalent
+	return ns.ndarray.toArray( arr, [ arr.length, 1 ], [ 1, 1 ], 0, 'row-major' ); // TODO: replace with @stdlib/array/base/equivalent
 }
 /**
 * Creates an ndarray.
@@ -588,6 +609,7 @@ function STDLIB_NDZEROS( shape, order, orderValue, as, asValue ) {
 function STDLIB_NDARRAY( data, shape, shapeValue, strides, stridesValue, offset, offsetValue, order, orderValue, dtype, dtypeValue, as, asValue ) { 
 	var ndims;
 	var opts;
+	var hlen;
 	var arr;
 	var len;
 	var ix;
@@ -634,9 +656,10 @@ function STDLIB_NDARRAY( data, shape, shapeValue, strides, stridesValue, offset,
 	ns.assert.isBufferLengthCompatible( len, opts.shape, opts.strides, opts.offset ); 
 	ndims = opts.shape.length;
 	// TODO: determine a means to abstract this logic to a helper utility package
-	// Header: 6 field names + 2 fields having length rank(shape) + 3 fields having one value
-	len = 6 + (2*ndims) + (3*1) + len;
-	arr = ns.array.zeros( len );
+	// Calculate the header length: 8 field names + 2 fields having length rank(shape) + 5 fields having one value
+	hlen = 8 + (2*ndims) + (5*1);
+	// Allocate an ndarray buffer which can accommodate both the header and data elements:
+	arr = ns.array.zeros( hlen + len );
 	ix = 0;
 	arr[ ix ] = 'shape';
 	ix += 1;
@@ -661,6 +684,14 @@ function STDLIB_NDARRAY( data, shape, shapeValue, strides, stridesValue, offset,
 	arr[ ix ] = 'dtype';
 	ix += 1;
 	arr[ ix ] = opts.dtype;
+	ix += 1;
+	arr[ ix ] = 'length';
+	ix += 1;
+	arr[ ix ] = ns.ndarray.numel( opts.shape );
+	ix += 1;
+	arr[ ix ] = 'capacity';
+	ix += 1;
+	arr[ ix ] = len;
 	ix += 1;
 	arr[ ix ] = 'data';
 	ix += 1;
