@@ -722,7 +722,7 @@ function STDLIB_NDARRAY( data, shape, shapeValue, strides, stridesValue, offset,
 		return [ arr ];
 	}
 	// opts.as === 'column'
-	return ns.ndarray.toArray( arr, [ len, 1 ], [ 1, 1 ], 0, 'row-major' ); // TODO: replace with @stdlib/array/base/equivalent
+	return ns.ndarray.toArray( arr, [ arr.length, 1 ], [ 1, 1 ], 0, 'row-major' ); // TODO: replace with @stdlib/array/base/equivalent
 }
 /**
 * Displays a printable stacked representation of an ndarray.
