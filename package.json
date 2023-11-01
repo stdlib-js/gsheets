@@ -245,6 +245,7 @@
     "@stdlib/ndarray-base-assert-is-buffer-length-compatible": "^0.1.0",
     "@stdlib/ndarray-base-broadcast-shapes": "^0.1.0",
     "@stdlib/ndarray-base-ctor": "^0.1.0",
+    "@stdlib/ndarray-base-next-cartesian-index": "^0.1.0",
     "@stdlib/ndarray-base-numel": "^0.1.1",
     "@stdlib/ndarray-base-shape2strides": "^0.1.1",
     "@stdlib/ndarray-base-slice": "^0.1.0",
