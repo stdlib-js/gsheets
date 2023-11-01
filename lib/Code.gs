@@ -818,12 +818,12 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	arr = new ns.ndarray.ndarray( 'generic', x, shape, strides, offset+hlen, order );
 	if ( ndims === 0 ) {
 		return [
-			[ '[] =' ],
+			[ '[ ] =' ],
 			[ arr.get() ]
 		];
 	}
 	if ( ndims === 1 ) {
-		out = [ [ '[":"] =' ] ];
+		out = [ [ '[ : ] =' ] ];
 		if ( arr.length === 0 ) {
 			out.push( [ '(empty)' ] );
 			return out;
@@ -838,7 +838,9 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	// Initialize a row counter:
 	row = 0;
 	// Assemble the output nested array...
-	out = [];
+	out = [ ns.array.filled( '', M ) ];
+	out[ 0 ][ 0 ] = shape.join( 'x' ) + ' ndarray:';
+	out = [ ns.array.filled( '', M ) ];
 	while ( true ) {
 		s = it.next();
 		if ( s.done ) {
@@ -846,7 +848,7 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 		}
 		if ( row === 0 ) {
 			out.push( ns.array.filled( '', M ) );
-			out[ out.length-1 ][ 0 ] = '[":, :"] ='; // FIXME: indexing subsequence
+			out[ out.length-1 ][ 0 ] = '[ :, : ] ='; // FIXME: indexing subsequence
 			out.push( ns.array.filled( '', M ) );
 		}
 		s = s.value;
