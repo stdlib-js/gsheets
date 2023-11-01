@@ -251,6 +251,7 @@
     "@stdlib/ndarray-base-strides2offset": "^0.1.1",
     "@stdlib/ndarray-base-to-array": "^0.1.0",
     "@stdlib/ndarray-base-zeros": "^0.1.0",
+    "@stdlib/ndarray-iter-rows": "^0.1.0",
     "@stdlib/process-read-stdin": "^0.1.0",
     "@stdlib/random-base-arcsine": "^0.1.0",
     "@stdlib/random-base-bernoulli": "^0.1.0",
