@@ -833,7 +833,7 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	}
 	// Determine the number of rows and columns per matrix:
 	N = shape[ ndims-2 ];
-	M = shape[ ndims ];
+	M = shape[ ndims-1 ];
 	// Compute the total number of stacks:
 	total = arr.length / ( N*M );
 	// Create an iterator which iterates over each row in the ndarray:
