@@ -281,7 +281,7 @@ function STDLIB_ANSCOMBES_QUARTET() {
 * @returns {Range} ndarray view
 *
 * @example
-* STDLIB_NDSLICE( A1:A100, '::-1,...,1::-2' )
+* STDLIB_NDSLICE( A1:A100, '::-1,...,::-2' )
 */
 function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asValue ) { 
 	var strides;
@@ -293,6 +293,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	var vhlen;
 	var opts;
 	var hlen;
+	var vlen;
 	var arr;
 	var len;
 	var tmp;
@@ -414,6 +415,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	arr = new ns.ndarray.ndarray( 'generic', x, shape, strides, offset+hlen, order );
 	// Create the slice:
 	vx = ns.ndarray.slice( arr, s, opts.strict, false );
+	vlen = vx.length;
 	shape = vx.shape;
 	ndims = shape.length;
 	strides = vx.strides;
@@ -440,12 +442,12 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	// Otherwise, return a fresh ndarray with data arranged contiguously...
 	else {
 		// Allocate a new data buffer which can accommodate the new header info and slice data:
-		len = vhlen + ns.ndarray.numel( vx.length );
+		len = vhlen + vlen;
 		buf = ns.array.zeros( len );
 		// When returning a view, return elements in array iteration order...
 		strides = ns.ndarray.shape2strides( shape, order );
 		tmp = new ns.ndarray.ndarray( 'generic', buf, shape, strides, vhlen, order );
-		for ( i = 0; i < vx.length; i++ ) {
+		for ( i = 0; i < vlen; i++ ) {
 			tmp.iset( i, vx.iget( i ) );
 		}
 		// Reset the index offset as the strides should all be nonnegative integers:
