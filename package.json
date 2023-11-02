@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@google/clasp": "^2.4.1",
+    "@stdlib/array-base-assert-contains": "^0.1.0",
     "@stdlib/array-base-broadcast-array": "^0.1.0",
     "@stdlib/array-base-broadcasted-binary2d": "^0.1.0",
     "@stdlib/array-base-filled": "^0.1.0",
@@ -245,6 +246,7 @@
     "@stdlib/math-base-special-xlog1py": "^0.1.1",
     "@stdlib/math-base-special-xlogy": "^0.1.1",
     "@stdlib/ndarray-base-assert-is-buffer-length-compatible": "^0.1.0",
+    "@stdlib/ndarray-base-assert-is-order": "^0.1.1",
     "@stdlib/ndarray-base-broadcast-shapes": "^0.1.0",
     "@stdlib/ndarray-base-ctor": "^0.1.0",
     "@stdlib/ndarray-base-next-cartesian-index": "^0.1.0",
