@@ -329,6 +329,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	x = ns.array.flatten2d( x );
 	// Resolve ndarray meta data...
 	ns.assert.isString( x[ 0 ], 'First range element' );
+	// TODO: check if x[0] === 'ndarray'
 	for ( i = 0; i < x.length; i++ ) {
 		o = ns.string.lowercase( x[ i ] );
 		if ( o === 'shape' ) {
@@ -365,6 +366,8 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 		} else if ( o === 'data' ) {
 			i += 1;
 			break;
+		} else if ( o === 'ndarray' ) {
+			// No-op...
 		} else {
 			throw new TypeError( 'invalid argument. First argument is not a valid ndarray. Unrecognized meta data field.' );
 		}
@@ -414,7 +417,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 		}
 	}
 	// Calculate the header length:
-	hlen = 8 + ndims + strides.length + (5*1);
+	hlen = 9 + ndims + strides.length + (5*1);
 	// Create an ndarray view, adjusting the offset to account for the header info:
 	arr = new ns.ndarray.ndarray( 'generic', x, shape, strides, offset+hlen, order );
 	// Create the slice:
@@ -425,7 +428,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	strides = vx.strides;
 	order = vx.order;
 	// Calculate the header length for the slice:
-	vhlen = 8 + ndims + strides.length + (5*1);
+	vhlen = 9 + ndims + strides.length + (5*1);
 	// Revert the header info offset adjustment:
 	offset = vx.offset - hlen;
 	// Check whether we need to return the same data buffer as the input array...
@@ -464,6 +467,8 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	}
 	// Set the header info...
 	ih = 0;
+	buf[ ih ] = 'ndarray';
+	ih += 1;
 	buf[ ih ] = 'shape';
 	ih += 1;
 	for ( i = 0; i < shape.length; i++ ) {
@@ -551,7 +556,7 @@ function STDLIB_NDZEROS( shape, order, orderValue, as, asValue ) {
 		strides = ns.ndarray.shape2strides( shape, opts.order );
 	}
 	// Calculate the header length:
-	hlen = 8 + ndims + strides.length + (5*1);
+	hlen = 9 + ndims + strides.length + (5*1);
 	// Allocate an ndarray buffer which can accommodate both the header and data elements:
 	if ( ndims === 0 ) {
 		len = 1;
@@ -560,6 +565,8 @@ function STDLIB_NDZEROS( shape, order, orderValue, as, asValue ) {
 	}
 	arr = ns.array.zeros( hlen + len );
 	offset = 0;
+	arr[ offset ] = 'ndarray';
+	offset += 1;
 	arr[ offset ] = 'shape';
 	offset += 1;
 	for ( i = 0; i < ndims; i++ ) {
@@ -679,10 +686,12 @@ function STDLIB_NDARRAY( data, shape, shapeValue, strides, stridesValue, offset,
 	ns.assert.isBufferLengthCompatible( len, opts.shape, opts.strides, opts.offset ); 
 	// TODO: determine a means to abstract the following logic to a helper utility package
 	// Calculate the header length:
-	hlen = 8 + ndims + opts.strides.length + (5*1);
+	hlen = 9 + ndims + opts.strides.length + (5*1);
 	// Allocate an ndarray buffer which can accommodate both the header and data elements:
 	arr = ns.array.zeros( hlen + len );
 	ix = 0;
+	arr[ ix ] = 'ndarray';
+	ix += 1;
 	arr[ ix ] = 'shape';
 	ix += 1;
 	for ( i = 0; i < opts.shape.length; i++ ) {
@@ -760,6 +769,7 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	x = ns.array.flatten2d( x );
 	// Resolve ndarray meta data...
 	ns.assert.isString( x[ 0 ], 'First range element' );
+	// TODO: check if x[0] === 'ndarray'
 	for ( i = 0; i < x.length; i++ ) {
 		o = ns.string.lowercase( x[ i ] );
 		if ( o === 'shape' ) {
@@ -793,6 +803,8 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 		} else if ( o === 'data' ) {
 			i += 1;
 			break;
+		} else if ( o === 'ndarray' ) {
+			// No-op...
 		} else {
 			throw new TypeError( 'invalid argument. First argument is not a valid ndarray. Unrecognized meta data field.' );
 		}
@@ -814,8 +826,8 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 	}
 	// TODO: validate order
 	// TODO: validate dtype
-	// Calculate the header length: 8 field names + 2 fields having length rank(shape) + 5 fields having one value
-	hlen = 8 + ndims + strides.length + (5*1);
+	// Calculate the header length:
+	hlen = 9 + ndims + strides.length + (5*1);
 	// Create an ndarray view, adjusting the offset to account for the header info:
 	arr = new ns.ndarray.ndarray( 'generic', x, shape, strides, offset+hlen, order );
 	if ( ndims === 0 ) {
