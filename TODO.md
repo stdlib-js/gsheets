@@ -18,12 +18,27 @@
     -   function search
     -   examples
     -   tutorials (e.g., machine learning with sample datasets; could have option to load a tutorial template)
+        -   another tutorial/offering could be "no code" analysis websites/dashboards
+            -   sheets functions as a database with built-in analytic capabilities
+            -   we can provide various templates that can then be converted into a web app via AppSheet
+            -   those web apps can then be interactive, etc (e.g., cross filtering, pan/zoom, etc)
+            -   Sheets effectively provides a platform for building serverless apps
+                -   just by updating a single cell in a spreadsheet, on next load/refresh, the app is updated
     -   videos and educational materials
     -   product announcements (notifications in the menu when we've released new features)
     -   ability to submit maintenance and feature requests
     -   product support
     -   auto-migration functionality whenever we update APIs (e.g., rename `STDLIB_FOO` to `STDLIB_BAR`)
     -   the editor menu could be the paid product (user has to sign-up and login for help, search, tutorials, etc; this would also mean that functions could be used without paying, thus allowing sheets using stdlib functions to be sharable and still functional)
+        -   we could add additional chart capabilities which understand, e.g., ndarrays, etc.
+        
+-   Can we prototype a quasi-jupyter/observable notebook in sheets?
+
+    -   similar to a REPL, can enter commands in a vertical (or horizontal!) sequence
+    -   when return ndarray, can specify to return "as" a row, with spillover into hidden columns/rows
+    -   similar to Observable, can display formula by using formula to display a formula for a cell
+    -   similar to Observable, can hide the return value by hiding the return value column/row
+    -   can intersperse text (no Markdown or TeX support, but do have editor capabilities)
     
 -   3D tensor representation
 
