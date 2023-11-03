@@ -430,7 +430,7 @@ function STDLIB_NDSLICE( x, slice, strict, strictValue, view, viewValue, as, asV
 	ih += 1;
 	buf[ ih ] = 'dtype';
 	ih += 1;
-	buf[ ih ] = dtype;
+	buf[ ih ] = obj.dtype;
 	ih += 1;
 	buf[ ih ] = 'length';
 	ih += 1;
