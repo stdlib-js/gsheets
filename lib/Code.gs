@@ -610,8 +610,8 @@ function STDLIB_NDARRAY_STACKED_REPR( x ) {
 		row = (row+1) % N;
 		if ( row === 0 ) {
 			out.push( ns.array.filled( '', M ) );
+			idx = ns.ndarray.nextCartesianIndex.assign( shape, obj.order, idx, dim-1, idx );
 		}
-		idx = ns.ndarray.nextCartesianIndex.assign( shape, obj.order, idx, dim-1, idx );
 	}
 	return out;
 }
