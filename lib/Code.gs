@@ -1305,7 +1305,6 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 	var args;
 	var data;
 	var hlen;
-	var vlen;
 	var obj;
 	var out;
 	var len;
@@ -1340,7 +1339,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 		// Create the slice:
 		x = ns.ndarray.slice( x, s, opts.strict, false );
 	}
-	vlen = x.length;
+	len = x.length; // numel(x)
 	shape = x.shape;
 	strides = x.strides;
 	offset = x.offset;
@@ -1357,7 +1356,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 	// Otherwise, return a fresh ndarray with data arranged contiguously...
 	else {
 		// Allocate a new data buffer which can accommodate the new header info and slice data:
-		buf = ns.array.zeros( vhlen + vlen );
+		buf = ns.array.zeros( vhlen + len );
 		// When returning a view, return elements in array iteration order...
 		if ( ndims > 0 ) {
 			strides = ns.ndarray.shape2strides( shape, order );
@@ -1373,7 +1372,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 	// Perform element-wise computation:
 	out = ns.math.tools.ndarray.unary( args, ns.math.abs );
 	// If we are returning a view of the input data buffer, check whether we need to shift the data to ensure a compact representation...
-	len = buf.length;
+	len = buf.length; // header + numel(out)
 	if ( opts.view ) {
 		// Check whether the number of dimensions was reduced and, if so, shift the data to account for less header info...
 		d = hlen - vhlen;
@@ -1390,7 +1389,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 			offset -= d;
 		}
 	}
-	// TODO: do we need to consider a returned ndarray having a different dtype?
+	// TODO: do we need to consider a returned ndarray having a different dtype? ANSWER: no. Once we convert this to a scaffold, we can hard code the expected output dtype
 	// Serialize the output ndarray to a range:
 	return ns.ndarray.ndarray2range( out.data, len-vhlen, obj.dtype, out.shape, out.strides, offset-vhlen, out.order, opts.as ); 
 }
