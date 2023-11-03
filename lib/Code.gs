@@ -1343,6 +1343,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 	vlen = x.length;
 	shape = x.shape;
 	strides = x.strides;
+	offset = x.offset;
 	order = x.order;
 	data = x.data;
 	ndims = shape.length;
@@ -1350,27 +1351,13 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 	vhlen = 9 + ndims + strides.length + (5*1); // TODO: use internal utility package instead of hardcoding
 	// Check whether we need to return the same data buffer as the input array...
 	if ( opts.view ) {
-		len = data.length;
-		buf = data;
-		// Check whether the number of dimensions was reduced and, if so, shift the data to account for less header info...
-		d = hlen - vhlen;
-		if ( d !== 0 ) {
-			len -= d;
-			// Because the meta data of the view consumes less memory than the input ndarray, we need to shift the data up to ensure a compact representation...
-			for ( i = 0; i < len; i++ ) {
-				buf[ vhlen+i ] = buf[ hlen+i ];
-			}
-			// Trim off the leftover items:
-			data.length = len;
-		}
-		// Adjust the offset to account for reduced ndarray meta data:
-		offset = x.offset - d;
+		// Copy the data to avoid mutation of the same elements over which we are iterating:
+		buf = data.slice();
 	}
 	// Otherwise, return a fresh ndarray with data arranged contiguously...
 	else {
 		// Allocate a new data buffer which can accommodate the new header info and slice data:
-		len = vhlen + vlen;
-		buf = ns.array.zeros( len );
+		buf = ns.array.zeros( vhlen + len );
 		// When returning a view, return elements in array iteration order...
 		if ( ndims > 0 ) {
 			strides = ns.ndarray.shape2strides( shape, order );
@@ -1380,13 +1367,32 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 		// Reset the index offset as the strides should all be nonnegative integers:
 		offset = vhlen;
 	}
+	// Set the input and output ndarray arguments:
 	args[ 0 ] = x;
 	args[ 1 ] = new ns.ndarray.ndarray( 'generic', buf, shape, strides, offset, order );
 	// Perform element-wise computation:
 	out = ns.math.tools.ndarray.unary( args, ns.math.abs );
+	// If we are returning a view of the input data buffer, check whether we need to shift the data to ensure a compact representation...
+	len = buf.length;
+	if ( opts.view ) {
+		// Check whether the number of dimensions was reduced and, if so, shift the data to account for less header info...
+		d = hlen - vhlen;
+		if ( d !== 0 ) {
+			// Reduce the buffer length:
+			len -= d;
+			// Because the meta data of the view consumes less memory than the input ndarray, we need to shift the data up to ensure a compact representation...
+			for ( i = 0; i < len; i++ ) {
+				buf[ vhlen+i ] = buf[ hlen+i ];
+			}
+			// Trim off the leftover items:
+			buf.length = len;
+			// Adjust the offset to account for reduced ndarray meta data:
+			offset -= d;
+		}
+	}
 	// TODO: do we need to consider a returned ndarray having a different dtype?
 	// Serialize the output ndarray to a range:
-	return ns.ndarray.ndarray2range( out.data, out.data.length-vhlen, obj.dtype, out.shape, out.strides, out.offset-vhlen, out.order, opts.as ); 
+	return ns.ndarray.ndarray2range( out.data, len-vhlen, obj.dtype, out.shape, out.strides, offset-vhlen, out.order, opts.as ); 
 }
 /**
 * Computes the arcsine of a number (in radians).
