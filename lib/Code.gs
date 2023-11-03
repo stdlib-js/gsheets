@@ -1316,8 +1316,9 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 	for ( i = 1; i < arguments.length; i++ ) {
 		o = arguments[ i ];
 		if ( o === 'as' || o === 'slice' || o === 'strict' || o === 'view' ) {
-			opts[ o ] = arguments[ i+1 ];
-			// TODO: validate as/strict option values
+			i += 1;
+			opts[ o ] = arguments[ i ];
+			// TODO: validate as/strict/view option values
 		} else {
 			args.push( o );
 		}
