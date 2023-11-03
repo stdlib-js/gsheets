@@ -1311,6 +1311,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 	var len;
 	var buf;
 	var s;
+	var d;
 	var o;
 	var i;
 	opts = {
@@ -1352,8 +1353,9 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 		len = data.length;
 		buf = data;
 		// Check whether the number of dimensions was reduced and, if so, shift the data to account for less header info...
-		if ( vhlen !== hlen ) {
-			len -= hlen - vhlen;
+		d = hlen - vhlen;
+		if ( d !== 0 ) {
+			len -= d;
 			// Because the meta data of the view consumes less memory than the input ndarray, we need to shift the data up to ensure a compact representation...
 			for ( i = 0; i < len; i++ ) {
 				buf[ vhlen+i ] = buf[ hlen+i ];
@@ -1361,7 +1363,8 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 			// Trim off the leftover items:
 			data.length = len;
 		}
-		offset = x.offset;
+		// Adjust the offset to account for reduced ndarray meta data:
+		offset = x.offset - d;
 	}
 	// Otherwise, return a fresh ndarray with data arranged contiguously...
 	else {
