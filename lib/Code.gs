@@ -1295,6 +1295,7 @@ function STDLIB_ASINH( value, nonnumeric, nonnumericValue, nan, nanValue, pinf, 
 * STDLIB_ABS( A1:A100, "nan", "", "pinf", "", "ninf", "" )
 */
 function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, nan, nanValue, pinf, pinfValue, ninf, ninfValue, view, viewValue, strict, strictValue, as, asValue ) { 
+	var ndims;
 	var opts;
 	var args;
 	var hlen;
@@ -1310,7 +1311,6 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 		'as': 'column' // FIXME: infer default based on orientation of `x`
 	};
 	obj = ns.ndarray.range2ndarray( x );
-	hlen = obj.headerLength;
 	x = obj.ndarray;
 	args = [ null, null ];
 	for ( i = 1; i < arguments.length; i++ ) {
@@ -1330,15 +1330,17 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 		x = ns.ndarray.slice( x, s, opts.strict, false );
 	}
 	if ( opts.view ) {
-		// TODO: create a new output array
+		// Perform an in-place operation to avoid unnecessary memory allocation:
 		out = x;
 	} else {
-		// Perform an in-place operation to avoid unnecessary memory allocation:
+		// TODO: create a new output array
 		out = x;
 	}
 	args[ 0 ] = x;
 	args[ 1 ] = out;
 	out = ns.math.tools.ndarray.unary( args, ns.math.abs );
+	ndims = out.ndims;
+	hlen = 9 + ndims + ( ( ndims === 0 ) ? 1 : ndims ) + 5; // TODO: use utility package to avoid hardcoding
 	// TODO: do we need to consider a returned ndarray having a different dtype?
 	return ns.ndarray.ndarray2range( out.data, out.data.length-hlen, obj.dtype, out.shape, out.strides, out.offset-hlen, out.order, opts.as ); 
 }
