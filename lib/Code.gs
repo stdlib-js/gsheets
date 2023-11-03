@@ -1361,6 +1361,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 			// Trim off the leftover items:
 			data.length = len;
 		}
+		offset = x.offset;
 	}
 	// Otherwise, return a fresh ndarray with data arranged contiguously...
 	else {
@@ -1373,9 +1374,11 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 		} else {
 			strides = [ 0 ];
 		}
+		// Reset the index offset as the strides should all be nonnegative integers:
+		offset = 0;
 	}
 	args[ 0 ] = x;
-	args[ 1 ] = new ns.ndarray.ndarray( 'generic', buf, shape, strides, vhlen, order );
+	args[ 1 ] = new ns.ndarray.ndarray( 'generic', buf, shape, strides, offset+vhlen, order );
 	// Perform element-wise computation:
 	out = ns.math.tools.ndarray.unary( args, ns.math.abs );
 	// TODO: do we need to consider a returned ndarray having a different dtype?
