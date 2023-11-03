@@ -1379,7 +1379,7 @@ function STDLIB_NDARRAY_ABS( x, slice, sliceValue, nonnumeric, nonnumericValue, 
 		offset = 0;
 	}
 	args[ 0 ] = x;
-	args[ 1 ] = new ns.ndarray.ndarray( 'generic', x.dtype, shape, strides, offset, order );
+	args[ 1 ] = new ns.ndarray.ndarray( 'generic', buf, shape, strides, offset, order );
 	// Perform element-wise computation:
 	out = ns.math.tools.ndarray.unary( args, ns.math.abs );
 	// TODO: do we need to consider a returned ndarray having a different dtype?
