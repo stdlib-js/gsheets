@@ -140,7 +140,37 @@
     
 -   determine whether gsheets/object/shallow-copy is needed anymore
 
--   remove array/broadcasted-ternary2d once stdlib pkg available
+-   update ndarray/stacked-repr to use @stdlib/ndarray-iter-matrix-entries once pkg available
+
+-   ndarray/base/to-linear-exchange-format
+
+    -   simple flat array format
+    -   should provide either a method or a complementary package which can return the header length
+    -   for Sheets, we can implement a small utility to modify the dtype based on gsheets dtypes
+        -   perform a linear scan for `dtype` and update the next field
+    
+-   ndarray/base/from-linear-exchange-format
+
+    -   convert a simple flat array format into an ndarray
+    -   for any unrecognized dtypes, set dtype to 'generic' for the output ndarray
+    
+-   ndarray/base/linear-exchange-format-buffer
+
+    -   allocate a generic array buffer which can accommodate header info and data
+    -   see ndarray/ctor and ndarray/zeros (two-liner)
+    -   signature: linearExchangeFormatBuffer( len ), where len is the underlying data buffer length
+    
+-   ndarray/base/to-stacked-array-repr
+
+    -   extract out the implementation from ndarray/stacked-repr
+    -   including the titles and separators is prob fine
+    
+-   gsheets/ndarray/default-presentation-layout
+
+-   demo sheet with Markov Chain Monte Carlo simulated time series
+
+    -   follow-up with k-means clustering: https://observablehq.com/@kgryte/stdlib-real-time-k-means-clustering
+    -   https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/ml/incr/kmeans
 
 
 ## Packages
