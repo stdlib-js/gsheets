@@ -588,6 +588,216 @@
     "prng": "uniform"
   },
   {
+    "alias": "cosh",
+    "pkg": "math/base/special/cosh",
+    "pkg_desc": "Compute the hyperbolic cosine of a number",
+    "desc": "Computes the hyperbolic cosine of a number",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      0.0,
+      2.0,
+      -2.0,
+      1.0,
+      -0.5,
+      0.5
+    ],
+    "min": -5.0,
+    "max": 5.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "cosm1",
+    "pkg": "math/base/special/cosm1",
+    "pkg_desc": "Compute cos(x)-1",
+    "desc": "Computes cos(x)-1",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      0.0,
+      0.75,
+      -0.5,
+      1.0,
+      0.45,
+      0.5
+    ],
+    "min": 0.0,
+    "max": 6.28,
+    "prng": "uniform"
+  },
+  {
+    "alias": "cospi",
+    "pkg": "math/base/special/cospi",
+    "pkg_desc": "Compute the cosine of a number times π",
+    "desc": "Computes the cosine of a number times π",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      0.0,
+      0.75,
+      -0.5,
+      1.0,
+      0.45,
+      0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "cot",
+    "pkg": "math/base/special/cot",
+    "pkg_desc": "Evaluate the cotangent of a number",
+    "desc": "Evaluates the cotangent of a number",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      0.1,
+      0.75,
+      -0.5,
+      1.0,
+      0.45,
+      0.5
+    ],
+    "min": -1.57,
+    "max": 1.57,
+    "prng": "uniform"
+  },
+  {
+    "alias": "coth",
+    "pkg": "math/base/special/coth",
+    "pkg_desc": "Compute the hyperbolic cotangent of a number",
+    "desc": "Computes the hyperbolic cotangent of a number",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.0,
+      0.75,
+      -0.5,
+      1.0,
+      0.45,
+      0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "covercos",
+    "pkg": "math/base/special/covercos",
+    "pkg_desc": "Compute the coversed cosine",
+    "desc": "Computes the coversed cosine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.0,
+      0.75,
+      -0.5,
+      1.0,
+      0.45,
+      0.5
+    ],
+    "min": 0.0,
+    "max": 6.28,
+    "prng": "uniform"
+  },
+  {
+    "alias": "coversin",
+    "pkg": "math/base/special/coversin",
+    "pkg_desc": "Compute the coversed sine",
+    "desc": "Computes the coversed sine",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.0,
+      0.75,
+      -0.5,
+      1.0,
+      0.45,
+      0.5
+    ],
+    "min": 0.0,
+    "max": 6.28,
+    "prng": "uniform"
+  },
+  {
+    "alias": "deg2rad",
+    "pkg": "math/base/special/deg2rad",
+    "pkg_desc": "Convert an angle from degrees to radians",
+    "desc": "Converts an angle from degrees to radians",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      90.0,
+      -45.0,
+      45.0,
+      30.0,
+      -60.0,
+      60.0
+    ],
+    "min": -360.0,
+    "max": 360.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "digamma",
+    "pkg": "math/base/special/digamma",
+    "pkg_desc": "Evaluate the digamma function",
+    "desc": "Evaluates the digamma function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.5,
+      1.0,
+      10.0,
+      -1.75,
+      3.14,
+      -0.5
+    ],
+    "min": 1.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "eta",
+    "pkg": "math/base/special/dirichlet-eta",
+    "pkg_desc": "Evaluate the Dirichlet eta function",
+    "desc": "Evaluates the Dirichlet eta function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.5,
+      1.0,
+      10.0,
+      -1.75,
+      3.14,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
     "alias": "sin",
     "pkg": "math/base/special/sin",
     "pkg_desc": "Compute the sine of a number (in radians)",

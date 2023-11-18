@@ -113,6 +113,8 @@
         -   for a simple range, this is more easily achieved with built-in ops; however, for tensors, things get more interesting
     -   fliplr/ud etc for tensors/matrices
         -   would be nice for demoing tensor/matrix operations, as can see value output
+        -   @stdlib/array/base/fliplr2d
+        -   @stdlib/array/base/flipud2d
     -   range2tensor3d
         -   `range2tensor3d(rows_per_matrix)` where rows per matrix must evenly divide number of rows in range
     -   tensor3d2range
@@ -171,6 +173,23 @@
 
     -   follow-up with k-means clustering: https://observablehq.com/@kgryte/stdlib-real-time-k-means-clustering
     -   https://github.com/stdlib-js/stdlib/tree/develop/lib/node_modules/%40stdlib/ml/incr/kmeans
+    
+-   demo sheet of discrete-time Markov chain for population sizes
+
+    -   https://ipython-books.github.io/131-simulating-a-discrete-time-markov-chain/
+    
+-   demo sheet for simulating stock prices using a discrete-time Markov chain
+
+    -   https://towardsdatascience.com/a-beginners-guide-to-discrete-time-markov-chains-d5be17cf0e12
+    
+-   demo sheet of simulated Brownian motion
+
+    -   https://ipython-books.github.io/133-simulating-a-brownian-motion/
+    
+-   demo sheet of simulating a stochastic differential equation
+
+    -   https://ipython-books.github.io/134-simulating-a-stochastic-differential-equation/
+    -   see also: https://github.com/ipython-books/cookbook-2nd/tree/master/chapter13_stochastic
 
 
 ## Packages
