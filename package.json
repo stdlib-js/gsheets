@@ -258,6 +258,7 @@
     "@stdlib/ndarray-base-to-array": "^0.1.0",
     "@stdlib/ndarray-base-unary": "^0.1.0",
     "@stdlib/ndarray-base-zeros": "^0.1.0",
+    "@stdlib/ndarray-iter-matrix-entries": "^0.1.0",
     "@stdlib/ndarray-iter-rows": "^0.1.0",
     "@stdlib/ndarray-orders": "^0.1.1",
     "@stdlib/process-read-stdin": "^0.1.0",
