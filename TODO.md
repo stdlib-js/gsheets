@@ -140,8 +140,6 @@
     
 -   determine whether gsheets/object/shallow-copy is needed anymore
 
--   update ndarray/stacked-repr to use @stdlib/ndarray-iter-matrix-entries once pkg available
-
 -   ndarray/base/to-linear-exchange-format
 
     -   simple flat array format
@@ -160,6 +158,7 @@
     -   see ndarray/ctor and ndarray/zeros (two-liner)
     -   signature: linearExchangeFormatBuffer( len ), where len is the underlying data buffer length
         -   don't we need to know the size of the header????
+            -   maybe `len` is already supposed to account for header info, meaning `len = header.length + data.length`
     
 -   ndarray/base/to-stacked-array-repr
 
