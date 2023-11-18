@@ -159,6 +159,7 @@
     -   allocate a generic array buffer which can accommodate header info and data
     -   see ndarray/ctor and ndarray/zeros (two-liner)
     -   signature: linearExchangeFormatBuffer( len ), where len is the underlying data buffer length
+        -   don't we need to know the size of the header????
     
 -   ndarray/base/to-stacked-array-repr
 
