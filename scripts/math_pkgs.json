@@ -38,13 +38,14 @@
     "@stdlib/math-base-special-deg2rad",
     "@stdlib/math-base-special-digamma",
     "@stdlib/math-base-special-dirichlet-eta",
-
     "@stdlib/math-base-special-ellipe",
     "@stdlib/math-base-special-ellipk",
     "@stdlib/math-base-special-erf",
     "@stdlib/math-base-special-erfc",
     "@stdlib/math-base-special-erfcinv",
+
     "@stdlib/math-base-special-erfcx",
+
     "@stdlib/math-base-special-erfinv",
     "@stdlib/math-base-special-exp",
     "@stdlib/math-base-special-exp10",
@@ -52,6 +53,7 @@
     "@stdlib/math-base-special-expit",
     "@stdlib/math-base-special-expm1",
     "@stdlib/math-base-special-expm1rel",
+
     "@stdlib/math-base-special-factorial",
     "@stdlib/math-base-special-factorialln",
     "@stdlib/math-base-special-fibonacci",

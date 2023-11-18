@@ -798,6 +798,258 @@
     "prng": "uniform"
   },
   {
+    "alias": "ellipe",
+    "pkg": "math/base/special/ellipe",
+    "pkg_desc": "Compute the complete elliptic integral of the second kind",
+    "desc": "Computes the complete elliptic integral of the second kind",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.5,
+      1.0,
+      0.0,
+      -1.75,
+      -3.14,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 1.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "ellipk",
+    "pkg": "math/base/special/ellipk",
+    "pkg_desc": "Compute the complete elliptic integral of the first kind",
+    "desc": "Computes the complete elliptic integral of the first kind",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.5,
+      1.0,
+      0.0,
+      -1.75,
+      -3.14,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 1.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "erf",
+    "pkg": "math/base/special/erf",
+    "pkg_desc": "Evaluate the error function",
+    "desc": "Evaluates the error function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.5,
+      1.0,
+      0.0,
+      -1.75,
+      -3.14,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "erfc",
+    "pkg": "math/base/special/erfc",
+    "pkg_desc": "Evaluate the complementary error function",
+    "desc": "Evaluates the complementary error function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      -2.5,
+      1.0,
+      0.0,
+      -1.75,
+      -3.14,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "erfcinv",
+    "pkg": "math/base/special/erfcinv",
+    "pkg_desc": "Evaluate the inverse complementary error function",
+    "desc": "Evaluates the inverse complementary error function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      1.5,
+      1.0,
+      0.8,
+      1.75,
+      0.2,
+      0.5
+    ],
+    "min": 0.0,
+    "max": 2.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "erfinv",
+    "pkg": "math/base/special/erfinv",
+    "pkg_desc": "Evaluate the inverse error function",
+    "desc": "Evaluates the inverse error function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      0.5,
+      -0.3,
+      -0.8,
+      0.75,
+      0.2,
+      -0.5
+    ],
+    "min": -0.9,
+    "max": 0.9,
+    "prng": "uniform"
+  },
+  {
+    "alias": "exp",
+    "pkg": "math/base/special/exp",
+    "pkg_desc": "Evaluate the natural exponential function",
+    "desc": "Evaluates the natural exponential function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      4.0,
+      -9.0,
+      -0.8,
+      1.75,
+      0.2,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "exp10",
+    "pkg": "math/base/special/exp10",
+    "pkg_desc": "Evaluate the base 10 exponential function",
+    "desc": "Evaluates the base 10 exponential function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      4.0,
+      -9.0,
+      -0.8,
+      1.75,
+      0.2,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "exp2",
+    "pkg": "math/base/special/exp2",
+    "pkg_desc": "Evaluate the base 2 exponential function",
+    "desc": "Evaluates the base 2 exponential function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      4.0,
+      -9.0,
+      -0.8,
+      1.75,
+      0.2,
+      -0.5
+    ],
+    "min": -10.0,
+    "max": 10.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "expit",
+    "pkg": "math/base/special/expit",
+    "pkg_desc": "Compute the standard logistic function",
+    "desc": "Computes the standard logistic function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      0.0,
+      1.0,
+      -1.0,
+      1.75,
+      0.2,
+      -0.5
+    ],
+    "min": -1.0,
+    "max": 1.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "expm1",
+    "pkg": "math/base/special/expm1",
+    "pkg_desc": "Compute exp(x)-1, where exp(x) is the natural exponential function",
+    "desc": "Computes exp(x)-1, where exp(x) is the natural exponential function",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      4.0,
+      -9.0,
+      -0.8,
+      1.75,
+      0.2,
+      -0.5
+    ],
+    "min": -5.0,
+    "max": 5.0,
+    "prng": "uniform"
+  },
+  {
+    "alias": "expm1rel",
+    "pkg": "math/base/special/expm1rel",
+    "pkg_desc": "Compute the relative error exponential",
+    "desc": "Computes the relative error exponential",
+    "dtypes": [
+      "float64",
+      "float64"
+    ],
+    "values": [
+      0.0,
+      1.0,
+      -1.0,
+      1.75,
+      0.2,
+      -0.5
+    ],
+    "min": -5.0,
+    "max": 5.0,
+    "prng": "uniform"
+  },
+  {
     "alias": "sin",
     "pkg": "math/base/special/sin",
     "pkg_desc": "Compute the sine of a number (in radians)",
