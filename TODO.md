@@ -103,6 +103,7 @@
 
     -   i.e., a sequence of operations on a provided range
     -   can we also support the ability to "print" out intermediate results so that users can see how each operation in a sequence transforms the results of the previous operation?
+    -   **UPDATE**: CAS
         
 -   range operations
 
@@ -113,8 +114,6 @@
         -   for a simple range, this is more easily achieved with built-in ops; however, for tensors, things get more interesting
     -   fliplr/ud etc for tensors/matrices
         -   would be nice for demoing tensor/matrix operations, as can see value output
-        -   @stdlib/array/base/fliplr2d
-        -   @stdlib/array/base/flipud2d
     -   range2tensor3d
         -   `range2tensor3d(rows_per_matrix)` where rows per matrix must evenly divide number of rows in range
     -   tensor3d2range
@@ -161,6 +160,8 @@
     -   signature: linearExchangeFormatBuffer( len ), where len is the underlying data buffer length
         -   don't we need to know the size of the header????
             -   maybe `len` is already supposed to account for header info, meaning `len = header.length + data.length`
+        -   **UPDATE**: why not `linearExchangeFormatBuffer( x )`, where `x` is an ndarray?
+            -   compute the header length internally and allocate accordingly?
     
 -   ndarray/base/to-stacked-array-repr
 
